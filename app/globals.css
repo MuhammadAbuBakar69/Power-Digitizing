@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) * 1.5);
+  --font-display: var(--font-display-active);
+  --font-sans: var(--font-body-active);
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--background); color: var(--foreground); font-family: var(--font-body-active), system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* The one signature moment: a running-stitch line that sews itself under the hero headline. */
+.stitch-line { clip-path: inset(0 100% 0 0); animation: sew 1.4s 0.3s cubic-bezier(.6,.05,.2,1) forwards; }
+@keyframes sew { to { clip-path: inset(0 0 0 0); } }
+
+.quote-input { width: 100%; border: 1px solid rgb(255 255 255 / 0.45); border-radius: 0.35rem; background: transparent; color: #FFFFFF; padding: 0.75rem 0.875rem; font-size: 0.875rem; line-height: 1.25rem; transition: border-color 180ms ease, background-color 180ms ease; }
+.quote-input::placeholder { color: rgb(255 255 255 / 0.65); }
+.quote-input:focus { border-color: #FF9C00; background: rgb(255 255 255 / 0.08); outline: none; }
+.quote-input option { color: #231F20; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .stitch-line { animation: none; clip-path: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
