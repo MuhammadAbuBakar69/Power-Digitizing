@@ -27,7 +27,7 @@ export default async function QuotePage() {
               <a href={`mailto:${site.contact.email}`} className="mt-1 inline-flex items-center font-semibold text-foreground hover:text-primary">{site.contact.email}</a>
             </div>
           </div>
-          <QuoteForm site={site} />
+          <QuoteForm />
         </div>
       </div>
     </main>

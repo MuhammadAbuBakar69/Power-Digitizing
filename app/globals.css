@@ -31,6 +31,46 @@ body { background: var(--background); color: var(--foreground); font-family: var
 .quote-input:focus { border-color: #FF9C00; background: rgb(255 255 255 / 0.08); outline: none; }
 .quote-input option { color: #231F20; }
 
+.about-hero {
+  background:
+    radial-gradient(ellipse at 12% 28%, rgb(218 44 70 / 0.065), transparent 38%),
+    radial-gradient(ellipse at 78% 68%, rgb(255 156 0 / 0.075), transparent 34%),
+    linear-gradient(118deg, #fff 0%, #fff 54%, #fffaf4 100%);
+}
+.about-hero-pattern {
+  opacity: 0.18;
+  background-image: radial-gradient(rgb(35 31 32 / 0.18) 0.7px, transparent 0.7px);
+  background-position: center;
+  background-size: 22px 22px;
+  mask-image: linear-gradient(100deg, transparent 8%, #000 55%, transparent 100%);
+}
+.about-hero-glow {
+  background: radial-gradient(circle, rgb(218 44 70 / 0.08), rgb(255 156 0 / 0.055) 42%, transparent 70%);
+  filter: blur(18px);
+}
+.hero-artwork-stage {
+  background:
+    radial-gradient(ellipse at 50% 45%, #fff 0%, #faf8f4 54%, #eeeae3 100%);
+}
+.hero-artwork-stage::before {
+  position: absolute;
+  inset: 8%;
+  border: 1px solid rgb(35 31 32 / 0.045);
+  border-radius: 9999px;
+  content: "";
+  pointer-events: none;
+}
+.gallery-like.is-liked { opacity: 1; }
+@media (hover: none) {
+  .gallery-like { opacity: 1; }
+}
+
+/* Touch screens get a brief press response in place of hover. */
+.service-card { touch-action: manipulation; }
+@media (hover: none) {
+  .service-card:active { transform: scale(0.985); border-color: var(--primary); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .stitch-line { animation: none; clip-path: none; }

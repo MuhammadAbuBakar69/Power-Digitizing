@@ -11,7 +11,7 @@ export function Services({ site }: { site: SiteConfig }) {
         <h2 className="max-w-xl font-display text-3xl font-semibold tracking-tight md:text-4xl">What we make for you</h2>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {site.services.map((s) => (
-            <article key={s.slug} className="group relative flex cursor-pointer flex-col overflow-hidden rounded-lg border border-border bg-card p-7 transition duration-300 ease-out hover:-translate-y-2 hover:border-primary hover:shadow-xl hover:shadow-primary/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+            <article key={s.slug} className="service-card group relative flex cursor-pointer flex-col overflow-hidden rounded-lg border border-border bg-card p-7 transition duration-200 ease-out hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
               <span aria-hidden className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100 motion-reduce:transition-none" />
               <span className="flex size-12 items-center justify-center rounded-full bg-primary/5 transition duration-300 ease-out group-hover:bg-primary group-hover:shadow-lg group-hover:shadow-primary/20 motion-reduce:transition-none">
                 <Icon name={s.icon} className="size-7 text-primary transition duration-300 group-hover:scale-110 group-hover:text-primary-foreground motion-reduce:transition-none" />

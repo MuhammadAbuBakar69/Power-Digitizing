@@ -1,3 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { poweredByHeader: false, images: { formats: ["image/avif", "image/webp"] } };
+const nextConfig = {
+  poweredByHeader: false,
+  images: {
+    formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
+};
 export default nextConfig;

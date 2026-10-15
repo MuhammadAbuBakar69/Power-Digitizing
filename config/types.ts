@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const FONT_KEYS = ["bricolage", "instrument", "inter"] as const;
-export const ICON_KEYS = ["needle", "vector", "patch", "shield", "clock", "globe", "headset", "tag", "award", "layers"] as const;
+export const ICON_KEYS = ["needle", "vector", "patch", "shield", "clock", "globe", "headset", "tag", "award", "layers", "truck"] as const;
 
 const link = z.object({ label: z.string().min(1), href: z.string().min(1) });
 const color = z.string().regex(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/, "Use a hex colour");
@@ -40,7 +40,7 @@ const portfolioSchema = z.object({
 });
 
 const useCaseSchema = z.object({ title: z.string(), description: z.string(), icon: z.enum(ICON_KEYS) });
-const collectionSchema = z.object({ name: z.string(), category: z.string(), price: z.string(), description: z.string(), image: z.string() });
+const collectionSchema = z.object({ slug: z.string().regex(/^[a-z0-9-]+$/), name: z.string(), category: z.string(), price: z.string(), description: z.string(), image: z.string() });
 const promiseSchema = z.object({ title: z.string(), description: z.string(), icon: z.enum(ICON_KEYS) });
 const processSchema = z.object({ step: z.string(), title: z.string(), description: z.string() });
 

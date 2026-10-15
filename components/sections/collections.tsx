@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { SiteConfig } from "@/config/types";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 
@@ -16,8 +17,27 @@ export function Collections({ site }: { site: SiteConfig }) {
             <p data-reveal className="max-w-sm text-muted-foreground">Detailed customization, premium materials and a free proof before production.</p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {site.collections.map((collection) => <article data-reveal key={collection.name} className="group overflow-hidden border border-border bg-background"><div className="relative aspect-[1.2] overflow-hidden bg-muted"><Image src={collection.image} alt={collection.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-105" /></div><div className="p-5"><p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{collection.category}</p><h3 className="mt-2 font-display text-xl font-semibold">{collection.name}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{collection.description}</p></div></article>)}
+            {site.collections.map((collection) => (
+              <Link
+                href={`/collections/${collection.slug}`}
+                data-reveal
+                key={collection.name}
+                className="group overflow-hidden rounded-2xl border border-border bg-background block shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="relative aspect-[1.2] overflow-hidden bg-muted">
+                  <Image src={collection.image} alt={collection.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                </div>
+                <div className="p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{collection.category}</p>
+                  <h3 className="mt-2 font-display text-xl font-semibold group-hover:text-primary transition-colors">{collection.name}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground line-clamp-2">{collection.description}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details →</span>
+                </div>
+              </Link>
+            ))}
           </div>
+          <div className="mt-9 flex justify-center"><Link href="/collections" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary">Explore all patch designs <span aria-hidden>→</span></Link></div>
         </ScrollReveal>
       </div>
     </section>
