@@ -96,8 +96,17 @@ export function Hero({ site }: { site: SiteConfig }) {
                 </div>
               </div>
             ) : (
-              <video className="max-h-[85vh] w-full bg-[#f7f4ef]" controls autoPlay playsInline poster="/images/american-patches/sublimated-cutout.png" onError={() => setVideoError(true)}>
+              <video
+                className="max-h-[85vh] w-full bg-[#f7f4ef]"
+                controls
+                autoPlay
+                playsInline
+                preload="auto"
+                poster="/images/american-patches/sublimated-cutout.png"
+                onError={() => setVideoError(true)}
+              >
                 <source src="/videos/power-digitizing-reel.MP4" type="video/mp4" />
+                <source src="/videos/power-digitizing-reel.mp4" type="video/mp4" />
               </video>
             )}
           </div>
