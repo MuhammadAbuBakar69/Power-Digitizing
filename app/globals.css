@@ -71,8 +71,31 @@ body { background: var(--background); color: var(--foreground); font-family: var
   .service-card:active { transform: scale(0.985); border-color: var(--primary); }
 }
 
+/* Infinite ticker marquee (movement from left side to right side, pause on cursor hover) */
+@keyframes marquee-ltr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-ltr {
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 28s linear infinite;
+  will-change: transform;
+}
+
+.pause-on-hover:hover .animate-marquee-ltr,
+.pause-on-hover:focus-within .animate-marquee-ltr {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .stitch-line { animation: none; clip-path: none; }
+  .animate-marquee-ltr { animation: none; transform: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
