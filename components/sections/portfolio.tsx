@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { SiteConfig } from "@/config/types";
 
 type Kind = "embroidery" | "vector" | "patch";
@@ -51,7 +52,19 @@ export function Portfolio({ site }: { site: SiteConfig }) {
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {site.portfolio.map((item) => (
             <article key={item.title} className="group overflow-hidden rounded-xl border border-border bg-card">
-              <div className="aspect-[1.7] overflow-hidden"><Artwork kind={item.kind} /></div>
+              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-b from-muted/30 to-muted/70 p-4 sm:p-6 flex items-center justify-center">
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 420px"
+                    className="object-contain object-center transition-transform duration-500 group-hover:scale-105 drop-shadow-md"
+                  />
+                ) : (
+                  <Artwork kind={item.kind} />
+                )}
+              </div>
               <div className="p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{item.label}</p>
                 <h3 className="mt-3 font-display text-2xl font-semibold">{item.title}</h3>

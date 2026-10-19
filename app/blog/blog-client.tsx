@@ -20,7 +20,6 @@ import {
   Wrench,
 } from "lucide-react";
 import { BLOG_CATEGORIES, BLOG_POSTS } from "@/config/blogs";
-import { StitchEstimator } from "@/components/blog/stitch-estimator";
 import { ProductionGlossary } from "@/components/blog/production-glossary";
 import { MachineMatrix } from "@/components/blog/machine-matrix";
 
@@ -242,10 +241,6 @@ export function BlogClient() {
           </div>
         </div>
 
-        {/* 3.5 INTERACTIVE STITCH COUNT & PRODUCTION ESTIMATOR */}
-        <div className="mt-20">
-          <StitchEstimator />
-        </div>
 
         {/* 4. POPULAR LEARNING TRACKS / CATEGORY CARDS */}
         <div className="mt-20 border-t border-border pt-12">

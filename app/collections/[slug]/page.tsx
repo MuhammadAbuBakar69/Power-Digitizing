@@ -16,11 +16,10 @@ import {
   Clock,
   Phone,
   Mail,
-  Sliders,
   Flame,
-  Feather,
 } from "lucide-react";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
+import { CollectionGallery } from "@/components/collections/collection-gallery";
 
 // ─── Per-collection rich content ──────────────────────────────────────────────
 const collectionDetails: Record<
@@ -56,7 +55,7 @@ const collectionDetails: Record<
           "We engineer our leather patches specifically for headwear curvature. Our patches feature calibrated pliability so they contour smoothly to curved cap crowns without creasing, lifting at the edges, or bubbling.",
           "Choose between blind debossing (where heated steel dies press your artwork permanently into the hide) and ultra-high-definition laser burnishing, which darkens the leather fibres to create rich caramel and espresso contrasts.",
         ],
-        image: "/images/american-patches/leather.jpg",
+        image: "/images/american-patches/leather-cutout.png",
         imageAlt: "Custom debossed leather patches on trucker caps and beanies",
       },
       {
@@ -97,7 +96,7 @@ const collectionDetails: Record<
           "Our color matching utilizes the Madeira Pantone system to guarantee your department's official colors are replicated with 100% accuracy.",
           "Available with military-grade hook-and-loop Velcro backings for rapid uniform changes or industrial heat-seal backing for permanent heat-press application.",
         ],
-        image: "/images/american-patches/embroidered.jpg",
+        image: "/images/embroidery/180ac20d-921e-4432-aee7-0ebb724068d7.webp",
         imageAlt: "Heavy-duty embroidered patches for uniform programs",
       },
       {
@@ -138,7 +137,7 @@ const collectionDetails: Record<
           "We build multi-layered letters with contrasting chenille center fills, felt border steps, and metallic gold or silver embroidery detailing for state championship stars and award years.",
           "Sized up to 10 inches for jacket backs or 4-5 inches for chest insignias, each piece is engineered to drape naturally on heavy wool and leather sleeves.",
         ],
-        image: "/images/american-patches/chenille.jpg",
+        image: "/images/american-patches/chenille-cutout.png",
         imageAlt: "Varsity letterman chenille patches with felt backing",
       },
       {
@@ -179,7 +178,7 @@ const collectionDetails: Record<
           "We produce subdued tactical colorways (Coyote Brown, Ranger Green, Wolf Grey, O.D. Green) and custom glow-in-the-dark or IR-reflective options for nocturnal operations.",
           "Hook-and-loop Velcro backings are heat-bonded and perimeter-stitched for unconditional retention on vests and gear.",
         ],
-        image: "/images/american-patches/pvc.jpg",
+        image: "/images/american-patches/pvc-white.png",
         imageAlt: "Tactical military PVC patches with Velcro backing",
       },
       {
@@ -189,7 +188,7 @@ const collectionDetails: Record<
           "Our multi-layer molding process allows up to 6 custom Pantone colors cast into distinct dimensional planes.",
           "Precision mold tooling captures sharp geometric typography and intricate logo badges without color bleeding.",
         ],
-        image: "/images/american-patches/pvc.jpg",
+        image: "/images/american-patches/pvc-white.png",
         imageAlt: "All-weather PVC patches for outdoor lifestyle brands",
         reverse: true,
       },
@@ -551,13 +550,13 @@ export default async function CollectionDetailPage({ params }: { params: Promise
 
                   {/* Image Column */}
                   <div className={`lg:col-span-5 ${isReversed ? "lg:order-1" : ""}`}>
-                    <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-[#E8E6E0] bg-[#EFECE6] shadow-xl">
+                    <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-[#E8E6E0] bg-white p-6 sm:p-10 shadow-xl flex items-center justify-center">
                       <Image
                         src={section.image}
                         alt={section.imageAlt}
                         fill
                         sizes="(max-width: 1024px) 100vw, 500px"
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        className="object-contain object-center drop-shadow-xl transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                     </div>
                   </div>
@@ -567,6 +566,9 @@ export default async function CollectionDetailPage({ params }: { params: Promise
           </ScrollReveal>
         );
       })}
+
+      {/* ── 5.5 CURATED PRODUCTION GALLERY (10-12 DESIGNS) ─────────── */}
+      <CollectionGallery slug={slug} collectionName={collection.name} />
 
       {/* ── 6. PRODUCTION PILLARS ───────────────────────────────────────────── */}
       <ScrollReveal>

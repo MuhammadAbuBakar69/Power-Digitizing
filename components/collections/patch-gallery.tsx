@@ -73,8 +73,8 @@ export function PatchGallery({ fallbackImages }: { fallbackImages: string[] }) {
           const liked = likedIds.includes(item.id);
           return (
             <article key={item.id} className="group relative mb-3 inline-block w-full break-inside-avoid overflow-hidden rounded-lg bg-muted shadow-sm sm:mb-4">
-              <div className={`relative ${item.shape}`}>
-                <Image src={failedImages.includes(item.id) ? fallbackImages[Number(item.id.slice(-3)) % fallbackImages.length] : item.image} onError={() => setFailedImages((current) => current.includes(item.id) ? current : [...current, item.id])} alt={`${item.material} patch: ${item.title}`} fill sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+              <div className={`relative ${item.shape} bg-gradient-to-b from-muted/30 to-muted/70 p-3 sm:p-4 flex items-center justify-center`}>
+                <Image src={failedImages.includes(item.id) ? fallbackImages[Number(item.id.slice(-3)) % fallbackImages.length] : item.image} onError={() => setFailedImages((current) => current.includes(item.id) ? current : [...current, item.id])} alt={`${item.material} patch: ${item.title}`} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-contain object-center transition-transform duration-500 group-hover:scale-[1.03] drop-shadow-md" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/10 opacity-70 transition-opacity group-hover:opacity-100" />
                 <span className="absolute bottom-3 left-3 rounded-full bg-black/55 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">{item.material}</span>
                 <button type="button" onClick={() => toggleLike(item.id)} aria-pressed={liked} aria-label={`${liked ? "Unlike" : "Like"} ${item.title}`}

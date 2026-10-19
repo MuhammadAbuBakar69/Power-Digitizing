@@ -24,9 +24,8 @@ export function Collections({ site }: { site: SiteConfig }) {
                 key={collection.name}
                 className="group overflow-hidden rounded-2xl border border-border bg-background block shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="relative aspect-[1.2] overflow-hidden bg-muted">
-                  <Image src={collection.image} alt={collection.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden bg-white p-4 sm:p-5 flex items-center justify-center">
+                  <Image src={collection.image} alt={collection.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-contain object-center transition-transform duration-500 group-hover:scale-105 drop-shadow-md" />
                 </div>
                 <div className="p-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{collection.category}</p>

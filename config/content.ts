@@ -73,7 +73,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Uniforms · Brands · Teams",
       price: "From $1.50",
       description: "Classic stitched detail with crisp lettering and durable thread for uniforms, clubs, corporate apparel and brand patches.",
-      image: "/images/american-patches/embroidered.jpg",
+      image: "/images/embroidery/180ac20d-921e-4432-aee7-0ebb724068d7.webp",
     },
     {
       slug: "chenille-patches",
@@ -81,7 +81,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Jackets · Letterman · Clubs",
       price: "From $4.25",
       description: "Soft varsity-style chenille perfect for letterman jackets, hoodies, sports teams and school spirit wear.",
-      image: "/images/american-patches/chenille.jpg",
+      image: "/images/american-patches/chenille-cutout.png",
     },
     {
       slug: "pvc-patches",
@@ -89,7 +89,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Outdoor · Tactical · Gear",
       price: "From $3.25",
       description: "Durable soft PVC / rubber patches that resist water, mud and heavy use — ideal for tactical, outdoor and work gear.",
-      image: "/images/american-patches/pvc.jpg",
+      image: "/images/american-patches/pvc-white.png",
     },
     {
       slug: "silicone-patches",
@@ -105,7 +105,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Hats · Premium · Heritage",
       price: "From $3.95",
       description: "Premium genuine or faux leather patches with a sophisticated finish for heritage brands, hats and minimalist logos.",
-      image: "/images/american-patches/leather.jpg",
+      image: "/images/american-patches/leather-cutout.png",
     },
     {
       slug: "woven-patches",
@@ -113,7 +113,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Logos · Labels · Fine detail",
       price: "From $2.75",
       description: "Smooth woven construction ideal for small text, fine detail and high-resolution logos on apparel and product labels.",
-      image: "/images/american-patches/woven.jpg",
+      image: "/images/american-patches/woven-white.png",
     },
     {
       slug: "sublimated-patches",
@@ -121,7 +121,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Full-color · Photo quality",
       price: "From $2.95",
       description: "Edge-to-edge full-color printing for gradients, photographs and highly detailed illustrations that embroidery cannot achieve.",
-      image: "/images/american-patches/sublimated.jpg",
+      image: "/images/american-patches/sublimated-cutout.png",
     },
     {
       slug: "iron-on-patches",
@@ -129,7 +129,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Apparel · Easy apply",
       price: "From $1.25",
       description: "Heat-seal iron-on backing for fast, no-sew application on jackets, bags, hats and team apparel.",
-      image: "/images/american-patches/iron-on.jpg",
+      image: "/images/american-patches/iron-on-white.png",
     },
   ],
   portfolio: [
@@ -138,18 +138,21 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       title: "Built for the uniform",
       description: "Crisp stitched lettering, bold borders and professional finishes for teams, departments, schools and workwear programs.",
       kind: "embroidery",
+      image: "/images/embroidery/180ac20d-921e-4432-aee7-0ebb724068d7.webp",
     },
     {
       label: "PVC + tactical",
       title: "Ready for the outdoors",
       description: "Weather-resistant PVC and Velcro-ready construction designed for gear that sees real use in the field.",
       kind: "patch",
+      image: "/images/embroidery/embroidered-big-rig-patch.webp",
     },
     {
       label: "Woven + leather",
       title: "Made for the brand",
       description: "Fine detail and premium finishes for hats, woven labels, merchandise and product lines that demand quality.",
       kind: "vector",
+      image: "/images/embroidery/solar-construction-embroidered-patch.webp",
     },
   ],
   process: [

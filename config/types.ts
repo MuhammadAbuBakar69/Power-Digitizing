@@ -37,6 +37,7 @@ const portfolioSchema = z.object({
   title: z.string(),
   description: z.string(),
   kind: z.enum(["embroidery", "vector", "patch"]),
+  image: z.string().optional(),
 });
 
 const useCaseSchema = z.object({ title: z.string(), description: z.string(), icon: z.enum(ICON_KEYS) });

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState, useCallback } from "react";
 import { Heart, X, ZoomIn } from "lucide-react";
+import { EMBROIDERY_DESIGNS } from "@/config/embroidery-gallery";
 
 const concepts = [
   { title: "Mountain Rescue Emblem",    material: "Embroidered" },
@@ -60,17 +61,38 @@ export function SalonGallery({ fallbackImages }: { fallbackImages: string[] }) {
   const [likedIds, setLikedIds] = useState<string[]>([]);
   const [lightboxItem, setLightboxItem] = useState<GalleryItem | null>(null);
 
-  // Build gallery items using fallback collection images
-  const galleryItems: GalleryItem[] = useMemo(
-    () =>
-      concepts.map((c, i) => ({
+  // Build gallery items using real embroidery WebP designs and fallback collection images
+  const galleryItems: GalleryItem[] = useMemo(() => {
+    let embIndex = 0;
+    const baseItems: GalleryItem[] = concepts.map((c, i) => {
+      let imageSrc = fallbackImages[i % fallbackImages.length];
+      let title = c.title;
+
+      if (c.material === "Embroidered" && EMBROIDERY_DESIGNS.length > 0) {
+        const emb = EMBROIDERY_DESIGNS[embIndex % EMBROIDERY_DESIGNS.length];
+        imageSrc = emb.image;
+        title = emb.title;
+        embIndex++;
+      }
+
+      return {
         id: `salon-${i}`,
-        title: c.title,
+        title,
         material: c.material,
-        image: fallbackImages[i % fallbackImages.length],
-      })),
-    [fallbackImages]
-  );
+        image: imageSrc,
+      };
+    });
+
+    // Also append any remaining real embroidery designs so all of them are accessible
+    const extraEmbroideryItems: GalleryItem[] = EMBROIDERY_DESIGNS.slice(embIndex).map((emb, idx) => ({
+      id: `emb-extra-${idx}`,
+      title: emb.title,
+      material: "Embroidered" as const,
+      image: emb.image,
+    }));
+
+    return [...baseItems, ...extraEmbroideryItems];
+  }, [fallbackImages]);
 
   // Load likes
   useEffect(() => {
@@ -133,25 +155,26 @@ export function SalonGallery({ fallbackImages }: { fallbackImages: string[] }) {
               className="group relative flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               onClick={() => setLightboxItem(item)}
             >
-              {/* Image */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden bg-muted">
+              {/* Image Container with Padding & Centered Fit */}
+              <div className="relative aspect-square w-full overflow-hidden rounded-t-2xl bg-gradient-to-b from-muted/30 to-muted/80 p-3 sm:p-4 flex items-center justify-center">
                 <Image
                   src={item.image}
                   alt={`${item.material} patch: ${item.title}`}
                   fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 20vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-contain object-center transition-transform duration-500 group-hover:scale-105 drop-shadow-md"
                 />
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-60 transition-opacity group-hover:opacity-90" />
 
-                {/* Zoom icon */}
-                <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ZoomIn className="h-8 w-8 text-white drop-shadow-lg" />
+                {/* Subtle hover sheen */}
+                <div className="absolute inset-0 bg-primary/5 opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none" />
+
+                {/* Zoom icon badge */}
+                <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-10 grid place-items-center rounded-full bg-black/60 backdrop-blur-sm text-white opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 shadow-xl pointer-events-none">
+                  <ZoomIn className="size-5" />
                 </span>
 
                 {/* Material badge */}
-                <span className="absolute bottom-3 left-3 rounded-full bg-black/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+                <span className="absolute bottom-2.5 left-2.5 rounded-full bg-background/90 backdrop-blur-md border border-border/80 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-foreground shadow-sm">
                   {item.material}
                 </span>
 
@@ -161,7 +184,7 @@ export function SalonGallery({ fallbackImages }: { fallbackImages: string[] }) {
                   onClick={(e) => { e.stopPropagation(); toggleLike(item.id); }}
                   aria-pressed={liked}
                   aria-label={`${liked ? "Unlike" : "Like"} ${item.title}`}
-                  className={`gallery-like absolute right-3 top-3 grid size-9 place-items-center rounded-full bg-white/95 shadow-md transition-all hover:scale-110 focus-visible:opacity-100 ${
+                  className={`gallery-like absolute right-2.5 top-2.5 grid size-8 sm:size-9 place-items-center rounded-full bg-background/90 backdrop-blur-md border border-border/80 shadow-md transition-all hover:scale-110 focus-visible:opacity-100 ${
                     liked ? "text-primary opacity-100" : "opacity-0 group-hover:opacity-100 text-muted-foreground"
                   }`}
                 >
@@ -170,8 +193,8 @@ export function SalonGallery({ fallbackImages }: { fallbackImages: string[] }) {
               </div>
 
               {/* Card text */}
-              <div className="flex min-h-[3.5rem] items-center px-3 py-3 sm:px-4">
-                <p className="line-clamp-2 text-[13px] font-semibold leading-snug text-foreground">{item.title}</p>
+              <div className="flex min-h-[3.5rem] items-center px-3 py-2.5 sm:px-4">
+                <p className="line-clamp-2 text-xs sm:text-[13px] font-semibold leading-snug text-foreground">{item.title}</p>
               </div>
             </article>
           );
@@ -205,15 +228,17 @@ export function SalonGallery({ fallbackImages }: { fallbackImages: string[] }) {
             <X className="size-5" />
           </button>
 
-          <div className="relative max-w-3xl w-full max-h-[85vh] overflow-hidden rounded-3xl shadow-2xl bg-card">
-            <Image
-              src={lightboxItem.image}
-              alt={lightboxItem.title}
-              width={900}
-              height={700}
-              className="w-full h-auto object-contain max-h-[70vh]"
-            />
-            <div className="p-6 flex items-center justify-between bg-card border-t border-border">
+          <div className="relative max-w-3xl w-full max-h-[90vh] overflow-hidden rounded-3xl shadow-2xl bg-card border border-border">
+            <div className="relative w-full h-[50vh] sm:h-[65vh] p-4 sm:p-8 flex items-center justify-center bg-gradient-to-b from-muted/20 to-muted/60">
+              <Image
+                src={lightboxItem.image}
+                alt={lightboxItem.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 900px"
+                className="object-contain object-center drop-shadow-2xl p-2 sm:p-4"
+              />
+            </div>
+            <div className="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-card border-t border-border">
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-primary">{lightboxItem.material}</p>
                 <h3 className="mt-1 font-display text-xl font-semibold">{lightboxItem.title}</h3>
