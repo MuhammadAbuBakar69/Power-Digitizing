@@ -1,4 +1,4 @@
-import { BookOpen, Layers, ShieldCheck, Sparkles } from "lucide-react";
+import { BookOpen, ShieldCheck } from "lucide-react";
 
 const glossaryTerms = [
   {

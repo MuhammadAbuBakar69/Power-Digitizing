@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Calculator, Sparkles, ArrowUpRight, Gauge, Clock, Layers, ShieldCheck } from "lucide-react";
+import { Calculator, ArrowUpRight, Gauge, Clock, Layers, ShieldCheck } from "lucide-react";
 
 export function StitchEstimator() {
   const [width, setWidth] = useState<number>(3.0);
@@ -122,7 +122,7 @@ export function StitchEstimator() {
                   <button
                     key={d.id}
                     type="button"
-                    onClick={() => setDensity(d.id as any)}
+                    onClick={() => setDensity(d.id as "light" | "medium" | "heavy")}
                     className={`rounded-xl border p-3 text-left transition-all ${
                       density === d.id
                         ? "border-primary bg-primary/5 shadow-sm"
@@ -151,7 +151,7 @@ export function StitchEstimator() {
                   <button
                     key={s.id}
                     type="button"
-                    onClick={() => setSubstrate(s.id as any)}
+                    onClick={() => setSubstrate(s.id as "cap" | "polo" | "jacket" | "hoodie")}
                     className={`rounded-xl border py-2.5 px-3 text-center text-xs font-semibold transition-all ${
                       substrate === s.id
                         ? "border-foreground bg-foreground text-background shadow-sm"

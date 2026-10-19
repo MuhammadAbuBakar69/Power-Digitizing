@@ -1,5 +1,4 @@
 import { Award, Building2, GraduationCap, HeartPulse, Shield, Shirt, Trophy, UtensilsCrossed } from "lucide-react";
-import type { SiteConfig } from "@/config/types";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 
 const industries = [

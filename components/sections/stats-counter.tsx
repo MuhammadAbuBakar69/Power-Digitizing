@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { SiteConfig } from "@/config/types";
 
 function useCountUp(target: number, duration: number, shouldStart: boolean) {
   const [count, setCount] = useState(0);

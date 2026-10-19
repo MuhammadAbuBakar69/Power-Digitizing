@@ -1,6 +1,5 @@
 import { Check, X, ArrowUpRight, Zap, Users, ShieldCheck, Clock, Palette, HeadphonesIcon } from "lucide-react";
 import Link from "next/link";
-import type { SiteConfig } from "@/config/types";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 
 const differentiators = [
