@@ -10,7 +10,11 @@ export function Collections({ site }: { site: SiteConfig }) {
       <div className="mx-auto max-w-6xl px-5">
         <ScrollReveal>
           <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <div data-reveal className="max-w-2xl"><p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Premium patch collections</p><h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl">Choose the finish that fits your idea.</h2><p className="mt-5 max-w-xl text-lg leading-8 text-muted-foreground">Every material brings a different character to your design.</p><p className="text-lg leading-8 text-muted-foreground">We help you choose the one that looks right and lasts longer.</p></div>
+            <div data-reveal className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Premium patch collections</p>
+              <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl">Choose the finish that fits your idea.</h2>
+              <p className="mt-4 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">Every material brings a different character to your design. We help you choose the one that looks right and lasts longer.</p>
+            </div>
             <div data-reveal className="relative hidden h-28 w-48 shrink-0 overflow-hidden md:block" aria-hidden>
               <svg viewBox="0 0 190 110" className="h-full w-full overflow-visible text-primary"><path data-thread d="M8 72c26-58 53-61 82-8s52 50 92-42" fill="none" stroke="currentColor" strokeDasharray="240" strokeDashoffset="240" strokeLinecap="round" strokeWidth="2" /><circle data-orbit cx="95" cy="55" r="35" fill="none" stroke="currentColor" strokeDasharray="2 8" strokeWidth="1" /><circle data-pulse cx="95" cy="55" r="4" fill="var(--accent)" /></svg>
             </div>

@@ -523,9 +523,9 @@ export default async function CollectionDetailPage({ params }: { params: Promise
           <ScrollReveal key={idx}>
             <section className={`py-20 md:py-28 ${idx % 2 === 0 ? "bg-[#FBF9F5]" : "bg-white"} border-b border-[#E8E6E0]`}>
               <div className="mx-auto max-w-6xl px-5">
-                <div className={`grid gap-12 lg:grid-cols-12 lg:gap-16 items-center ${isReversed ? "lg:[&>*:first-child]:order-2" : ""}`}>
+                <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
                   {/* Text Column */}
-                  <div className="lg:col-span-7 space-y-6">
+                  <div className={`lg:col-span-7 space-y-6 ${isReversed ? "lg:order-2" : "lg:order-1"}`}>
                     <span className="rounded-full bg-primary/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-primary">
                       {patchTypeName} Production Standard
                     </span>
@@ -549,7 +549,7 @@ export default async function CollectionDetailPage({ params }: { params: Promise
                   </div>
 
                   {/* Image Column */}
-                  <div className={`lg:col-span-5 ${isReversed ? "lg:order-1" : ""}`}>
+                  <div className={`lg:col-span-5 ${isReversed ? "lg:order-1" : "lg:order-2"}`}>
                     <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-[#E8E6E0] bg-white p-6 sm:p-10 shadow-xl flex items-center justify-center">
                       <Image
                         src={section.image}

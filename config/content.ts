@@ -73,7 +73,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Uniforms · Brands · Teams",
       price: "From $1.50",
       description: "Classic stitched detail with crisp lettering and durable thread for uniforms, clubs, corporate apparel and brand patches.",
-      image: "/images/embroidery/180ac20d-921e-4432-aee7-0ebb724068d7.webp",
+      image: "/images/embroidery/embroidered-big-rig-patch.webp",
     },
     {
       slug: "chenille-patches",
@@ -138,21 +138,21 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       title: "Built for the uniform",
       description: "Crisp stitched lettering, bold borders and professional finishes for teams, departments, schools and workwear programs.",
       kind: "embroidery",
-      image: "/images/embroidery/180ac20d-921e-4432-aee7-0ebb724068d7.webp",
+      image: "/images/embroidery/solar-construction-embroidered-patch.webp",
     },
     {
       label: "PVC + tactical",
       title: "Ready for the outdoors",
       description: "Weather-resistant PVC and Velcro-ready construction designed for gear that sees real use in the field.",
       kind: "patch",
-      image: "/images/embroidery/embroidered-big-rig-patch.webp",
+      image: "/images/american-patches/pvc-white.png",
     },
     {
       label: "Woven + leather",
       title: "Made for the brand",
       description: "Fine detail and premium finishes for hats, woven labels, merchandise and product lines that demand quality.",
       kind: "vector",
-      image: "/images/embroidery/solar-construction-embroidered-patch.webp",
+      image: "/images/american-patches/leather-cutout.png",
     },
   ],
   process: [

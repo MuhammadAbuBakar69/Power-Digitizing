@@ -56,14 +56,48 @@ interface GalleryItem {
   image: string;
 }
 
+const materialImageMap: Record<string, string[]> = {
+  Woven: [
+    "/images/american-patches/woven-white.png",
+    "/images/american-patches/woven.jpg",
+  ],
+  Chenille: [
+    "/images/american-patches/chenille-white.png",
+    "/images/american-patches/chenille-cutout.png",
+    "/images/american-patches/chenille.jpg",
+  ],
+  PVC: [
+    "/images/american-patches/pvc-white.png",
+    "/images/american-patches/pvc.jpg",
+    "/images/company/custom-patches-collection.jpg",
+  ],
+  Leather: [
+    "/images/american-patches/leather-cutout.png",
+    "/images/american-patches/leather-white.png",
+    "/images/american-patches/leather.jpg",
+  ],
+  Sublimated: [
+    "/images/american-patches/sublimated-cutout.png",
+    "/images/american-patches/sublimated.jpg",
+  ],
+};
+
 export function SalonGallery({ fallbackImages }: { fallbackImages: string[] }) {
   const [activeCategory, setActiveCategory] = useState("All patches");
   const [likedIds, setLikedIds] = useState<string[]>([]);
   const [lightboxItem, setLightboxItem] = useState<GalleryItem | null>(null);
 
-  // Build gallery items using real embroidery WebP designs and fallback collection images
+  // Build gallery items using unique embroidery designs and authentic material assets
   const galleryItems: GalleryItem[] = useMemo(() => {
     let embIndex = 0;
+    const materialCounters: Record<string, number> = {
+      Woven: 0,
+      Chenille: 0,
+      PVC: 0,
+      Leather: 0,
+      Sublimated: 0,
+    };
+
     const baseItems: GalleryItem[] = concepts.map((c, i) => {
       let imageSrc = fallbackImages[i % fallbackImages.length];
       let title = c.title;
@@ -73,6 +107,11 @@ export function SalonGallery({ fallbackImages }: { fallbackImages: string[] }) {
         imageSrc = emb.image;
         title = emb.title;
         embIndex++;
+      } else if (materialImageMap[c.material]) {
+        const list = materialImageMap[c.material];
+        const count = materialCounters[c.material] || 0;
+        imageSrc = list[count % list.length];
+        materialCounters[c.material] = count + 1;
       }
 
       return {
@@ -83,7 +122,7 @@ export function SalonGallery({ fallbackImages }: { fallbackImages: string[] }) {
       };
     });
 
-    // Also append any remaining real embroidery designs so all of them are accessible
+    // Also append remaining distinct embroidery designs so all 15 are showcased
     const extraEmbroideryItems: GalleryItem[] = EMBROIDERY_DESIGNS.slice(embIndex).map((emb, idx) => ({
       id: `emb-extra-${idx}`,
       title: emb.title,

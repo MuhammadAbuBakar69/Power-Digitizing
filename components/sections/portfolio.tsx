@@ -52,7 +52,7 @@ export function Portfolio({ site }: { site: SiteConfig }) {
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {site.portfolio.map((item) => (
             <article key={item.title} className="group overflow-hidden rounded-xl border border-border bg-card">
-              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-b from-muted/30 to-muted/70 p-4 sm:p-6 flex items-center justify-center">
+              <div className="relative aspect-[16/10] overflow-hidden bg-white p-4 sm:p-6 flex items-center justify-center">
                 {item.image ? (
                   <Image
                     src={item.image}
