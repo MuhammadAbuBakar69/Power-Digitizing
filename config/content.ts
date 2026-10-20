@@ -6,6 +6,12 @@ import type { SiteInput } from "./types";
  */
 export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
   name: "Power Digitizing",
+  logo: {
+    src: "/images/brand/logo.png",
+    alt: "Power Digitizing - Custom Patches and Precision Embroidery Digitizing",
+    width: 240,
+    height: 100,
+  },
   tagline: "Premium custom patches with free digital proof — crafted for brands, teams & uniforms worldwide.",
   hero: {
     headline: ["Custom patches,", "crafted for you."],

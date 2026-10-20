@@ -12,7 +12,7 @@ export function Footer({ site }: { site: SiteConfig }) {
   const socialIcons = { Facebook, Instagram, LinkedIn: Linkedin };
 
   return (
-    <footer className="border-t border-secondary/10 bg-[linear-gradient(135deg,#231F20_0%,#231F20_52%,#8F2637_76%,#DA2C46_90%,#FF9C00_100%)] text-white">
+    <footer className="border-t border-secondary/10 bg-[linear-gradient(135deg,#0B1626_0%,#14263D_60%,#182e4a_85%,#1c3657_100%)] text-white">
       <div className="mx-auto max-w-6xl px-5 pb-12 pt-16 md:pb-16 md:pt-20">
         <div className="grid gap-12 lg:grid-cols-[1.25fr_0.85fr_0.85fr_0.85fr_1fr] lg:gap-8">
           <div className="max-w-xs">

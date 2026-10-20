@@ -32,7 +32,7 @@ export function Header({ site, loginUrl }: Props) {
     <header className={clsx("fixed inset-x-0 top-0 z-50 transition-colors duration-200", solid ? "border-b border-border bg-background/95 backdrop-blur" : "bg-transparent")}>
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
-          {site.logo ? <Image src={site.logo.src} alt={site.logo.alt} width={site.logo.width} height={site.logo.height} priority className="h-8 w-auto" /> : site.name}
+          {site.logo ? <Image src={site.logo.src} alt={site.logo.alt} width={site.logo.width} height={site.logo.height} priority className="h-9 sm:h-10 w-auto object-contain" /> : site.name}
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-6 text-sm lg:flex">

@@ -33,9 +33,9 @@ body { background: var(--background); color: var(--foreground); font-family: var
 
 .about-hero {
   background:
-    radial-gradient(ellipse at 12% 28%, rgb(218 44 70 / 0.065), transparent 38%),
+    radial-gradient(ellipse at 12% 28%, rgb(20 38 61 / 0.065), transparent 38%),
     radial-gradient(ellipse at 78% 68%, rgb(255 156 0 / 0.075), transparent 34%),
-    linear-gradient(118deg, #fff 0%, #fff 54%, #fffaf4 100%);
+    linear-gradient(118deg, #fff 0%, #fff 54%, #f8fafc 100%);
 }
 .about-hero-pattern {
   opacity: 0.18;
@@ -45,7 +45,7 @@ body { background: var(--background); color: var(--foreground); font-family: var
   mask-image: linear-gradient(100deg, transparent 8%, #000 55%, transparent 100%);
 }
 .about-hero-glow {
-  background: radial-gradient(circle, rgb(218 44 70 / 0.08), rgb(255 156 0 / 0.055) 42%, transparent 70%);
+  background: radial-gradient(circle, rgb(20 38 61 / 0.08), rgb(255 156 0 / 0.055) 42%, transparent 70%);
   filter: blur(18px);
 }
 .hero-artwork-stage {
