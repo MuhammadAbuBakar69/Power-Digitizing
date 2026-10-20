@@ -4,11 +4,23 @@ import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, Phone } from "lucide
 import type { SiteConfig } from "@/config/types";
 
 export function Footer({ site }: { site: SiteConfig }) {
+  const serviceLinks = [
+    { label: "Vector Artwork", href: "/services/vector" },
+    { label: "Embroidery Digitizing", href: "/services/embroidery" },
+    { label: "Patch Collections", href: "/collections" },
+    { label: "Get Instant Quote", href: "/quote" },
+  ];
   const resourceLinks = [
-    { label: "How it works", href: "#process" },
-    { label: "Our promise", href: "#promise" },
-    { label: "Customer stories", href: "#testimonials" },
-    { label: "FAQ", href: "#faq" },
+    { label: "How it works", href: "/#process" },
+    { label: "Our promise", href: "/#promise" },
+    { label: "Customer stories", href: "/#testimonials" },
+    { label: "FAQ", href: "/#faq" },
+  ];
+  const useCaseLinks = [
+    { label: "Uniform Patches", href: "/collections/embroidered-patches" },
+    { label: "Brand Patches", href: "/collections/woven-patches" },
+    { label: "Tactical Patches", href: "/collections/pvc-patches" },
+    { label: "Varsity & Chenille", href: "/collections/chenille-patches" },
   ];
   const socialIcons = { Facebook, Instagram, LinkedIn: Linkedin };
 
@@ -38,8 +50,8 @@ export function Footer({ site }: { site: SiteConfig }) {
             </Link>
           </div>
 
-          <FooterColumn title="Services" links={site.services.map((service) => ({ label: service.name, href: "#services" }))} />
-          <FooterColumn title="Use cases" links={site.useCases.map((item) => ({ label: item.title, href: "#use-cases" }))} />
+          <FooterColumn title="Services" links={serviceLinks} />
+          <FooterColumn title="Use cases" links={useCaseLinks} />
           <FooterColumn title="Resources" links={resourceLinks} />
 
           <div>
@@ -94,12 +106,6 @@ export function Footer({ site }: { site: SiteConfig }) {
             })}
           </div>
         </div>
-      </div>
-      <div
-        className="overflow-hidden border-t border-white/5 px-5 pt-4 text-center font-display text-[clamp(4rem,14vw,12rem)] font-semibold leading-[0.75] tracking-[-0.06em] text-white/[0.03] select-none"
-        aria-hidden
-      >
-        {site.name}
       </div>
     </footer>
   );
