@@ -87,7 +87,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Jackets · Letterman · Clubs",
       price: "From $4.25",
       description: "Soft varsity-style chenille perfect for letterman jackets, hoodies, sports teams and school spirit wear.",
-      image: "/images/american-patches/chenille-cutout.png",
+      image: "/images/Chennile WebP/37612dd6-9e4f-40a9-b1d8-f6fe661351c7.webp",
     },
     {
       slug: "pvc-patches",
@@ -95,7 +95,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Outdoor · Tactical · Gear",
       price: "From $3.25",
       description: "Durable soft PVC / rubber patches that resist water, mud and heavy use — ideal for tactical, outdoor and work gear.",
-      image: "/images/american-patches/pvc-white.png",
+      image: "/images/PVC WebP/0593e5cd-dc2a-4e46-bb61-e5def04a98ab.webp",
     },
     {
       slug: "silicone-patches",
@@ -111,7 +111,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Hats · Premium · Heritage",
       price: "From $3.95",
       description: "Premium genuine or faux leather patches with a sophisticated finish for heritage brands, hats and minimalist logos.",
-      image: "/images/american-patches/leather-cutout.png",
+      image: "/images/Leather WebP/11dc7b26-571a-4c9c-98fb-4d7b1f27979a.webp",
     },
     {
       slug: "woven-patches",
@@ -175,14 +175,14 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       title: "Ready for the outdoors",
       description: "Weather-resistant PVC and Velcro-ready construction designed for gear that sees real use in the field.",
       kind: "patch",
-      image: "/images/american-patches/pvc-white.png",
+      image: "/images/PVC WebP/308c1aea-e284-4c78-b934-1501d16f6228.webp",
     },
     {
       label: "Woven + leather",
       title: "Made for the brand",
       description: "Fine detail and premium finishes for hats, woven labels, merchandise and product lines that demand quality.",
       kind: "vector",
-      image: "/images/american-patches/leather-cutout.png",
+      image: "/images/Leather WebP/68525281-80dd-4b27-8c40-dd32d378d39d.webp",
     },
   ],
   process: [

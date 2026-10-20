@@ -7,9 +7,10 @@ import { useEffect, useState } from "react";
 import type { SiteConfig } from "@/config/types";
 
 const heroSlides = [
-  { image: "/images/american-patches/embroidered-cutout.png", label: "Embroidered patch" },
-  { image: "/images/american-patches/chenille-cutout.png", label: "Chenille patch" },
-  { image: "/images/american-patches/leather-cutout.png", label: "Leather patch" },
+  { image: "/images/embroidery/embroidered-big-rig-patch.webp", label: "Embroidered patch" },
+  { image: "/images/Chennile WebP/37612dd6-9e4f-40a9-b1d8-f6fe661351c7.webp", label: "Chenille patch" },
+  { image: "/images/Leather WebP/11dc7b26-571a-4c9c-98fb-4d7b1f27979a.webp", label: "Leather patch" },
+  { image: "/images/PVC WebP/0593e5cd-dc2a-4e46-bb61-e5def04a98ab.webp", label: "3D PVC patch" },
 ];
 
 export function Hero({ site }: { site: SiteConfig }) {

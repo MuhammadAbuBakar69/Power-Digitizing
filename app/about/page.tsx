@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { title: "Embroidery digitizing", text: "Artwork is translated into carefully planned stitches by skilled digitizers. Manual planning helps retain the look of the original design while preparing a clean file for an embroidery machine.", image: "/images/american-patches/embroidered-cutout.png", icon: Brush },
-  { title: "Vector artwork", text: "Raster artwork is redrawn as sharp, scalable vector graphics. Clean paths and considered detail make your artwork easier to produce, print and adapt for future use.", image: "/images/american-patches/sublimated-cutout.png", icon: Sparkles },
-  { title: "Custom patches", text: "Choose from embroidered, PVC, chenille, leather, woven and sublimated finishes. We help match the material and backing to where your patch will be used.", image: "/images/american-patches/leather-cutout.png", icon: Layers3 },
+  { title: "Embroidery digitizing", text: "Artwork is translated into carefully planned stitches by skilled digitizers. Manual planning helps retain the look of the original design while preparing a clean file for an embroidery machine.", image: "/images/embroidery/embroidered-big-rig-patch.webp", icon: Brush },
+  { title: "Vector artwork", text: "Raster artwork is redrawn as sharp, scalable vector graphics. Clean paths and considered detail make your artwork easier to produce, print and adapt for future use.", image: "/images/company/vector-separation-showcase.jpg", icon: Sparkles },
+  { title: "Custom patches", text: "Choose from embroidered, PVC, chenille, leather, woven and sublimated finishes. We help match the material and backing to where your patch will be used.", image: "/images/company/custom-patches-collection.jpg", icon: Layers3 },
 ];
 
 const values = [
