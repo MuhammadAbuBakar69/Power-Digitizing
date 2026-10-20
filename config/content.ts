@@ -22,16 +22,16 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
     { icon: "truck", label: "Free Shipping" },
   ],
   about: {
-    eyebrow: "Premium patch manufacturer since 2010",
-    title: "The trusted patch partner for uniforms, brands and teams worldwide.",
+    eyebrow: "Our Company & Manufacturing Heritage",
+    title: "Engineering Custom Patches & Commercial Digitizing with Uncompromising Precision.",
     paragraphs: [
-      "From a first sketch to a finished custom patch, we make the entire process simple and reliable. Our experienced team helps you choose the right material, backing, border and finish for your artwork, then delivers a free digital proof for your approval before production begins.",
-      "Whether you need a small run of five custom embroidered patches or thousands of PVC and tactical patches for a national program, every order is carefully checked against the approved design. We serve clients across the United States, Canada, United Kingdom and Australia with consistent quality and transparent pricing.",
+      "Since 2010, Power Digitizing has served as the manufacturing and digitizing backbone for apparel decorators, uniform contractors, tactical units, and premier brands worldwide. We blend meticulous manual punch artistry with an industrial-grade patch production facility to ensure every thread, backing, and border performs flawlessly on commercial embroidery machines and finished garments.",
+      "From single-piece prototypes to high-volume commercial runs exceeding 50,000 units, we handle every stage under one roof. Our senior digitizers program custom pull compensation matrices for every fabric type, while our multi-head Tajima and Barudan fleet executes razor-sharp embroidery with zero setup fees, free digital proofs, and guaranteed color fidelity.",
     ],
     highlights: [
-      { label: "Customer rating", value: "4.9 / 5" },
-      { label: "Customers served", value: "1,000+" },
-      { label: "Proof turnaround", value: "24-48 hrs" },
+      { label: "Production Experience", value: "15+ Years" },
+      { label: "Designs & Patches Delivered", value: "250K+" },
+      { label: "Client Satisfaction Rate", value: "98.8%" },
     ],
   },
   useCases: [

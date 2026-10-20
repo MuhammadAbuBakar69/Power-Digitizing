@@ -1,5 +1,16 @@
 import Image from "next/image";
-import { ArrowUpRight, Instagram, Linkedin, Play, Youtube } from "lucide-react";
+import Link from "next/link";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  CheckCircle2,
+  Factory,
+  Layers,
+  Cpu,
+  ShieldCheck,
+  Clock,
+  Sparkles,
+} from "lucide-react";
 import type { SiteConfig } from "@/config/types";
 
 export function About({ site }: { site: SiteConfig }) {
@@ -7,62 +18,215 @@ export function About({ site }: { site: SiteConfig }) {
   if (!about) return null;
 
   return (
-    <section id="about" className="scroll-mt-20 overflow-hidden border-y border-border bg-card py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5">
-        <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-center lg:gap-16">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">{about.eyebrow}</p>
-            <h2 className="mt-5 max-w-xl font-display text-4xl font-semibold leading-[1.03] tracking-tight md:text-6xl">{about.title}</h2>
-            <p className="mt-7 max-w-md text-base leading-7 text-muted-foreground">{about.paragraphs[0]}</p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#contact" className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-1">
-                Learn about our process <ArrowUpRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-              <span className="text-sm text-muted-foreground">Trusted since 2010</span>
+    <section
+      id="about"
+      className="scroll-mt-20 overflow-hidden border-y border-border bg-card py-16 sm:py-20 lg:py-28"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Top Story & Visual Showcase Grid */}
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-12 xl:gap-16">
+          {/* Left Column: Heritage, Authority & Capabilities */}
+          <div className="lg:col-span-7">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              <Factory className="size-3.5 text-accent" />
+              <span>{about.eyebrow}</span>
+            </div>
+
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl lg:leading-[1.12]">
+              {about.title}
+            </h2>
+
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg sm:leading-8">
+              {about.paragraphs[0]}
+            </p>
+
+            {about.paragraphs[1] && (
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground/90 sm:text-base">
+                {about.paragraphs[1]}
+              </p>
+            )}
+
+            {/* Key Manufacturing Pillars */}
+            <div className="mt-7 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+              <div className="flex items-center gap-2.5 rounded-lg border border-border/80 bg-background/70 p-3 text-xs font-medium text-foreground sm:text-sm">
+                <CheckCircle2 className="size-4 shrink-0 text-accent" />
+                <span>Tajima & Barudan Multi-Head Capacity</span>
+              </div>
+              <div className="flex items-center gap-2.5 rounded-lg border border-border/80 bg-background/70 p-3 text-xs font-medium text-foreground sm:text-sm">
+                <CheckCircle2 className="size-4 shrink-0 text-accent" />
+                <span>4 Backings: Velcro, Iron-On, Sticker, Sew-On</span>
+              </div>
+              <div className="flex items-center gap-2.5 rounded-lg border border-border/80 bg-background/70 p-3 text-xs font-medium text-foreground sm:text-sm">
+                <CheckCircle2 className="size-4 shrink-0 text-accent" />
+                <span>100% Madeira & Pantone Color Fidelity</span>
+              </div>
+              <div className="flex items-center gap-2.5 rounded-lg border border-border/80 bg-background/70 p-3 text-xs font-medium text-foreground sm:text-sm">
+                <CheckCircle2 className="size-4 shrink-0 text-accent" />
+                <span>Free Digital Proofs & Zero Setup Fees</span>
+              </div>
+            </div>
+
+            {/* Dual High-Converting CTAs */}
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link
+                href="/company"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/95 hover:shadow-lg"
+              >
+                Explore Our Company & Facility
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/quote"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-5 py-3.5 text-sm font-semibold text-foreground transition-all duration-200 hover:border-primary/40 hover:bg-muted/50"
+              >
+                Request Free Digital Proof
+                <ArrowUpRight className="size-4 text-muted-foreground" />
+              </Link>
             </div>
           </div>
 
-          <div className="relative min-h-[440px] md:min-h-[520px]">
-            <div className="group absolute inset-x-0 top-0 h-[72%] overflow-hidden rounded-[1.4rem] bg-muted shadow-xl shadow-primary/10">
-              <Image src="/images/american-patches/embroidered.jpg" alt="Detailed embroidered patch artwork" fill sizes="(max-width: 1024px) 100vw, 700px" className="object-cover transition duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
-              <span className="absolute bottom-6 left-6 text-sm font-semibold uppercase tracking-[0.16em] text-white">Detail in every thread</span>
-            </div>
-            <div className="group absolute bottom-0 right-0 h-[43%] w-[52%] overflow-hidden rounded-[1.4rem] border-8 border-card bg-muted shadow-2xl shadow-primary/15">
-              <Image src="/images/american-patches/leather.jpg" alt="Premium leather patch detail" fill sizes="(max-width: 1024px) 52vw, 360px" className="object-cover transition duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-secondary/25 transition-colors group-hover:bg-secondary/5" />
-              <span className="absolute bottom-4 left-4 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-secondary">Crafted to last</span>
-            </div>
-            <div className="absolute bottom-[14%] left-0 flex size-20 -translate-x-1/4 items-center justify-center rounded-full border-8 border-card bg-accent text-accent-foreground shadow-xl transition-transform duration-500 hover:rotate-12 md:size-24">
-              <Play aria-hidden className="ml-1 size-6 fill-current" />
-            </div>
-          </div>
-        </div>
+          {/* Right Column: Responsive Studio Visual Showcase */}
+          <div className="lg:col-span-5">
+            {/* Primary Hero Image Card */}
+            <div className="group relative overflow-hidden rounded-2xl border border-border bg-muted shadow-xl">
+              <div className="relative aspect-[16/10] w-full sm:aspect-[4/3]">
+                <Image
+                  src="/images/company/custom-patches-collection.jpg"
+                  alt="Power Digitizing custom patches showcase - embroidered, leather, PVC, and woven styles"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 520px"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
 
-        <div className="mt-16 grid gap-8 rounded-2xl bg-primary px-7 py-8 text-primary-foreground shadow-xl shadow-primary/15 md:grid-cols-[0.72fr_1.28fr] md:items-center md:px-10 md:py-9">
-          <div className="border-b border-white/30 pb-7 md:border-b-0 md:border-r md:pb-0 md:pr-10">
-            <p className="font-display text-3xl leading-tight md:text-4xl">Crafting digital artwork that elevates your brand.</p>
-            <div className="mt-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              <span className="grid size-6 place-items-center rounded-full border border-accent"><ArrowUpRight aria-hidden className="size-3" /></span> About us
-            </div>
-          </div>
-          <div>
-            <p className="max-w-2xl text-base leading-7 text-white/80">{about.paragraphs[1]}</p>
-            <dl className="mt-7 grid grid-cols-3 gap-4 border-t border-white/20 pt-5">
-              {about.highlights.map((highlight) => (
-                <div key={highlight.label}>
-                  <dt className="text-[10px] uppercase tracking-[0.14em] text-white/60">{highlight.label}</dt>
-                  <dd className="mt-2 font-display text-xl font-semibold">{highlight.value}</dd>
+                {/* Live Status Badge */}
+                <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/75 px-3 py-1.5 text-xs font-semibold text-white shadow-lg backdrop-blur-md">
+                  <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>ISO 9001 Production Standards</span>
                 </div>
-              ))}
-            </dl>
+
+                {/* Bottom Scrim Caption */}
+                <div className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white">
+                    Industrial Custom Patch Manufacturing
+                  </p>
+                  <p className="mt-1 text-xs text-white/80">
+                    Embroidered • Tactical PVC • Laser Leather • Woven • Chenille
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Companion Technical Production Previews */}
+            <div className="mt-4 grid grid-cols-2 gap-3.5 sm:gap-4">
+              <div className="group relative overflow-hidden rounded-xl border border-border bg-muted shadow-sm">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src="/images/company/machine-macro.jpg"
+                    alt="Commercial Tajima embroidery machine needle and thread tensioning"
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 260px"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-white">
+                      Tajima & Barudan
+                    </p>
+                    <p className="text-[10px] text-white/75">1,000 SPM Precision</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-xl border border-border bg-muted shadow-sm">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src="/images/company/digitizing-cad.jpg"
+                    alt="Precision embroidery digitizing toolpath CAD simulation"
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 260px"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-white">
+                      Toolpath Simulation
+                    </p>
+                    <p className="text-[10px] text-white/75">DST & EMB Formats</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="mt-6 flex items-center gap-4 text-muted-foreground">
-          <span className="text-xs font-semibold uppercase tracking-[0.18em]">Follow the work</span>
-          <span className="h-px w-10 bg-border" />
-          {[{ label: "Instagram", Icon: Instagram }, { label: "YouTube", Icon: Youtube }, { label: "LinkedIn", Icon: Linkedin }].map(({ label, Icon: SocialIcon }) => <a key={label} href="#contact" aria-label={`Follow Power Digitizing on ${label}`} className="transition-colors hover:text-accent"><SocialIcon aria-hidden className="size-4" /></a>)}
+        {/* Bottom Production Standards & Guarantees Bar */}
+        <div className="mt-14 sm:mt-16 rounded-2xl border border-border bg-muted/30 p-6 sm:p-8 lg:p-10 shadow-sm">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-xl border border-border/60 bg-card p-5">
+              <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <Cpu className="size-5" />
+              </div>
+              <h3 className="mt-4 font-display text-base font-semibold text-foreground">
+                Manual Punch Artistry
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                Zero auto-trace shortcuts. Every stitch angle, density gradient, and underlay is calibrated manually for smooth production.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border/60 bg-card p-5">
+              <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <Layers className="size-5" />
+              </div>
+              <h3 className="mt-4 font-display text-base font-semibold text-foreground">
+                Multi-Material Versatility
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                Engineered toolpaths for curved 270° cap frames, performance piqué knits, heavy leather, and tactile 3D puff embroidery.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border/60 bg-card p-5">
+              <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <ShieldCheck className="size-5" />
+              </div>
+              <h3 className="mt-4 font-display text-base font-semibold text-foreground">
+                Zero Setup Fees & Free Proofs
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                Review true-to-scale digital simulations with exact thread color codes and stitch counts before paying a single dollar.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border/60 bg-card p-5">
+              <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <Clock className="size-5" />
+              </div>
+              <h3 className="mt-4 font-display text-base font-semibold text-foreground">
+                Rapid Dispatch Cycles
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                Digital files delivered in 2–24 hours; physical custom patch runs produced and shipped within 7–14 business days.
+              </p>
+            </div>
+          </div>
+
+          {/* Quick Facility Tour Banner */}
+          <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-center sm:flex-row sm:text-left">
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <Sparkles className="size-4 text-accent" />
+              <span>Looking for detailed machine tolerances, file specs, or placement disciplines?</span>
+            </div>
+            <Link
+              href="/company"
+              className="group inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-primary transition-colors hover:text-accent"
+            >
+              Tour Our Company & Innovation Lab
+              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
