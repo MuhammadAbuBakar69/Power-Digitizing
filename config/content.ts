@@ -275,8 +275,8 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       label: "Services",
       href: "/services",
       children: [
-        { label: "Vector", href: "/services", description: "Raster-to-vector artwork recreation & clean bezier paths" },
-        { label: "Embroidery", href: "/company#embroidery", description: "Precision digitizing, stitch toolpaths & 3D puff" },
+        { label: "Vector", href: "/services/vector", description: "Raster-to-vector artwork recreation & clean bezier paths" },
+        { label: "Embroidery", href: "/services/embroidery", description: "Precision digitizing, all stitch types & machine files" },
       ],
     },
     {

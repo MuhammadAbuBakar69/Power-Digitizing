@@ -86,13 +86,20 @@ export default async function ServicesPage() {
                 ))}
               </div>
 
-              <div className="pt-2">
+              <div className="flex flex-wrap items-center gap-3 pt-2">
                 <Link
                   href="/quote"
                   className="inline-flex items-center gap-2 rounded-lg bg-[#14263D] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0B1626] transition-colors"
                 >
                   <span>Submit Vector Artwork</span>
                   <ArrowUpRight className="size-4" />
+                </Link>
+                <Link
+                  href="/services/vector"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-[#14263D] hover:border-[#14263D] transition-colors"
+                >
+                  <span>Explore Vector Specs &amp; Prepress</span>
+                  <ArrowUpRight className="size-4 text-[#C94343]" />
                 </Link>
               </div>
             </div>
@@ -162,13 +169,20 @@ export default async function ServicesPage() {
                 ))}
               </div>
 
-              <div className="pt-2">
+              <div className="flex flex-wrap items-center gap-3 pt-2">
                 <Link
                   href="/quote"
                   className="inline-flex items-center gap-2 rounded-lg bg-[#C94343] px-6 py-3 text-sm font-semibold text-white hover:bg-[#b03535] transition-colors shadow-md shadow-[#C94343]/20"
                 >
                   <span>Submit Stitch File for Digitizing</span>
                   <ArrowUpRight className="size-4" />
+                </Link>
+                <Link
+                  href="/services/embroidery"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-[#14263D] hover:border-[#14263D] transition-colors"
+                >
+                  <span>Explore All Embroidery Stitch Types</span>
+                  <ArrowUpRight className="size-4 text-[#C94343]" />
                 </Link>
               </div>
             </div>
