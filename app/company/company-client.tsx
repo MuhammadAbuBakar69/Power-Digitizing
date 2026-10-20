@@ -316,7 +316,7 @@ export function CompanyClient() {
       </section>
 
       {/* ─── 4. SECTION [ 02 ]: DIGITIZING DISCIPLINES & PLACEMENTS (Interactive Accordion 1) ─── */}
-      <section className="px-6 py-20 md:px-12 md:py-28 lg:px-20 max-w-[1440px] mx-auto border-b border-[#EAE8E2]">
+      <section id="embroidery" className="scroll-mt-24 px-6 py-20 md:px-12 md:py-28 lg:px-20 max-w-[1440px] mx-auto border-b border-[#EAE8E2]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Heading + Interactive Accordion */}
           <div className="lg:col-span-7 space-y-8">
@@ -460,7 +460,7 @@ export function CompanyClient() {
       </section>
 
       {/* ─── 6. SECTION [ 04 ]: RASTER-TO-VECTOR ARTWORK CONVERSION (from powerdigitizing.com) ─── */}
-      <section className="px-6 py-20 md:px-12 md:py-28 lg:px-20 max-w-[1440px] mx-auto border-t border-b border-[#EAE8E2]">
+      <section id="vector" className="scroll-mt-24 px-6 py-20 md:px-12 md:py-28 lg:px-20 max-w-[1440px] mx-auto border-t border-b border-[#EAE8E2]">
         <div className="flex items-center justify-between text-[11px] font-mono tracking-widest uppercase text-[#8A8780] pb-6 mb-12 border-b border-[#EAE8E2]">
           <span>[ 04 ] VECTOR ART RECREATION</span>
           <span>RASTER-TO-VECTOR PERFECTION</span>

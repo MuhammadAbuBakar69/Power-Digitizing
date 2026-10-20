@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
+import { Menu, X, ChevronDown, PenTool, Scissors, ArrowRight } from "lucide-react";
 import clsx from "clsx";
 import type { SiteConfig } from "@/config/types";
 
@@ -12,6 +12,9 @@ type Props = { site: Pick<SiteConfig, "name" | "logo" | "navigation" | "cta">; l
 export function Header({ site, loginUrl }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>({});
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -27,7 +30,26 @@ export function Header({ site, loginUrl }: Props) {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
+  const handleMouseEnter = (label: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setActiveDropdown(label);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150);
+  };
+
+  const toggleMobileSub = (label: string) => {
+    setMobileExpanded((prev) => ({ ...prev, [label]: !prev[label] }));
+  };
+
   const solid = scrolled || open;
+
   return (
     <header
       className={clsx(
@@ -38,7 +60,12 @@ export function Header({ site, loginUrl }: Props) {
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight transition-transform hover:opacity-90">
+        {/* Brand Logo - Returns to Home from any page */}
+        <Link
+          href="/"
+          aria-label="Power Digitizing Home"
+          className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight transition-transform hover:opacity-90"
+        >
           {site.logo ? (
             <Image
               src={site.logo.src}
@@ -53,18 +80,143 @@ export function Header({ site, loginUrl }: Props) {
           )}
         </Link>
 
-        {/* Desktop Navigation with #C94343 and #14263D interactive hover styling */}
+        {/* Desktop Navigation */}
         <nav aria-label="Main" className="hidden items-center gap-1 text-sm lg:flex">
-          {site.navigation.map((l) => (
-            <Link
-              key={l.href + l.label}
-              href={l.href}
-              className="group relative rounded-full px-3.5 py-1.5 text-sm font-medium text-[#14263D]/85 transition-all duration-200 hover:bg-[#C94343]/5 hover:text-[#C94343]"
-            >
-              <span>{l.label}</span>
-              <span className="absolute inset-x-3.5 bottom-0 h-0.5 origin-center scale-x-0 rounded-full bg-[#C94343] transition-transform duration-200 ease-out group-hover:scale-x-100" />
-            </Link>
-          ))}
+          {site.navigation.map((item) => {
+            const hasChildren = Boolean(item.children && item.children.length > 0);
+            const isOpen = activeDropdown === item.label;
+
+            if (!hasChildren) {
+              return (
+                <Link
+                  key={item.href + item.label}
+                  href={item.href}
+                  className="group relative rounded-full px-3.5 py-1.5 text-sm font-medium text-[#14263D]/85 transition-all duration-200 hover:bg-[#C94343]/5 hover:text-[#C94343]"
+                >
+                  <span>{item.label}</span>
+                  <span className="absolute inset-x-3.5 bottom-0 h-0.5 origin-center scale-x-0 rounded-full bg-[#C94343] transition-transform duration-200 ease-out group-hover:scale-x-100" />
+                </Link>
+              );
+            }
+
+            const isCollections = item.label.toLowerCase() === "collections";
+
+            return (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(item.label)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link
+                  href={item.href}
+                  className={clsx(
+                    "group relative inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm font-medium transition-all duration-200",
+                    isOpen
+                      ? "bg-[#C94343]/10 text-[#C94343]"
+                      : "text-[#14263D]/85 hover:bg-[#C94343]/5 hover:text-[#C94343]"
+                  )}
+                >
+                  <span>{item.label}</span>
+                  <ChevronDown
+                    className={clsx(
+                      "size-3.5 transition-transform duration-200",
+                      isOpen && "rotate-180 text-[#C94343]"
+                    )}
+                  />
+                  <span
+                    className={clsx(
+                      "absolute inset-x-3.5 bottom-0 h-0.5 origin-center rounded-full bg-[#C94343] transition-transform duration-200 ease-out",
+                      isOpen ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    )}
+                  />
+                </Link>
+
+                {/* Dropdown Floating Menu */}
+                {isOpen && (
+                  <div
+                    className={clsx(
+                      "absolute top-full pt-2 transition-all duration-200 animate-in fade-in-0 slide-in-from-top-2",
+                      isCollections ? "left-1/2 -translate-x-1/2" : "left-0"
+                    )}
+                  >
+                    <div
+                      className={clsx(
+                        "overflow-hidden rounded-2xl border border-border/80 bg-background/95 p-3 shadow-2xl backdrop-blur-xl ring-1 ring-black/5",
+                        isCollections ? "w-[480px]" : "w-[320px]"
+                      )}
+                    >
+                      {/* Services Menu Format */}
+                      {!isCollections && (
+                        <div className="space-y-1">
+                          {item.children?.map((child) => (
+                            <Link
+                              key={child.href + child.label}
+                              href={child.href}
+                              onClick={() => setActiveDropdown(null)}
+                              className="group flex items-start gap-3 rounded-xl p-3 text-left transition-all duration-150 hover:bg-[#C94343]/5"
+                            >
+                              <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-[#14263D]/5 text-[#14263D] transition-colors group-hover:bg-[#C94343] group-hover:text-white">
+                                {child.label.toLowerCase().includes("vector") ? (
+                                  <PenTool className="size-4" />
+                                ) : (
+                                  <Scissors className="size-4" />
+                                )}
+                              </span>
+                              <div>
+                                <div className="text-sm font-semibold text-[#14263D] transition-colors group-hover:text-[#C94343]">
+                                  {child.label}
+                                </div>
+                                {child.description && (
+                                  <p className="mt-0.5 text-xs text-muted-foreground leading-snug">
+                                    {child.description}
+                                  </p>
+                                )}
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Collections Menu Format (2 Columns) */}
+                      {isCollections && (
+                        <div>
+                          <div className="mb-2 px-3 pt-1 text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
+                            Custom Patch Collections
+                          </div>
+                          <div className="grid grid-cols-2 gap-1">
+                            {item.children?.map((child) => (
+                              <Link
+                                key={child.href + child.label}
+                                href={child.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className="group flex items-center gap-2.5 rounded-xl px-3 py-2 text-left transition-all duration-150 hover:bg-[#C94343]/5"
+                              >
+                                <span className="size-1.5 rounded-full bg-[#14263D]/30 transition-all duration-150 group-hover:scale-125 group-hover:bg-[#C94343]" />
+                                <span className="text-xs font-medium text-[#14263D] transition-colors group-hover:text-[#C94343]">
+                                  {child.label}
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                          <div className="mt-3 border-t border-border/60 pt-2 px-1">
+                            <Link
+                              href="/collections"
+                              onClick={() => setActiveDropdown(null)}
+                              className="flex items-center justify-between rounded-xl px-3 py-2 text-xs font-semibold text-[#C94343] hover:bg-[#C94343]/5 transition-colors"
+                            >
+                              <span>Browse Complete Gallery</span>
+                              <ArrowRight className="size-3.5" />
+                            </Link>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
 
         {/* Desktop Actions */}
@@ -102,26 +254,72 @@ export function Header({ site, loginUrl }: Props) {
 
       {/* Mobile Menu Dropdown */}
       {open && (
-        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-border bg-background px-5 pb-6 pt-2 lg:hidden">
+        <nav
+          id="mobile-menu"
+          aria-label="Mobile"
+          className="border-t border-border bg-background px-5 pb-6 pt-2 lg:hidden max-h-[85vh] overflow-y-auto"
+        >
           <ul className="flex flex-col">
-            {site.navigation.map((l) => (
-              <li key={l.href + l.label}>
-                <Link
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="block border-b border-border py-3 text-base font-medium text-[#14263D] transition-colors hover:text-[#C94343]"
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
+            {site.navigation.map((item) => {
+              const hasChildren = Boolean(item.children && item.children.length > 0);
+              const isExpanded = Boolean(mobileExpanded[item.label]);
+
+              if (!hasChildren) {
+                return (
+                  <li key={item.href + item.label}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="block border-b border-border/60 py-3 text-base font-medium text-[#14263D] transition-colors hover:text-[#C94343]"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              }
+
+              return (
+                <li key={item.label} className="border-b border-border/60 py-2">
+                  <button
+                    type="button"
+                    onClick={() => toggleMobileSub(item.label)}
+                    className="flex w-full items-center justify-between py-2 text-base font-medium text-[#14263D] transition-colors hover:text-[#C94343]"
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown
+                      className={clsx(
+                        "size-4 transition-transform duration-200",
+                        isExpanded && "rotate-180 text-[#C94343]"
+                      )}
+                    />
+                  </button>
+
+                  {isExpanded && (
+                    <ul className="mt-1 space-y-1 pb-2 pl-3">
+                      {item.children?.map((child) => (
+                        <li key={child.href + child.label}>
+                          <Link
+                            href={child.href}
+                            onClick={() => setOpen(false)}
+                            className="block rounded-lg px-3 py-2 text-sm text-[#14263D]/80 hover:bg-[#C94343]/5 hover:text-[#C94343] transition-colors"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
+
             {loginUrl && (
               <li>
                 <a
                   href={loginUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="block border-b border-border py-3 text-base font-medium text-[#14263D] transition-colors hover:text-[#C94343]"
+                  className="block border-b border-border/60 py-3 text-base font-medium text-[#14263D] transition-colors hover:text-[#C94343]"
                 >
                   {site.cta.portalLabel}
                 </a>
@@ -140,3 +338,4 @@ export function Header({ site, loginUrl }: Props) {
     </header>
   );
 }
+

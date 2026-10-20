@@ -3,7 +3,16 @@ import { z } from "zod";
 export const FONT_KEYS = ["bricolage", "instrument", "inter"] as const;
 export const ICON_KEYS = ["needle", "vector", "patch", "shield", "clock", "globe", "headset", "tag", "award", "layers", "truck"] as const;
 
-const link = z.object({ label: z.string().min(1), href: z.string().min(1) });
+const navChild = z.object({
+  label: z.string().min(1),
+  href: z.string().min(1),
+  description: z.string().optional(),
+});
+const link = z.object({
+  label: z.string().min(1),
+  href: z.string().min(1),
+  children: z.array(navChild).optional(),
+});
 const color = z.string().regex(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/, "Use a hex colour");
 
 export const themeSchema = z.object({
