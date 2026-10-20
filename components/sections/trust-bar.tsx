@@ -27,7 +27,7 @@ export function TrustBar({ site }: { site: SiteConfig }) {
             >
               <Icon
                 name={t.icon}
-                className="size-4 text-primary shrink-0 transition-transform duration-200 group-hover/item:scale-115"
+                className="size-4 text-[#C94343] shrink-0 transition-transform duration-200 group-hover/item:scale-115"
               />
               <span className="tracking-tight">{t.label}</span>
             </li>
@@ -46,7 +46,7 @@ export function TrustBar({ site }: { site: SiteConfig }) {
             >
               <Icon
                 name={t.icon}
-                className="size-4 text-primary shrink-0 transition-transform duration-200 group-hover/item:scale-115"
+                className="size-4 text-[#C94343] shrink-0 transition-transform duration-200 group-hover/item:scale-115"
               />
               <span className="tracking-tight">{t.label}</span>
             </li>

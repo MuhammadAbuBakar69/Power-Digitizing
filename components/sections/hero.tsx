@@ -49,8 +49,8 @@ export function Hero({ site }: { site: SiteConfig }) {
               if (i === 0 && line.startsWith("Custom patches")) {
                 return (
                   <span key={i} className="block">
-                    <span className="font-bold text-red-500">Custom </span>
-                    <span className="font-normal text-orange-500">patches,</span>
+                    <span className="font-bold text-[#C94343]">Custom </span>
+                    <span className="font-bold text-[#C94343]">patches,</span>
                   </span>
                 );
               }
@@ -59,15 +59,27 @@ export function Hero({ site }: { site: SiteConfig }) {
           </h1>
           <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground">{hero.subcopy}</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Link href={hero.primaryCta.href} className="rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-white transition-transform hover:-translate-y-px">{hero.primaryCta.label}</Link>
-            {hero.secondaryCta && <Link href={hero.secondaryCta.href} className="rounded-full border border-border bg-card px-6 py-3.5 text-sm font-semibold transition-colors hover:border-primary">{hero.secondaryCta.label}</Link>}
+            <Link
+              href={hero.primaryCta.href}
+              className="rounded-full bg-[#C94343] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#C94343]/20 transition-all hover:bg-[#14263D] hover:-translate-y-0.5 hover:shadow-xl"
+            >
+              {hero.primaryCta.label}
+            </Link>
+            {hero.secondaryCta && (
+              <Link
+                href={hero.secondaryCta.href}
+                className="rounded-full border border-border bg-card px-6 py-3.5 text-sm font-semibold text-[#14263D] transition-all hover:border-[#C94343] hover:text-[#C94343]"
+              >
+                {hero.secondaryCta.label}
+              </Link>
+            )}
           </div>
 
           <button type="button" onClick={() => { setVideoError(false); setVideoOpen(true); }} className="group mt-10 block w-full max-w-md cursor-pointer text-left" aria-label="Play release video">
             <span className="hero-artwork-stage relative block aspect-[2.15/1] overflow-hidden rounded-2xl border border-border">
               <Image src="/images/american-patches/sublimated-cutout.png" alt="Colorful custom patch artwork" fill priority sizes="(max-width: 768px) 100vw, 420px" className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.03]" />
-              <span className="absolute left-1/2 top-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-secondary shadow-lg transition-transform group-hover:scale-110" aria-hidden>
-                <span className="ml-1 border-y-[7px] border-l-[10px] border-y-transparent border-l-secondary" />
+              <span className="absolute left-1/2 top-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#C94343] shadow-lg transition-transform group-hover:scale-110" aria-hidden>
+                <span className="ml-1 border-y-[7px] border-l-[10px] border-y-transparent border-l-[#C94343]" />
               </span>
               <span className="absolute bottom-4 left-5 rounded-full bg-white/90 px-3 py-1 text-sm font-medium text-foreground shadow-sm backdrop-blur">Play release video</span>
             </span>

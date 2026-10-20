@@ -28,24 +28,24 @@ body { background: var(--background); color: var(--foreground); font-family: var
 
 .quote-input { width: 100%; border: 1px solid rgb(255 255 255 / 0.45); border-radius: 0.35rem; background: transparent; color: #FFFFFF; padding: 0.75rem 0.875rem; font-size: 0.875rem; line-height: 1.25rem; transition: border-color 180ms ease, background-color 180ms ease; }
 .quote-input::placeholder { color: rgb(255 255 255 / 0.65); }
-.quote-input:focus { border-color: #FF9C00; background: rgb(255 255 255 / 0.08); outline: none; }
-.quote-input option { color: #231F20; }
+.quote-input:focus { border-color: #C94343; background: rgb(255 255 255 / 0.08); outline: none; }
+.quote-input option { color: #14263D; }
 
 .about-hero {
   background:
-    radial-gradient(ellipse at 12% 28%, rgb(20 38 61 / 0.065), transparent 38%),
-    radial-gradient(ellipse at 78% 68%, rgb(255 156 0 / 0.075), transparent 34%),
+    radial-gradient(ellipse at 12% 28%, rgb(201 67 67 / 0.05), transparent 38%),
+    radial-gradient(ellipse at 78% 68%, rgb(20 38 61 / 0.05), transparent 34%),
     linear-gradient(118deg, #fff 0%, #fff 54%, #f8fafc 100%);
 }
 .about-hero-pattern {
   opacity: 0.18;
-  background-image: radial-gradient(rgb(35 31 32 / 0.18) 0.7px, transparent 0.7px);
+  background-image: radial-gradient(rgb(20 38 61 / 0.18) 0.7px, transparent 0.7px);
   background-position: center;
   background-size: 22px 22px;
   mask-image: linear-gradient(100deg, transparent 8%, #000 55%, transparent 100%);
 }
 .about-hero-glow {
-  background: radial-gradient(circle, rgb(20 38 61 / 0.08), rgb(255 156 0 / 0.055) 42%, transparent 70%);
+  background: radial-gradient(circle, rgb(201 67 67 / 0.06), rgb(20 38 61 / 0.05) 42%, transparent 70%);
   filter: blur(18px);
 }
 .hero-artwork-stage {

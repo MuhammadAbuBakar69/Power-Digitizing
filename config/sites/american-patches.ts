@@ -15,7 +15,7 @@ export default defineSite({
       primary: "#14263D",
       primaryForeground: "#FFFFFF",
       secondary: "#0B1626",
-      accent: "#FF9C00",
+      accent: "#C94343",
       accentForeground: "#FFFFFF",
     },
     fonts: { display: "bricolage", body: "instrument" },

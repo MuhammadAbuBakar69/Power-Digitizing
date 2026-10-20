@@ -48,7 +48,7 @@ export function WhyChooseUs() {
                   className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
                 >
                   <span aria-hidden className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100" />
-                  <div className="grid size-11 place-items-center rounded-xl bg-primary/5 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:shadow-lg group-hover:shadow-primary/20">
+                  <div className="grid size-11 place-items-center rounded-xl bg-[#C94343]/10 text-[#C94343] transition-all duration-300 group-hover:bg-[#C94343] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#C94343]/20">
                     <IconComp className="size-5" />
                   </div>
                   <h3 className="mt-5 font-display text-lg font-semibold tracking-tight transition-colors group-hover:text-primary">{item.title}</h3>

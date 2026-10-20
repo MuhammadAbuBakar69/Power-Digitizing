@@ -708,7 +708,7 @@ export function CompanyClient() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-[11px] font-mono tracking-widest uppercase text-[#FF9C00] block">
+              <span className="text-[11px] font-mono tracking-widest uppercase text-[#C94343] block">
                 PARTNER WITH POWER DIGITIZING
               </span>
 
@@ -725,7 +725,7 @@ export function CompanyClient() {
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <Link
                   href="/quote"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#DA2C46] px-8 py-4 text-xs sm:text-sm font-semibold tracking-wider uppercase text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-[#c2243c]"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#C94343] px-8 py-4 text-xs sm:text-sm font-semibold tracking-wider uppercase text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-[#14263D]"
                 >
                   <span>Request Digital Proof</span>
                   <ArrowRight className="size-4" />
@@ -735,7 +735,7 @@ export function CompanyClient() {
                   href="tel:+13164441366"
                   className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-7 py-4 text-xs sm:text-sm font-semibold tracking-wider text-white backdrop-blur transition-colors hover:border-white hover:bg-white/10"
                 >
-                  <Phone className="size-4 text-[#FF9C00]" />
+                  <Phone className="size-4 text-[#C94343]" />
                   <span>Call: +1 (316) 444-1366</span>
                 </a>
 
