@@ -156,7 +156,7 @@ export function CompanyClient() {
                   <div className="flex items-center gap-4 pt-1">
                     <Link
                       href="/quote"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1A1A1A] underline underline-offset-4 hover:text-[#DA2C46] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1A1A1A] underline underline-offset-4 hover:text-[#C94343] transition-colors"
                     >
                       <span>Request Free Digital Proof</span>
                       <ArrowRight className="size-3" />
@@ -196,7 +196,7 @@ export function CompanyClient() {
           {/* Stat 1 */}
           <div className="space-y-2">
             <div className="font-display text-4xl sm:text-5xl font-light text-[#1A1A1A] tracking-tight">
-              15<span className="text-[#DA2C46] font-normal">+</span>
+              15<span className="text-[#C94343] font-normal">+</span>
             </div>
             <div className="text-xs font-mono uppercase tracking-wider text-[#1A1A1A] font-semibold">
               Years of Master Digitizing
@@ -209,7 +209,7 @@ export function CompanyClient() {
           {/* Stat 2 */}
           <div className="space-y-2 border-t sm:border-t-0 sm:border-l border-[#EAE8E2] pt-6 sm:pt-0 sm:pl-6">
             <div className="font-display text-4xl sm:text-5xl font-light text-[#1A1A1A] tracking-tight">
-              250K<span className="text-[#DA2C46] font-normal">+</span>
+              250K<span className="text-[#C94343] font-normal">+</span>
             </div>
             <div className="text-xs font-mono uppercase tracking-wider text-[#1A1A1A] font-semibold">
               Production Runs Perfected
@@ -222,7 +222,7 @@ export function CompanyClient() {
           {/* Stat 3 */}
           <div className="space-y-2 border-t lg:border-t-0 lg:border-l border-[#EAE8E2] pt-6 lg:pt-0 lg:pl-6">
             <div className="font-display text-4xl sm:text-5xl font-light text-[#1A1A1A] tracking-tight">
-              2–4<span className="text-[#DA2C46] font-normal">h</span>
+              2–4<span className="text-[#C94343] font-normal">h</span>
             </div>
             <div className="text-xs font-mono uppercase tracking-wider text-[#1A1A1A] font-semibold">
               Rush Turnaround Option
@@ -235,7 +235,7 @@ export function CompanyClient() {
           {/* Stat 4 */}
           <div className="space-y-2 border-t lg:border-t-0 lg:border-l border-[#EAE8E2] pt-6 lg:pt-0 lg:pl-6">
             <div className="font-display text-4xl sm:text-5xl font-light text-[#1A1A1A] tracking-tight">
-              100<span className="text-[#DA2C46] font-normal">%</span>
+              100<span className="text-[#C94343] font-normal">%</span>
             </div>
             <div className="text-xs font-mono uppercase tracking-wider text-[#1A1A1A] font-semibold">
               Zero-Pucker Sew-Out Guarantee
@@ -265,7 +265,7 @@ export function CompanyClient() {
           <div className="pt-2 flex flex-wrap items-center justify-center gap-6">
             <Link
               href="/quote"
-              className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#1A1A1A] border-b border-[#1A1A1A] pb-1 hover:text-[#DA2C46] hover:border-[#DA2C46] transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#1A1A1A] border-b border-[#1A1A1A] pb-1 hover:text-[#C94343] hover:border-[#C94343] transition-colors"
             >
               <span>Submit Artwork for Free Evaluation</span>
               <ArrowUpRight className="size-3.5" />
@@ -274,7 +274,7 @@ export function CompanyClient() {
               href="tel:+13164441366"
               className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#686660] hover:text-[#1A1A1A] transition-colors"
             >
-              <Phone className="size-3 text-[#DA2C46]" />
+              <Phone className="size-3 text-[#C94343]" />
               <span>Direct Inquiries: +1 (316) 444-1366</span>
             </a>
           </div>
@@ -344,10 +344,10 @@ export function CompanyClient() {
                       className="w-full flex items-center justify-between text-left group"
                     >
                       <div className="space-y-1 pr-4">
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#DA2C46] block font-semibold">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#C94343] block font-semibold">
                           {item.tag}
                         </span>
-                        <span className="text-sm sm:text-base font-medium text-[#1A1A1A] group-hover:text-[#DA2C46] transition-colors">
+                        <span className="text-sm sm:text-base font-medium text-[#1A1A1A] group-hover:text-[#C94343] transition-colors">
                           {item.title}
                         </span>
                       </div>
@@ -413,7 +413,7 @@ export function CompanyClient() {
                   { fabric: "Heavy Twill & Denim", desc: "Firm contour anchors with high-tension compensation for bold letterforms." },
                 ].map((spec, i) => (
                   <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-[#44423E]">
-                    <span className="size-1.5 rounded-full bg-[#DA2C46] mt-2 shrink-0" />
+                    <span className="size-1.5 rounded-full bg-[#C94343] mt-2 shrink-0" />
                     <div>
                       <strong className="text-[#1A1A1A] font-semibold">{spec.fabric}: </strong>
                       <span className="text-[#66645E]">{spec.desc}</span>
@@ -432,7 +432,7 @@ export function CompanyClient() {
                 </Link>
                 <a
                   href="tel:+13164441366"
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#1A1A1A] underline underline-offset-4 hover:text-[#DA2C46] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#1A1A1A] underline underline-offset-4 hover:text-[#C94343] transition-colors"
                 >
                   <Phone className="size-3.5" />
                   <span>Call +1 (316) 444-1366</span>
@@ -477,22 +477,22 @@ export function CompanyClient() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div className="p-4 rounded-xl border border-[#EAE8E2] bg-white space-y-1">
-                <Palette className="size-4 text-[#DA2C46]" />
+                <Palette className="size-4 text-[#C94343]" />
                 <h4 className="text-xs font-mono uppercase tracking-wider font-semibold text-[#1A1A1A]">Pantone Matching</h4>
                 <p className="text-xs text-[#6B6963]">Exact PMS color codes assigned for consistent ink and thread reproduction.</p>
               </div>
               <div className="p-4 rounded-xl border border-[#EAE8E2] bg-white space-y-1">
-                <FileCode2 className="size-4 text-[#DA2C46]" />
+                <FileCode2 className="size-4 text-[#C94343]" />
                 <h4 className="text-xs font-mono uppercase tracking-wider font-semibold text-[#1A1A1A]">Multi-Format Delivery</h4>
                 <p className="text-xs text-[#6B6963]">Scalable AI, EPS, SVG, CDR, and high-res PDF ready for any printer.</p>
               </div>
               <div className="p-4 rounded-xl border border-[#EAE8E2] bg-white space-y-1">
-                <Layers className="size-4 text-[#DA2C46]" />
+                <Layers className="size-4 text-[#C94343]" />
                 <h4 className="text-xs font-mono uppercase tracking-wider font-semibold text-[#1A1A1A]">Color Separations</h4>
                 <p className="text-xs text-[#6B6963]">Clean layers and underbase traps configured for screen printing & DTF.</p>
               </div>
               <div className="p-4 rounded-xl border border-[#EAE8E2] bg-white space-y-1">
-                <Clock className="size-4 text-[#DA2C46]" />
+                <Clock className="size-4 text-[#C94343]" />
                 <h4 className="text-xs font-mono uppercase tracking-wider font-semibold text-[#1A1A1A]">Rapid 12–24h Delivery</h4>
                 <p className="text-xs text-[#6B6963]">Same-day vector delivery so your print presses never sit idle.</p>
               </div>
@@ -582,13 +582,13 @@ export function CompanyClient() {
                 />
               </div>
               <div className="p-6 space-y-2">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#DA2C46] font-semibold block">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#C94343] font-semibold block">
                   {patch.tag}
                 </span>
                 <h4 className="font-display text-lg font-semibold text-[#1A1A1A]">{patch.title}</h4>
                 <p className="text-xs text-[#6B6963] leading-relaxed">{patch.desc}</p>
                 <div className="pt-3 border-t border-[#F0EEE8] flex items-center justify-between text-xs font-semibold text-[#1A1A1A]">
-                  <Link href="/quote" className="inline-flex items-center gap-1 hover:text-[#DA2C46] transition-colors">
+                  <Link href="/quote" className="inline-flex items-center gap-1 hover:text-[#C94343] transition-colors">
                     <span>Order Patches</span>
                     <ArrowRight className="size-3" />
                   </Link>
@@ -616,7 +616,7 @@ export function CompanyClient() {
 
             <div className="p-6 rounded-2xl bg-[#F7F6F1] border border-[#E8E6DF] space-y-3">
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider font-semibold text-[#1A1A1A]">
-                <Cpu className="size-4 text-[#DA2C46]" />
+                <Cpu className="size-4 text-[#C94343]" />
                 <span>Compatible Machine Ecosystem</span>
               </div>
               <p className="text-xs text-[#6B6963] leading-relaxed">
@@ -636,7 +636,7 @@ export function CompanyClient() {
                       onClick={() => setOpenAccordion2(isOpen ? null : idx)}
                       className="w-full flex items-center justify-between text-left group"
                     >
-                      <span className="text-sm sm:text-base font-medium text-[#1A1A1A] group-hover:text-[#DA2C46] transition-colors pr-4">
+                      <span className="text-sm sm:text-base font-medium text-[#1A1A1A] group-hover:text-[#C94343] transition-colors pr-4">
                         {item.title}
                       </span>
                       <span className="shrink-0 size-6 rounded-full border border-[#D5D2CA] flex items-center justify-center text-[#555] group-hover:border-[#1A1A1A] transition-colors">
@@ -682,7 +682,7 @@ export function CompanyClient() {
                   onClick={() => setOpenFaq(isOpen ? null : idx)}
                   className="w-full flex items-center justify-between text-left group"
                 >
-                  <span className="text-sm sm:text-base font-medium text-[#1A1A1A] group-hover:text-[#DA2C46] transition-colors pr-4">
+                  <span className="text-sm sm:text-base font-medium text-[#1A1A1A] group-hover:text-[#C94343] transition-colors pr-4">
                     {faq.q}
                   </span>
                   <span className="shrink-0 size-6 rounded-full border border-[#D5D2CA] flex items-center justify-center text-[#555] group-hover:border-[#1A1A1A] transition-colors">

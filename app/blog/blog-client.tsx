@@ -524,22 +524,22 @@ export function BlogClient() {
         </div>
 
         {/* 6.5 THE DIGITIZER'S JOURNAL NEWSLETTER */}
-        <div className="mt-24 rounded-3xl bg-gradient-to-br from-[#1E1B18] via-[#2A2421] to-[#1E1B18] p-8 sm:p-12 md:p-16 text-white border border-white/10 shadow-2xl relative overflow-hidden">
-          <div aria-hidden className="absolute -right-20 -top-20 size-80 rounded-full bg-primary/20 blur-3xl pointer-events-none" />
+        <div className="mt-24 rounded-3xl bg-gradient-to-br from-[#0B1626] via-[#14263D] to-[#0B1626] p-8 sm:p-12 md:p-16 text-white border border-white/10 shadow-2xl relative overflow-hidden">
+          <div aria-hidden className="absolute -right-20 -top-20 size-80 rounded-full bg-[#C94343]/15 blur-3xl pointer-events-none" />
           <div className="relative max-w-2xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              <Mail className="size-3.5" /> Weekly Production Dispatch
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+              <Mail className="size-3.5 text-[#C94343]" /> Weekly Production Dispatch
             </span>
             <h2 className="mt-5 font-display text-3xl sm:text-4xl font-bold tracking-tight text-white">
               The Digitizer&apos;s Field Guide
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-white/70 leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed">
               Join 4,500+ commercial embroiderers and apparel decorators. Get weekly underlay recipes, needle-tension cheatsheets, and free monthly DST/EMB test files directly in your inbox.
             </p>
 
             {newsletterDone ? (
               <div className="mt-8 rounded-xl bg-white/10 border border-white/20 p-5 text-center flex items-center justify-center gap-3">
-                <Check className="size-5 text-emerald-400 stroke-[3]" />
+                <Check className="size-5 text-[#C94343] stroke-[3]" />
                 <span className="text-sm font-semibold text-white">
                   You&apos;re subscribed! Check your inbox for our 3D Puff Underlay Guide.
                 </span>
@@ -562,7 +562,7 @@ export function BlogClient() {
                 />
                 <button
                   type="submit"
-                  className="rounded-xl bg-primary px-6 py-3.5 text-sm font-bold text-white shadow-lg hover:bg-primary/90 transition-all hover:scale-105 shrink-0"
+                  className="rounded-xl bg-[#C94343] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#C94343]/25 hover:bg-[#b03535] transition-all hover:scale-105 shrink-0"
                 >
                   Join 4,500+ Pros
                 </button>
@@ -644,8 +644,8 @@ export function BlogClient() {
         </div>
 
         {/* 9. BOTTOM CALL TO ACTION BANNER */}
-        <div className="mt-20 rounded-3xl bg-[linear-gradient(135deg,#231F20_0%,#231F20_60%,#DA2C46_100%)] p-8 sm:p-12 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
-          <div className="absolute -right-10 -bottom-10 size-72 rounded-full bg-accent/20 blur-3xl pointer-events-none" />
+        <div className="mt-20 rounded-3xl bg-gradient-to-br from-[#0B1626] via-[#14263D] to-[#0B1626] border border-white/10 p-8 sm:p-12 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
+          <div className="absolute -right-10 -bottom-10 size-72 rounded-full bg-[#C94343]/20 blur-3xl pointer-events-none" />
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
             <div className="mx-auto grid size-12 place-items-center rounded-full bg-accent/20 text-accent border border-accent/40">
               <Sparkles className="size-6" />

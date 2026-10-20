@@ -83,7 +83,7 @@ export function TableOfContents({
     <>
       {/* Top Reading Progress Bar */}
       <div
-        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary via-[#E6C687] to-primary z-50 transition-all duration-150 ease-out"
+        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#14263D] via-[#C94343] to-[#14263D] z-50 transition-all duration-150 ease-out"
         style={{ width: `${readProgress}%` }}
       />
 

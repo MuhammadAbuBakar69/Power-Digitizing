@@ -166,9 +166,9 @@ export function StitchEstimator() {
           </div>
 
           {/* Results Output Column */}
-          <div className="lg:col-span-5 rounded-2xl bg-gradient-to-br from-[#1E1B18] to-[#2B231F] text-white p-6 sm:p-7 shadow-xl flex flex-col justify-between">
+          <div className="lg:col-span-5 rounded-2xl bg-gradient-to-br from-[#0B1626] to-[#14263D] text-white p-6 sm:p-7 shadow-xl flex flex-col justify-between border border-white/10">
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-accent">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#C94343]">
                 ESTIMATED SPECIFICATIONS
               </span>
 

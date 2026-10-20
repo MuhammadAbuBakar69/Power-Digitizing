@@ -347,8 +347,8 @@ export default async function BlogPostPage({ params }: Props) {
                         </p>
 
                         {/* Master Pro-Tip Banner */}
-                        <div className="my-8 rounded-2xl border border-[#E6C687]/40 bg-[#FAF7F0] dark:bg-[#1E1B18] p-6 sm:p-7 relative overflow-hidden shadow-sm">
-                          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-[#E6C687] mb-2">
+                        <div className="my-8 rounded-2xl border border-[#C94343]/30 bg-[#C94343]/5 p-6 sm:p-7 relative overflow-hidden shadow-sm">
+                          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C94343] mb-2">
                             <Lightbulb className="size-4" />
                             <span>Master Digitizer&apos;s Pro Tip</span>
                           </div>
@@ -648,38 +648,38 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           )}
 
-          {/* ── Editorial Luxury Bottom CTA (Matching Tonelli Luxury Leather Style) ── */}
-          <div className="mt-20 rounded-3xl bg-[#1E1B18] p-8 sm:p-14 text-center text-white relative overflow-hidden shadow-2xl">
+          {/* ── Editorial Luxury Bottom CTA (Bluestone & Redis) ── */}
+          <div className="mt-20 rounded-3xl bg-gradient-to-br from-[#0B1626] via-[#14263D] to-[#0B1626] p-8 sm:p-14 text-center text-white relative overflow-hidden shadow-2xl border border-white/10">
             <div
               aria-hidden
-              className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-80 w-[600px] rounded-full bg-primary/20 blur-[100px]"
+              className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-80 w-[600px] rounded-full bg-[#C94343]/15 blur-[100px]"
             />
 
             <div className="relative z-10 max-w-2xl mx-auto space-y-5">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#E6C687]">
-                <Layers className="size-3.5" /> Master Craftsmanship Guarantee
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur-sm">
+                <Layers className="size-3.5 text-[#C94343]" /> Master Craftsmanship Guarantee
               </span>
 
               <h3 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
                 Turn Complex Designs Into Flawless, Production-Ready Files & Patches
               </h3>
 
-              <p className="text-xs sm:text-sm text-white/75 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 Zero digitizing setup fees, guaranteed 2–4 hour turnaround, and physical stitch-out proof verification. Experience why over 5,000 apparel brands trust Power Digitizing.
               </p>
 
               <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
                 <Link
                   href="/quote"
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-xs sm:text-sm font-bold text-white shadow-xl shadow-primary/25 hover:bg-primary/90 transition-transform hover:-translate-y-0.5"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[#C94343] px-8 py-3.5 text-xs sm:text-sm font-bold text-white shadow-xl shadow-[#C94343]/30 hover:bg-[#b03535] hover:shadow-2xl transition-all hover:scale-105"
                 >
                   <span>Get Free Digital Proof & Quote</span>
-                  <ArrowUpRight className="size-4" />
+                  <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-xs sm:text-sm font-semibold text-white backdrop-blur hover:bg-white/10 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-xs sm:text-sm font-semibold text-white backdrop-blur hover:bg-white/15 hover:border-white/40 transition-colors"
                 >
                   <span>Contact Embroidery Team</span>
                 </Link>

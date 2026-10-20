@@ -373,19 +373,19 @@ export default async function CollectionDetailPage({ params }: { params: Promise
       {/* ── 3. SPECIAL LEATHER ATELIER SHOWCASE (If Leather Page) ─────────────── */}
       {isLeather && (
         <ScrollReveal>
-          <section className="py-20 md:py-28 border-b border-[#E8E6E0] bg-[#241B15] text-white relative overflow-hidden">
-            <div aria-hidden className="absolute -right-24 -top-24 size-96 rounded-full bg-[#DA2C46]/10 blur-3xl pointer-events-none" />
-            <div aria-hidden className="absolute -left-24 -bottom-24 size-96 rounded-full bg-[#D4AF37]/10 blur-3xl pointer-events-none" />
+          <section className="py-20 md:py-28 border-b border-white/10 bg-[#0B1626] text-white relative overflow-hidden">
+            <div aria-hidden className="absolute -right-24 -top-24 size-96 rounded-full bg-[#C94343]/10 blur-3xl pointer-events-none" />
+            <div aria-hidden className="absolute -left-24 -bottom-24 size-96 rounded-full bg-[#14263D]/30 blur-3xl pointer-events-none" />
 
             <div className="relative mx-auto max-w-6xl px-5">
               <div data-reveal className="max-w-2xl text-center mx-auto mb-16">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-mono uppercase tracking-widest text-[#E6C687]">
-                  <Flame className="size-3.5" /> Artisanal Hide Curation
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-mono uppercase tracking-widest text-white backdrop-blur-sm">
+                  <Flame className="size-3.5 text-[#C94343]" /> Artisanal Hide Curation
                 </div>
                 <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
                   Four Master Leather Grades
                 </h2>
-                <p className="mt-3 text-sm sm:text-base text-white/70 leading-relaxed">
+                <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
                   Every hide is hand-selected for oil balance, density, and burnishing reaction under heat and laser.
                 </p>
               </div>
@@ -429,17 +429,17 @@ export default async function CollectionDetailPage({ params }: { params: Promise
                   <div
                     data-reveal
                     key={swatch.name}
-                    className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-md flex flex-col justify-between hover:border-[#E6C687]/50 transition-all hover:-translate-y-1"
+                    className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-md flex flex-col justify-between hover:border-[#C94343]/50 transition-all hover:-translate-y-1"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[10px] font-mono text-[#E6C687]">
+                        <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[10px] font-mono text-[#C94343]">
                           {swatch.badge}
                         </span>
                         <span className="size-4 rounded-full border border-white/40 shadow-inner" style={{ backgroundColor: swatch.color.replace("bg-[", "").replace("]", "") }} />
                       </div>
                       <h3 className="font-display text-lg font-bold text-white">{swatch.name}</h3>
-                      <p className="mt-2 text-xs leading-relaxed text-white/65">{swatch.desc}</p>
+                      <p className="mt-2 text-xs leading-relaxed text-slate-300/80">{swatch.desc}</p>
                     </div>
 
                     <div className="mt-6 pt-4 border-t border-white/10 space-y-1.5 text-[11px] font-mono text-white/50">
@@ -460,17 +460,17 @@ export default async function CollectionDetailPage({ params }: { params: Promise
               <div data-reveal className="mt-14 rounded-3xl border border-white/15 bg-white/[0.04] p-8 md:p-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   <div className="lg:col-span-7 space-y-4">
-                    <p className="text-xs font-mono uppercase tracking-widest text-[#E6C687]">HEADWEAR CALIBRATION</p>
+                    <p className="text-xs font-mono uppercase tracking-widest text-[#C94343]">HEADWEAR CALIBRATION</p>
                     <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
                       Curved Crown & Beanie Fold Engineering
                     </h3>
-                    <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                       Most generic leather patches crack or bubble when applied to curved 6-panel trucker caps. At Power Digitizing, our dies are cast with perimeter bevels and custom flexibility conditioning, ensuring the patch contours flush against Richardson 112, Yupoong Classics, and Carhartt beanies.
                     </p>
                     <div className="flex flex-wrap gap-4 pt-2 text-xs text-white/80">
-                      <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="size-4 text-emerald-400" /> Pre-curved Cap Option</span>
-                      <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="size-4 text-emerald-400" /> Perimeter Stitch Grooves</span>
-                      <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="size-4 text-emerald-400" /> High-Melt Industrial Adhesive</span>
+                      <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="size-4 text-[#C94343]" /> Pre-curved Cap Option</span>
+                      <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="size-4 text-[#C94343]" /> Perimeter Stitch Grooves</span>
+                      <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="size-4 text-[#C94343]" /> High-Melt Industrial Adhesive</span>
                     </div>
                   </div>
 
@@ -651,57 +651,62 @@ export default async function CollectionDetailPage({ params }: { params: Promise
       </ScrollReveal>
 
       {/* ── 8. TONELLI-INSPIRED LUXURY EDITORIAL CALLOUT (Replacing red block) ── */}
-      <section className="relative overflow-hidden bg-[#1E1B18] py-20 text-white md:py-28">
-        <div aria-hidden className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-96 w-[700px] rounded-full bg-primary/20 blur-[120px]" />
-
+      <section className="relative overflow-hidden bg-background py-16 md:py-24">
         <div className="relative mx-auto max-w-6xl px-5 text-center">
-          <div className="rounded-[2.5rem] border border-white/10 bg-white/[0.03] p-8 sm:p-12 md:p-16 backdrop-blur-md">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#E6C687]">
-              <Sparkles className="size-3.5" /> Start Your Custom Order
-            </span>
+          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#0B1626] via-[#14263D] to-[#0B1626] p-8 text-white shadow-2xl sm:p-12 md:p-16">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-96 w-[600px] rounded-full bg-[#C94343]/15 blur-[120px]"
+            />
 
-            <h2 className="mt-6 font-display text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-              Ready to craft your custom <br className="hidden sm:inline" />
-              {patchTypeName.toLowerCase()} patches with master precision?
-            </h2>
-
-            <p className="mx-auto mt-6 max-w-2xl text-sm sm:text-base text-white/70 leading-relaxed">
-              Upload your artwork or idea today. Our senior digitizers and craft directors will prepare your tailored specification sheet and complimentary digital proof within 24 hours.
-            </p>
-
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/quote"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-bold text-white shadow-xl shadow-primary/25 hover:bg-primary/90 transition-all hover:scale-105"
-              >
-                <span>Request Free Proof & Quote</span>
-                <ArrowUpRight className="size-4" />
-              </Link>
-
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white backdrop-blur transition-all hover:bg-white/10"
-              >
-                <span>Talk to Patch Specialist</span>
-              </Link>
-            </div>
-
-            {/* Direct hotline */}
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 border-t border-white/10 pt-8 text-xs text-white/60">
-              <a href={`tel:${phone.replace(/\D/g, "")}`} className="flex items-center gap-2 hover:text-white transition-colors">
-                <Phone className="size-3.5 text-[#E6C687]" />
-                <span>{phone}</span>
-              </a>
-              <span className="hidden sm:inline text-white/20">•</span>
-              <a href={`mailto:${email}`} className="flex items-center gap-2 hover:text-white transition-colors">
-                <Mail className="size-3.5 text-[#E6C687]" />
-                <span>{email}</span>
-              </a>
-              <span className="hidden sm:inline text-white/20">•</span>
-              <span className="flex items-center gap-1.5 text-white/80">
-                <Clock className="size-3.5 text-emerald-400" />
-                <span>24/6 Active Production Studio</span>
+            <div className="relative z-10">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
+                <Sparkles className="size-3.5 text-[#C94343]" /> Start Your Custom Order
               </span>
+
+              <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-white sm:text-5xl leading-tight">
+                Ready to craft your custom <br className="hidden sm:inline" />
+                {patchTypeName.toLowerCase()} patches with master precision?
+              </h2>
+
+              <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
+                Upload your artwork or idea today. Our senior digitizers and craft directors will prepare your tailored specification sheet and complimentary digital proof within 24 hours.
+              </p>
+
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <Link
+                  href="/quote"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[#C94343] px-8 py-4 text-sm font-bold text-white shadow-xl shadow-[#C94343]/30 transition-all hover:scale-105 hover:bg-[#b03535] hover:shadow-2xl"
+                >
+                  <span>Request Free Proof & Quote</span>
+                  <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white backdrop-blur transition-all hover:border-white/40 hover:bg-white/15"
+                >
+                  <span>Talk to Patch Specialist</span>
+                </Link>
+              </div>
+
+              {/* Direct hotline */}
+              <div className="mt-12 flex flex-wrap items-center justify-center gap-6 border-t border-white/10 pt-8 text-xs text-slate-300/80">
+                <a href={`tel:${phone.replace(/\D/g, "")}`} className="group flex items-center gap-2 transition-colors hover:text-white">
+                  <Phone className="size-3.5 text-[#C94343] transition-transform group-hover:scale-110" />
+                  <span>{phone}</span>
+                </a>
+                <span className="hidden text-white/20 sm:inline">•</span>
+                <a href={`mailto:${email}`} className="group flex items-center gap-2 transition-colors hover:text-white">
+                  <Mail className="size-3.5 text-[#C94343] transition-transform group-hover:scale-110" />
+                  <span>{email}</span>
+                </a>
+                <span className="hidden text-white/20 sm:inline">•</span>
+                <span className="flex items-center gap-1.5 text-slate-200">
+                  <Clock className="size-3.5 text-[#C94343]" />
+                  <span>24/6 Active Production Studio</span>
+                </span>
+              </div>
             </div>
           </div>
         </div>

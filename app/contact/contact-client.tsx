@@ -50,7 +50,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F6F2] text-[#1E1E1E] selection:bg-[#DA2C46] selection:text-white font-sans">
+    <div className="min-h-screen bg-[#F7F6F2] text-[#1E1E1E] selection:bg-[#C94343] selection:text-white font-sans">
       {/* 1-Inch Gap (pt-24 md:pt-32) from navbar */}
       <div className="px-5 pt-24 pb-20 md:pt-32 md:pb-28 max-w-6xl mx-auto">
         {/* Main Card Container inspired by the Untitled UI design */}
@@ -61,7 +61,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
               <div className="space-y-8">
                 {/* Brand Logo & Name */}
                 <Link href="/" className="inline-flex items-center gap-3 group">
-                  <span className="grid size-10 place-items-center rounded-xl bg-[#DA2C46] text-white font-display font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+                  <span className="grid size-10 place-items-center rounded-xl bg-[#C94343] text-white font-display font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
                     P
                   </span>
                   <div>
@@ -79,7 +79,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                   {/* Chat to us */}
                   <div className="flex items-start gap-4">
                     <div className="grid size-11 place-items-center rounded-full border border-[#E6E4DD] bg-[#FAFAF7] text-[#1A1A1A] shrink-0 shadow-sm">
-                      <MessageSquare className="size-5 text-[#DA2C46]" />
+                      <MessageSquare className="size-5 text-[#C94343]" />
                     </div>
                     <div className="space-y-1">
                       <h4 className="text-sm font-semibold text-[#1A1A1A]">Chat to us</h4>
@@ -88,7 +88,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                       </p>
                       <a
                         href={`mailto:${site.contact.email}`}
-                        className="text-xs font-semibold text-[#1A1A1A] underline underline-offset-4 hover:text-[#DA2C46] transition-colors block pt-0.5"
+                        className="text-xs font-semibold text-[#1A1A1A] underline underline-offset-4 hover:text-[#C94343] transition-colors block pt-0.5"
                       >
                         {site.contact.email}
                       </a>
@@ -98,7 +98,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                   {/* Visit us */}
                   <div className="flex items-start gap-4">
                     <div className="grid size-11 place-items-center rounded-full border border-[#E6E4DD] bg-[#FAFAF7] text-[#1A1A1A] shrink-0 shadow-sm">
-                      <MapPin className="size-5 text-[#DA2C46]" />
+                      <MapPin className="size-5 text-[#C94343]" />
                     </div>
                     <div className="space-y-1">
                       <h4 className="text-sm font-semibold text-[#1A1A1A]">Visit us</h4>
@@ -114,7 +114,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                   {/* Call us */}
                   <div className="flex items-start gap-4">
                     <div className="grid size-11 place-items-center rounded-full border border-[#E6E4DD] bg-[#FAFAF7] text-[#1A1A1A] shrink-0 shadow-sm">
-                      <Phone className="size-5 text-[#DA2C46]" />
+                      <Phone className="size-5 text-[#C94343]" />
                     </div>
                     <div className="space-y-1">
                       <h4 className="text-sm font-semibold text-[#1A1A1A]">Call us</h4>
@@ -123,7 +123,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                       </p>
                       <a
                         href={`tel:${site.contact.phone || "+13164441366"}`}
-                        className="text-xs font-semibold text-[#1A1A1A] hover:text-[#DA2C46] transition-colors block pt-0.5"
+                        className="text-xs font-semibold text-[#1A1A1A] hover:text-[#C94343] transition-colors block pt-0.5"
                       >
                         {site.contact.phone || "+1 (316) 444-1366"}
                       </a>
@@ -139,7 +139,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                     href="https://facebook.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="grid size-9 place-items-center rounded-lg border border-[#E5E3DC] text-[#555] hover:text-[#DA2C46] hover:border-[#DA2C46] transition-colors"
+                    className="grid size-9 place-items-center rounded-lg border border-[#E5E3DC] text-[#555] hover:text-[#C94343] hover:border-[#C94343] transition-colors"
                     aria-label="Facebook"
                   >
                     <Facebook className="size-4" />
@@ -148,7 +148,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                     href="https://instagram.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="grid size-9 place-items-center rounded-lg border border-[#E5E3DC] text-[#555] hover:text-[#DA2C46] hover:border-[#DA2C46] transition-colors"
+                    className="grid size-9 place-items-center rounded-lg border border-[#E5E3DC] text-[#555] hover:text-[#C94343] hover:border-[#C94343] transition-colors"
                     aria-label="Instagram"
                   >
                     <Instagram className="size-4" />
@@ -157,7 +157,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                     href="https://linkedin.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="grid size-9 place-items-center rounded-lg border border-[#E5E3DC] text-[#555] hover:text-[#DA2C46] hover:border-[#DA2C46] transition-colors"
+                    className="grid size-9 place-items-center rounded-lg border border-[#E5E3DC] text-[#555] hover:text-[#C94343] hover:border-[#C94343] transition-colors"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="size-4" />
@@ -166,7 +166,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                     href="https://powerdigitizing.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="grid size-9 place-items-center rounded-lg border border-[#E5E3DC] text-[#555] hover:text-[#DA2C46] hover:border-[#DA2C46] transition-colors"
+                    className="grid size-9 place-items-center rounded-lg border border-[#E5E3DC] text-[#555] hover:text-[#C94343] hover:border-[#C94343] transition-colors"
                     aria-label="Website"
                   >
                     <Globe className="size-4" />
@@ -180,7 +180,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
 
             {/* ─── RIGHT COLUMN: THEMED COLOR FORM CARD ─── */}
             <div className="lg:col-span-7">
-              <div className="rounded-[2rem] bg-gradient-to-br from-[#DA2C46] via-[#D1233F] to-[#B31A33] text-white p-7 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden flex flex-col justify-between h-full">
+              <div className="rounded-[2rem] bg-gradient-to-br from-[#C94343] via-[#D1233F] to-[#B31A33] text-white p-7 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden flex flex-col justify-between h-full">
                 {/* Subtle decorative glow */}
                 <div className="absolute top-0 right-0 -mr-16 -mt-16 size-64 rounded-full bg-white/10 blur-2xl pointer-events-none" />
 
@@ -197,7 +197,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                   {/* Form */}
                   {submitted ? (
                     <div className="mt-10 p-8 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-center space-y-4 animate-in fade-in duration-300">
-                      <div className="mx-auto grid size-12 place-items-center rounded-full bg-white text-[#DA2C46] shadow-lg">
+                      <div className="mx-auto grid size-12 place-items-center rounded-full bg-white text-[#C94343] shadow-lg">
                         <Check className="size-6 stroke-[3]" />
                       </div>
                       <h3 className="font-display text-xl font-bold">Message Received!</h3>
@@ -212,7 +212,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                           setEmail("");
                           setMessage("");
                         }}
-                        className="inline-flex items-center gap-2 rounded-full bg-white text-[#DA2C46] px-6 py-2.5 text-xs font-bold shadow-md hover:bg-white/90 transition-colors"
+                        className="inline-flex items-center gap-2 rounded-full bg-white text-[#C94343] px-6 py-2.5 text-xs font-bold shadow-md hover:bg-white/90 transition-colors"
                       >
                         <span>Send Another Message</span>
                       </button>
@@ -271,7 +271,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                                 <span
                                   className={`size-4 rounded border flex items-center justify-center transition-colors ${
                                     isChecked
-                                      ? "bg-white border-white text-[#DA2C46]"
+                                      ? "bg-white border-white text-[#C94343]"
                                       : "border-white/50 bg-white/10 group-hover:border-white"
                                   }`}
                                 >
@@ -374,7 +374,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
             </p>
             <a
               href="mailto:wholesale@powerdigitizing.com"
-              className="mt-4 inline-block text-xs font-bold text-[#DA2C46] hover:underline"
+              className="mt-4 inline-block text-xs font-bold text-[#C94343] hover:underline"
             >
               Inquire about contract rates →
             </a>
