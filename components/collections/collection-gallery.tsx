@@ -70,63 +70,52 @@ const GALLERY_BY_SLUG: Record<string, GalleryItem[]> = {
   ],
 
   "woven-patches": [
-    { id: "wov-1", title: "St Leger Iron Horse Rally High-Definition", image: "/images/american-patches/woven-white.png", tag: "Rally & Club" },
-    { id: "wov-2", title: "Micro-Thread Technical Brand Label", image: "/images/american-patches/woven.jpg", tag: "High-Resolution" },
-    { id: "wov-3", title: "Outdoor Expedition Merrowed Woven", image: "/images/american-patches/woven-white.png", tag: "Fine Lettering" },
-    { id: "wov-4", title: "Maritime Yacht Club Woven Crest", image: "/images/company/custom-patches-collection.jpg", tag: "Yacht Club" },
-    { id: "wov-5", title: "Corporate Staff Uniform Micro-Detail", image: "/images/american-patches/woven-white.png", tag: "Staff Uniform" },
-    { id: "wov-6", title: "Boutique Fashion Hem Label", image: "/images/american-patches/woven.jpg", tag: "Fashion Brand" },
-    { id: "wov-7", title: "High-Density Small Font Insignia", image: "/images/american-patches/woven-white.png", tag: "Small Text" },
-    { id: "wov-8", title: "Motorsport Team Sponsors Woven", image: "/images/american-patches/woven.jpg", tag: "Motorsports" },
-    { id: "wov-9", title: "Craft Brewery Fine Detail Badge", image: "/images/american-patches/woven-white.png", tag: "Micro Detail" },
-    { id: "wov-10", title: "Ultra-Thin Heat-Cut Woven Badge", image: "/images/company/custom-patches-collection.jpg", tag: "Heat-Cut Border" },
-    { id: "wov-11", title: "Precision Heritage Shield Woven", image: "/images/american-patches/woven-white.png", tag: "Merrowed Edge" },
-    { id: "wov-12", title: "Alpine Hiking Club Fine Woven", image: "/images/american-patches/woven.jpg", tag: "Outdoor Club" },
+    { id: "wov-1", title: "Apex Explorations High-Density Damask Crest", image: "/images/collections/woven-patch.webp", tag: "Fine Woven" },
+    { id: "wov-2", title: "Micro-Thread Technical Brand Label", image: "/images/collections/woven-patch.webp", tag: "High-Resolution" },
+    { id: "wov-3", title: "Outdoor Expedition Merrowed Woven", image: "/images/collections/woven-patch.webp", tag: "Fine Lettering" },
+    { id: "wov-4", title: "Heritage Leadership Gold Crest", image: "/images/collections/woven-patch.webp", tag: "Crest Badge" },
   ],
 
   "silicone-patches": [
-    { id: "sil-1", title: "The American Patches Soft-Touch Emblem", image: "/images/american-patches/silicone.png", tag: "Soft Touch" },
-    { id: "sil-2", title: "3D Molded Matte Finish Hat Patch", image: "/images/american-patches/silicone.png", tag: "Headwear" },
-    { id: "sil-3", title: "Athletic Performance Silicone Brand", image: "/images/american-patches/silicone.png", tag: "Sportswear" },
-    { id: "sil-4", title: "Waterproof Lifestyle Gear Badge", image: "/images/american-patches/silicone.png", tag: "All-Weather" },
-    { id: "sil-5", title: "High-Elasticity Silicone Chest Logo", image: "/images/american-patches/silicone.png", tag: "Flex Fit" },
-    { id: "sil-6", title: "Glow-in-the-Dark Silicone Patch", image: "/images/american-patches/silicone.png", tag: "Special Effect" },
-    { id: "sil-7", title: "Contemporary Streetwear Silicone Tag", image: "/images/american-patches/silicone.png", tag: "Streetwear" },
-    { id: "sil-8", title: "Tactical Matte Blackout Silicone", image: "/images/american-patches/silicone.png", tag: "Blackout Edition" },
-    { id: "sil-9", title: "Velcro-Ready Outerwear Silicone Crest", image: "/images/american-patches/silicone.png", tag: "Hook & Loop" },
-    { id: "sil-10", title: "Micro-Textured Silicone Apparel Label", image: "/images/american-patches/silicone.png", tag: "Micro Texture" },
-    { id: "sil-11", title: "Vibrant Multi-Color Silicone Badge", image: "/images/american-patches/silicone.png", tag: "Color Matched" },
-    { id: "sil-12", title: "Modern Minimalist Hat Crown Silicone", image: "/images/american-patches/silicone.png", tag: "Custom Molded" },
+    { id: "sil-1", title: "Explore Wilderness Adventure Co 3D Silicone", image: "/images/collections/silicone-patch.webp", tag: "Soft Touch 3D" },
+    { id: "sil-2", title: "3D Molded Matte Finish Mountain Badge", image: "/images/collections/silicone-patch.webp", tag: "Headwear" },
+    { id: "sil-3", title: "Athletic Performance Silicone Brand", image: "/images/collections/silicone-patch.webp", tag: "Sportswear" },
+    { id: "sil-4", title: "Waterproof Lifestyle Gear Badge", image: "/images/collections/silicone-patch.webp", tag: "All-Weather" },
   ],
 
   "sublimated-patches": [
-    { id: "sub-1", title: "World Fidelity Space Shuttle Full-Color", image: "/images/american-patches/sublimated-cutout.png", tag: "Photographic" },
-    { id: "sub-2", title: "Full-Gradient Sunset Horizon Patch", image: "/images/american-patches/sublimated.jpg", tag: "Gradient Art" },
-    { id: "sub-3", title: "Photographic Wildlife Mountain Scene", image: "/images/american-patches/sublimated-cutout.png", tag: "Photo Realistic" },
-    { id: "sub-4", title: "Detailed Digital Painting Patch", image: "/images/american-patches/sublimated.jpg", tag: "Digital Art" },
-    { id: "sub-5", title: "Festival Watercolor Art Emblem", image: "/images/american-patches/sublimated-cutout.png", tag: "Watercolor" },
-    { id: "sub-6", title: "Edge-to-Edge Printed Merrowed Badge", image: "/images/american-patches/sublimated.jpg", tag: "Merrowed Border" },
-    { id: "sub-7", title: "Complex Brand Logo with Micro-Drop Shadows", image: "/images/american-patches/sublimated-cutout.png", tag: "Drop Shadows" },
-    { id: "sub-8", title: "Sci-Fi Cosmic Planet Expedition", image: "/images/american-patches/sublimated.jpg", tag: "Sci-Fi Illustration" },
-    { id: "sub-9", title: "Retro 80s Synthwave Gradient Patch", image: "/images/american-patches/sublimated-cutout.png", tag: "Vibrant Color" },
-    { id: "sub-10", title: "Motorcycle Art Portrait Sublimated", image: "/images/american-patches/sublimated.jpg", tag: "Portrait" },
-    { id: "sub-11", title: "National Park Vista Commemorative", image: "/images/american-patches/sublimated-cutout.png", tag: "Landscape" },
-    { id: "sub-12", title: "High-DPI Printed Tactical Morale", image: "/images/american-patches/sublimated.jpg", tag: "High-DPI" },
+    { id: "sub-1", title: "World Fidelity Space Shuttle Full-Color", image: "/images/collections/sublimation-patch.webp", tag: "Photographic" },
+    { id: "sub-2", title: "Full-Gradient Space Odyssey Patch", image: "/images/collections/sublimation-patch.webp", tag: "Gradient Art" },
+    { id: "sub-3", title: "Edge-to-Edge Printed Sublimated Badge", image: "/images/collections/sublimation-patch.webp", tag: "Full Color" },
+    { id: "sub-4", title: "Photographic Corporate Retreat Emblem", image: "/images/collections/sublimation-patch.webp", tag: "Photo Realistic" },
   ],
 
   "iron-on-patches": [
-    { id: "irn-1", title: "Villa Regia Airshow Heat-Seal Embroidered", image: "/images/american-patches/iron-on-white.png", tag: "Heat Seal" },
-    { id: "irn-2", title: "Commercial Heat-Bonded Emblem", image: "/images/american-patches/iron-on.jpg", tag: "Heavy Duty" },
-    { id: "irn-3", title: "Industrial Quick-Apply Heat Press Patch", image: "/images/company/custom-patches-collection.jpg", tag: "Apparel Ready" },
-    { id: "irn-4", title: "Varsity Sports Heat-Press Emblem", image: "/images/american-patches/iron-on-white.png", tag: "Team Jersey" },
-    { id: "irn-5", title: "Outdoor Trail Iron-On Crest", image: "/images/american-patches/iron-on.jpg", tag: "Backpack & Hat" },
-    { id: "irn-6", title: "Air Squadron Aviation Iron-On", image: "/images/american-patches/iron-on-white.png", tag: "Aviation" },
-    { id: "irn-7", title: "Racing Motorsports Heat-Seal Badge", image: "/images/company/custom-patches-collection.jpg", tag: "Motorsports" },
-    { id: "irn-8", title: "Fleet Service Technician Iron-On", image: "/images/american-patches/iron-on-white.png", tag: "Workwear" },
-    { id: "irn-9", title: "Athletic Gold Shield Heat-Seal", image: "/images/american-patches/iron-on.jpg", tag: "Athletic" },
-    { id: "irn-10", title: "Hotrod Garage Custom Iron-On", image: "/images/american-patches/iron-on-white.png", tag: "Custom Auto" },
-    { id: "irn-11", title: "Industrial Tech Iron-On Badge", image: "/images/company/custom-patches-collection.jpg", tag: "Uniform" },
-    { id: "irn-12", title: "Corporate Staff Heat-Press Emblem", image: "/images/american-patches/iron-on-white.png", tag: "Corporate" },
+    { id: "irn-1", title: "Wilderness Trail Wolf Merrowed Iron-On", image: "/images/collections/iron-on-patch.webp", tag: "Heat Seal" },
+    { id: "irn-2", title: "Outdoor Exploration Mountain Crest", image: "/images/collections/iron-on-patch.webp", tag: "Heavy Duty" },
+    { id: "irn-3", title: "Industrial Quick-Apply Heat Press Patch", image: "/images/collections/iron-on-patch.webp", tag: "Apparel Ready" },
+    { id: "irn-4", title: "Pine Forest Night Sky Embroidered Emblem", image: "/images/collections/iron-on-patch.webp", tag: "Team Jersey" },
+  ],
+
+  "enamel-pins": [
+    { id: "pin-1", title: "Royal Lion Crest Gold Lapel Pin", image: "/images/collections/enamel-pin.webp", tag: "Hard Enamel" },
+    { id: "pin-2", title: "Virtute et Honore Polished Badge", image: "/images/collections/enamel-pin.webp", tag: "Gold Plated" },
+    { id: "pin-3", title: "Corporate Milestone Recognition Pin", image: "/images/collections/enamel-pin.webp", tag: "Die Struck" },
+    { id: "pin-4", title: "Heritage Crown Emblem Pin", image: "/images/collections/enamel-pin.webp", tag: "Soft Enamel" },
+  ],
+
+  "embroidery-keychains": [
+    { id: "key-1", title: "Remove Before Flight Red Merrowed Tag", image: "/images/collections/embroidery-keychain.webp", tag: "Double-Sided" },
+    { id: "key-2", title: "Aviation Squadron Steel Ring Key Fob", image: "/images/collections/embroidery-keychain.webp", tag: "Flight Tag" },
+    { id: "key-3", title: "Motorsport Club Merrowed Flight Tag", image: "/images/collections/embroidery-keychain.webp", tag: "Heavy Eyelet" },
+    { id: "key-4", title: "Custom Heavy-Duty Merrowed Tag", image: "/images/collections/embroidery-keychain.webp", tag: "Key Fob" },
+  ],
+
+  "sequin-patches": [
+    { id: "seq-1", title: "Glittering Reversible Sequin Star Emblem", image: "/images/collections/sequin-patch.webp", tag: "Reversible Sequin" },
+    { id: "seq-2", title: "Metallic Gold & Crimson Heart Star", image: "/images/collections/sequin-patch.webp", tag: "Fashion Shimmer" },
+    { id: "seq-3", title: "Sparkling Dancewear Costume Emblem", image: "/images/collections/sequin-patch.webp", tag: "Dancewear" },
+    { id: "seq-4", title: "Reflective Flip Sequin Apparel Patch", image: "/images/collections/sequin-patch.webp", tag: "High Shimmer" },
   ],
 };
 
@@ -158,14 +147,14 @@ export function CollectionGallery({ slug, collectionName }: { slug: string; coll
               onClick={() => setLightboxItem(item)}
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#E8E6E0] bg-white shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
             >
-              {/* Image Container with pure white background and centered padding */}
-              <div className="relative aspect-square w-full overflow-hidden bg-white p-5 sm:p-7 flex items-center justify-center">
+              {/* Image Container with seamless neutral background and centered padding */}
+              <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-b from-slate-50/80 to-slate-100/40 p-5 sm:p-7 flex items-center justify-center">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-110 drop-shadow-md"
+                  className="object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-110 drop-shadow-[0_12px_20px_rgba(20,38,61,0.16)] select-none"
                 />
                 {/* Zoom overlay badge */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
@@ -229,13 +218,13 @@ export function CollectionGallery({ slug, collectionName }: { slug: string; coll
             </button>
 
             {/* High-res Image Showcase */}
-            <div className="relative aspect-square sm:aspect-[4/3] w-full bg-white p-8 sm:p-14 flex items-center justify-center">
+            <div className="relative aspect-square sm:aspect-[4/3] w-full bg-gradient-to-b from-slate-50 to-slate-100 p-8 sm:p-14 flex items-center justify-center">
               <Image
                 src={lightboxItem.image}
                 alt={lightboxItem.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 800px"
-                className="object-contain p-4 drop-shadow-2xl"
+                className="object-contain p-4 drop-shadow-[0_20px_35px_rgba(20,38,61,0.2)]"
                 priority
               />
             </div>
@@ -250,7 +239,7 @@ export function CollectionGallery({ slug, collectionName }: { slug: string; coll
                   {lightboxItem.title}
                 </h3>
                 <p className="text-xs text-muted-foreground mt-1">
-                  100% white background studio capture • Production specimen
+                  Transparent contour cutout • Production specimen
                 </p>
               </div>
               <Link

@@ -52,14 +52,14 @@ export function Portfolio({ site }: { site: SiteConfig }) {
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {site.portfolio.map((item) => (
             <article key={item.title} className="group overflow-hidden rounded-xl border border-border bg-card">
-              <div className="relative aspect-[16/10] overflow-hidden bg-white p-4 sm:p-6 flex items-center justify-center">
+              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-b from-slate-50/80 to-slate-100/40 p-4 sm:p-6 flex items-center justify-center border-b border-border/40">
                 {item.image ? (
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 420px"
-                    className="object-contain object-center transition-transform duration-500 group-hover:scale-105 drop-shadow-md"
+                    className="object-contain object-center transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_12px_20px_rgba(20,38,61,0.16)] select-none"
                   />
                 ) : (
                   <Artwork kind={item.kind} />

@@ -49,13 +49,13 @@ export default async function CollectionsPage() {
                 href={`/collections/${collection.slug}`}
                 className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden bg-white p-4 sm:p-5 flex items-center justify-center">
+                <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden bg-gradient-to-b from-slate-50/80 to-slate-100/40 p-5 flex items-center justify-center border-b border-border/40">
                   <Image
                     src={collection.image}
                     alt={collection.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-contain object-center transition-transform duration-500 group-hover:scale-105 drop-shadow-md"
+                    className="object-contain object-center transition-transform duration-500 group-hover:scale-105 p-3 drop-shadow-[0_12px_20px_rgba(20,38,61,0.14)]"
                   />
                 </div>
                 <div className="p-6">

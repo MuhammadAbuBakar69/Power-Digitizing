@@ -194,9 +194,215 @@ const collectionDetails: Record<
       },
     ],
   },
+  "enamel-pins": {
+    about: {
+      heading: "Jewelry-Grade Custom Hard & Soft Enamel Lapel Pins",
+      paragraphs: [
+        "Custom enamel pins offer museum-grade jewelry quality, brilliant Pantone enamel fills, and mirror-polished metal plating in 24k gold, silver, rose gold, and dyed black nickel.",
+        "Whether crafting commemorative pins for corporate galas, collectible merchandise for festivals, or distinguished collar badges for military and clubs, our pins are cast with sub-millimeter die-striking precision.",
+        "Choose between smooth flush hard enamel (cloisonné style) and textured dimensional soft enamel with raised metal borders and recessed color valleys.",
+      ],
+    },
+    specs: [
+      { label: "Plating Finishes", value: "24K Gold, Silver, Black Nickel, Antique" },
+      { label: "Enamel Type", value: "Jewelry Hard Enamel or Soft Enamel" },
+      { label: "Attachment Backs", value: "Butterfly Clutch, Rubber Cap, Deluxe Magnet" },
+      { label: "Packaging", value: "Custom Backing Cards & Velvet Pouches" },
+      { label: "Tolerance", value: "±0.05mm Micro-Die Striking" },
+      { label: "Minimum Order", value: "25 Pieces (Free Proof Included)" },
+    ],
+    splitSections: [
+      {
+        heading: "Die-Struck Precision & Vivid Pantone Coloring",
+        body: [
+          "Every enamel pin begins with a hardened steel die cast under 50 tons of hydraulic pressure. Liquid enamel is hand-applied needle by needle into each recessed cavity and fired at high temperature.",
+          "Hard enamel pins undergo multiple rounds of hand-polishing and electroplating until the enamel and metal rims form a continuous, flush, mirror-flat surface.",
+          "We offer custom backing cards with spot UV, foil stamping, and individual poly-bagging ready for retail display.",
+        ],
+        image: "/images/collections/enamel-pin.webp",
+        imageAlt: "Custom hard enamel lapel pin with polished gold edges",
+      },
+    ],
+  },
+  "embroidery-keychains": {
+    about: {
+      heading: "Aviation-Grade Double-Sided Embroidered Flight Tags & Keychains",
+      paragraphs: [
+        "Our custom embroidered keychains — famously modeled after vintage aviation flight tags — combine durable heavy twill fabric, merrowed stitched border perimeter rings, and solid steel grommet eyelets.",
+        "Engineered for heavy daily carry on keys, backpacks, gear bags, and motorcycle ignitions, these keychains will never scratch bike paint or car dashboards.",
+        "With 100% double-sided embroidery, your slogan, club emblem, or warning insignia is legible from both sides with industrial thread durability.",
+      ],
+    },
+    specs: [
+      { label: "Fabric Core", value: "Heavy-Duty Reinforced Twill" },
+      { label: "Borders", value: "Tightly Merrowed Overlock Stitch" },
+      { label: "Hardware", value: "Solid Steel Grommet & Flat Split Ring" },
+      { label: "Sides", value: "100% Double-Sided Embroidery" },
+      { label: "Standard Size", value: "130mm x 30mm (Custom Shapes Available)" },
+      { label: "Minimum Order", value: "25 Pieces" },
+    ],
+    splitSections: [
+      {
+        heading: "Engineered for Motors, Aviation & Everyday Carry",
+        body: [
+          "Unlike metal keychains that rattle and scratch steering columns or fuel tanks, fabric embroidered key fobs are soft, flexible, and completely silent.",
+          "Featuring high-tensile polyester threads that resist fraying, gasoline spills, and weather exposure.",
+          "Custom lengths, double eyelets, and swivel clasps are available for all automotive, aerospace, and club orders.",
+        ],
+        image: "/images/collections/embroidery-keychain.webp",
+        imageAlt: "Custom double-sided embroidered flight tag keychain",
+      },
+    ],
+  },
+  "sequin-patches": {
+    about: {
+      heading: "Shimmering Reversible & High-Density Metallic Sequin Patches",
+      paragraphs: [
+        "Sequin patches bring high-fashion dazzle, dynamic motion, and reflective sparkle to denim, hoodies, dancewear, and festival apparel. Each sequin is precision-sewn onto high-grade backing fabric for permanent retention.",
+        "We craft both classic single-color glittering sequins and interactive two-tone flip reversible sequins where swiping your hand across the patch reveals a secondary color or hidden graphic.",
+        "Engineered with soft fabric borders or clean heat-sealed edges for easy machine sewing or commercial heat-press application.",
+      ],
+    },
+    specs: [
+      { label: "Sequin Types", value: "Metallic, Holographic, Reversible Flip" },
+      { label: "Sequin Sizes", value: "3mm Micro to 5mm Standard Discs" },
+      { label: "Border Finish", value: "Merrowed Felt or Embroidered Ring" },
+      { label: "Backing", value: "Iron-On Heat Seal or Sew-On Twill" },
+      { label: "Luster", value: "High-Gloss Mirror & Shimmer Refraction" },
+      { label: "Minimum Order", value: "25 Pieces" },
+    ],
+    splitSections: [
+      {
+        heading: "Dynamic Motion & Runway Glamour",
+        body: [
+          "Whether lighting up festival stages or accenting couture streetwear jackets, sequin emblems reflect ambient light with stunning vibrancy.",
+          "Our reinforced stitching locks every sequin disc in place to prevent thread breakage during laundering or active wear.",
+          "Available in gold, silver, iridescent chameleon, crimson, and two-tone flip combinations.",
+        ],
+        image: "/images/collections/sequin-patch.webp",
+        imageAlt: "Custom glittering reversible sequin patch emblem",
+      },
+    ],
+  },
+  "silicone-patches": {
+    about: {
+      heading: "Modern Soft-Touch 3D Matte Molded Silicone Patches",
+      paragraphs: [
+        "Silicone patches provide a clean, modern aesthetic with ultra-matte velvet finish, sharp 3D reliefs, and exceptional durability. They represent the modern evolution of tactical and athletic emblems.",
+        "Impervious to water, UV radiation, and freezing temperatures, silicone patches maintain their vibrant matte color and elasticity for years of rigorous outdoor and streetwear wear.",
+        "Available with sew-on stitch channels, peel-and-stick adhesives, or military-spec Velcro hook-and-loop backings.",
+      ],
+    },
+    specs: [
+      { label: "Material", value: "Eco-Grade Matte Silicone" },
+      { label: "Finish", value: "Velvet Soft-Touch Non-Glare" },
+      { label: "Relief Depth", value: "Up to 3.5mm Multi-Tier 3D" },
+      { label: "Backing", value: "Hook & Loop, Heat-Seal, Sew Channel" },
+      { label: "Waterproof", value: "100% Submersible & Washable" },
+      { label: "Minimum Order", value: "25 Pieces" },
+    ],
+    splitSections: [
+      {
+        heading: "Tactile Precision for Modern Headwear & Technical Apparel",
+        body: [
+          "Matte silicone patches create an upscale, understated look on technical outerwear, structured trucker caps, and athletic compression gear.",
+          "Our multi-cavity precision molds capture crisp micro-lettering down to 0.5mm stroke thickness without distortion.",
+        ],
+        image: "/images/collections/silicone-patch.webp",
+        imageAlt: "Custom 3D molded soft silicone patch",
+      },
+    ],
+  },
+  "woven-patches": {
+    about: {
+      heading: "Ultra-Fine Damask Woven Patches for Micro-Detail & Small Typography",
+      paragraphs: [
+        "When your artwork features intricate line art, micro-typography, or fine gradient details that exceed the physical needle resolution of embroidery, woven patches are the premier choice.",
+        "Woven on high-speed Jacquard looms with microscopic 50-denier polyester threads, woven patches deliver photographic sharpness with a smooth, flat, lightweight profile.",
+        "Finished with traditional merrowed overlock borders for classic insignia styling or laser heat-cut edges for modern, flush-fit application.",
+      ],
+    },
+    specs: [
+      { label: "Weave Type", value: "High-Density Damask Jacquard" },
+      { label: "Thread Density", value: "50-Denier Microfilament" },
+      { label: "Min Text Height", value: "1.5mm Ultra-Legible Typography" },
+      { label: "Border Style", value: "Merrowed Edge or Laser Heat-Cut" },
+      { label: "Backing", value: "Iron-On, Velcro Hook/Loop, Adhesive" },
+      { label: "Minimum Order", value: "25 Pieces" },
+    ],
+    splitSections: [
+      {
+        heading: "Micro-Detail Without Needle Restrictions",
+        body: [
+          "Unlike embroidery where needles punch through fabric, woven threads are interlaced horizontally and vertically, allowing razor-sharp resolution on complex crests and sponsor logos.",
+          "Smooth surface feel that lays completely flat on shirts, beanies, caps, and outdoor equipment.",
+        ],
+        image: "/images/collections/woven-patch.webp",
+        imageAlt: "High-definition custom woven damask patch emblem",
+      },
+    ],
+  },
+  "sublimated-patches": {
+    about: {
+      heading: "Photographic & Full-Color Gradient Sublimation Patches",
+      paragraphs: [
+        "Dye-sublimation patches infuse high-resolution heat-activated dyes directly into the polyester fabric fibers at 400°F. The result is permanent, photo-realistic color with zero stitch restrictions.",
+        "Ideal for photography, complex gradients, continuous shading, and multi-color illustrated artwork that cannot be replicated with threads.",
+        "Often finished with an authentic merrowed embroidered border or clean laser edge, blending the authority of an embroidered patch with photographic fidelity.",
+      ],
+    },
+    specs: [
+      { label: "Print Method", value: "Direct Fiber Dye Sublimation" },
+      { label: "Resolution", value: "1200 DPI True Photographic" },
+      { label: "Color Gamut", value: "Full Spectrum CMYK + Neon" },
+      { label: "Border Finish", value: "Merrowed Embroidered Overlock" },
+      { label: "Durability", value: "Permanent Colorfast In-Fiber Infusion" },
+      { label: "Minimum Order", value: "10 Pieces" },
+    ],
+    splitSections: [
+      {
+        heading: "True Full-Color Gradients & Photo Realism",
+        body: [
+          "From space mission emblems to corporate event illustrations with complex shadows, sublimation delivers infinite color possibilities.",
+          "The dye is permanently bound into the fibers, meaning it will never peel, crack, or wash away.",
+        ],
+        image: "/images/collections/sublimation-patch.webp",
+        imageAlt: "Photographic full-color sublimated patch with merrowed border",
+      },
+    ],
+  },
+  "iron-on-patches": {
+    about: {
+      heading: "Industrial Heat-Seal Iron-On Patches for Fast, Permanent Application",
+      paragraphs: [
+        "Iron-on patches feature commercial-grade thermoplastic heat-activated adhesive backing. Applied in seconds using a home iron or commercial heat press, the adhesive bonds deep into garment fibers.",
+        "Engineered to withstand over 50 commercial laundry wash cycles without edge peeling, lifting, or bubbling.",
+        "Available across all our patch constructions — embroidered, woven, printed, and leather.",
+      ],
+    },
+    specs: [
+      { label: "Adhesive Type", value: "Commercial Thermoplastic Polyolefin" },
+      { label: "Press Temp", value: "150°C – 170°C (300°F – 340°F)" },
+      { label: "Press Time", value: "12 – 15 Seconds Firm Pressure" },
+      { label: "Wash Resistance", value: "50+ Machine Wash Cycles" },
+      { label: "Border", value: "Merrowed Edge or Precision Heat-Cut" },
+      { label: "Minimum Order", value: "25 Pieces" },
+    ],
+    splitSections: [
+      {
+        heading: "Fast, No-Sew Apparel Decoration",
+        body: [
+          "Perfect for school programs, event merch, and team uniform rollouts where fast application is essential without sewing machines.",
+          "Our heat-activated adhesive bonds permanently to cotton, denim, canvas, fleece, and polyester blends.",
+        ],
+        image: "/images/collections/iron-on-patch.webp",
+        imageAlt: "Custom embroidered iron-on emblem patch",
+      },
+    ],
+  },
 };
 
-const fallbackDetails = (name: string, patchTypeName: string) => ({
+const fallbackDetails = (name: string, patchTypeName: string, fallbackImage = "/images/brand/logo.png") => ({
   about: {
     heading: `The Definitive Guide to Custom ${name}`,
     paragraphs: [
@@ -221,7 +427,7 @@ const fallbackDetails = (name: string, patchTypeName: string) => ({
         `Whether you need a small batch for a local club or thousands for a national rollout, our production scales to your requirements with no minimum order restrictions and transparent, competitive pricing.`,
         `We provide a free digital proof within 24-48 hours of your request, allowing you to review and approve the exact design before a single patch is manufactured.`,
       ],
-      image: `/images/american-patches/${name.toLowerCase().split(" ")[0]}.jpg`,
+      image: fallbackImage,
       imageAlt: `Custom ${name.toLowerCase()} for brands and teams`,
     },
   ],
@@ -246,7 +452,7 @@ export default async function CollectionDetailPage({ params }: { params: Promise
   if (!collection) notFound();
 
   const patchTypeName = collection.name.replace(/ patches$/i, "");
-  const details = collectionDetails[slug] ?? fallbackDetails(collection.name, patchTypeName);
+  const details = collectionDetails[slug] ?? fallbackDetails(collection.name, patchTypeName, collection.image);
   const isLeather = slug === "leather-patches";
 
   const phone = site.contact?.phone || "+1 (316) 444-1366";
@@ -327,16 +533,16 @@ export default async function CollectionDetailPage({ params }: { params: Promise
 
             {/* Right Product Card with Zoom Effect */}
             <div className="lg:col-span-5">
-              <div className="group relative aspect-square overflow-hidden rounded-3xl border border-[#E8E6E0] bg-white p-6 sm:p-10 shadow-2xl flex items-center justify-center">
-                <div aria-hidden className="absolute inset-0 bg-gradient-to-tr from-[#F8F7F2] to-transparent pointer-events-none" />
-                <div className="relative size-full">
+              <div className="group relative aspect-square overflow-hidden rounded-3xl border border-[#E8E6E0] bg-gradient-to-b from-slate-50/90 to-slate-100/50 p-6 sm:p-10 shadow-2xl flex items-center justify-center">
+                <div aria-hidden className="absolute inset-0 bg-gradient-to-tr from-[#F8F7F2]/40 to-transparent pointer-events-none" />
+                <div className="relative size-full flex items-center justify-center">
                   <Image
                     src={collection.image}
                     alt={collection.name}
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 450px"
-                    className="object-contain drop-shadow-2xl transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="object-contain p-4 drop-shadow-[0_20px_35px_rgba(20,38,61,0.2)] transition-transform duration-700 ease-out group-hover:scale-110 select-none"
                   />
                 </div>
 
@@ -550,13 +756,13 @@ export default async function CollectionDetailPage({ params }: { params: Promise
 
                   {/* Image Column */}
                   <div className={`lg:col-span-5 ${isReversed ? "lg:order-1" : "lg:order-2"}`}>
-                    <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-[#E8E6E0] bg-white p-6 sm:p-10 shadow-xl flex items-center justify-center">
+                    <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-[#E8E6E0] bg-gradient-to-b from-slate-50/80 to-slate-100/40 p-6 sm:p-10 shadow-xl flex items-center justify-center">
                       <Image
                         src={section.image}
                         alt={section.imageAlt}
                         fill
                         sizes="(max-width: 1024px) 100vw, 500px"
-                        className="object-contain object-center drop-shadow-xl transition-transform duration-700 ease-out group-hover:scale-105"
+                        className="object-contain object-center p-2 drop-shadow-[0_16px_28px_rgba(20,38,61,0.18)] transition-transform duration-700 ease-out group-hover:scale-105 select-none"
                       />
                     </div>
                   </div>

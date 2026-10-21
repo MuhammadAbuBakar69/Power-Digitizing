@@ -79,7 +79,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Uniforms · Brands · Teams",
       price: "From $1.50",
       description: "Classic stitched detail with crisp lettering and durable thread for uniforms, clubs, corporate apparel and brand patches.",
-      image: "/images/embroidery/embroidered-big-rig-patch.webp",
+      image: "/images/collections/embroidered-patch.webp",
     },
     {
       slug: "chenille-patches",
@@ -87,7 +87,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Jackets · Letterman · Clubs",
       price: "From $4.25",
       description: "Soft varsity-style chenille perfect for letterman jackets, hoodies, sports teams and school spirit wear.",
-      image: "/images/Chennile WebP/37612dd6-9e4f-40a9-b1d8-f6fe661351c7.webp",
+      image: "/images/collections/chenille-patch.webp",
     },
     {
       slug: "pvc-patches",
@@ -95,7 +95,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Outdoor · Tactical · Gear",
       price: "From $3.25",
       description: "Durable soft PVC / rubber patches that resist water, mud and heavy use — ideal for tactical, outdoor and work gear.",
-      image: "/images/PVC WebP/0593e5cd-dc2a-4e46-bb61-e5def04a98ab.webp",
+      image: "/images/collections/pvc-patch.webp",
     },
     {
       slug: "silicone-patches",
@@ -103,7 +103,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Soft touch · Modern brands",
       price: "From $3.95",
       description: "Clean modern silicone patches with a soft-touch finish for hats, apparel and contemporary branding.",
-      image: "/images/american-patches/silicone.png",
+      image: "/images/collections/silicone-patch.webp",
     },
     {
       slug: "leather-patches",
@@ -111,7 +111,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Hats · Premium · Heritage",
       price: "From $3.95",
       description: "Premium genuine or faux leather patches with a sophisticated finish for heritage brands, hats and minimalist logos.",
-      image: "/images/Leather WebP/11dc7b26-571a-4c9c-98fb-4d7b1f27979a.webp",
+      image: "/images/collections/leather-patch.webp",
     },
     {
       slug: "woven-patches",
@@ -119,7 +119,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Logos · Labels · Fine detail",
       price: "From $2.75",
       description: "Smooth woven construction ideal for small text, fine detail and high-resolution logos on apparel and product labels.",
-      image: "/images/american-patches/woven-white.png",
+      image: "/images/collections/woven-patch.webp",
     },
     {
       slug: "sublimated-patches",
@@ -127,7 +127,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Full-color · Photo quality",
       price: "From $2.95",
       description: "Edge-to-edge full-color printing for gradients, photographs and highly detailed illustrations that embroidery cannot achieve.",
-      image: "/images/american-patches/sublimated-cutout.png",
+      image: "/images/collections/sublimation-patch.webp",
     },
     {
       slug: "sequin-patches",
@@ -135,7 +135,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Fashion · Shimmer · Glamour",
       price: "From $3.50",
       description: "Eye-catching metallic sequin patches that shimmer with motion, perfect for dancewear, fashion apparel and special events.",
-      image: "/images/american-patches/sublimated-cutout.png",
+      image: "/images/collections/sequin-patch.webp",
     },
     {
       slug: "enamel-pins",
@@ -143,7 +143,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Hard & Soft Enamel · Collectibles",
       price: "From $2.20",
       description: "Jewelry-grade custom soft and hard enamel lapel pins with vibrant Pantone colors, polished metal borders, and butterfly clutch backings.",
-      image: "/images/american-patches/pvc-white.png",
+      image: "/images/collections/enamel-pin.webp",
     },
     {
       slug: "embroidery-keychains",
@@ -151,7 +151,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Flight Tags · Merch · Double-sided",
       price: "From $1.85",
       description: "Heavy-duty double-sided embroidered flight tags and fabric keychains with reinforced merrowed edge borders and steel eyelets.",
-      image: "/images/embroidery/embroidered-big-rig-patch.webp",
+      image: "/images/collections/embroidery-keychain.webp",
     },
     {
       slug: "iron-on-patches",
@@ -159,7 +159,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "Apparel · Easy apply",
       price: "From $1.25",
       description: "Heat-seal iron-on backing for fast, no-sew application on jackets, bags, hats and team apparel.",
-      image: "/images/american-patches/iron-on-white.png",
+      image: "/images/collections/iron-on-patch.webp",
     },
   ],
   portfolio: [
