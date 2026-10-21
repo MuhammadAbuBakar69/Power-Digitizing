@@ -19,7 +19,7 @@ const GALLERY_BY_SLUG: Record<string, GalleryItem[]> = {
     { id: "emb-1", title: "Eagle Tactical Squadron Patch", image: "/images/embroidery/1b2d76db-5a99-496b-b5af-f035d43d78b0.webp", tag: "Emergency & Tactical" },
     { id: "emb-2", title: "Heritage Shield Embroidered Emblem", image: "/images/embroidery/23f96426-782a-448f-ad52-fe47d76ea937.webp", tag: "Corporate & Crest" },
     { id: "emb-3", title: "Precision Merrowed Border Insignia", image: "/images/embroidery/280450bd-82a6-4501-a69f-31b5614d12c2.webp", tag: "Corporate & Crest" },
-    { id: "emb-4", title: "Special Operations Unit Patch", image: "/images/embroidery/280450bd-82a6-4501-a69f-31b5614d12c2 (1).webp", tag: "Emergency & Tactical" },
+    { id: "emb-4", title: "Emergency Response System Emblem", image: "/images/embroidery/180ac20d-921e-4432-aee7-0ebb724068d7.webp", tag: "Emergency & Tactical" },
     { id: "emb-5", title: "High-Density Varsity Sports Patch", image: "/images/embroidery/2cc23cde-3bb0-4f4e-96e7-c5205cb48ad3.webp", tag: "Sports & Uniform" },
     { id: "emb-6", title: "Fire & Rescue Department Emblem", image: "/images/embroidery/3185e84c-5626-4f73-b33a-6f649d68381d.webp", tag: "Emergency & Tactical" },
     { id: "emb-7", title: "Outdoor Exploration Trail Crest", image: "/images/embroidery/3a3d6a15-0258-4549-ac88-559efb0be921.webp", tag: "Sports & Uniform" },
