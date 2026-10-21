@@ -7,10 +7,10 @@ import { useEffect, useState } from "react";
 import type { SiteConfig } from "@/config/types";
 
 const heroSlides = [
-  { image: "/images/embroidery/embroidered-big-rig-patch.webp", label: "Embroidered patch" },
-  { image: "/images/Chennile WebP/37612dd6-9e4f-40a9-b1d8-f6fe661351c7.webp", label: "Chenille patch" },
-  { image: "/images/Leather WebP/11dc7b26-571a-4c9c-98fb-4d7b1f27979a.webp", label: "Leather patch" },
-  { image: "/images/PVC WebP/0593e5cd-dc2a-4e46-bb61-e5def04a98ab.webp", label: "3D PVC patch" },
+  { image: "/images/hero/hero-leather-patch.png", label: "Custom Leather Patch" },
+  { image: "/images/hero/hero-embroidery-patch.png", label: "Custom Embroidered Patch" },
+  { image: "/images/hero/hero-chenille-patch.png", label: "Custom Chenille Patch" },
+  { image: "/images/hero/hero-pvc-patch.png", label: "Custom 3D PVC Patch" },
 ];
 
 export function Hero({ site }: { site: SiteConfig }) {
@@ -41,11 +41,14 @@ export function Hero({ site }: { site: SiteConfig }) {
   }, [videoOpen]);
 
   return (
-    <section className="relative overflow-hidden pb-20 pt-28 md:pb-28 md:pt-36">
-      <div className="mx-auto grid max-w-6xl gap-14 px-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-16">
-        <div>
-          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">{site.name} / Precision in every detail</p>
-          <h1 className="max-w-2xl font-display text-5xl font-semibold leading-[0.98] tracking-tight sm:text-6xl md:text-[4.4rem]">
+    <section className="relative overflow-hidden pt-24 pb-14 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">
+        {/* Left Column: Copy & Actions */}
+        <div className="flex flex-col justify-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            {site.name} / Precision in every detail
+          </p>
+          <h1 className="max-w-2xl font-display text-4xl font-semibold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.2rem]">
             {hero.headline.map((line, i) => {
               if (i === 0 && line.startsWith("Custom patches")) {
                 return (
@@ -58,11 +61,14 @@ export function Hero({ site }: { site: SiteConfig }) {
               return <span key={i} className="block">{line}</span>;
             })}
           </h1>
-          <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground">{hero.subcopy}</p>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            {hero.subcopy}
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
               href={hero.primaryCta.href}
-              className="rounded-full bg-[#C94343] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#C94343]/20 transition-all hover:bg-[#14263D] hover:-translate-y-0.5 hover:shadow-xl"
+              className="rounded-full bg-[#C94343] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#C94343]/20 transition-all hover:bg-[#14263D] hover:-translate-y-0.5 hover:shadow-xl"
             >
               {hero.primaryCta.label}
             </Link>
@@ -74,23 +80,67 @@ export function Hero({ site }: { site: SiteConfig }) {
                 {hero.secondaryCta.label}
               </Link>
             )}
-          </div>
-
-          <button type="button" onClick={() => { setVideoError(false); setVideoOpen(true); }} className="group mt-10 block w-full max-w-md cursor-pointer text-left" aria-label="Play release video">
-            <span className="hero-artwork-stage relative block aspect-[2.15/1] overflow-hidden rounded-2xl border border-border">
-              <Image src="/images/american-patches/sublimated-cutout.png" alt="Colorful custom patch artwork" fill priority sizes="(max-width: 768px) 100vw, 420px" className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.03]" />
-              <span className="absolute left-1/2 top-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#C94343] shadow-lg transition-transform group-hover:scale-110" aria-hidden>
-                <span className="ml-1 border-y-[7px] border-l-[10px] border-y-transparent border-l-[#C94343]" />
+            <button
+              type="button"
+              onClick={() => {
+                setVideoError(false);
+                setVideoOpen(true);
+              }}
+              className="group inline-flex items-center gap-2.5 rounded-full border border-border/80 bg-card/60 px-4 py-2.5 text-xs font-semibold text-[#14263D] transition-all hover:border-[#C94343]/50 hover:bg-[#C94343]/5 hover:text-[#C94343] cursor-pointer"
+              aria-label="Play release video"
+            >
+              <span className="flex size-6 items-center justify-center rounded-full bg-[#C94343] text-white shadow-sm transition-transform group-hover:scale-110">
+                <span className="ml-0.5 border-y-[4px] border-l-[7px] border-y-transparent border-l-white" />
               </span>
-              <span className="absolute bottom-4 left-5 rounded-full bg-white/90 px-3 py-1 text-sm font-medium text-foreground shadow-sm backdrop-blur">Play release video</span>
-            </span>
-          </button>
+              <span>Watch Video</span>
+            </button>
+          </div>
         </div>
-        <div className="relative mx-auto aspect-[0.88/1] w-full max-w-[570px] rounded-2xl bg-transparent">
-          <div className="relative h-full w-full rounded-2xl bg-transparent flex items-center justify-center">
+
+        {/* Right Column: Hero Patch Showcase (Centered, Full View, Pure Cutouts) */}
+        <div className="relative flex items-center justify-center w-full min-w-0">
+          <div className="relative aspect-square w-full max-w-[420px] sm:max-w-[460px] lg:max-w-[490px] flex items-center justify-center">
+            {/* Subtle radial ambient highlight */}
+            <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-[#14263D]/5 via-[#C94343]/6 to-transparent blur-3xl pointer-events-none" />
+
             {heroSlides.map((item, index) => (
-              <Image key={item.image} src={item.image} alt={item.label} fill sizes="(max-width: 1024px) 100vw, 570px" priority={index === 0} className={`object-contain object-center p-6 drop-shadow-[0_12px_18px_rgba(35,31,32,0.14)] transition-opacity duration-700 sm:p-10 ${index === activeSlide ? "opacity-100" : "opacity-0"}`} />
+              <div
+                key={item.image}
+                className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
+                  index === activeSlide
+                    ? "opacity-100 scale-100 pointer-events-auto"
+                    : "opacity-0 scale-95 pointer-events-none"
+                }`}
+              >
+                <div className="relative h-full w-full p-2 sm:p-4 flex items-center justify-center">
+                  <Image
+                    src={item.image}
+                    alt={item.label}
+                    fill
+                    priority={index === 0}
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 490px"
+                    className="object-contain object-center drop-shadow-[0_20px_35px_rgba(20,38,61,0.18)] select-none transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+              </div>
             ))}
+
+            {/* Slide Navigation Dots */}
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+              {heroSlides.map((item, index) => (
+                <button
+                  key={item.label}
+                  type="button"
+                  onClick={() => setActiveSlide(index)}
+                  aria-label={`Show ${item.label}`}
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    index === activeSlide
+                      ? "w-8 bg-[#C94343]"
+                      : "w-2 bg-[#14263D]/25 hover:bg-[#14263D]/50"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
