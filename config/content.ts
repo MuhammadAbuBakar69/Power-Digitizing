@@ -314,7 +314,8 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
   footer: {
     about: "Premium custom embroidered, PVC, chenille, leather and woven patches with free digital proof, no setup fees and reliable worldwide shipping.",
     legalLinks: [
-      { label: "Privacy policy", href: "/privacy" },
+      { label: "Privacy policy", href: "/privacy-policy" },
+      { label: "Refund policy", href: "/refund-policy" },
       { label: "Terms of service", href: "/terms" },
     ],
   },

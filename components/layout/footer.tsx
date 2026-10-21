@@ -13,7 +13,8 @@ export function Footer({ site }: { site: SiteConfig }) {
   const resourceLinks = [
     { label: "How it works", href: "/#process" },
     { label: "Our promise", href: "/#promise" },
-    { label: "Customer stories", href: "/#testimonials" },
+    { label: "Refund policy", href: "/refund-policy" },
+    { label: "Privacy policy", href: "/privacy-policy" },
     { label: "FAQ", href: "/#faq" },
   ];
   const useCaseLinks = [
