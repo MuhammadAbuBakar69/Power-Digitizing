@@ -58,8 +58,17 @@ interface GalleryItem {
 
 const materialImageMap: Record<string, string[]> = {
   Woven: [
-    "/images/american-patches/woven-white.png",
-    "/images/american-patches/woven.jpg",
+    "/images/Wooven WebP/58df48c6-cdd5-4947-8347-7028f6f71e16.webp",
+    "/images/Wooven WebP/0144dc71-5e3b-449e-b4ef-180df37885d7.webp",
+    "/images/Wooven WebP/489d7c55-9362-4851-98b0-c6739be58541.webp",
+    "/images/Wooven WebP/0a58900f-02b7-4919-96f7-143a3a03ca55.webp",
+    "/images/Wooven WebP/3cd13830-5704-45bc-a07f-1dfd4424aa09.webp",
+    "/images/Wooven WebP/a8e01f49-a725-43ac-afc8-a053972fba24_converted.webp",
+    "/images/Wooven WebP/d20cf8c2-a6e1-4942-ba10-07601b8e526d_converted.webp",
+    "/images/Wooven WebP/db9b2a89-b642-4989-9c2c-03db7ee6d7d7_converted.webp",
+    "/images/Wooven WebP/575f3720-2c06-4b75-ad4e-9b87ee34ea88.webp",
+    "/images/Wooven WebP/593a6db1-e2da-42a8-9273-c53114defa32_converted.webp",
+    "/images/Wooven WebP/83171e3f-c35f-4ddc-aa68-683e3d64a8a0_converted.webp",
   ],
   Chenille: [
     "/images/Chennile WebP/37612dd6-9e4f-40a9-b1d8-f6fe661351c7.webp",
@@ -103,8 +112,18 @@ const materialImageMap: Record<string, string[]> = {
     "/images/Leather WebP/f3edb031-4207-47d0-af66-785fe860ebce.webp",
   ],
   Sublimated: [
-    "/images/american-patches/sublimated-cutout.png",
-    "/images/american-patches/sublimated.jpg",
+    "/images/Sublimatiob WEBP/26246876-c845-4884-99ac-448603884dd8.webp",
+    "/images/Sublimatiob WEBP/3e719772-4b60-4b78-b436-5a705b206aab.webp",
+    "/images/Sublimatiob WEBP/6ea9b97a-7c09-44dd-837d-4f7ab705ece5.webp",
+    "/images/Sublimatiob WEBP/f718d004-9e7c-4b5d-a4b3-405099b5f5ad.webp",
+    "/images/Sublimatiob WEBP/0799ebf8-4ef7-412d-b733-e3a306f94014.webp",
+    "/images/Sublimatiob WEBP/98a05369-9ca7-4184-b7ba-bdd18444d19a.webp",
+    "/images/Sublimatiob WEBP/9efd1a1e-7a47-4663-9bcf-23f9caab05e1.webp",
+    "/images/Sublimatiob WEBP/a0147e7a-45fa-49e6-853a-fe497c000ad0.webp",
+    "/images/Sublimatiob WEBP/b1c76bb68df84ee8a2ca7ed8dfe8182e.webp",
+    "/images/Sublimatiob WEBP/bb96dbdf-3895-475b-8493-5b9c785d27b7.webp",
+    "/images/Sublimatiob WEBP/d9457424-4686-4dfd-8229-faa60d8f66b0.webp",
+    "/images/Sublimatiob WEBP/df644e098fdbf9e90163ba4b4b5391a8.webp",
   ],
 };
 

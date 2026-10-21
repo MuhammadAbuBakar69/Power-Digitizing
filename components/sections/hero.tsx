@@ -11,6 +11,7 @@ const heroSlides = [
   { image: "/images/hero/hero-embroidery-patch.png", label: "Custom Embroidered Patch" },
   { image: "/images/hero/hero-chenille-patch.png", label: "Custom Chenille Patch" },
   { image: "/images/hero/hero-pvc-patch.png", label: "Custom 3D PVC Patch" },
+  { image: "/images/Sublimatiob WEBP/26246876-c845-4884-99ac-448603884dd8.webp", label: "Custom Sublimated Patch" },
 ];
 
 export function Hero({ site }: { site: SiteConfig }) {

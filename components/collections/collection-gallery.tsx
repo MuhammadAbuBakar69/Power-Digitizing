@@ -70,10 +70,14 @@ const GALLERY_BY_SLUG: Record<string, GalleryItem[]> = {
   ],
 
   "woven-patches": [
-    { id: "wov-1", title: "Apex Explorations High-Density Damask Crest", image: "/images/collections/woven-patch.webp", tag: "Fine Woven" },
-    { id: "wov-2", title: "Micro-Thread Technical Brand Label", image: "/images/collections/woven-patch.webp", tag: "High-Resolution" },
-    { id: "wov-3", title: "Outdoor Expedition Merrowed Woven", image: "/images/collections/woven-patch.webp", tag: "Fine Lettering" },
-    { id: "wov-4", title: "Heritage Leadership Gold Crest", image: "/images/collections/woven-patch.webp", tag: "Crest Badge" },
+    { id: "wov-1", title: "Apex Explorations High-Density Damask Crest", image: "/images/Wooven WebP/58df48c6-cdd5-4947-8347-7028f6f71e16.webp", tag: "Fine Woven" },
+    { id: "wov-2", title: "Micro-Thread Technical Brand Label", image: "/images/Wooven WebP/0144dc71-5e3b-449e-b4ef-180df37885d7.webp", tag: "High-Resolution" },
+    { id: "wov-3", title: "Outdoor Expedition Merrowed Woven", image: "/images/Wooven WebP/489d7c55-9362-4851-98b0-c6739be58541.webp", tag: "Fine Lettering" },
+    { id: "wov-4", title: "Heritage Leadership Gold Crest", image: "/images/Wooven WebP/0a58900f-02b7-4919-96f7-143a3a03ca55.webp", tag: "Crest Badge" },
+    { id: "wov-5", title: "Pacific Surf & Mountain Merrowed Label", image: "/images/Wooven WebP/3cd13830-5704-45bc-a07f-1dfd4424aa09.webp", tag: "Damask Twill" },
+    { id: "wov-6", title: "Vintage Heritage Shield Woven Patch", image: "/images/Wooven WebP/a8e01f49-a725-43ac-afc8-a053972fba24_converted.webp", tag: "Merrowed Edge" },
+    { id: "wov-7", title: "Alpine Trail Adventure Club Insignia", image: "/images/Wooven WebP/d20cf8c2-a6e1-4942-ba10-07601b8e526d_converted.webp", tag: "Precision Weave" },
+    { id: "wov-8", title: "Motor Classics Vintage Woven Emblem", image: "/images/Wooven WebP/db9b2a89-b642-4989-9c2c-03db7ee6d7d7_converted.webp", tag: "High Definition" },
   ],
 
   "silicone-patches": [
@@ -84,10 +88,18 @@ const GALLERY_BY_SLUG: Record<string, GalleryItem[]> = {
   ],
 
   "sublimated-patches": [
-    { id: "sub-1", title: "World Fidelity Space Shuttle Full-Color", image: "/images/collections/sublimation-patch.webp", tag: "Photographic" },
-    { id: "sub-2", title: "Full-Gradient Space Odyssey Patch", image: "/images/collections/sublimation-patch.webp", tag: "Gradient Art" },
-    { id: "sub-3", title: "Edge-to-Edge Printed Sublimated Badge", image: "/images/collections/sublimation-patch.webp", tag: "Full Color" },
-    { id: "sub-4", title: "Photographic Corporate Retreat Emblem", image: "/images/collections/sublimation-patch.webp", tag: "Photo Realistic" },
+    { id: "sub-1", title: "Delaware Coastal Lighthouse Sunset Crest", image: "/images/Sublimatiob WEBP/26246876-c845-4884-99ac-448603884dd8.webp", tag: "Full Photographic" },
+    { id: "sub-2", title: "Pickle Mountain Explorer Bulldog Patch", image: "/images/Sublimatiob WEBP/3e719772-4b60-4b78-b436-5a705b206aab.webp", tag: "Full-Color Art" },
+    { id: "sub-3", title: "Halloween Monster Roadtrip Custom Badge", image: "/images/Sublimatiob WEBP/6ea9b97a-7c09-44dd-837d-4f7ab705ece5.webp", tag: "High Gamut Print" },
+    { id: "sub-4", title: "Vintage Heritage Sunset Landscape Patch", image: "/images/Sublimatiob WEBP/f718d004-9e7c-4b5d-a4b3-405099b5f5ad.webp", tag: "Fine Gradient" },
+    { id: "sub-5", title: "Outdoor Wilderness Mountain Lake Emblem", image: "/images/Sublimatiob WEBP/0799ebf8-4ef7-412d-b733-e3a306f94014.webp", tag: "Edge-to-Edge" },
+    { id: "sub-6", title: "Retro Cosmic Space Odyssey Patch", image: "/images/Sublimatiob WEBP/98a05369-9ca7-4184-b7ba-bdd18444d19a.webp", tag: "Vibrant Dyes" },
+    { id: "sub-7", title: "Pacific Coast Highway Sunset Badge", image: "/images/Sublimatiob WEBP/9efd1a1e-7a47-4663-9bcf-23f9caab05e1.webp", tag: "Photo Realistic" },
+    { id: "sub-8", title: "Aviation Squadron Flight Helmet Insignia", image: "/images/Sublimatiob WEBP/a0147e7a-45fa-49e6-853a-fe497c000ad0.webp", tag: "Tactical Print" },
+    { id: "sub-9", title: "Artisan Coffee Roasters Brand Patch", image: "/images/Sublimatiob WEBP/b1c76bb68df84ee8a2ca7ed8dfe8182e.webp", tag: "Merrowed Edge" },
+    { id: "sub-10", title: "Rocky Mountain Wildlife Trail Crest", image: "/images/Sublimatiob WEBP/bb96dbdf-3895-475b-8493-5b9c785d27b7.webp", tag: "Photographic" },
+    { id: "sub-11", title: "Desert Sunset Motor Expedition Emblem", image: "/images/Sublimatiob WEBP/d9457424-4686-4dfd-8229-faa60d8f66b0.webp", tag: "Gradient Color" },
+    { id: "sub-12", title: "Heritage Motorcycle Club Sublimated Patch", image: "/images/Sublimatiob WEBP/df644e098fdbf9e90163ba4b4b5391a8.webp", tag: "Sublimated Stitch" },
   ],
 
   "iron-on-patches": [
@@ -98,10 +110,14 @@ const GALLERY_BY_SLUG: Record<string, GalleryItem[]> = {
   ],
 
   "enamel-pins": [
-    { id: "pin-1", title: "Royal Lion Crest Gold Lapel Pin", image: "/images/collections/enamel-pin.webp", tag: "Hard Enamel" },
-    { id: "pin-2", title: "Virtute et Honore Polished Badge", image: "/images/collections/enamel-pin.webp", tag: "Gold Plated" },
-    { id: "pin-3", title: "Corporate Milestone Recognition Pin", image: "/images/collections/enamel-pin.webp", tag: "Die Struck" },
-    { id: "pin-4", title: "Heritage Crown Emblem Pin", image: "/images/collections/enamel-pin.webp", tag: "Soft Enamel" },
+    { id: "pin-1", title: "Royal Lion Crest Gold Lapel Pin", image: "/images/Enamel Pins/3051384c-c62d-47ec-b705-1a6a633a8fcb.webp", tag: "Hard Enamel" },
+    { id: "pin-2", title: "Virtute et Honore Polished Badge", image: "/images/Enamel Pins/54c5fa67-1ebb-4c46-b911-78817a436452.webp", tag: "Gold Plated" },
+    { id: "pin-3", title: "Corporate Milestone Recognition Pin", image: "/images/Enamel Pins/1ebfa65c-13d8-432e-bb93-f1ddc4b880e6.webp", tag: "Die Struck" },
+    { id: "pin-4", title: "Heritage Crown Emblem Pin", image: "/images/Enamel Pins/747b1a6e-e0e6-4678-a6e3-7a3a03e5bc60.webp", tag: "Soft Enamel" },
+    { id: "pin-5", title: "Midnight Falcon Die-Cast Lapel Pin", image: "/images/Enamel Pins/6f880484-44db-450d-a4e8-24a8d7a8a4a0.webp", tag: "Black Nickel" },
+    { id: "pin-6", title: "Vintage Explorer Compass Pin", image: "/images/Enamel Pins/79e2ce8b-5ddd-488a-b8fc-528e0ece9eed.webp", tag: "Antique Brass" },
+    { id: "pin-7", title: "Geometric Prism Collector Pin", image: "/images/Enamel Pins/c79ca0de-e32a-47d1-8363-e8d2f4cba787.webp", tag: "Glitter Enamel" },
+    { id: "pin-8", title: "Commemorative Crest Jubilee Pin", image: "/images/Enamel Pins/e7ad1708-c4cb-4507-9376-0e7a559d8712.webp", tag: "Jewelry Grade" },
   ],
 
   "embroidery-keychains": [
