@@ -3,7 +3,7 @@ import { defineSite } from "../types";
 
 export default defineSite({
   id: "powerdigitizing",
-  domains: ["powerdigitizing.com", "www.powerdigitizing.com"],
+  domains: ["powerdigitizing.com", "www.powerdigitizing.com", "leads.powerdigitizing.com", "*.powerdigitizing.com"],
   theme: {
     colors: {
       background: "#FFFFFF",

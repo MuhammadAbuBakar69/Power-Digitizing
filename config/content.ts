@@ -104,7 +104,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       category: "3D Rubber · Merch · Weatherproof",
       price: "From $1.75",
       description: "Custom 2D & 3D molded soft PVC rubber keychains with reinforced steel split rings, multi-level relief, and vibrant Pantone colors.",
-      image: "/images/PVC Keytain WebP/11ea7517-d14e-46df-9402-99631c94c09b-6ad90f0dd4de7.webp",
+      image: "/images/collections/pvc-keychain.webp",
     },
     {
       slug: "silicone-patches",
@@ -184,14 +184,14 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
       title: "Ready for the outdoors",
       description: "Weather-resistant PVC and Velcro-ready construction designed for gear that sees real use in the field.",
       kind: "patch",
-      image: "/images/PVC WebP/308c1aea-e284-4c78-b934-1501d16f6228.webp",
+      image: "/images/pvc/308c1aea-e284-4c78-b934-1501d16f6228.webp",
     },
     {
       label: "Woven + leather",
       title: "Made for the brand",
       description: "Fine detail and premium finishes for hats, woven labels, merchandise and product lines that demand quality.",
       kind: "vector",
-      image: "/images/Leather WebP/68525281-80dd-4b27-8c40-dd32d378d39d.webp",
+      image: "/images/leather/68525281-80dd-4b27-8c40-dd32d378d39d.webp",
     },
   ],
   process: [
@@ -296,6 +296,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
         { label: "Chenille Patches", href: "/collections/chenille-patches" },
         { label: "PVC Patches", href: "/collections/pvc-patches" },
         { label: "PVC Keychains", href: "/collections/pvc-keychains" },
+        { label: "Silicone Patches", href: "/collections/silicone-patches" },
         { label: "Leather Patches", href: "/collections/leather-patches" },
         { label: "Sublimation Patches", href: "/collections/sublimated-patches" },
         { label: "Woven Patches", href: "/collections/woven-patches" },
