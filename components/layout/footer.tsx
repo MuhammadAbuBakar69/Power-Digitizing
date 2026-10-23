@@ -31,13 +31,13 @@ export function Footer({ site }: { site: SiteConfig }) {
         <div className="grid gap-12 lg:grid-cols-[1.25fr_0.85fr_0.85fr_0.85fr_1fr] lg:gap-8">
           <div className="max-w-xs">
             <Link href="/" className="group inline-flex items-center gap-3">
-              <div className="rounded-lg bg-white/10 p-1.5 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105">
+              <div className="rounded-xl bg-white px-3.5 py-2.5 shadow-md transition-transform duration-300 group-hover:scale-105">
                 <Image
-                  src="/images/brand/logo.png"
+                  src={site.logo?.src ?? "/images/brand/aaaa.PNG"}
                   alt={site.name}
-                  width={140}
-                  height={48}
-                  className="h-8 w-auto brightness-0 invert object-contain"
+                  width={292}
+                  height={131}
+                  className="h-11 sm:h-12 w-auto object-contain"
                 />
               </div>
             </Link>

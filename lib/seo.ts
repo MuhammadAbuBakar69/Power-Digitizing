@@ -8,9 +8,14 @@ export function buildMetadata(site: SiteConfig, origin: string): Metadata {
     title: { default: site.seo.title, template: site.seo.titleTemplate },
     description: site.seo.description,
     keywords: site.seo.keywords,
-    alternates: { canonical: "/" },
-    icons: { icon: site.favicon },
-    openGraph: { type: "website", siteName: site.name, title: site.seo.title, description: site.seo.description, url: origin, images: og },
+    icons: {
+      icon: [
+        { url: site.favicon || "/images/brand/wa.png" },
+        { url: "/favicon.ico" },
+      ],
+      apple: [{ url: "/images/brand/wa.png" }],
+      shortcut: [{ url: "/images/brand/wa.png" }],
+    },
     twitter: { card: "summary_large_image", title: site.seo.title, description: site.seo.description, site: site.seo.twitterHandle, images: og?.map((i) => i.url) },
   };
 }

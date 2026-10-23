@@ -27,8 +27,7 @@ export default async function CollectionsPage() {
             <span className="text-primary">one place.</span>
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Browse all eight premium patch types — from classic embroidered to modern silicone — and
-            click any card to explore deep product details, use-cases and get a free instant quote.
+            Browse our full range of custom patch collections — from classic embroidered and tactile PVC patches & design to plush chenille and genuine leather — and click any card to explore deep product details, use-cases and get a free instant quote.
           </p>
         </div>
       </section>
@@ -108,9 +107,11 @@ export default async function CollectionsPage() {
               <tbody className="divide-y divide-border/60">
                 {[
                   { name: "Embroidered", best: "Classic apparel, uniforms & caps", detail: "High (classic thread)", waterproof: "Weather-resistant", moq: "10 pcs", time: "5-7 days" },
-                  { name: "PVC Rubber", best: "Tactical, outdoor, hats & marine", detail: "Ultra-sharp 2D/3D molds", waterproof: "100% Waterproof", moq: "25 pcs", time: "7-10 days" },
+                  { name: "PVC Patches", best: "Tactical, outdoor, hats & marine", detail: "Ultra-sharp 2D/3D molds", waterproof: "100% Waterproof", moq: "25 pcs", time: "7-10 days" },
+                  { name: "PVC Keychains", best: "Automotive, keys, merch & gear", detail: "2D/3D molded rubber + chain", waterproof: "100% Waterproof", moq: "25 pcs", time: "6-8 days" },
                   { name: "Chenille Varsity", best: "Letterman jackets & streetwear", detail: "Plush looped texture", waterproof: "Dry clean only", moq: "10 pcs", time: "6-8 days" },
                   { name: "Genuine Leather", best: "Beanies, caps, workwear & denim", detail: "Debossed / laser burned", waterproof: "Conditioned finish", moq: "25 pcs", time: "7-9 days" },
+                  { name: "Iron-On / Heat-Seal", best: "Apparel, jerseys & fast no-sew", detail: "Commercial embroidery bond", waterproof: "50+ machine washes", moq: "25 pcs", time: "5-7 days" },
                   { name: "Woven High-Res", best: "Small text, gradients & fine logos", detail: "Ultra-fine weave (<2mm)", waterproof: "Wash durable", moq: "50 pcs", time: "6-8 days" },
                   { name: "Sublimated Print", best: "Photographic artwork & fades", detail: "Continuous full color", waterproof: "Fade-proof wash", moq: "20 pcs", time: "5-7 days" },
                   { name: "3D Molded Silicone", best: "Luxury athleticwear & bags", detail: "Velvet-touch soft 3D", waterproof: "100% Waterproof", moq: "50 pcs", time: "8-12 days" },

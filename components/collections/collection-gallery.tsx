@@ -81,10 +81,14 @@ const GALLERY_BY_SLUG: Record<string, GalleryItem[]> = {
   ],
 
   "silicone-patches": [
-    { id: "sil-1", title: "Explore Wilderness Adventure Co 3D Silicone", image: "/images/collections/silicone-patch.webp", tag: "Soft Touch 3D" },
-    { id: "sil-2", title: "3D Molded Matte Finish Mountain Badge", image: "/images/collections/silicone-patch.webp", tag: "Headwear" },
-    { id: "sil-3", title: "Athletic Performance Silicone Brand", image: "/images/collections/silicone-patch.webp", tag: "Sportswear" },
-    { id: "sil-4", title: "Waterproof Lifestyle Gear Badge", image: "/images/collections/silicone-patch.webp", tag: "All-Weather" },
+    { id: "sil-1", title: "Hilf Frag Gib Energie 3D Round Silicone Emblem", image: "/images/Silicone WebP/2ac5cc5d-94fa-4889-b6e5-066611aa1d47.webp", tag: "3D Molded" },
+    { id: "sil-2", title: "Pink Ribbon Breast Cancer Awareness Silicone Badge", image: "/images/Silicone WebP/496ee1a3-0c10-4cea-a5ad-00ec373472d7.webp", tag: "Awareness" },
+    { id: "sil-3", title: "Glace Bay Fire Dept. Shield Silicone Crest", image: "/images/Silicone WebP/4dcf7a59-f478-4f4f-9a76-496d1d3d0286.webp", tag: "First Responder" },
+    { id: "sil-4", title: "Queens Finest 3D Pop-Out Streetwear Patch", image: "/images/Silicone WebP/90dc77d0-d222-43bd-a6ba-84c2b88cc895.webp", tag: "Streetwear" },
+    { id: "sil-5", title: "UFO Cow Abduction Tactical Space Crest", image: "/images/Silicone WebP/97809f4b-a1aa-4e64-a41b-c5724b20ba4c.webp", tag: "Tactical Morale" },
+    { id: "sil-6", title: "Easy Going Gamers Esports Crosshair Badge", image: "/images/Silicone WebP/afe94608-9e25-4298-96b0-d490eae92839.webp", tag: "Gaming" },
+    { id: "sil-7", title: "Spiderweb Skull & Hourglass Eye Pop-Art Patch", image: "/images/Silicone WebP/c6887061-8b81-4662-a85b-3562a6d86e2c.webp", tag: "Pop Art" },
+    { id: "sil-8", title: "La Mole TV 3D Dimensional Textured Mascot", image: "/images/Silicone WebP/de480fa9-f2d6-457a-8422-9bf5104ac4a5.webp", tag: "3D Textured" },
   ],
 
   "sublimated-patches": [
@@ -103,10 +107,30 @@ const GALLERY_BY_SLUG: Record<string, GalleryItem[]> = {
   ],
 
   "iron-on-patches": [
-    { id: "irn-1", title: "Wilderness Trail Wolf Merrowed Iron-On", image: "/images/collections/iron-on-patch.webp", tag: "Heat Seal" },
-    { id: "irn-2", title: "Outdoor Exploration Mountain Crest", image: "/images/collections/iron-on-patch.webp", tag: "Heavy Duty" },
-    { id: "irn-3", title: "Industrial Quick-Apply Heat Press Patch", image: "/images/collections/iron-on-patch.webp", tag: "Apparel Ready" },
-    { id: "irn-4", title: "Pine Forest Night Sky Embroidered Emblem", image: "/images/collections/iron-on-patch.webp", tag: "Team Jersey" },
+    { id: "irn-1", title: "Varsity Athletic All-Stars Merrowed Iron-On", image: "/images/collections/iron-on-patch.webp", tag: "Heat Seal" },
+    { id: "irn-2", title: "ASG K9 Unit Police & Flag Iron-On Shield", image: "/images/embroidery/96b75709-c2d7-4b88-a1e5-010d0cf07629.webp", tag: "Tactical Unit" },
+    { id: "irn-3", title: "American Eagle Crossed Rifles Tactical Crest", image: "/images/embroidery/90746538-274a-42c2-99ff-14a7ff42f2c2.webp", tag: "Apparel Ready" },
+    { id: "irn-4", title: "Michigan Sheriff Star Gold Heat-Seal Badge", image: "/images/embroidery/7a87b989-229d-45f3-8809-f67fe3e29ff7.webp", tag: "Department" },
+    { id: "irn-5", title: "Collegiate Varsity 'MR' Monogram Iron-On", image: "/images/embroidery/7571cad3-6834-4ded-a431-3cacb7fab0ff.webp", tag: "Letterman" },
+    { id: "irn-6", title: "Fierce Golden Eagle Mascot Heat-Seal Emblem", image: "/images/embroidery/73ca64a6-a7d5-4c45-8d66-f4f0acf98d75.webp", tag: "Mascot Patch" },
+    { id: "irn-7", title: "Heritage Chief Feather War Bonnet Patch", image: "/images/embroidery/ac096be9-f997-4f9f-b7d9-cf3e72912cd0.webp", tag: "Permanent Bond" },
+    { id: "irn-8", title: "Antler Skull & Red Roses Biker Iron-On", image: "/images/embroidery/7358a70d-cbdb-4156-ad4a-c182d3dcd5ce.webp", tag: "Biker Vest" },
+    { id: "irn-9", title: "Eat The Rich Streetwear Pop Art Iron-On", image: "/images/embroidery/a85949b1-3786-4718-9d46-a22862bc0357.webp", tag: "Streetwear" },
+    { id: "irn-10", title: "4x4 Off-Road Trucker Heat-Seal Patch", image: "/images/embroidery/6066659c-0239-443c-9bec-0d7f60df92ce.webp", tag: "Headwear" },
+    { id: "irn-11", title: "Pastel Bat Creature Apparel Iron-On", image: "/images/embroidery/9df7dfeb-61bd-4efb-a34a-cdb3a9789f02.webp", tag: "Fashion Merch" },
+    { id: "irn-12", title: "Colonial Patriot Hockey Mascot Iron-On Emblem", image: "/images/embroidery/9574b008-d2d2-4695-9b6d-366fb9cc82bf.webp", tag: "Team Jersey" },
+  ],
+
+  "pvc-keychains": [
+    { id: "pvck-1", title: "GTT Neon Pink & Green 3D Rubber Keychain", image: "/images/PVC Keytain WebP/11ea7517-d14e-46df-9402-99631c94c09b-6ad90f0dd4de7.webp", tag: "3D Rubber" },
+    { id: "pvck-2", title: "Mill Creek Academy Flying Mallard Fob", image: "/images/PVC Keytain WebP/4fd78dbf-5d25-4342-aaaf-c5db604137ac-6ad90f0cea3f9.webp", tag: "Die-Cut Fob" },
+    { id: "pvck-3", title: "Automotive Club 3D Sculpted Key Holder", image: "/images/PVC Keytain WebP/8adf7f0a-0467-4fd0-8a6c-6c4c02beb2d0-6ad90f0d02746.webp", tag: "Motorsport" },
+    { id: "pvck-4", title: "Streetwear Brand Soft-Touch PVC Key Tag", image: "/images/PVC Keytain WebP/95513fe8-df4a-4edf-9449-27771489d749-6ad90f0f29d28.webp", tag: "Streetwear" },
+    { id: "pvck-5", title: "Tactical Division Weatherproof Key Fob", image: "/images/PVC Keytain WebP/a2e3a428-d4a6-498b-86c0-1c139cf96a12-6ad90f0f37035.webp", tag: "Tactical" },
+    { id: "pvck-6", title: "Custom Mascot 3D Molded Key Ring", image: "/images/PVC Keytain WebP/a7d770b7-aaf1-48c6-8535-72fc4c95929a-6ad90f10114e5.webp", tag: "Mascot Fob" },
+    { id: "pvck-7", title: "Outdoor Expedition All-Weather Key Ring", image: "/images/PVC Keytain WebP/b0907314-deec-45a7-8a99-8756ed993e50-6ad90f113c3c4.webp", tag: "Weatherproof" },
+    { id: "pvck-8", title: "Double-Sided Molded Rubber Key Holder", image: "/images/PVC Keytain WebP/b597b0a5-2c77-4745-8ba7-45f6cf6023af-6ad90f1065b80.webp", tag: "Double-Sided" },
+    { id: "pvck-9", title: "Corporate Logo Custom PVC Keychain", image: "/images/PVC Keytain WebP/c2362ac1-7028-468b-ab8d-55098769108d-6ad90f11b66d7.webp", tag: "Corporate Merch" },
   ],
 
   "enamel-pins": [
@@ -121,19 +145,32 @@ const GALLERY_BY_SLUG: Record<string, GalleryItem[]> = {
   ],
 
   "embroidery-keychains": [
-    { id: "key-1", title: "Remove Before Flight Red Merrowed Tag", image: "/images/collections/embroidery-keychain.webp", tag: "Double-Sided" },
-    { id: "key-2", title: "Aviation Squadron Steel Ring Key Fob", image: "/images/collections/embroidery-keychain.webp", tag: "Flight Tag" },
-    { id: "key-3", title: "Motorsport Club Merrowed Flight Tag", image: "/images/collections/embroidery-keychain.webp", tag: "Heavy Eyelet" },
-    { id: "key-4", title: "Custom Heavy-Duty Merrowed Tag", image: "/images/collections/embroidery-keychain.webp", tag: "Key Fob" },
+    { id: "key-1", title: "Trio Aviation Crew Stitched Flight Tags", image: "/images/Embroidery Keytain WEBP/125b3a14-acde-4c8d-adca-cda2365756cc.webp", tag: "Flight Tag" },
+    { id: "key-2", title: "Lucky Number 13 Round Merrowed Key Fob", image: "/images/Embroidery Keytain WEBP/1c5bebf4-4fce-451b-b85c-f31bce5a8e85.webp", tag: "Round Fob" },
+    { id: "key-3", title: "Custom Flight Tags Squadron Aviation Pack", image: "/images/Embroidery Keytain WEBP/6762830b-e120-4ea5-9c0a-eb48fdc84b74.webp", tag: "Double-Sided" },
+    { id: "key-4", title: "Remove Before Flight Safety Orange Flight Tags", image: "/images/Embroidery Keytain WEBP/90e7af6d-31c6-499e-951c-aa0f450d2151.webp", tag: "Aviation Classic" },
+    { id: "key-5", title: "London Prime Tattoo Sacred Gold Merrowed Tag", image: "/images/Embroidery Keytain WEBP/910d7955-c277-4016-a356-664e55214205.webp", tag: "Brand Merch" },
+    { id: "key-6", title: "Personalized Custom Name Swivel Hook Keychains", image: "/images/Embroidery Keytain WEBP/a0d44bce-3d32-486a-af7a-476b0facfd49.webp", tag: "Custom Name" },
+    { id: "key-7", title: "London Sacred Gold Double-Sided Fabric Tag", image: "/images/Embroidery Keytain WEBP/c5c27fa4-c85e-4f62-849b-ffc4d4f7a870.webp", tag: "Merrowed Border" },
+    { id: "key-8", title: "Dream Big Stay Real Crown 4-Link Chain Fob", image: "/images/Embroidery Keytain WEBP/d438248a-2ee5-42e2-a814-67cf64a4d45a.webp", tag: "Streetwear Fob" },
+    { id: "key-9", title: "Jessica Electric Blue & Yellow Embroidered Fob", image: "/images/Embroidery Keytain WEBP/f1085a5d-d497-4c3a-9e82-375030a97d9a.webp", tag: "Custom Name" },
   ],
 
   "sequin-patches": [
-    { id: "seq-1", title: "Glittering Reversible Sequin Star Emblem", image: "/images/collections/sequin-patch.webp", tag: "Reversible Sequin" },
-    { id: "seq-2", title: "Metallic Gold & Crimson Heart Star", image: "/images/collections/sequin-patch.webp", tag: "Fashion Shimmer" },
-    { id: "seq-3", title: "Sparkling Dancewear Costume Emblem", image: "/images/collections/sequin-patch.webp", tag: "Dancewear" },
-    { id: "seq-4", title: "Reflective Flip Sequin Apparel Patch", image: "/images/collections/sequin-patch.webp", tag: "High Shimmer" },
+    { id: "seq-1", title: "Wolves Royal Blue & Silver Script Sequin Patch", image: "/images/Sequence webp/05598b79-25f3-493d-bc1b-33176e43d323.webp", tag: "Sports Script" },
+    { id: "seq-2", title: "Wildcats Sparkling Hot Pink Sequin Script", image: "/images/Sequence webp/1ee8d767-91d2-4778-9d7b-02d4e2d6b99c.webp", tag: "Cheer & Spirit" },
+    { id: "seq-3", title: "Tigers Lavender Purple Shimmer Sequin Emblem", image: "/images/Sequence webp/409f1794-b6a2-4c46-bbbd-448470bbfb28.webp", tag: "Team Script" },
+    { id: "seq-4", title: "Spooky Season Halloween Pumpkin & Ghost Sequin Patch", image: "/images/Sequence webp/54a186ec-97d8-4669-a2bf-938f126f45a3.webp", tag: "Holiday Sequin" },
+    { id: "seq-5", title: "Psalm 23 The Lord Is My Shepherd Gold Sequin Crest", image: "/images/Sequence webp/5597ea67-e918-4193-93ee-1f1e246091e0.webp", tag: "Jacket Crest" },
+    { id: "seq-6", title: "Game Day Purple & Silver Sequin Baseball", image: "/images/Sequence webp/5af416a1-4bf4-4ec3-9361-5b61a805a3b8.webp", tag: "Game Day" },
+    { id: "seq-7", title: "Gameday Varsity Hot Pink Arch Lettering", image: "/images/Sequence webp/9c380b84-f1d0-4b69-9e3d-16c3ffc16a2b (1).webp", tag: "Varsity Arch" },
+    { id: "seq-8", title: "Hot Pink & Silver Shimmer Sequin Angel Wings", image: "/images/Sequence webp/af5d32d0-8a31-46fc-bb56-b6b6d119641a.webp", tag: "Fashion Wings" },
+    { id: "seq-9", title: "Game Day Red & White Script Sequin Patch", image: "/images/Sequence webp/dfa21bc7-f92d-49a8-bb23-217a15a166f4.webp", tag: "Team Jersey" },
   ],
 };
+
+GALLERY_BY_SLUG["pvc-keychain"] = GALLERY_BY_SLUG["pvc-keychains"];
+GALLERY_BY_SLUG["pvc-patch-design"] = GALLERY_BY_SLUG["pvc-keychains"];
 
 export function CollectionGallery({ slug, collectionName }: { slug: string; collectionName: string }) {
   const [lightboxItem, setLightboxItem] = useState<GalleryItem | null>(null);

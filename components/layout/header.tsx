@@ -59,12 +59,12 @@ export function Header({ site, loginUrl }: Props) {
           : "bg-transparent hover:bg-background/95 hover:backdrop-blur-md hover:border-b hover:border-[#14263D]/10 hover:shadow-sm"
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+      <div className="mx-auto flex h-16 sm:h-20 max-w-6xl items-center justify-between px-5">
         {/* Brand Logo - Returns to Home from any page */}
         <Link
           href="/"
           aria-label="Power Digitizing Home"
-          className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight transition-transform hover:opacity-90"
+          className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight transition-transform hover:opacity-90 py-1"
         >
           {site.logo ? (
             <Image
@@ -73,7 +73,7 @@ export function Header({ site, loginUrl }: Props) {
               width={site.logo.width}
               height={site.logo.height}
               priority
-              className="h-9 sm:h-10 w-auto object-contain"
+              className="h-12 sm:h-14 md:h-[58px] w-auto object-contain"
             />
           ) : (
             site.name

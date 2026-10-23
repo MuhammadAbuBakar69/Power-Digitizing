@@ -20,6 +20,35 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en" className={fontVariables} style={themeStyle(site)} data-site={site.id}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function isExtensionError(msg, src, stack) {
+                  var str = (String(msg || '')) + ' ' + (String(src || '')) + ' ' + (String(stack || ''));
+                  return /MetaMask|chrome-extension:\\/\\/|moz-extension:\\/\\/|inpage\\.js/i.test(str);
+                }
+                window.addEventListener('error', function(e) {
+                  if (isExtensionError(e.message, e.filename, e.error && e.error.stack)) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                  }
+                }, true);
+                window.addEventListener('unhandledrejection', function(e) {
+                  var r = e.reason;
+                  var msg = (r && r.message) || String(r || '');
+                  var stack = (r && r.stack) || '';
+                  if (isExtensionError(msg, '', stack)) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                  }
+                }, true);
+              })();
+            `,
+          }}
+        />
+      </head>
       <body suppressHydrationWarning>
         <Header site={{ name: site.name, logo: site.logo, navigation: site.navigation, cta: site.cta }} loginUrl={loginUrl} />
         <main>{children}</main>

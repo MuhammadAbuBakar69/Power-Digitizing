@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getSite } from "@/lib/tenant";
 import {
   CheckCircle2,
@@ -192,6 +192,116 @@ const collectionDetails: Record<
         imageAlt: "All-weather PVC patches for outdoor lifestyle brands",
         reverse: true,
       },
+      {
+        heading: "Custom PVC Patches & Precision 3D Mold Design",
+        body: [
+          "Our engineering team translates complex vector logos into precision multi-level CNC aluminum molds. Liquid marine-grade PVC is injected under pressure into each dimensional cavity.",
+          "Features recessed borders, rounded contours, and fine-line texture fills that cannot be duplicated by textile embroidery.",
+          "Every order includes a 3D isometric CAD rendering verifying all relief tiers, base thicknesses, and pantone rubber colors before metal tooling commences.",
+        ],
+        image: "/images/PVC WebP/308c1aea-e284-4c78-b934-1501d16f6228.webp",
+        imageAlt: "Custom 3D molded tactical PVC patch design with multi-level relief",
+      },
+    ],
+  },
+  "pvc-keychains": {
+    about: {
+      heading: "Custom 3D Molded PVC Rubber Keychains & Everyday Carry Tags",
+      paragraphs: [
+        "Soft PVC keychains are the ultimate durable, high-impact promotional merchandise and everyday carry accessory. Cast from flexible, non-toxic marine-grade rubber, they never fade, crack, or scratch motorcycle fuel tanks, car ignitions, or gear bags.",
+        "Featuring full multi-level 2D and sculpted 3D relief, our custom PVC keychains capture vivid Pantone colors with razor-sharp separation, rich textured backgrounds, and rounded sculptural contours.",
+        "Equipped with solid steel grommets, 4-link chains, and flat heavy-duty split keyrings. Available with single-sided 3D relief with textured reverse or full double-sided molded rubber.",
+      ],
+    },
+    specs: [
+      { label: "Material Grade", value: "Non-Toxic Flexible Marine PVC" },
+      { label: "Dimensioning", value: "2D Multi-Level or 3D Sculpted" },
+      { label: "Hardware", value: "Reinforced 4-Link Chain & Split Ring" },
+      { label: "Waterproof", value: "100% Submersible & Weatherproof" },
+      { label: "Double-Sided", value: "Single-Sided or Full 2-Sided 3D" },
+      { label: "Minimum Order", value: "25 Pieces (Free Proof Included)" },
+    ],
+    splitSections: [
+      {
+        heading: "Automotive, Motorcycle & Everyday Carry Durability",
+        body: [
+          "Unlike metal keychains that rattle against steering columns and scratch vehicle finishes, soft PVC rubber keychains are completely scratch-free and silent in motion.",
+          "Engineered to withstand heavy keys, gasoline spills, rain, mud, and extreme temperatures from -30°C to +80°C without discoloring or losing flexibility.",
+          "Solid steel 25mm–30mm split keyrings and 4-link chains are pull-tested for 25kg+ retention strength.",
+        ],
+        image: "/images/PVC Keytain WebP/11ea7517-d14e-46df-9402-99631c94c09b-6ad90f0dd4de7.webp",
+        imageAlt: "Custom 3D molded soft rubber PVC keychain with split ring",
+      },
+      {
+        heading: "Multi-Tiered 3D Relief & Vivid Pantone Coloring",
+        body: [
+          "Our precision CNC aluminum molds inject up to 8 separate liquid Pantone colors into distinct dimensional levels without bleeding or color mixing.",
+          "Ideal for corporate merchandise, mascot characters, streetwear drops, and automotive enthusiast clubs seeking retail-grade accessories.",
+          "Every order includes a 3D isometric digital proof detailing layer heights, color codes, and chain attachment placement before mold casting.",
+        ],
+        image: "/images/PVC Keytain WebP/4fd78dbf-5d25-4342-aaaf-c5db604137ac-6ad90f0cea3f9.webp",
+        imageAlt: "Mill Creek Academy custom molded PVC rubber keychain",
+        reverse: true,
+      },
+      {
+        heading: "Double-Sided 3D Molded Branding Options",
+        body: [
+          "Choose between standard textured reverse backing, printed URL/contact details on back, or full double-sided 3D sculpted molding for premium weight and feel.",
+          "Custom die-cut shapes contour naturally to your logo outline, ensuring maximum visual punch in pocket-friendly dimensions.",
+        ],
+        image: "/images/PVC Keytain WebP/8adf7f0a-0467-4fd0-8a6c-6c4c02beb2d0-6ad90f0d02746.webp",
+        imageAlt: "Double-sided molded PVC rubber keychain with custom chain",
+      },
+    ],
+  },
+  "pvc-keychain": {
+    about: {
+      heading: "Custom 3D Molded PVC Rubber Keychains & Everyday Carry Tags",
+      paragraphs: [
+        "Soft PVC keychains are the ultimate durable, high-impact promotional merchandise and everyday carry accessory. Cast from flexible, non-toxic marine-grade rubber, they never fade, crack, or scratch motorcycle fuel tanks, car ignitions, or gear bags.",
+        "Featuring full multi-level 2D and sculpted 3D relief, our custom PVC keychains capture vivid Pantone colors with razor-sharp separation, rich textured backgrounds, and rounded sculptural contours.",
+        "Equipped with solid steel grommets, 4-link chains, and flat heavy-duty split keyrings. Available with single-sided 3D relief with textured reverse or full double-sided molded rubber.",
+      ],
+    },
+    specs: [
+      { label: "Material Grade", value: "Non-Toxic Flexible Marine PVC" },
+      { label: "Dimensioning", value: "2D Multi-Level or 3D Sculpted" },
+      { label: "Hardware", value: "Reinforced 4-Link Chain & Split Ring" },
+      { label: "Waterproof", value: "100% Submersible & Weatherproof" },
+      { label: "Double-Sided", value: "Single-Sided or Full 2-Sided 3D" },
+      { label: "Minimum Order", value: "25 Pieces (Free Proof Included)" },
+    ],
+    splitSections: [
+      {
+        heading: "Automotive, Motorcycle & Everyday Carry Durability",
+        body: [
+          "Unlike metal keychains that rattle against steering columns and scratch vehicle finishes, soft PVC rubber keychains are completely scratch-free and silent in motion.",
+          "Engineered to withstand heavy keys, gasoline spills, rain, mud, and extreme temperatures from -30°C to +80°C without discoloring or losing flexibility.",
+          "Solid steel 25mm–30mm split keyrings and 4-link chains are pull-tested for 25kg+ retention strength.",
+        ],
+        image: "/images/PVC Keytain WebP/11ea7517-d14e-46df-9402-99631c94c09b-6ad90f0dd4de7.webp",
+        imageAlt: "Custom 3D molded soft rubber PVC keychain with split ring",
+      },
+      {
+        heading: "Multi-Tiered 3D Relief & Vivid Pantone Coloring",
+        body: [
+          "Our precision CNC aluminum molds inject up to 8 separate liquid Pantone colors into distinct dimensional levels without bleeding or color mixing.",
+          "Ideal for corporate merchandise, mascot characters, streetwear drops, and automotive enthusiast clubs seeking retail-grade accessories.",
+          "Every order includes a 3D isometric digital proof detailing layer heights, color codes, and chain attachment placement before mold casting.",
+        ],
+        image: "/images/PVC Keytain WebP/4fd78dbf-5d25-4342-aaaf-c5db604137ac-6ad90f0cea3f9.webp",
+        imageAlt: "Mill Creek Academy custom molded PVC rubber keychain",
+        reverse: true,
+      },
+      {
+        heading: "Double-Sided 3D Molded Branding Options",
+        body: [
+          "Choose between standard textured reverse backing, printed URL/contact details on back, or full double-sided 3D sculpted molding for premium weight and feel.",
+          "Custom die-cut shapes contour naturally to your logo outline, ensuring maximum visual punch in pocket-friendly dimensions.",
+        ],
+        image: "/images/PVC Keytain WebP/8adf7f0a-0467-4fd0-8a6c-6c4c02beb2d0-6ad90f0d02746.webp",
+        imageAlt: "Double-sided molded PVC rubber keychain with custom chain",
+      },
     ],
   },
   "enamel-pins": {
@@ -253,14 +363,35 @@ const collectionDetails: Record<
     ],
     splitSections: [
       {
-        heading: "Engineered for Motors, Aviation & Everyday Carry",
+        heading: "Aviation-Heritage Merrowed Flight Tags & Steel Eyelets",
         body: [
-          "Unlike metal keychains that rattle and scratch steering columns or fuel tanks, fabric embroidered key fobs are soft, flexible, and completely silent.",
-          "Featuring high-tensile polyester threads that resist fraying, gasoline spills, and weather exposure.",
-          "Custom lengths, double eyelets, and swivel clasps are available for all automotive, aerospace, and club orders.",
+          "Unlike metal keychains that rattle and scratch steering columns, fuel tanks, or motorcycle finishes, fabric embroidered key fobs are soft, flexible, and completely silent in motion.",
+          "Featuring high-tensile Madeira polyester threads that resist fraying, gasoline spills, salt spray, and extreme weather exposure.",
+          "Finished with solid brass or steel grommets pull-tested for 20kg+ retention and flat 30mm split keyrings.",
         ],
-        image: "/images/collections/embroidery-keychain.webp",
-        imageAlt: "Custom double-sided embroidered flight tag keychain",
+        image: "/images/Embroidery Keytain WEBP/125b3a14-acde-4c8d-adca-cda2365756cc.webp",
+        imageAlt: "Aviation crew double-sided embroidered flight tag keychains",
+      },
+      {
+        heading: "Personalized Names, Club Drops & Swivel Clasp Hardware",
+        body: [
+          "From automotive enthusiast clubs to corporate onboarding merchandise and retail lifestyle accessories, our keychains can be personalized with individual names, numbers, or department designations.",
+          "Available with lobster claw swivel clips, carabiner clips, or double grommet loops for versatile attachment to packs, duty belts, and flight jackets.",
+          "Merrowed overlock borders wrap 360 degrees around the outer edge, locking fabric threads permanently to prevent unraveling.",
+        ],
+        image: "/images/Embroidery Keytain WEBP/a0d44bce-3d32-486a-af7a-476b0facfd49.webp",
+        imageAlt: "Personalized embroidered name key fobs with swivel clasps",
+        reverse: true,
+      },
+      {
+        heading: "Double-Sided High-Density Twill Embroidery",
+        body: [
+          "Every flight tag features full 100% double-sided embroidery with identical or contrasting artwork on the reverse side.",
+          "Reinforced heavy buckram core provides just the right amount of stiffness so tags hold their shape without bending or flopping in the wind.",
+          "Free digital proof includes 1:1 scale mockups showing both sides, border thread colors, and eyelet placement before manufacturing.",
+        ],
+        image: "/images/Embroidery Keytain WEBP/6762830b-e120-4ea5-9c0a-eb48fdc84b74.webp",
+        imageAlt: "Custom military aviation squadron double-sided flight tags",
       },
     ],
   },
@@ -283,14 +414,35 @@ const collectionDetails: Record<
     ],
     splitSections: [
       {
-        heading: "Dynamic Motion & Runway Glamour",
+        heading: "Dynamic Motion & Stadium Game Day Glamour",
         body: [
           "Whether lighting up festival stages or accenting couture streetwear jackets, sequin emblems reflect ambient light with stunning vibrancy.",
           "Our reinforced stitching locks every sequin disc in place to prevent thread breakage during laundering or active wear.",
           "Available in gold, silver, iridescent chameleon, crimson, and two-tone flip combinations.",
         ],
-        image: "/images/collections/sequin-patch.webp",
-        imageAlt: "Custom glittering reversible sequin patch emblem",
+        image: "/images/Sequence webp/5af416a1-4bf4-4ec3-9361-5b61a805a3b8.webp",
+        imageAlt: "Custom glittering purple and silver game day sequin patch",
+      },
+      {
+        heading: "Varsity Script & High-Density Spirit Wear Lettering",
+        body: [
+          "Craft custom cheer team scripts, school mascots, and collegiate lettering with dazzling metallic sequin fills.",
+          "Outlined with precision embroidered borders or felt bases that provide clean contrast and effortless garment stitching.",
+          "Soft felt and heat-seal adhesive backings ensure comfortable wear on cheer hoodies, bomber jackets, and competition jerseys.",
+        ],
+        image: "/images/Sequence webp/1ee8d767-91d2-4778-9d7b-02d4e2d6b99c.webp",
+        imageAlt: "Wildcats sparkling hot pink varsity sequin script emblem",
+        reverse: true,
+      },
+      {
+        heading: "Large Statement Crests & Couture Jacket Wings",
+        body: [
+          "Make an unmistakable runway impression with oversized back-of-jacket sequin wings, sacred crests, and Halloween holiday collections.",
+          "Engineered with flexible multi-layer stabiliser fabric so large-format patches contour naturally over shoulder blades without stiff creasing.",
+          "Every order includes a high-definition digital layout verifying sequin density, disc orientation, and stitch framing.",
+        ],
+        image: "/images/Sequence webp/af5d32d0-8a31-46fc-bb56-b6b6d119641a.webp",
+        imageAlt: "Hot pink and silver shimmering sequin angel wings jacket patches",
       },
     ],
   },
@@ -317,9 +469,31 @@ const collectionDetails: Record<
         body: [
           "Matte silicone patches create an upscale, understated look on technical outerwear, structured trucker caps, and athletic compression gear.",
           "Our multi-cavity precision molds capture crisp micro-lettering down to 0.5mm stroke thickness without distortion.",
+          "The recessed needle channel around the perimeter protects sewing thread from abrasion and friction.",
         ],
-        image: "/images/collections/silicone-patch.webp",
-        imageAlt: "Custom 3D molded soft silicone patch",
+        image: "/images/Silicone WebP/2ac5cc5d-94fa-4889-b6e5-066611aa1d47.webp",
+        imageAlt: "Custom 3D molded soft silicone round emblem with raised lettering",
+      },
+      {
+        heading: "First Responder, Fire Department & Tactical Insignia",
+        body: [
+          "Silicone stands up to heat, hydraulic fluids, mud, and rigorous scrubbing that would degrade standard embroidered patches.",
+          "Chosen by fire departments, rescue squads, and tactical operators for crisp geometric crests and non-reflective matte subdued finishes.",
+          "Heat-bonded industrial Velcro hook-and-loop backings allow instant swap between uniforms, tactical vests, and gear bags.",
+        ],
+        image: "/images/Silicone WebP/4dcf7a59-f478-4f4f-9a76-496d1d3d0286.webp",
+        imageAlt: "Glace Bay Fire Dept tactical silicone department shield",
+        reverse: true,
+      },
+      {
+        heading: "Dimensional Streetwear Drops & Pop-Art Mascot Badges",
+        body: [
+          "Elevate streetwear collections with sculptural 3D pop-out typography and vibrant Pantone rubber fills that cannot be duplicated with thread.",
+          "Multi-tier liquid silicone injection allows up to 6 custom colors cast into separate architectural planes with clean, knife-sharp boundaries.",
+          "Every order includes a 3D isometric CAD rendering detailing all layer heights and color codes before metal tooling begins.",
+        ],
+        image: "/images/Silicone WebP/90dc77d0-d222-43bd-a6ba-84c2b88cc895.webp",
+        imageAlt: "Queens Finest 3D layered yellow and white streetwear silicone patch",
       },
     ],
   },
@@ -420,13 +594,25 @@ const collectionDetails: Record<
     ],
     splitSections: [
       {
-        heading: "Fast, No-Sew Apparel Decoration",
+        heading: "Fast, No-Sew Apparel Decoration with High-Tensile Stitching",
         body: [
           "Perfect for school programs, event merch, and team uniform rollouts where fast application is essential without sewing machines.",
           "Our heat-activated adhesive bonds permanently to cotton, denim, canvas, fleece, and polyester blends.",
+          "Each patch is crafted with premium trilobal embroidery threads that maintain radiant color depth through heavy wear.",
         ],
         image: "/images/collections/iron-on-patch.webp",
         imageAlt: "Custom embroidered iron-on emblem patch",
+      },
+      {
+        heading: "Commercial Wash Durability & Thermoplastic Adhesive",
+        body: [
+          "Every iron-on patch begins with our premium colorfast embroidery thread, bound by an authentic merrowed overlock edge that locks all thread ends securely.",
+          "Our commercial-grade thermoplastic adhesive melts uniformly under heat and pressure, penetrating deep into fabric weaves for a bond that survives 50+ commercial washing machine cycles.",
+          "Includes peel-proof perimeter sealing so corners and curved edges never lift or fray over time.",
+        ],
+        image: "/images/embroidery/7571cad3-6834-4ded-a431-3cacb7fab0ff.webp",
+        imageAlt: "Collegiate varsity monogram embroidered iron-on patch",
+        reverse: true,
       },
     ],
   },
@@ -463,8 +649,14 @@ const fallbackDetails = (name: string, patchTypeName: string, fallbackImage = "/
   ],
 });
 
+const SLUG_ALIASES: Record<string, string> = {
+  "pvc-patch-design": "pvc-keychains",
+  "pvc-keychain": "pvc-keychains",
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
+  let { slug } = await params;
+  if (SLUG_ALIASES[slug]) slug = SLUG_ALIASES[slug];
   const site = await getSite();
   const collection = site.collections.find((c) => c.slug === slug);
   if (!collection) return {};
@@ -477,6 +669,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function CollectionDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (SLUG_ALIASES[slug]) {
+    redirect(`/collections/${SLUG_ALIASES[slug]}`);
+  }
   const site = await getSite();
   const collection = site.collections.find((c) => c.slug === slug);
   if (!collection) notFound();

@@ -22,10 +22,11 @@ export default defineSite({
     radius: "0.5rem",
   },
   logo: {
-    src: "/images/brand/logo.png",
+    src: "/images/brand/aaaa.PNG",
     alt: "Power Digitizing - Custom Patches & Precision Embroidery Digitizing",
-    width: 240,
-    height: 100,
+    width: 292,
+    height: 131,
   },
+  favicon: "/images/brand/wa.png",
   ...siteContent,
 });
