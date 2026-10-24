@@ -55,14 +55,14 @@ export function Testimonials({ site }: { site: SiteConfig }) {
 
   return (
     <section id="testimonials" className="border-t border-border bg-card py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div className="text-center">
           <p className="inline-flex rounded-full bg-secondary px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-white">Testimonials</p>
           <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-6xl">Kind words for Power Digitizing.</h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-muted-foreground">Trusted by teams, brands and creators who care about the details that make good work last.</p>
         </div>
 
-        <div className="relative mx-auto mt-12 h-[430px] max-w-5xl overflow-hidden sm:h-[390px] md:h-[360px]" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={() => setPaused(false)} aria-live="polite">
+        <div className="relative mx-auto mt-12 h-[430px] max-w-5xl xl:max-w-6xl overflow-hidden sm:h-[390px] md:h-[360px]" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={() => setPaused(false)} aria-live="polite">
           <TestimonialCard item={testimonials[previousIndex]} position="previous" />
           <TestimonialCard item={testimonials[activeIndex]} position="active" />
           <TestimonialCard item={testimonials[nextIndex]} position="next" />

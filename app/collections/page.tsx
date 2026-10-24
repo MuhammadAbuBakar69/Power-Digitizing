@@ -18,15 +18,15 @@ export default async function CollectionsPage() {
       {/* ── Hero ───────────────────────────────────────────── */}
       <section className="relative overflow-hidden border-b border-border bg-muted pb-16 pt-32 md:pb-24 md:pt-40">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <div className="mx-auto max-w-5xl px-5 relative z-10 text-center">
+        <div className="mx-auto max-w-5xl xl:max-w-6xl 2xl:max-w-7xl px-5 relative z-10 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-5">
             Patch Collections
           </p>
-          <h1 className="font-display text-5xl font-semibold leading-tight tracking-tight md:text-7xl">
+          <h1 className="font-display text-5xl font-semibold leading-tight tracking-tight md:text-7xl xl:text-8xl">
             Every patch type,<br />
             <span className="text-primary">one place.</span>
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-8 max-w-2xl xl:max-w-3xl text-lg xl:text-xl leading-relaxed text-muted-foreground">
             Browse our full range of custom patch collections — from classic embroidered and tactile PVC patches & design to plush chenille and genuine leather — and click any card to explore deep product details, use-cases and get a free instant quote.
           </p>
         </div>
@@ -34,14 +34,14 @@ export default async function CollectionsPage() {
 
       {/* ── Collection Cards ──────────────────────────────── */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="mx-auto max-w-7xl px-5">
+        <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="mb-14 text-center">
-            <h2 className="font-display text-3xl font-semibold md:text-4xl">Shop by Patch Type</h2>
+            <h2 className="font-display text-3xl font-semibold md:text-4xl xl:text-5xl">Shop by Patch Type</h2>
             <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
               Click any collection to explore pricing, applications, and full product details.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8">
             {site.collections.map((collection) => (
               <Link
                 key={collection.slug}
@@ -79,7 +79,7 @@ export default async function CollectionsPage() {
 
       {/* ── Material Comparison Table ─────────────────────── */}
       <section className="border-t border-border bg-card py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-5">
+        <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="mb-14 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-3">
               Decision Guide

@@ -59,7 +59,7 @@ export function Header({ site, loginUrl }: Props) {
           : "bg-transparent hover:bg-background/95 hover:backdrop-blur-md hover:border-b hover:border-[#14263D]/10 hover:shadow-sm"
       )}
     >
-      <div className="mx-auto flex h-16 sm:h-20 max-w-6xl items-center justify-between px-5">
+      <div className="mx-auto flex h-16 sm:h-20 max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] items-center justify-between px-5 sm:px-6 lg:px-8 xl:px-10">
         {/* Brand Logo - Returns to Home from any page */}
         <Link
           href="/"
@@ -81,7 +81,7 @@ export function Header({ site, loginUrl }: Props) {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav aria-label="Main" className="hidden items-center gap-1 text-sm lg:flex">
+        <nav aria-label="Main" className="hidden items-center gap-1 xl:gap-2 text-sm lg:flex">
           {site.navigation.map((item) => {
             const hasChildren = Boolean(item.children && item.children.length > 0);
             const isOpen = activeDropdown === item.label;
@@ -91,7 +91,7 @@ export function Header({ site, loginUrl }: Props) {
                 <Link
                   key={item.href + item.label}
                   href={item.href}
-                  className="group relative rounded-full px-3.5 py-1.5 text-sm font-medium text-[#14263D]/85 transition-all duration-200 hover:bg-[#C94343]/5 hover:text-[#C94343]"
+                  className="group relative rounded-full px-3.5 py-1.5 xl:px-4 xl:py-2 text-sm font-medium text-[#14263D]/85 transition-all duration-200 hover:bg-[#C94343]/5 hover:text-[#C94343]"
                 >
                   <span>{item.label}</span>
                   <span className="absolute inset-x-3.5 bottom-0 h-0.5 origin-center scale-x-0 rounded-full bg-[#C94343] transition-transform duration-200 ease-out group-hover:scale-x-100" />
@@ -111,7 +111,7 @@ export function Header({ site, loginUrl }: Props) {
                 <Link
                   href={item.href}
                   className={clsx(
-                    "group relative inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm font-medium transition-all duration-200",
+                    "group relative inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 xl:px-4 xl:py-2 text-sm font-medium transition-all duration-200",
                     isOpen
                       ? "bg-[#C94343]/10 text-[#C94343]"
                       : "text-[#14263D]/85 hover:bg-[#C94343]/5 hover:text-[#C94343]"

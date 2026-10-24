@@ -41,15 +41,15 @@ export function Portfolio({ site }: { site: SiteConfig }) {
   if (!site.portfolio.length) return null;
   return (
     <section id="portfolio" className="scroll-mt-20 bg-background py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">A look at the work</p>
-            <h2 className="mt-3 max-w-2xl font-display text-3xl font-semibold tracking-tight md:text-5xl">Production-ready art, thoughtfully composed.</h2>
+            <h2 className="mt-3 max-w-2xl xl:max-w-3xl font-display text-3xl font-semibold tracking-tight md:text-5xl xl:text-6xl">Production-ready art, thoughtfully composed.</h2>
           </div>
           <p className="max-w-sm text-muted-foreground">From the first sketch to the final stitch file, every project gets the attention it needs to work in the real world.</p>
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-3 xl:gap-8">
           {site.portfolio.map((item) => (
             <article key={item.title} className="group overflow-hidden rounded-xl border border-border bg-card">
               <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-b from-slate-50/80 to-slate-100/40 p-4 sm:p-6 flex items-center justify-center border-b border-border/40">

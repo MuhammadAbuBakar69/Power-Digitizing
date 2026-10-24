@@ -213,7 +213,7 @@ export default async function VectorServicePage() {
           className="pointer-events-none absolute top-1/4 -right-20 size-80 rounded-full bg-[#C94343]/10 blur-[110px]"
         />
 
-        <div className="relative mx-auto max-w-6xl px-5 text-center">
+        <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#14263D]/10 bg-[#14263D]/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#C94343]">
             <Sparkles className="size-3.5" />
             <span>Prepress-Grade Manual Vectorization</span>
@@ -268,7 +268,7 @@ export default async function VectorServicePage() {
 
       {/* ─── 2. BEFORE & AFTER SHOWCASE ─── */}
       <section className="py-20 md:py-28 border-b border-border/80 bg-card/30">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-[#C94343]/10 px-3 py-1 text-xs font-semibold text-[#C94343] uppercase tracking-wider">
               <Eye className="size-3.5" />
@@ -319,7 +319,7 @@ export default async function VectorServicePage() {
 
       {/* ─── 3. PREPRESS PRODUCTION PROCESS (INFOGRAPHIC) ─── */}
       <section className="py-20 md:py-28 border-b border-border/80">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
               <div className="inline-flex items-center gap-1.5 rounded-full bg-[#14263D]/5 px-3 py-1 text-xs font-semibold text-[#14263D] uppercase tracking-wider">
@@ -403,7 +403,7 @@ export default async function VectorServicePage() {
 
       {/* ─── 4. OUTPUT PROCESSES WE SPECIALIZE IN ─── */}
       <section className="py-20 md:py-28 border-b border-border/80 bg-card/20">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-[#C94343]/10 px-3 py-1 text-xs font-semibold text-[#C94343] uppercase tracking-wider">
               <Zap className="size-3.5" />
@@ -466,7 +466,7 @@ export default async function VectorServicePage() {
 
       {/* ─── 5. THE 4-STAGE MANUAL PIPELINE ─── */}
       <section className="py-20 md:py-28 border-b border-border/80">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-[#14263D]/5 px-3 py-1 text-xs font-semibold text-[#14263D] uppercase tracking-wider">
               <ShieldCheck className="size-3.5" />
@@ -497,7 +497,7 @@ export default async function VectorServicePage() {
 
       {/* ─── 6. FILE FORMATS DELIVERED ─── */}
       <section className="py-20 md:py-28 border-b border-border/80 bg-card/30">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-[#C94343]/10 px-3 py-1 text-xs font-semibold text-[#C94343] uppercase tracking-wider">
               <Download className="size-3.5" />

@@ -27,9 +27,9 @@ export function Footer({ site }: { site: SiteConfig }) {
 
   return (
     <footer className="border-t border-white/10 bg-[#0B1626] text-white">
-      <div className="mx-auto max-w-6xl px-5 pb-12 pt-16 md:pb-16 md:pt-20">
-        <div className="grid gap-12 lg:grid-cols-[1.25fr_0.85fr_0.85fr_0.85fr_1fr] lg:gap-8">
-          <div className="max-w-xs">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10 pb-12 pt-16 md:pb-16 md:pt-20">
+        <div className="grid gap-12 lg:grid-cols-[1.25fr_0.85fr_0.85fr_0.85fr_1fr] lg:gap-8 xl:grid-cols-[1.35fr_0.9fr_0.9fr_0.9fr_1.1fr] xl:gap-10">
+          <div className="max-w-xs xl:max-w-sm">
             <Link href="/" className="group inline-flex items-center gap-3">
               <div className="rounded-xl bg-white px-3.5 py-2.5 shadow-md transition-transform duration-300 group-hover:scale-105">
                 <Image

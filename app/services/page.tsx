@@ -21,7 +21,7 @@ export default async function ServicesPage() {
         <div aria-hidden className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 size-[650px] rounded-full bg-[#14263D]/5 blur-[120px]" />
         <div aria-hidden className="pointer-events-none absolute top-1/3 -right-20 size-72 rounded-full bg-[#C94343]/10 blur-[100px]" />
 
-        <div className="relative mx-auto max-w-6xl px-5 text-center">
+        <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#14263D]/10 bg-[#14263D]/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#C94343]">
             <Sparkles className="size-3.5" />
             <span>Core Digital Craftsmanship</span>
@@ -56,7 +56,7 @@ export default async function ServicesPage() {
 
       {/* ─── 1. VECTOR ART CONVERSION SERVICE ─── */}
       <section id="vector" className="scroll-mt-24 py-20 md:py-28 border-b border-border/80">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#C94343] font-semibold">
@@ -124,7 +124,7 @@ export default async function ServicesPage() {
 
       {/* ─── 2. EMBROIDERY DIGITIZING SERVICE ─── */}
       <section id="embroidery" className="scroll-mt-24 py-20 md:py-28 bg-slate-50/60 border-b border-border/80">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Visual Preview */}
             <div className="lg:col-span-6 order-2 lg:order-1">

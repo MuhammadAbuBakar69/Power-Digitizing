@@ -5,7 +5,7 @@ import type { SiteConfig } from "@/config/types";
 export function ContactCta({ site }: { site: SiteConfig }) {
   return (
     <section id="contact" className="scroll-mt-20 border-t border-border bg-secondary py-20 text-primary-foreground md:py-24">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+      <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] gap-12 px-5 sm:px-6 lg:px-8 xl:px-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Ready when you are</p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl">Bring us the artwork. We&apos;ll bring the precision.</h2>

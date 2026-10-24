@@ -7,9 +7,9 @@ export function Services({ site }: { site: SiteConfig }) {
   if (!site.services.length) return null;
   return (
     <section id="services" className="scroll-mt-20 py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5">
-        <h2 className="max-w-xl font-display text-3xl font-semibold tracking-tight md:text-4xl">What we make for you</h2>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
+        <h2 className="max-w-xl font-display text-3xl font-semibold tracking-tight md:text-4xl xl:text-5xl">What we make for you</h2>
+        <div className="mt-12 grid gap-6 md:grid-cols-3 xl:gap-8">
           {site.services.map((s) => (
             <article key={s.slug} className="service-card group relative flex cursor-pointer flex-col overflow-hidden rounded-lg border border-border bg-card p-7 transition duration-200 ease-out hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
               <span aria-hidden className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100 motion-reduce:transition-none" />

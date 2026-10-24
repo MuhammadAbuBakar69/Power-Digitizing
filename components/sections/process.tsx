@@ -4,10 +4,10 @@ export function Process({ site }: { site: SiteConfig }) {
   if (!site.process.length) return null;
   return (
     <section id="process" className="scroll-mt-20 bg-primary py-20 text-primary-foreground md:py-24">
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Our four-step process</p>
-        <h2 className="mt-3 max-w-2xl font-display text-3xl font-semibold tracking-tight md:text-5xl">Simple from upload to doorstep.</h2>
-        <ol className="mt-12 grid gap-8 md:grid-cols-4">
+        <h2 className="mt-3 max-w-2xl xl:max-w-3xl font-display text-3xl font-semibold tracking-tight md:text-5xl xl:text-6xl">Simple from upload to doorstep.</h2>
+        <ol className="mt-12 grid gap-8 md:grid-cols-4 xl:gap-10">
           {site.process.map((item) => (
             <li key={item.step} className="group relative cursor-pointer border-t border-white/30 pt-5 transition duration-300 ease-out hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
               <span aria-hidden className="absolute inset-x-0 top-[-1px] h-px origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100 motion-reduce:transition-none" />

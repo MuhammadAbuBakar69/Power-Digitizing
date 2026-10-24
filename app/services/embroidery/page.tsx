@@ -133,7 +133,7 @@ export default async function EmbroideryPage() {
         <div aria-hidden className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-[#14263D]/5 blur-[120px]" />
         <div aria-hidden className="pointer-events-none absolute top-1/4 -right-24 size-80 rounded-full bg-[#C94343]/10 blur-[100px]" />
 
-        <div className="relative mx-auto max-w-6xl px-5 text-center">
+        <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#14263D]/10 bg-[#14263D]/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#C94343]">
             <Scissors className="size-3.5" />
             <span>Master Commercial Embroidery Digitizing</span>
@@ -188,7 +188,7 @@ export default async function EmbroideryPage() {
 
       {/* ─── 1. ALL EMBROIDERY TYPES DEEP DIVE ─── */}
       <section id="stitch-types" className="scroll-mt-24 py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-mono uppercase tracking-widest text-[#C94343] font-semibold">
               Comprehensive Stitch Library
@@ -276,7 +276,7 @@ export default async function EmbroideryPage() {
 
       {/* ─── 2. EMBROIDERY FILE FORMAT COMPATIBILITY ─── */}
       <section className="py-20 md:py-28 bg-slate-50/70 border-t border-b border-border/80">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-2xl mx-auto text-center mb-14">
             <span className="text-xs font-mono uppercase tracking-widest text-[#C94343] font-semibold">
               Seamless Machine Compatibility
@@ -307,7 +307,7 @@ export default async function EmbroideryPage() {
 
       {/* ─── 3. FABRIC PULL-COMPENSATION FORMULAS ─── */}
       <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs font-mono uppercase tracking-widest text-[#C94343] font-semibold">

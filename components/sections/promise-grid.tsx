@@ -5,13 +5,13 @@ export function PromiseGrid({ site }: { site: SiteConfig }) {
   if (!site.promises.length) return null;
   return (
     <section id="promise" className="scroll-mt-20 bg-background py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5">
-        <div className="max-w-2xl">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
+        <div className="max-w-2xl xl:max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Our promise to you</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl">Zero risk. Every order.</h2>
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl xl:text-6xl">Zero risk. Every order.</h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">Six practical promises backed on every patch we make, whether you order five or five thousand.</p>
         </div>
-        <div className="mt-12 grid gap-x-10 gap-y-9 border-t border-border pt-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-x-10 gap-y-9 border-t border-border pt-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-14 xl:gap-y-12">
           {site.promises.map((item) => (
             <article key={item.title} className="group relative flex cursor-pointer gap-4 border-l-2 border-transparent pl-4 transition duration-300 ease-out hover:-translate-y-1 hover:border-accent motion-reduce:transition-none motion-reduce:hover:translate-y-0">
               <span className="flex size-9 shrink-0 items-center justify-center rounded-full transition duration-300 group-hover:bg-accent/10 motion-reduce:transition-none">

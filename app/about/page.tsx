@@ -60,15 +60,15 @@ export default async function AboutPage() {
     <>
       <section className="about-hero relative isolate overflow-hidden px-5 pb-16 pt-28 text-foreground md:pb-24 md:pt-36">
         <div aria-hidden className="about-hero-pattern pointer-events-none absolute inset-0" />
-        <div className="relative mx-auto max-w-6xl">
-          <div className="mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px]">
+          <div className="mx-auto max-w-3xl xl:max-w-4xl text-center">
             <p className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-card/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground shadow-sm">
               <span className="size-1.5 rounded-full bg-accent" /> About Power Digitizing
             </p>
-            <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl">
+            <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl xl:text-7xl">
               Good ideas deserve <span className="text-primary">exceptional detail.</span>
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
+            <p className="mx-auto mt-5 max-w-2xl xl:max-w-3xl text-base leading-7 text-muted-foreground md:text-lg xl:text-xl">
               Since 2010, we have helped turn artwork into production-ready embroidery files, clean vector graphics and custom patches—with care at every step.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
@@ -77,7 +77,7 @@ export default async function AboutPage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-12 grid max-w-5xl gap-3 sm:grid-cols-3 sm:gap-4">
+          <div className="mx-auto mt-12 grid max-w-5xl xl:max-w-6xl 2xl:max-w-7xl gap-3 sm:grid-cols-3 sm:gap-4 xl:gap-6">
             <div className="relative min-h-64 overflow-hidden rounded-lg border border-border bg-card shadow-lg shadow-secondary/10 sm:col-span-1 sm:row-span-2 sm:min-h-[430px]">
               <Image src="/images/american-patches/embroidered.jpg" alt="Detailed embroidered custom patch" fill priority sizes="(max-width: 640px) 100vw, 34vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/70 via-transparent to-transparent" />
@@ -107,7 +107,7 @@ export default async function AboutPage() {
 
       <ScrollReveal>
       <section id="our-story" className="scroll-mt-20 bg-background py-16 md:py-24">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] gap-10 px-5 sm:px-6 lg:px-8 xl:px-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div data-reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Our approach</p>
             <h2 className="mt-4 max-w-md font-display text-3xl font-semibold leading-tight tracking-tight md:text-4xl">A creative idea, brought to life through technology.</h2>
@@ -132,7 +132,7 @@ export default async function AboutPage() {
       {/* ─── COMPANY TIMELINE ─── */}
       <ScrollReveal>
       <section className="border-t border-border bg-[#FBF9F5] py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div data-reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Our Journey</p>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-4xl">15+ Years of Evolution & Dedication.</h2>
@@ -165,7 +165,7 @@ export default async function AboutPage() {
       {/* ─── CRAFT SPECIALISTS TEAM ─── */}
       <ScrollReveal>
       <section className="border-y border-border bg-card py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div data-reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The People Behind the Stitches</p>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-4xl">Meet our senior digitizers and artists.</h2>
@@ -201,7 +201,7 @@ export default async function AboutPage() {
 
       <ScrollReveal>
       <section className="overflow-hidden border-b border-border bg-card py-16 md:py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] items-center gap-10 px-5 sm:px-6 lg:px-8 xl:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-20">
           <div data-reveal className="relative mx-auto w-full max-w-xl">
             <div className="relative aspect-[1.08/1] overflow-hidden rounded-2xl bg-[#f2eee8]">
               <Image src="/images/american-patches/embroidered-cutout.png" alt="Embroidered patch prepared as a clean product cutout" fill sizes="(max-width: 1024px) 100vw, 560px" className="object-contain p-7 sm:p-10" />
@@ -227,7 +227,7 @@ export default async function AboutPage() {
       {/* ─── STANDARDS STRIP ─── */}
       <ScrollReveal>
       <section className="bg-secondary text-white py-14">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {standards.map((std) => (
               <div key={std.label} className="border-l border-white/20 pl-5">
@@ -242,7 +242,7 @@ export default async function AboutPage() {
 
       <ScrollReveal>
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div data-reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">A clear path forward</p>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-4xl">From first artwork to ready for production.</h2>
@@ -258,7 +258,7 @@ export default async function AboutPage() {
 
       <ScrollReveal>
       <section className="border-y border-border bg-secondary py-16 text-white md:py-24">
-        <div className="mx-auto grid max-w-6xl gap-5 px-5 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] gap-5 px-5 sm:px-6 lg:px-8 xl:px-10 md:grid-cols-2">
           <article data-reveal className="rounded-xl border border-white/10 bg-white/[0.04] p-7 sm:p-9">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Our mission</p>
             <h2 className="mt-4 font-display text-3xl font-semibold leading-tight md:text-4xl">Make quality creative production accessible.</h2>
@@ -275,7 +275,7 @@ export default async function AboutPage() {
 
       <ScrollReveal>
       <section className="border-y border-border bg-card py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div data-reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">What we do</p>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-4xl">Creative services, connected by craft.</h2>
@@ -297,7 +297,7 @@ export default async function AboutPage() {
 
       <ScrollReveal>
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div data-reveal className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">What guides us</p>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-4xl">The values behind every project.</h2>
@@ -310,7 +310,7 @@ export default async function AboutPage() {
       </ScrollReveal>
 
       {testimonials.length > 0 && <ScrollReveal><section className="bg-[#faf8f5] py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div data-reveal className="mx-auto max-w-xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Client feedback</p>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-4xl">Trusted for the details that matter.</h2>
@@ -324,7 +324,7 @@ export default async function AboutPage() {
 
       <ScrollReveal>
       <section className="px-5 py-16 md:py-20">
-        <div data-reveal className="relative isolate mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 overflow-hidden rounded-lg bg-secondary p-7 text-white sm:flex-row sm:items-center sm:p-10">
+        <div data-reveal className="relative isolate mx-auto flex max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] flex-col items-start justify-between gap-6 overflow-hidden rounded-lg bg-secondary p-7 text-white sm:flex-row sm:items-center sm:p-10 xl:p-14">
           <Image src="/images/american-patches/embroidered.jpg" alt="" aria-hidden fill sizes="(max-width: 1024px) 100vw, 1152px" className="-z-20 object-cover opacity-40" />
           <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-secondary/85 via-secondary/75 to-secondary/60" />
           <div aria-hidden className="absolute -right-20 -top-32 -z-10 size-96 rounded-full border border-white/10" />

@@ -43,13 +43,13 @@ export function Hero({ site }: { site: SiteConfig }) {
 
   return (
     <section className="relative overflow-hidden pt-24 pb-14 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">
+      <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] gap-10 px-5 sm:px-6 lg:px-8 xl:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 xl:gap-16 2xl:gap-20">
         {/* Left Column: Copy & Actions */}
         <div className="flex flex-col justify-center">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             {site.name} / Precision in every detail
           </p>
-          <h1 className="max-w-2xl font-display text-4xl font-semibold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.2rem]">
+          <h1 className="max-w-2xl xl:max-w-3xl font-display text-4xl font-semibold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.75rem] 2xl:text-[5.25rem]">
             {hero.headline.map((line, i) => {
               if (i === 0 && line.startsWith("Custom patches")) {
                 return (
@@ -62,7 +62,7 @@ export function Hero({ site }: { site: SiteConfig }) {
               return <span key={i} className="block">{line}</span>;
             })}
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mt-5 max-w-xl xl:max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg xl:text-xl">
             {hero.subcopy}
           </p>
 
@@ -100,7 +100,7 @@ export function Hero({ site }: { site: SiteConfig }) {
 
         {/* Right Column: Hero Patch Showcase (Centered, Full View, Pure Cutouts) */}
         <div className="relative flex items-center justify-center w-full min-w-0">
-          <div className="relative aspect-square w-full max-w-[420px] sm:max-w-[460px] lg:max-w-[490px] flex items-center justify-center">
+          <div className="relative aspect-square w-full max-w-[420px] sm:max-w-[460px] lg:max-w-[490px] xl:max-w-[560px] 2xl:max-w-[620px] flex items-center justify-center">
             {/* Subtle radial ambient highlight */}
             <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-[#14263D]/5 via-[#C94343]/6 to-transparent blur-3xl pointer-events-none" />
 
@@ -119,7 +119,7 @@ export function Hero({ site }: { site: SiteConfig }) {
                     alt={item.label}
                     fill
                     priority={index === 0}
-                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 490px"
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 620px"
                     className="object-contain object-center drop-shadow-[0_20px_35px_rgba(20,38,61,0.18)] select-none transition-transform duration-500 hover:scale-105"
                   />
                 </div>

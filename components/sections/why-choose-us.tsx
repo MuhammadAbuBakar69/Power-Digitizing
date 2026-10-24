@@ -25,7 +25,7 @@ const comparisonFeatures = [
 export function WhyChooseUs() {
   return (
     <section className="scroll-mt-20 py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <ScrollReveal>
           <div data-reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The Power Digitizing difference</p>
@@ -38,7 +38,7 @@ export function WhyChooseUs() {
           </div>
 
           {/* Differentiator Cards */}
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:gap-6">
             {differentiators.map((item) => {
               const IconComp = item.icon;
               return (

@@ -8,7 +8,7 @@ export function CtaBanner({ site }: { site: SiteConfig }) {
 
   return (
     <section className="relative overflow-hidden bg-background py-16 md:py-24">
-      <div className="relative mx-auto max-w-6xl px-5">
+      <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#0B1626] via-[#14263D] to-[#0B1626] p-8 text-center text-white shadow-2xl sm:p-12 md:p-16 lg:p-20">
           {/* Subtle ambient lighting inside the Bluestone container */}
           <div

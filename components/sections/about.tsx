@@ -22,7 +22,7 @@ export function About({ site }: { site: SiteConfig }) {
       id="about"
       className="scroll-mt-20 overflow-hidden border-y border-border bg-card py-16 sm:py-20 lg:py-28"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-8 xl:px-10">
         {/* Top Story & Visual Showcase Grid */}
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-12 xl:gap-16">
           {/* Left Column: Heritage, Authority & Capabilities */}

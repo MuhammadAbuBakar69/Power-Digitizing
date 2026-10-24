@@ -7,7 +7,7 @@ export function Collections({ site }: { site: SiteConfig }) {
   if (!site.collections.length) return null;
   return (
     <section id="collections" className="scroll-mt-20 border-y border-border bg-card py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <ScrollReveal>
           <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div data-reveal className="max-w-2xl">
@@ -20,7 +20,7 @@ export function Collections({ site }: { site: SiteConfig }) {
             </div>
             <p data-reveal className="max-w-sm text-muted-foreground">Detailed customization, premium materials and a free proof before production.</p>
           </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-6">
             {site.collections.map((collection) => (
               <Link
                 href={`/collections/${collection.slug}`}

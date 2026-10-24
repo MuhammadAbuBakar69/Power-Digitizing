@@ -690,7 +690,7 @@ export default async function CollectionDetailPage({ params }: { params: Promise
         {/* Subtle geometric pattern */}
         <div aria-hidden className="absolute inset-0 bg-[linear-gradient(to_right,#00000006_1px,transparent_1px),linear-gradient(to_bottom,#00000006_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
 
-        <div className="relative mx-auto max-w-6xl px-5">
+        <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           {/* Breadcrumbs */}
           <nav className="mb-8 flex items-center gap-2 text-xs font-mono tracking-wider uppercase text-muted-foreground">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -700,19 +700,19 @@ export default async function CollectionDetailPage({ params }: { params: Promise
             <span className="text-foreground font-semibold">{collection.name}</span>
           </nav>
 
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-20 items-center">
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-6 xl:space-y-8">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                 <Sparkles className="size-3.5" />
                 <span>Atelier Grade • {collection.category}</span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#1A1A1A] leading-[1.08]">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-[#1A1A1A] leading-[1.08]">
                 Bespoke <span className="text-primary">{collection.name}</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-[#555] leading-relaxed max-w-xl font-normal">
+              <p className="text-base sm:text-lg xl:text-xl text-[#555] leading-relaxed max-w-xl xl:max-w-2xl font-normal">
                 {collection.description} Engineered with master-level calibration, authentic materials, and strict production tolerances for apparel brands, hatmakers, and uniform programs worldwide.
               </p>
 
@@ -789,7 +789,7 @@ export default async function CollectionDetailPage({ params }: { params: Promise
 
       {/* ── 2. TECHNICAL SPECIFICATIONS PILL STRIP ───────────────────────────── */}
       <section className="border-b border-[#E8E6E0] bg-[#F7F5EE] py-8">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
             {details.specs.map((spec) => (
               <div key={spec.label} className="rounded-xl border border-[#E5E3DC] bg-white p-3.5 shadow-sm">
@@ -808,7 +808,7 @@ export default async function CollectionDetailPage({ params }: { params: Promise
             <div aria-hidden className="absolute -right-24 -top-24 size-96 rounded-full bg-[#C94343]/10 blur-3xl pointer-events-none" />
             <div aria-hidden className="absolute -left-24 -bottom-24 size-96 rounded-full bg-[#14263D]/30 blur-3xl pointer-events-none" />
 
-            <div className="relative mx-auto max-w-6xl px-5">
+            <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
               <div data-reveal className="max-w-2xl text-center mx-auto mb-16">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-mono uppercase tracking-widest text-white backdrop-blur-sm">
                   <Flame className="size-3.5 text-[#C94343]" /> Artisanal Hide Curation
@@ -953,8 +953,8 @@ export default async function CollectionDetailPage({ params }: { params: Promise
         return (
           <ScrollReveal key={idx}>
             <section className={`py-20 md:py-28 ${idx % 2 === 0 ? "bg-[#FBF9F5]" : "bg-white"} border-b border-[#E8E6E0]`}>
-              <div className="mx-auto max-w-6xl px-5">
-                <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
+              <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
+                <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-20 items-center">
                   {/* Text Column */}
                   <div className={`lg:col-span-7 space-y-6 ${isReversed ? "lg:order-2" : "lg:order-1"}`}>
                     <span className="rounded-full bg-primary/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-primary">
@@ -1004,7 +1004,7 @@ export default async function CollectionDetailPage({ params }: { params: Promise
       {/* ── 6. PRODUCTION PILLARS ───────────────────────────────────────────── */}
       <ScrollReveal>
         <section className="py-20 md:py-28 bg-[#F7F5EE] border-b border-[#E8E6E0]">
-          <div className="mx-auto max-w-6xl px-5">
+          <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
             <div data-reveal className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-xs font-mono uppercase tracking-widest text-primary">ZERO COMPROMISE</span>
               <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#1A1A1A]">
@@ -1044,7 +1044,7 @@ export default async function CollectionDetailPage({ params }: { params: Promise
       {/* ── 7. FAQ ACCORDION FOR THIS PATCH TYPE ─────────────────────────────── */}
       <ScrollReveal>
         <section className="py-20 md:py-28 bg-white border-b border-[#E8E6E0]">
-          <div className="mx-auto max-w-4xl px-5">
+          <div className="mx-auto max-w-4xl xl:max-w-5xl px-5 sm:px-6 lg:px-8">
             <div data-reveal className="text-center mb-12">
               <span className="text-xs font-mono uppercase tracking-widest text-primary">COMMON INQUIRIES</span>
               <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#1A1A1A]">
@@ -1083,7 +1083,7 @@ export default async function CollectionDetailPage({ params }: { params: Promise
 
       {/* ── 8. TONELLI-INSPIRED LUXURY EDITORIAL CALLOUT (Replacing red block) ── */}
       <section className="relative overflow-hidden bg-background py-16 md:py-24">
-        <div className="relative mx-auto max-w-6xl px-5 text-center">
+        <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10 text-center">
           <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#0B1626] via-[#14263D] to-[#0B1626] p-8 text-white shadow-2xl sm:p-12 md:p-16">
             <div
               aria-hidden

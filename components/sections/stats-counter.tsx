@@ -69,10 +69,10 @@ export function StatsCounter() {
       <div aria-hidden className="absolute -right-32 -top-32 size-96 rounded-full bg-primary/10 blur-3xl" />
       <div aria-hidden className="absolute -left-20 -bottom-20 size-72 rounded-full bg-accent/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-6xl px-5">
+      <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Power Digitizing by the numbers</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl xl:text-6xl">
             Results that speak for themselves.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-white/70">
@@ -80,7 +80,7 @@ export function StatsCounter() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8">
           {stats.map((stat) => (
             <StatItem key={stat.label} stat={stat} visible={visible} />
           ))}

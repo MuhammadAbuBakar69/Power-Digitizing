@@ -103,7 +103,7 @@ export function BlogClient() {
   return (
     <div className="min-h-screen bg-background pt-24 pb-24">
       {/* 1. TOP HERO SECTION */}
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div className="flex flex-col gap-4 text-center max-w-4xl mx-auto py-10">
           <div className="inline-flex items-center justify-center gap-2 self-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary">
             <Sparkles className="size-3.5" />

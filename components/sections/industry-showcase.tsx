@@ -15,11 +15,11 @@ const industries = [
 export function IndustryShowcase() {
   return (
     <section className="scroll-mt-20 border-y border-border bg-card py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <ScrollReveal>
           <div data-reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Industries we serve</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl">
+            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl xl:text-6xl">
               Trusted across every industry.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-muted-foreground">
@@ -27,7 +27,7 @@ export function IndustryShowcase() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:gap-6">
             {industries.map((industry) => {
               const IconComp = industry.icon;
               return (

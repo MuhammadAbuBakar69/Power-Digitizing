@@ -14,7 +14,7 @@ export default async function QuotePage() {
 
   return (
     <main className="min-h-screen bg-background pb-20 pt-28 md:pt-36">
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"><ArrowLeft aria-hidden className="size-4" /> Back to home</Link>
         <div className="mt-8 grid overflow-hidden rounded-[0.35rem] border border-border bg-card shadow-xl shadow-secondary/5 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="flex flex-col justify-center p-7 md:p-12 lg:p-16">

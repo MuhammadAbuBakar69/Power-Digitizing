@@ -52,7 +52,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
   return (
     <div className="min-h-screen bg-[#F7F6F2] text-[#1E1E1E] selection:bg-[#C94343] selection:text-white font-sans">
       {/* 1-Inch Gap (pt-24 md:pt-32) from navbar */}
-      <div className="px-5 pt-24 pb-20 md:pt-32 md:pb-28 max-w-6xl mx-auto">
+      <div className="px-5 sm:px-6 lg:px-8 xl:px-10 pt-24 pb-20 md:pt-32 md:pb-28 max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] mx-auto">
         {/* Main Card Container inspired by the Untitled UI design */}
         <div className="rounded-[2.5rem] bg-white border border-[#E8E6E0] shadow-xl overflow-hidden p-6 sm:p-10 lg:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
