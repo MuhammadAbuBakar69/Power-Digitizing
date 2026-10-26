@@ -136,7 +136,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
               <div className="pt-8 border-t border-[#F0EEE8]">
                 <div className="flex items-center gap-3">
                   <a
-                    href="https://facebook.com/"
+                    href="https://www.facebook.com/powerdigitizings07"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="grid size-9 place-items-center rounded-lg border border-[#E5E3DC] text-[#555] hover:text-[#C94343] hover:border-[#C94343] transition-colors"
@@ -145,7 +145,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                     <Facebook className="size-4" />
                   </a>
                   <a
-                    href="https://instagram.com/"
+                    href="https://www.instagram.com/power_digitizing/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="grid size-9 place-items-center rounded-lg border border-[#E5E3DC] text-[#555] hover:text-[#C94343] hover:border-[#C94343] transition-colors"

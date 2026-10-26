@@ -320,8 +320,8 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
     address: "16192 Coastal Hwy, Lewes, DE, United States",
   },
   socials: [
-    { label: "Facebook", href: "https://facebook.com/" },
-    { label: "Instagram", href: "https://instagram.com/" },
+    { label: "Facebook", href: "https://www.facebook.com/powerdigitizings07" },
+    { label: "Instagram", href: "https://www.instagram.com/power_digitizing/" },
   ],
   footer: {
     about: "Premium custom embroidered, PVC, chenille, leather and woven patches with free digital proof, no setup fees and reliable worldwide shipping.",
