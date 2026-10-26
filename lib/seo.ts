@@ -8,6 +8,9 @@ export function buildMetadata(site: SiteConfig, origin: string): Metadata {
     title: { default: site.seo.title, template: site.seo.titleTemplate },
     description: site.seo.description,
     keywords: site.seo.keywords,
+    verification: {
+      google: "hQ9qNGyTKvu7sI_LZTKi7kZqAdvQYU38hw5g71o6rgE",
+    },
     icons: {
       icon: [
         { url: site.favicon || "/images/brand/wa.png" },

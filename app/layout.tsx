@@ -22,6 +22,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={fontVariables} style={themeStyle(site)} data-site={site.id}>
       <head>
+        <meta name="google-site-verification" content="hQ9qNGyTKvu7sI_LZTKi7kZqAdvQYU38hw5g71o6rgE" />
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-P27VCSC5V3"
