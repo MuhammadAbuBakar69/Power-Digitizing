@@ -11,7 +11,7 @@ const heroSlides = [
   { image: "/images/hero/hero-embroidery-patch.png", label: "Custom Embroidered Patch" },
   { image: "/images/hero/hero-chenille-patch.png", label: "Custom Chenille Patch" },
   { image: "/images/hero/hero-pvc-patch.png", label: "Custom 3D PVC Patch" },
-  { image: "/images/sublimation/26246876-c845-4884-99ac-448603884dd8.webp", label: "Custom Sublimated Patch" },
+  { image: "/images/hero/hero-sublimated-patch.png", label: "Custom Sublimated Patch" },
 ];
 
 export function Hero({ site }: { site: SiteConfig }) {
@@ -119,6 +119,7 @@ export function Hero({ site }: { site: SiteConfig }) {
                     alt={item.label}
                     fill
                     priority={index === 0}
+                    loading="eager"
                     sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 620px"
                     className="object-contain object-center drop-shadow-[0_20px_35px_rgba(20,38,61,0.18)] select-none transition-transform duration-500 hover:scale-105"
                   />
