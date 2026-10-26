@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { getSite, getOrigin } from "@/lib/tenant";
 import { buildMetadata, faqJsonLd, jsonLdString, organizationJsonLd } from "@/lib/seo";
@@ -21,6 +22,20 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={fontVariables} style={themeStyle(site)} data-site={site.id}>
       <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-P27VCSC5V3"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-P27VCSC5V3');
+          `}
+        </Script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
