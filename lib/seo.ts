@@ -8,6 +8,17 @@ export function buildMetadata(site: SiteConfig, origin: string): Metadata {
     title: { default: site.seo.title, template: site.seo.titleTemplate },
     description: site.seo.description,
     keywords: site.seo.keywords,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
     verification: {
       google: "hQ9qNGyTKvu7sI_LZTKi7kZqAdvQYU38hw5g71o6rgE",
     },
