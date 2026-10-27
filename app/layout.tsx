@@ -7,6 +7,7 @@ import { themeStyle } from "@/lib/theme";
 import { fontVariables } from "@/lib/fonts";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 
 export async function generateMetadata(): Promise<Metadata> {
   const site = await getSite();
@@ -69,6 +70,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Header site={{ name: site.name, logo: site.logo, navigation: site.navigation, cta: site.cta }} loginUrl={loginUrl} />
         <main>{children}</main>
         <Footer site={site} />
+        <WhatsAppButton />
         {schemas.map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(s) }} />)}
       </body>
     </html>

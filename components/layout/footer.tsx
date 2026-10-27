@@ -3,6 +3,14 @@ import Image from "next/image";
 import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import type { SiteConfig } from "@/config/types";
 
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.217 8.217 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m-3.53 3.61c-.19 0-.42.07-.63.32-.22.25-.83.81-.83 1.98s.85 2.3.97 2.46c.12.16 1.66 2.54 4.03 3.56.56.24 1 .39 1.34.5.57.18 1.08.16 1.49.1.45-.07 1.4-.57 1.6-1.13.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28s-1.4-.69-1.62-.77c-.22-.08-.37-.12-.53.12-.16.25-.61.77-.75.93-.14.16-.28.18-.52.06s-1.01-.37-1.93-1.19c-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.41h-.45z" />
+    </svg>
+  );
+}
+
 export function Footer({ site }: { site: SiteConfig }) {
   const serviceLinks = [
     { label: "Vector Artwork", href: "/services/vector" },
@@ -23,7 +31,7 @@ export function Footer({ site }: { site: SiteConfig }) {
     { label: "Tactical Patches", href: "/collections/pvc-patches" },
     { label: "Varsity & Chenille", href: "/collections/chenille-patches" },
   ];
-  const socialIcons = { Facebook, Instagram, LinkedIn: Linkedin };
+  const socialIcons = { Facebook, Instagram, LinkedIn: Linkedin, WhatsApp: WhatsAppIcon };
 
   return (
     <footer className="border-t border-white/10 bg-[#0B1626] text-white">
