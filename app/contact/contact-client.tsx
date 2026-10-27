@@ -154,7 +154,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
                     <Instagram className="size-4" />
                   </a>
                   <a
-                    href="https://wa.me/14093022660"
+                    href="https://wa.me/13164441366"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="grid size-9 place-items-center rounded-lg border border-[#E5E3DC] text-[#555] hover:text-[#25D366] hover:border-[#25D366] transition-colors"

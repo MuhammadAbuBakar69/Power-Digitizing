@@ -322,7 +322,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
   socials: [
     { label: "Facebook", href: "https://www.facebook.com/powerdigitizings07" },
     { label: "Instagram", href: "https://www.instagram.com/power_digitizing/" },
-    { label: "WhatsApp", href: "https://wa.me/14093022660" },
+    { label: "WhatsApp", href: "https://wa.me/13164441366" },
   ],
   footer: {
     about: "Premium custom embroidered, PVC, chenille, leather and woven patches with free digital proof, no setup fees and reliable worldwide shipping.",
