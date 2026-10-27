@@ -10,10 +10,10 @@ export function buildMetadata(site: SiteConfig, origin: string): Metadata {
     keywords: site.seo.keywords,
     robots: {
       index: true,
-      follow: true,
+      follow: false,
       googleBot: {
         index: true,
-        follow: true,
+        follow: false,
         "max-video-preview": -1,
         "max-image-preview": "large",
         "max-snippet": -1,
