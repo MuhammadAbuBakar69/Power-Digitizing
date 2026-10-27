@@ -24,11 +24,13 @@ export function buildMetadata(site: SiteConfig, origin: string): Metadata {
     },
     icons: {
       icon: [
-        { url: site.favicon || "/images/brand/wa.png" },
-        { url: "/favicon.ico" },
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon.png", sizes: "512x512", type: "image/png" },
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       ],
-      apple: [{ url: "/images/brand/wa.png" }],
-      shortcut: [{ url: "/images/brand/wa.png" }],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+      shortcut: [{ url: "/favicon.ico" }],
     },
     twitter: { card: "summary_large_image", title: site.seo.title, description: site.seo.description, site: site.seo.twitterHandle, images: og?.map((i) => i.url) },
   };

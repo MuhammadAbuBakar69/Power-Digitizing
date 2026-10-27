@@ -12,7 +12,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
     width: 292,
     height: 131,
   },
-  favicon: "/images/brand/wa.png",
+  favicon: "/favicon.png",
   tagline: "Premium custom patches with free digital proof — crafted for brands, teams & uniforms worldwide.",
   hero: {
     headline: ["Custom patches,", "crafted for you."],

@@ -25,6 +25,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head>
         <meta name="robots" content="index, nofollow" />
         <meta name="google-site-verification" content="hQ9qNGyTKvu7sI_LZTKi7kZqAdvQYU38hw5g71o6rgE" />
+        <link rel="icon" href="/favicon.png" sizes="512x512" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-P27VCSC5V3"
