@@ -31,6 +31,7 @@ export const serviceSchema = z.object({
   benefits: z.array(z.string()).default([]),
   icon: z.enum(ICON_KEYS),
   cta: z.string().default("Explore service"),
+  href: z.string().optional(),
   image: z.string().optional(),
 });
 

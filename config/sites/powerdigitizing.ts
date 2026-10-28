@@ -27,6 +27,6 @@ export default defineSite({
     width: 292,
     height: 131,
   },
-  favicon: "/images/brand/wa.png",
+  favicon: "/favicon.png",
   ...siteContent,
 });

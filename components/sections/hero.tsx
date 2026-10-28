@@ -7,11 +7,11 @@ import { useEffect, useState } from "react";
 import type { SiteConfig } from "@/config/types";
 
 const heroSlides = [
-  { image: "/images/hero/hero-leather-patch.png", label: "Custom Leather Patch" },
-  { image: "/images/hero/hero-embroidery-patch.png", label: "Custom Embroidered Patch" },
-  { image: "/images/hero/hero-chenille-patch.png", label: "Custom Chenille Patch" },
-  { image: "/images/hero/hero-pvc-patch.png", label: "Custom 3D PVC Patch" },
-  { image: "/images/hero/hero-sublimated-patch.png", label: "Custom Sublimated Patch" },
+  { image: "/images/hero/hero-leather-patch.png", label: "Custom leather patch with a laser-engraved bulldog team logo" },
+  { image: "/images/hero/hero-embroidery-patch.png", label: "Custom embroidered squadron patch with bold lettering and a stitched border" },
+  { image: "/images/hero/hero-chenille-patch.png", label: "Custom chenille patch with soft, fuzzy varsity-style texture" },
+  { image: "/images/hero/hero-pvc-patch.png", label: "Custom 3D PVC rubber patch with raised details" },
+  { image: "/images/hero/hero-sublimated-patch.png", label: "Full-color custom sublimated patch with printed artwork" },
 ];
 
 export function Hero({ site }: { site: SiteConfig }) {
@@ -47,7 +47,7 @@ export function Hero({ site }: { site: SiteConfig }) {
         {/* Left Column: Copy & Actions */}
         <div className="flex flex-col justify-center">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            {site.name} / Precision in every detail
+            Power Digitizing / Custom Patches Since 2010
           </p>
           <h1 className="max-w-2xl xl:max-w-3xl font-display text-4xl font-semibold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.75rem] 2xl:text-[5.25rem]">
             {hero.headline.map((line, i) => {

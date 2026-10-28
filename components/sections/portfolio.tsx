@@ -37,6 +37,12 @@ function Artwork({ kind }: { kind: Kind }) {
   );
 }
 
+const portfolioAltMap: Record<string, string> = {
+  "Built for the uniform": "Embroidered uniform patch for a solar construction company",
+  "Ready for the outdoors": "PVC patch with a desert highway design and raised details",
+  "Made for the brand": "Custom leather patch with an engraved cosmic cat design",
+};
+
 export function Portfolio({ site }: { site: SiteConfig }) {
   if (!site.portfolio.length) return null;
   return (
@@ -45,9 +51,9 @@ export function Portfolio({ site }: { site: SiteConfig }) {
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">A look at the work</p>
-            <h2 className="mt-3 max-w-2xl xl:max-w-3xl font-display text-3xl font-semibold tracking-tight md:text-5xl xl:text-6xl">Production-ready art, thoughtfully composed.</h2>
+            <h2 className="mt-3 max-w-2xl xl:max-w-3xl font-display text-3xl font-semibold tracking-tight md:text-5xl xl:text-6xl">Real patches, made from real designs.</h2>
           </div>
-          <p className="max-w-sm text-muted-foreground">From the first sketch to the final stitch file, every project gets the attention it needs to work in the real world.</p>
+          <p className="max-w-sm text-muted-foreground">From the first sketch to the finished patch, every project gets the attention it needs to look right in the real world.</p>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3 xl:gap-8">
           {site.portfolio.map((item) => (
@@ -56,7 +62,7 @@ export function Portfolio({ site }: { site: SiteConfig }) {
                 {item.image ? (
                   <Image
                     src={item.image}
-                    alt={item.title}
+                    alt={portfolioAltMap[item.title] || item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 420px"
                     className="object-contain object-center transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_12px_20px_rgba(20,38,61,0.16)] select-none"

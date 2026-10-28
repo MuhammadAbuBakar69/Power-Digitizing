@@ -5,7 +5,7 @@ export function Faq({ site }: { site: SiteConfig }) {
   return (
     <section id="faq" className="scroll-mt-20 border-t border-border bg-card py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-5">
-        <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">Common questions</h2>
+        <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">Custom patch questions, answered</h2>
         <div className="mt-10 divide-y divide-border border-y border-border">
           {site.faqs.map((f) => (
             <details key={f.q} className="group py-5">

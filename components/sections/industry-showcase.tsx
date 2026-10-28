@@ -2,14 +2,14 @@ import { Award, Building2, GraduationCap, HeartPulse, Shield, Shirt, Trophy, Ute
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 
 const industries = [
-  { name: "Sports Teams & Leagues", description: "Team logos, player numbers, championship patches, and fan merchandise embroidery.", icon: Trophy, color: "bg-[#C94343]/10 text-[#C94343]" },
-  { name: "Military & Tactical", description: "Unit insignias, morale patches, name tapes, and tactical PVC patches for armed forces.", icon: Shield, color: "bg-[#14263D]/10 text-[#14263D]" },
-  { name: "Corporate & Uniforms", description: "Left chest logos, employee nametags, and branded workwear for professional teams.", icon: Building2, color: "bg-[#C94343]/10 text-[#C94343]" },
-  { name: "Fashion & Streetwear", description: "High-density jacket backs, 3D puff caps, chenille varsity letters, and limited edition drops.", icon: Shirt, color: "bg-[#14263D]/10 text-[#14263D]" },
-  { name: "Schools & Universities", description: "Varsity letterman jackets, graduation stoles, club emblems, and spirit wear patches.", icon: GraduationCap, color: "bg-[#C94343]/10 text-[#C94343]" },
-  { name: "Hospitality & Restaurants", description: "Chef coats, apron logos, hotel linens, and branded hospitality uniforms.", icon: UtensilsCrossed, color: "bg-[#14263D]/10 text-[#14263D]" },
-  { name: "Healthcare & Medical", description: "Scrub embroidery, lab coat monograms, hospital department patches, and clinic branding.", icon: HeartPulse, color: "bg-[#C94343]/10 text-[#C94343]" },
-  { name: "Awards & Recognition", description: "Custom award patches, achievement emblems, scout badges, and commemorative pieces.", icon: Award, color: "bg-[#14263D]/10 text-[#14263D]" },
+  { name: "Sports Teams & Leagues", description: "Team logos, player numbers, championship patches, and fan merchandise.", icon: Trophy, color: "bg-[#C94343]/10 text-[#C94343]" },
+  { name: "Military & Tactical", description: "Unit insignia, morale patches, name tapes, and tactical PVC patches with hook-and-loop backing.", icon: Shield, color: "bg-[#14263D]/10 text-[#14263D]" },
+  { name: "Corporate & Uniforms", description: "Left-chest logos, name patches, and branded workwear for your whole team.", icon: Building2, color: "bg-[#C94343]/10 text-[#C94343]" },
+  { name: "Fashion & Streetwear", description: "Jacket back patches, 3D puff patches for caps, chenille letters, and limited-edition drops.", icon: Shirt, color: "bg-[#14263D]/10 text-[#14263D]" },
+  { name: "Schools & Universities", description: "Letterman jacket patches, club emblems, graduation patches, and spirit wear.", icon: GraduationCap, color: "bg-[#C94343]/10 text-[#C94343]" },
+  { name: "Hospitality & Restaurants", description: "Logo patches for chef coats, aprons, and staff uniforms.", icon: UtensilsCrossed, color: "bg-[#14263D]/10 text-[#14263D]" },
+  { name: "Healthcare & Medical", description: "Department patches for scrubs and lab coats, plus clinic and hospital branding.", icon: HeartPulse, color: "bg-[#C94343]/10 text-[#C94343]" },
+  { name: "Awards & Recognition", description: "Achievement patches, scout badges, and commemorative designs.", icon: Award, color: "bg-[#14263D]/10 text-[#14263D]" },
 ];
 
 export function IndustryShowcase() {
@@ -20,10 +20,10 @@ export function IndustryShowcase() {
           <div data-reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Industries we serve</p>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl xl:text-6xl">
-              Trusted across every industry.
+              Custom patches for every industry.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-muted-foreground">
-              From military units to fashion labels, our digitizing and patch production serves professionals who demand flawless quality.
+              From military units to fashion labels, we make patches for people who care how their name or logo looks.
             </p>
           </div>
 

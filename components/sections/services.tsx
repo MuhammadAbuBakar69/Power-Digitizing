@@ -19,7 +19,7 @@ export function Services({ site }: { site: SiteConfig }) {
               <h3 className="mt-5 font-display text-xl font-semibold transition-colors duration-300 group-hover:text-primary">{s.name}</h3>
               <p className="mt-2 text-muted-foreground transition-colors duration-300 group-hover:text-foreground">{s.description}</p>
               <ul className="mt-5 space-y-1.5 text-sm">{s.benefits.map((b) => <li key={b} className="border-l-2 border-accent pl-3 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none">{b}</li>)}</ul>
-              <Link href="#contact" className="mt-auto inline-flex items-center gap-1.5 pt-7 font-semibold text-primary transition-colors group-hover:text-accent">
+              <Link href={s.href ?? (s.cta.toLowerCase().includes("see how it works") ? "#process" : "/quote")} className="mt-auto inline-flex items-center gap-1.5 pt-7 font-semibold text-primary transition-colors group-hover:text-accent">
                 {s.cta}<ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </article>

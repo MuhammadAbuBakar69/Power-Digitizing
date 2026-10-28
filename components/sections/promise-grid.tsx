@@ -9,7 +9,7 @@ export function PromiseGrid({ site }: { site: SiteConfig }) {
         <div className="max-w-2xl xl:max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Our promise to you</p>
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl xl:text-6xl">Zero risk. Every order.</h2>
-          <p className="mt-4 text-lg leading-8 text-muted-foreground">Six practical promises backed on every patch we make, whether you order five or five thousand.</p>
+          <p className="mt-4 text-lg leading-8 text-muted-foreground">Six promises that come with every custom patch order, whether you order five or five thousand.</p>
         </div>
         <div className="mt-12 grid gap-x-10 gap-y-9 border-t border-border pt-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-14 xl:gap-y-12">
           {site.promises.map((item) => (

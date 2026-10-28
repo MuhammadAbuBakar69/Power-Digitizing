@@ -23,22 +23,24 @@ function useCountUp(target: number, duration: number, shouldStart: boolean) {
 }
 
 const stats = [
-  { value: 250000, suffix: "+", label: "Designs Digitized", description: "Production-ready embroidery files delivered to contract decorators and brands worldwide." },
-  { value: 15, suffix: "+ Years", label: "Industry Experience", description: "Founded in 2010 with a passion for manual punching artistry over automated shortcuts." },
-  { value: 98, suffix: "%", label: "Client Satisfaction", description: "Measured across 1,000+ active accounts through repeat orders and referral rates." },
-  { value: 4, suffix: "h Rush", label: "Fastest Turnaround", description: "Emergency same-day digitizing when your production line can't wait." },
+  { value: 234000, prefix: "", suffix: "+", label: "Designs Digitized", description: "Logos and artwork prepared for embroidery and patches since 2010." },
+  { value: 16, prefix: "", suffix: "+ Years", label: "Industry Experience", description: "Founded in 2010, with every design still digitized by hand." },
+  { value: 9, prefix: "", suffix: "", label: "Patch Styles", description: "Embroidered, PVC, chenille, leather, woven, sublimated, silicone, sequin, and iron-on." },
+  { value: 48, prefix: "24–", suffix: "h", label: "Free Proof Turnaround", description: "Every custom patch order gets a free digital proof within 24–48 hours." },
 ];
 
 function StatItem({ stat, visible }: { stat: typeof stats[0]; visible: boolean }) {
   const count = useCountUp(stat.value, 2000, visible);
+  const displayValue = visible ? count.toLocaleString() : stat.value.toLocaleString();
 
   return (
     <div
       className="group relative rounded-2xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-white/[0.07]"
     >
       <div className="font-display text-4xl font-bold tracking-tight text-white md:text-5xl">
-        {count.toLocaleString()}
-        <span className="text-accent">{stat.suffix}</span>
+        {stat.prefix}
+        {displayValue}
+        {stat.suffix && <span className="text-accent">{stat.suffix}</span>}
       </div>
       <h3 className="mt-3 text-sm font-semibold uppercase tracking-[0.14em] text-white/90">{stat.label}</h3>
       <p className="mt-2 text-xs leading-relaxed text-white/55">{stat.description}</p>
@@ -76,7 +78,7 @@ export function StatsCounter() {
             Results that speak for themselves.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-white/70">
-            Every number represents real production runs, satisfied customers, and precision-crafted embroidery files.
+            Every number comes from real orders, real customers, and real designs.
           </p>
         </div>
 

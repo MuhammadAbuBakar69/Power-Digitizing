@@ -12,13 +12,13 @@ export function Collections({ site }: { site: SiteConfig }) {
           <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div data-reveal className="max-w-2xl">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Premium patch collections</p>
-              <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl">Choose the finish that fits your idea.</h2>
-              <p className="mt-4 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">Every material brings a different character to your design. We help you choose the one that looks right and lasts longer.</p>
+              <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl">Choose the custom patch style that fits your idea.</h2>
+              <p className="mt-4 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">Every material gives your design a different look and feel. Browse custom patches online by style, or tell us how you&apos;ll use them and we&apos;ll help you choose.</p>
             </div>
             <div data-reveal className="relative hidden h-28 w-48 shrink-0 overflow-hidden md:block" aria-hidden>
               <svg viewBox="0 0 190 110" className="h-full w-full overflow-visible text-primary"><path data-thread d="M8 72c26-58 53-61 82-8s52 50 92-42" fill="none" stroke="currentColor" strokeDasharray="240" strokeDashoffset="240" strokeLinecap="round" strokeWidth="2" /><circle data-orbit cx="95" cy="55" r="35" fill="none" stroke="currentColor" strokeDasharray="2 8" strokeWidth="1" /><circle data-pulse cx="95" cy="55" r="4" fill="var(--accent)" /></svg>
             </div>
-            <p data-reveal className="max-w-sm text-muted-foreground">Detailed customization, premium materials and a free proof before production.</p>
+            <p data-reveal className="max-w-sm text-muted-foreground">Detailed customization, premium materials, and a free proof before production.</p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-6">
             {site.collections.map((collection) => (
@@ -45,7 +45,7 @@ export function Collections({ site }: { site: SiteConfig }) {
               </Link>
             ))}
           </div>
-          <div className="mt-9 flex justify-center"><Link href="/collections" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary">Explore all patch designs <span aria-hidden>→</span></Link></div>
+          <div className="mt-9 flex justify-center"><Link href="/collections" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary">Explore all custom patches online <span aria-hidden>→</span></Link></div>
         </ScrollReveal>
       </div>
     </section>

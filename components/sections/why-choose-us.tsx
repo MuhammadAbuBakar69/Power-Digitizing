@@ -1,25 +1,49 @@
-import { Check, X, ArrowUpRight, Zap, Users, ShieldCheck, Clock, Palette, HeadphonesIcon } from "lucide-react";
+import { Check, ArrowUpRight, Zap, Users, ShieldCheck, Clock, Palette, HeadphonesIcon } from "lucide-react";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 
 const differentiators = [
-  { icon: Users, title: "Human-Punched, Never Auto-Traced", description: "Every design is manually digitized by experienced embroiderers — no one-click auto-digitizing software that wrecks density and snap needles." },
-  { icon: Zap, title: "2–4 Hour Rush Available", description: "Emergency production deadlines? We deliver same-day rush files in as little as 2 hours with zero compromise on stitch quality." },
-  { icon: ShieldCheck, title: "Free Unlimited Revisions", description: "If a file puckers on your fabric, needs resizing, or requires density tweaks — we revise at zero additional cost until it runs perfectly." },
-  { icon: Clock, title: "12–24h Standard Turnaround", description: "Our distributed digitizing lab operates around the clock. Most orders are delivered within 12 to 24 hours of artwork submission." },
-  { icon: Palette, title: "Pantone PMS Color Matching", description: "Every thread color is mapped to exact Pantone PMS codes with Madeira, Robison-Anton, and Isacord conversion charts included." },
-  { icon: HeadphonesIcon, title: "Dedicated Account Support", description: "Direct access to your assigned senior digitizer — not a ticketing system. Real conversations about your production needs." },
+  {
+    icon: Users,
+    title: "Artwork Prepared by People, Not Software",
+    description: "Every design is digitized by hand by the same team behind our embroidery digitizing service, not converted with one-click auto software.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Help Choosing the Right Patch",
+    description: "Not sure between embroidered, woven, PVC, or leather? Tell us how you'll use it and we'll recommend the best fit.",
+  },
+  {
+    icon: Zap,
+    title: "Free Proof Before You Pay",
+    description: "See your design, size, and colors on a free digital proof before anything is produced.",
+  },
+  {
+    icon: Clock,
+    title: "Rush Options Available",
+    description: "Working to a deadline? Share your date when you request a quote and we'll tell you what's possible.",
+  },
+  {
+    icon: Palette,
+    title: "Pantone Color Matching",
+    description: "Thread and material colors are matched to Pantone codes, so your logo colors stay consistent from order to order.",
+  },
+  {
+    icon: HeadphonesIcon,
+    title: "Dedicated Support",
+    description: "Talk directly with our team by phone, email, or WhatsApp, not a ticket system.",
+  },
 ];
 
 const comparisonFeatures = [
-  { feature: "Manual digitizing by humans", us: true, them: false },
-  { feature: "Free unlimited revisions", us: true, them: false },
-  { feature: "Fabric-specific calibration", us: true, them: false },
-  { feature: "2–4h rush turnaround", us: true, them: false },
-  { feature: "All machine formats included", us: true, them: true },
-  { feature: "Production PDF run sheets", us: true, them: false },
-  { feature: "Pantone thread matching", us: true, them: false },
-  { feature: "No setup or hidden fees", us: true, them: false },
+  { feature: "Free digital proof on every order", us: true, them: "Varies" },
+  { feature: "No setup fees", us: true, them: "Varies" },
+  { feature: "Artwork digitized by hand", us: true, them: "Varies" },
+  { feature: "Free basic revisions", us: true, them: "Varies" },
+  { feature: "Iron-on, sew-on, Velcro & adhesive backing", us: true, them: "Varies" },
+  { feature: "Pantone color matching", us: true, them: "Varies" },
+  { feature: "Remake if it doesn't match your proof", us: true, them: "Varies" },
+  { feature: "No minimum order quantity", us: true, them: "Varies" },
 ];
 
 export function WhyChooseUs() {
@@ -30,10 +54,10 @@ export function WhyChooseUs() {
           <div data-reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The Power Digitizing difference</p>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-5xl">
-              Why professionals choose us.
+              Why customers choose us for custom patches.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-muted-foreground">
-              We don&apos;t just digitize — we engineer stitch files calibrated to your specific fabric, machine, and production environment.
+              We don&apos;t just make patches. We prepare your artwork so it looks right on the material, size, and garment you choose.
             </p>
           </div>
 
@@ -69,18 +93,14 @@ export function WhyChooseUs() {
               <div key={row.feature} className={`grid grid-cols-3 items-center px-6 py-3.5 text-sm ${i % 2 === 0 ? "bg-background" : "bg-card"} ${i < comparisonFeatures.length - 1 ? "border-b border-border/50" : ""}`}>
                 <span className="font-medium text-foreground">{row.feature}</span>
                 <span className="flex justify-center">
-                  {row.us ? (
-                    <span className="grid size-7 place-items-center rounded-full bg-emerald-500/10"><Check className="size-4 text-emerald-600" /></span>
-                  ) : (
-                    <span className="grid size-7 place-items-center rounded-full bg-red-500/10"><X className="size-4 text-red-500" /></span>
-                  )}
+                  <span className="grid size-7 place-items-center rounded-full bg-emerald-500/10">
+                    <Check className="size-4 text-emerald-600" />
+                  </span>
                 </span>
                 <span className="flex justify-center">
-                  {row.them ? (
-                    <span className="grid size-7 place-items-center rounded-full bg-emerald-500/10"><Check className="size-4 text-emerald-600" /></span>
-                  ) : (
-                    <span className="grid size-7 place-items-center rounded-full bg-red-500/10"><X className="size-4 text-red-500" /></span>
-                  )}
+                  <span className="rounded-full bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground">
+                    {row.them}
+                  </span>
                 </span>
               </div>
             ))}

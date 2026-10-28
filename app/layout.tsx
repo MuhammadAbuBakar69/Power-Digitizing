@@ -23,7 +23,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={fontVariables} style={themeStyle(site)} data-site={site.id}>
       <head>
-        <meta name="robots" content="index, nofollow" />
+        <meta name="robots" content="index, follow" />
         <meta name="google-site-verification" content="hQ9qNGyTKvu7sI_LZTKi7kZqAdvQYU38hw5g71o6rgE" />
         <link rel="icon" href="/favicon.png" sizes="512x512" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />

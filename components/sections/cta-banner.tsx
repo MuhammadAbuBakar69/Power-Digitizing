@@ -23,16 +23,15 @@ export function CtaBanner({ site }: { site: SiteConfig }) {
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
               <Sparkles className="size-3.5 text-[#C94343]" />
-              <span>Ready for flawless embroidery?</span>
+              <span>Ready to get started?</span>
             </div>
 
             <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Bring your most complex designs <br className="hidden sm:inline" />
-              to production reality today.
+              Turn your design into custom patches today.
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-              Experience the precision of manual digitizing, zero-breakage stitch engineering, and lightning-fast 2–4 hour turnaround. Get a free digital preview with complete stitch specs.
+              Send your logo, sketch, or idea. We&apos;ll recommend the right patch style and backing, send a free digital proof within 24–48 hours, and start production only after you approve.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -40,7 +39,7 @@ export function CtaBanner({ site }: { site: SiteConfig }) {
                 href="/quote"
                 className="group inline-flex items-center gap-2 rounded-full bg-[#C94343] px-8 py-4 text-sm font-bold text-white shadow-xl shadow-[#C94343]/30 transition-all hover:scale-105 hover:bg-[#b03535] hover:shadow-2xl"
               >
-                <span>Get Free Instant Quote</span>
+                <span>Get Your Custom Patch Quote</span>
                 <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
 
@@ -48,7 +47,7 @@ export function CtaBanner({ site }: { site: SiteConfig }) {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white backdrop-blur transition-all hover:border-white/40 hover:bg-white/15"
               >
-                <span>Talk to Senior Digitizer</span>
+                <span>Talk to Our Team</span>
               </Link>
             </div>
 
@@ -72,12 +71,12 @@ export function CtaBanner({ site }: { site: SiteConfig }) {
               <span className="hidden text-white/20 sm:inline">•</span>
               <span className="flex items-center gap-1.5 text-slate-200">
                 <Clock className="size-4 text-[#C94343]" />
-                <span>2-4h Rush Option Available</span>
+                <span>Rush options available</span>
               </span>
               <span className="hidden text-white/20 sm:inline">•</span>
               <span className="flex items-center gap-1.5 text-slate-200">
                 <ShieldCheck className="size-4 text-[#C94343]" />
-                <span>100% Satisfaction Guarantee</span>
+                <span>Remake if it doesn&apos;t match your proof</span>
               </span>
             </div>
           </div>

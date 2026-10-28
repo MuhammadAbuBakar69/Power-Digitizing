@@ -16,7 +16,7 @@ export function Footer({ site }: { site: SiteConfig }) {
     { label: "Vector Artwork", href: "/services/vector" },
     { label: "Embroidery Digitizing", href: "/services/embroidery" },
     { label: "Patch Collections", href: "/collections" },
-    { label: "Get Instant Quote", href: "/quote" },
+    { label: "Get a Free Quote", href: "/quote" },
   ];
   const resourceLinks = [
     { label: "How it works", href: "/#process" },

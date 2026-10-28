@@ -50,19 +50,19 @@ export function About({ site }: { site: SiteConfig }) {
             <div className="mt-7 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               <div className="flex items-center gap-2.5 rounded-lg border border-border/80 bg-background/70 p-3 text-xs font-medium text-foreground sm:text-sm">
                 <CheckCircle2 className="size-4 shrink-0 text-accent" />
-                <span>Tajima & Barudan Multi-Head Capacity</span>
+                <span>Tajima & Barudan multi-head embroidery machines</span>
               </div>
               <div className="flex items-center gap-2.5 rounded-lg border border-border/80 bg-background/70 p-3 text-xs font-medium text-foreground sm:text-sm">
                 <CheckCircle2 className="size-4 shrink-0 text-accent" />
-                <span>4 Backings: Velcro, Iron-On, Sticker, Sew-On</span>
+                <span>4 backings: Velcro, iron-on, adhesive, sew-on</span>
               </div>
               <div className="flex items-center gap-2.5 rounded-lg border border-border/80 bg-background/70 p-3 text-xs font-medium text-foreground sm:text-sm">
                 <CheckCircle2 className="size-4 shrink-0 text-accent" />
-                <span>100% Madeira & Pantone Color Fidelity</span>
+                <span>Pantone color matching for thread and materials</span>
               </div>
               <div className="flex items-center gap-2.5 rounded-lg border border-border/80 bg-background/70 p-3 text-xs font-medium text-foreground sm:text-sm">
                 <CheckCircle2 className="size-4 shrink-0 text-accent" />
-                <span>Free Digital Proofs & Zero Setup Fees</span>
+                <span>Free digital proofs and zero setup fees</span>
               </div>
             </div>
 
@@ -72,14 +72,14 @@ export function About({ site }: { site: SiteConfig }) {
                 href="/company"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/95 hover:shadow-lg"
               >
-                Explore Our Company & Facility
+                About Our Company
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/quote"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-5 py-3.5 text-sm font-semibold text-foreground transition-all duration-200 hover:border-primary/40 hover:bg-muted/50"
               >
-                Request Free Digital Proof
+                Request a Free Digital Proof
                 <ArrowUpRight className="size-4 text-muted-foreground" />
               </Link>
             </div>
@@ -103,16 +103,16 @@ export function About({ site }: { site: SiteConfig }) {
                 {/* Live Status Badge */}
                 <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/75 px-3 py-1.5 text-xs font-semibold text-white shadow-lg backdrop-blur-md">
                   <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>ISO 9001 Production Standards</span>
+                  <span>Custom Patches Since 2010</span>
                 </div>
 
                 {/* Bottom Scrim Caption */}
                 <div className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white">
-                    Industrial Custom Patch Manufacturing
+                    Custom Patch Manufacturing
                   </p>
                   <p className="mt-1 text-xs text-white/80">
-                    Embroidered • Tactical PVC • Laser Leather • Woven • Chenille
+                    Embroidered • PVC • Leather • Woven • Chenille
                   </p>
                 </div>
               </div>
@@ -134,7 +134,7 @@ export function About({ site }: { site: SiteConfig }) {
                     <p className="text-[11px] font-semibold uppercase tracking-wider text-white">
                       Tajima & Barudan
                     </p>
-                    <p className="text-[10px] text-white/75">1,000 SPM Precision</p>
+                    <p className="text-[10px] text-white/75">Clean, consistent stitching</p>
                   </div>
                 </div>
               </div>
@@ -151,9 +151,9 @@ export function About({ site }: { site: SiteConfig }) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-2.5 left-2.5 right-2.5">
                     <p className="text-[11px] font-semibold uppercase tracking-wider text-white">
-                      Toolpath Simulation
+                      Hand-digitized artwork
                     </p>
-                    <p className="text-[10px] text-white/75">DST & EMB Formats</p>
+                    <p className="text-[10px] text-white/75">Checked before production</p>
                   </div>
                 </div>
               </div>
@@ -169,10 +169,10 @@ export function About({ site }: { site: SiteConfig }) {
                 <Cpu className="size-5" />
               </div>
               <h3 className="mt-4 font-display text-base font-semibold text-foreground">
-                Manual Punch Artistry
+                Artwork Prepared by Hand
               </h3>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                Zero auto-trace shortcuts. Every stitch angle, density gradient, and underlay is calibrated manually for smooth production.
+                Our team digitizes every design manually, not with one-click auto-trace software, so lettering and small details stay as clean as your patch size allows.
               </p>
             </div>
 
@@ -181,10 +181,10 @@ export function About({ site }: { site: SiteConfig }) {
                 <Layers className="size-5" />
               </div>
               <h3 className="mt-4 font-display text-base font-semibold text-foreground">
-                Multi-Material Versatility
+                Every Patch Style in One Place
               </h3>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                Engineered toolpaths for curved 270° cap frames, performance piqué knits, heavy leather, and tactile 3D puff embroidery.
+                Embroidered, PVC, leather, chenille, woven, sublimated, and silicone patches, plus 3D puff embroidery, made for caps, uniforms, jackets, bags, and gear.
               </p>
             </div>
 
@@ -196,7 +196,7 @@ export function About({ site }: { site: SiteConfig }) {
                 Zero Setup Fees & Free Proofs
               </h3>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                Review true-to-scale digital simulations with exact thread color codes and stitch counts before paying a single dollar.
+                See your patch before you pay. Every order includes a free digital proof with free basic revisions and no setup charges.
               </p>
             </div>
 
@@ -205,10 +205,10 @@ export function About({ site }: { site: SiteConfig }) {
                 <Clock className="size-5" />
               </div>
               <h3 className="mt-4 font-display text-base font-semibold text-foreground">
-                Rapid Dispatch Cycles
+                Clear Turnaround Times
               </h3>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                Digital files delivered in 2–24 hours; physical custom patch runs produced and shipped within 7–14 business days.
+                Free digital proof in 24–48 hours. Standard production takes 7–14 business days after you approve, with rush options for tight deadlines.
               </p>
             </div>
           </div>
@@ -217,13 +217,13 @@ export function About({ site }: { site: SiteConfig }) {
           <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-center sm:flex-row sm:text-left">
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               <Sparkles className="size-4 text-accent" />
-              <span>Looking for detailed machine tolerances, file specs, or placement disciplines?</span>
+              <span>Want to see how we work and what we make?</span>
             </div>
             <Link
               href="/company"
               className="group inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-primary transition-colors hover:text-accent"
             >
-              Tour Our Company & Innovation Lab
+              Tour Our Company
               <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
