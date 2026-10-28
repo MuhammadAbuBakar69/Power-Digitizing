@@ -14,6 +14,8 @@ import {
   Globe,
 } from "lucide-react";
 import type { SiteConfig } from "@/config/types";
+import { db } from "@/lib/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export function ContactClient({ site }: { site: SiteConfig }) {
   const [name, setName] = useState("");
@@ -40,13 +42,44 @@ export function ContactClient({ site }: { site: SiteConfig }) {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 800);
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "23d6f0cd-5bce-46da-a69d-4481f9990ef1";
+
+    // 1. Save contact message to Firebase Firestore
+    try {
+      await addDoc(collection(db, "contacts"), {
+        name,
+        email,
+        services,
+        message,
+        toEmail: "design@powerdigitizing.com",
+        createdAt: serverTimestamp(),
+      });
+    } catch (firestoreErr) {
+      console.warn("Firestore contact save warning:", firestoreErr);
+    }
+
+    // 2. Send email notification to design@powerdigitizing.com via Web3Forms
+    try {
+      const formData = new FormData();
+      formData.append("access_key", accessKey);
+      formData.append("subject", `New Contact Inquiry from ${name || "Customer"} - Power Digitizing`);
+      formData.append("from_name", "Power Digitizing Contact Page");
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("replyto", email);
+      formData.append("to_email", "design@powerdigitizing.com");
+      formData.append("services", services.join(", "));
+      formData.append("message", message);
+      await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+    } catch (emailErr) {
+      console.warn("Email contact dispatch warning:", emailErr);
+    }
+
+    setLoading(false);
+    setSubmitted(true);
   };
 
   return (

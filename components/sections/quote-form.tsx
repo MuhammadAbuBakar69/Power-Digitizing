@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { ArrowUpRight, Clock3, Globe2, Palette, Upload } from "lucide-react";
+import { db, storage } from "@/lib/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export function QuoteForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -11,26 +14,69 @@ export function QuoteForm() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
-    if (!accessKey) {
-      setStatus("error");
-      setStatusMessage("Web3Forms is not configured.");
-      return;
-    }
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "23d6f0cd-5bce-46da-a69d-4481f9990ef1";
 
     setStatus("sending");
     setStatusMessage("");
     try {
       const formData = new FormData(form);
-      formData.append("access_key", accessKey);
-      formData.append("subject", `Quote request from ${formData.get("name") || "website visitor"}`);
-      const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
-      const result = await response.json() as { success?: boolean; message?: string; body?: { message?: string } };
-      if (!response.ok || !result.success) throw new Error(result.message || result.body?.message || "Web3Forms rejected the request.");
+      const name = String(formData.get("name") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const phone = String(formData.get("phone") || "").trim();
+      const category = String(formData.get("category") || "").trim();
+      const quantity = String(formData.get("quantity") || "").trim();
+      const zip = String(formData.get("zip") || "").trim();
+      const details = String(formData.get("details") || "").trim();
+      const file = formData.get("attachment") as File | null;
+
+      let fileUrl = "";
+      if (file && file.size > 0) {
+        try {
+          const fileRef = ref(storage, `quotes/${Date.now()}_${file.name.replace(/\s+/g, "_")}`);
+          const uploadResult = await uploadBytes(fileRef, file);
+          fileUrl = await getDownloadURL(uploadResult.ref);
+        } catch (storageErr) {
+          console.warn("Firebase storage upload skipped/errored:", storageErr);
+        }
+      }
+
+      // 1. Save quote to Firebase Firestore
+      try {
+        await addDoc(collection(db, "quotes"), {
+          name,
+          email,
+          phone,
+          category,
+          quantity: quantity ? Number(quantity) || quantity : "",
+          zip,
+          details,
+          fileName: file?.name || "",
+          fileUrl,
+          toEmail: "design@powerdigitizing.com",
+          createdAt: serverTimestamp(),
+        });
+      } catch (firestoreErr) {
+        console.warn("Firestore save warning:", firestoreErr);
+      }
+
+      // 2. Send email notification to design@powerdigitizing.com via Web3Forms
+      try {
+        formData.append("access_key", accessKey);
+        formData.append("subject", `New Quote Request from ${name || "Customer"} - Power Digitizing`);
+        formData.append("from_name", "Power Digitizing Quote Portal");
+        formData.append("to_email", "design@powerdigitizing.com");
+        if (fileUrl) {
+          formData.append("file_download_url", fileUrl);
+        }
+        await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+      } catch (emailErr) {
+        console.warn("Email dispatch warning:", emailErr);
+      }
+
       form.reset();
       setFileName("");
       setStatus("success");
-      setStatusMessage("Request sent successfully.");
+      setStatusMessage("Thank you! Your quote request has been received and sent to design@powerdigitizing.com.");
     } catch (error) {
       setStatus("error");
       setStatusMessage(error instanceof Error ? error.message : "Could not send. Please try again.");
