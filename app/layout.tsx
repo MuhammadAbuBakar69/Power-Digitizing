@@ -49,6 +49,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   var str = (String(msg || '')) + ' ' + (String(src || '')) + ' ' + (String(stack || ''));
                   return /MetaMask|chrome-extension:\\/\\/|moz-extension:\\/\\/|inpage\\.js/i.test(str);
                 }
+                var origError = console.error;
+                console.error = function() {
+                  var text = Array.prototype.slice.call(arguments).map(function(a) {
+                    return (a && (a.message || a.stack)) || String(a || '');
+                  }).join(' ');
+                  if (isExtensionError(text, '', '')) return;
+                  return origError.apply(console, arguments);
+                };
                 window.addEventListener('error', function(e) {
                   if (isExtensionError(e.message, e.filename, e.error && e.error.stack)) {
                     e.stopImmediatePropagation();
