@@ -82,16 +82,12 @@ export function QuoteForm() {
         console.warn("Firestore save warning:", firestoreErr);
       }
 
-      // 2. Send email notification to design@powerdigitizing.com via Web3Forms
+      // 2. Send email notification with design file attached via /api/quote
       try {
-        formData.append("access_key", accessKey);
-        formData.append("subject", `New Quote Request from ${name || "Customer"} - Power Digitizing`);
-        formData.append("from_name", "Power Digitizing Quote Portal");
-        formData.append("to_email", "design@powerdigitizing.com");
-        if (fileUrl) {
-          formData.append("file_download_url", fileUrl);
-        }
-        await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+        await fetch("/api/quote", {
+          method: "POST",
+          body: formData,
+        });
       } catch (emailErr) {
         console.warn("Email dispatch warning:", emailErr);
       }

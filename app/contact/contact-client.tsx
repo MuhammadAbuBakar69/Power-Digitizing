@@ -61,21 +61,15 @@ export function ContactClient({ site }: { site: SiteConfig }) {
       console.warn("Firestore contact save warning:", firestoreErr);
     }
 
-    // 2. Send email notification to design@powerdigitizing.com via Web3Forms
+    // 2. Send email notification via /api/contact
     try {
-      const formData = new FormData();
-      formData.append("access_key", accessKey);
-      formData.append("subject", `New Contact Inquiry from ${name || "Customer"} - Power Digitizing`);
-      formData.append("from_name", "Power Digitizing Contact Page");
-      formData.append("name", name);
-      formData.append("email", email);
-      formData.append("replyto", email);
-      formData.append("to_email", "design@powerdigitizing.com");
-      formData.append("services", services.join(", "));
-      formData.append("message", message);
-      await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, services, message }),
+      });
     } catch (emailErr) {
-      console.warn("Email contact dispatch warning:", emailErr);
+      console.warn("Contact email dispatch warning:", emailErr);
     }
 
     setLoading(false);
