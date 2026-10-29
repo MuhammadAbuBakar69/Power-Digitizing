@@ -26,7 +26,7 @@ const stats = [
   { value: 234000, prefix: "", suffix: "+", label: "Designs Digitized", description: "Logos and artwork prepared for embroidery and patches since 2010." },
   { value: 16, prefix: "", suffix: "+ Years", label: "Industry Experience", description: "Founded in 2010, with every design still digitized by hand." },
   { value: 9, prefix: "", suffix: "", label: "Patch Styles", description: "Embroidered, PVC, chenille, leather, woven, sublimated, silicone, sequin, and iron-on." },
-  { value: 48, prefix: "24–", suffix: "h", label: "Free Proof Turnaround", description: "Every custom patch order gets a free digital proof within 24–48 hours." },
+  { value: 48, prefix: "24–", suffix: " hrs", label: "Free Proof Turnaround", description: "Every custom patch order gets a free digital proof within 24–48 hours." },
 ];
 
 function StatItem({ stat, visible }: { stat: typeof stats[0]; visible: boolean }) {
