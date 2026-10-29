@@ -69,7 +69,7 @@ export function About({ site }: { site: SiteConfig }) {
             {/* Dual High-Converting CTAs */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
-                href="/company"
+                href="/about"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/95 hover:shadow-lg"
               >
                 About Our Company

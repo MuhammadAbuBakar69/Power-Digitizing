@@ -111,7 +111,7 @@ export function WhyChooseUs() {
             <Link href="/quote" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/20">
               Start Your Free Proof <ArrowUpRight className="size-4" />
             </Link>
-            <Link href="/company" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-sm font-semibold transition-colors hover:border-primary hover:text-primary">
+            <Link href="/about" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-sm font-semibold transition-colors hover:border-primary hover:text-primary">
               Learn More About Us <ArrowUpRight className="size-4" />
             </Link>
           </div>
