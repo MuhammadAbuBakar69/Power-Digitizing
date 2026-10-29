@@ -30,7 +30,27 @@ export function QuoteForm() {
       const file = formData.get("attachment") as File | null;
 
       let fileUrl = "";
+      let fileData = "";
+      const fileName = file?.name || "";
+      const fileSize = file?.size || 0;
+      const fileType = file?.type || "";
+
       if (file && file.size > 0) {
+        // Read as Base64 data URL so the image is stored directly in Firestore
+        if (file.size <= 800 * 1024) {
+          try {
+            fileData = await new Promise<string>((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onload = () => resolve(String(reader.result || ""));
+              reader.onerror = () => reject(reader.error);
+              reader.readAsDataURL(file);
+            });
+          } catch (readerErr) {
+            console.warn("FileReader error:", readerErr);
+          }
+        }
+
+        // Also attempt Firebase Storage upload if bucket is active
         try {
           const fileRef = ref(storage, `quotes/${Date.now()}_${file.name.replace(/\s+/g, "_")}`);
           const uploadResult = await uploadBytes(fileRef, file);
@@ -40,7 +60,7 @@ export function QuoteForm() {
         }
       }
 
-      // 1. Save quote to Firebase Firestore
+      // 1. Save quote to Firebase Firestore (includes file name, size, type, data, and URL)
       try {
         await addDoc(collection(db, "quotes"), {
           name,
@@ -50,8 +70,11 @@ export function QuoteForm() {
           quantity: quantity ? Number(quantity) || quantity : "",
           zip,
           details,
-          fileName: file?.name || "",
+          fileName,
+          fileSize,
+          fileType,
           fileUrl,
+          fileData,
           toEmail: "design@powerdigitizing.com",
           createdAt: serverTimestamp(),
         });
