@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { ArrowUpRight, Clock3, Globe2, Palette, Upload } from "lucide-react";
-import { db, storage } from "@/lib/firebase";
+import { db } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export function QuoteForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -14,7 +13,6 @@ export function QuoteForm() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "23d6f0cd-5bce-46da-a69d-4481f9990ef1";
 
     setStatus("sending");
     setStatusMessage("");
@@ -29,68 +27,51 @@ export function QuoteForm() {
       const details = String(formData.get("details") || "").trim();
       const file = formData.get("attachment") as File | null;
 
-      let fileUrl = "";
       let fileData = "";
       const fileName = file?.name || "";
       const fileSize = file?.size || 0;
       const fileType = file?.type || "";
 
-      if (file && file.size > 0) {
-        // Read as Base64 data URL so the image is stored directly in Firestore
-        if (file.size <= 800 * 1024) {
-          try {
-            fileData = await new Promise<string>((resolve, reject) => {
-              const reader = new FileReader();
-              reader.onload = () => resolve(String(reader.result || ""));
-              reader.onerror = () => reject(reader.error);
-              reader.readAsDataURL(file);
-            });
-          } catch (readerErr) {
-            console.warn("FileReader error:", readerErr);
-          }
-        }
-
-        // Also attempt Firebase Storage upload if bucket is active
+      if (file && file.size > 0 && file.size <= 800 * 1024) {
         try {
-          const fileRef = ref(storage, `quotes/${Date.now()}_${file.name.replace(/\s+/g, "_")}`);
-          const uploadResult = await uploadBytes(fileRef, file);
-          fileUrl = await getDownloadURL(uploadResult.ref);
-        } catch (storageErr) {
-          console.warn("Firebase storage upload skipped/errored:", storageErr);
+          fileData = await new Promise<string>((resolve) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(String(reader.result || ""));
+            reader.onerror = () => resolve("");
+            reader.readAsDataURL(file);
+          });
+        } catch (readerErr) {
+          console.warn("FileReader error:", readerErr);
         }
       }
 
-      // 1. Save quote to Firebase Firestore (includes file name, size, type, data, and URL)
-      try {
-        await addDoc(collection(db, "quotes"), {
-          name,
-          email,
-          phone,
-          category,
-          quantity: quantity ? Number(quantity) || quantity : "",
-          zip,
-          details,
-          fileName,
-          fileSize,
-          fileType,
-          fileUrl,
-          fileData,
-          toEmail: "design@powerdigitizing.com",
-          createdAt: serverTimestamp(),
-        });
-      } catch (firestoreErr) {
+      // 1. Save to Firestore and 2. Dispatch email notification in parallel
+      const firestoreTask = addDoc(collection(db, "quotes"), {
+        name,
+        email,
+        phone,
+        category,
+        quantity: quantity ? Number(quantity) || quantity : "",
+        zip,
+        details,
+        fileName,
+        fileSize,
+        fileType,
+        fileData,
+        toEmail: "design@powerdigitizing.com",
+        createdAt: serverTimestamp(),
+      }).catch((firestoreErr) => {
         console.warn("Firestore save warning:", firestoreErr);
-      }
+      });
 
-      // 2. Send email notification with design file attached via /api/quote
-      try {
-        await fetch("/api/quote", {
-          method: "POST",
-          body: formData,
-        });
-      } catch (emailErr) {
+      const emailTask = fetch("/api/quote", {
+        method: "POST",
+        body: formData,
+      }).catch((emailErr) => {
         console.warn("Email dispatch warning:", emailErr);
-      }
+      });
+
+      await Promise.all([firestoreTask, emailTask]);
 
       form.reset();
       setFileName("");

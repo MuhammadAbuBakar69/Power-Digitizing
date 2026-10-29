@@ -47,30 +47,27 @@ export function ContactClient({ site }: { site: SiteConfig }) {
     setLoading(true);
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "23d6f0cd-5bce-46da-a69d-4481f9990ef1";
 
-    // 1. Save contact message to Firebase Firestore
-    try {
-      await addDoc(collection(db, "contacts"), {
-        name,
-        email,
-        services,
-        message,
-        toEmail: "design@powerdigitizing.com",
-        createdAt: serverTimestamp(),
-      });
-    } catch (firestoreErr) {
+    // 1. Save contact message to Firestore & 2. Send email via /api/contact in parallel
+    const firestoreTask = addDoc(collection(db, "contacts"), {
+      name,
+      email,
+      services,
+      message,
+      toEmail: "design@powerdigitizing.com",
+      createdAt: serverTimestamp(),
+    }).catch((firestoreErr) => {
       console.warn("Firestore contact save warning:", firestoreErr);
-    }
+    });
 
-    // 2. Send email notification via /api/contact
-    try {
-      await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, services, message }),
-      });
-    } catch (emailErr) {
+    const emailTask = fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, services, message }),
+    }).catch((emailErr) => {
       console.warn("Contact email dispatch warning:", emailErr);
-    }
+    });
+
+    await Promise.all([firestoreTask, emailTask]);
 
     setLoading(false);
     setSubmitted(true);
