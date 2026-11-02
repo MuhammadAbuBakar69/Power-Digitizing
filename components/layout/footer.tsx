@@ -11,19 +11,24 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
 export function Footer({ site }: { site: SiteConfig }) {
   const serviceLinks = [
     { label: "Vector Artwork", href: "/services/vector" },
     { label: "Embroidery Digitizing", href: "/services/embroidery" },
-    { label: "Patch Collections", href: "/collections" },
-    { label: "Get a Free Quote", href: "/quote" },
   ];
   const resourceLinks = [
-    { label: "How it works", href: "/#process" },
+    { label: "How it works", href: "/about" },
     { label: "Our promise", href: "/#promise" },
     { label: "Refund policy", href: "/refund-policy" },
     { label: "Privacy policy", href: "/privacy-policy" },
-    { label: "FAQ", href: "/#faq" },
   ];
   const useCaseLinks = [
     { label: "Uniform Patches", href: "/collections/embroidered-patches" },
@@ -31,7 +36,14 @@ export function Footer({ site }: { site: SiteConfig }) {
     { label: "Tactical Patches", href: "/collections/pvc-patches" },
     { label: "Varsity & Chenille", href: "/collections/chenille-patches" },
   ];
-  const socialIcons = { Facebook, Instagram, LinkedIn: Linkedin, WhatsApp: WhatsAppIcon };
+  const socialIcons = {
+    Facebook,
+    Instagram,
+    LinkedIn: Linkedin,
+    WhatsApp: WhatsAppIcon,
+    X: XIcon,
+    Twitter: XIcon,
+  };
 
   return (
     <footer className="border-t border-white/10 bg-[#0B1626] text-white">

@@ -333,6 +333,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
   socials: [
     { label: "Facebook", href: "https://www.facebook.com/powerdigitizings07" },
     { label: "Instagram", href: "https://www.instagram.com/power_digitizing/" },
+    { label: "X", href: "https://x.com/Powerdigitizing" },
     { label: "WhatsApp", href: "https://wa.me/13164441366" },
   ],
   footer: {
