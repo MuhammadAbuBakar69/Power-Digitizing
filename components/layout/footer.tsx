@@ -19,6 +19,14 @@ function XIcon({ className }: { className?: string }) {
   );
 }
 
+function EtsyIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M8.564 2.445c0-.325.033-.52.59-.52h7.465c1.3 0 2.02 1.11 2.54 3.193l.42 1.666h1.27c.23-4.728.43-6.784.43-6.784s-3.196.36-5.09.36H6.64L1.526.196v1.37l1.725.326c1.21.24 1.5.496 1.6 1.606 0 0 .11 3.27.11 8.64 0 5.385-.09 8.61-.09 8.61 0 .973-.3 1.363-1.6 1.604l-1.725.326v1.37l5.378-.344h5.27c2.022 0 4.962.344 4.962.344s-.22-2.146-.462-6.93h-1.27l-.42 1.666c-.52 2.083-1.24 3.193-2.54 3.193H9.154c-.557 0-.59-.196-.59-.52V13.88h7.022v-1.465H8.564z" />
+    </svg>
+  );
+}
+
 export function Footer({ site }: { site: SiteConfig }) {
   const serviceLinks = [
     { label: "Vector Artwork", href: "/services/vector" },
@@ -43,6 +51,7 @@ export function Footer({ site }: { site: SiteConfig }) {
     WhatsApp: WhatsAppIcon,
     X: XIcon,
     Twitter: XIcon,
+    Etsy: EtsyIcon,
   };
 
   return (

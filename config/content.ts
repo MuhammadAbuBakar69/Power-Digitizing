@@ -334,6 +334,7 @@ export const siteContent: Omit<SiteInput, "id" | "domains" | "theme"> = {
     { label: "Facebook", href: "https://www.facebook.com/powerdigitizings07" },
     { label: "Instagram", href: "https://www.instagram.com/power_digitizing/" },
     { label: "X", href: "https://x.com/Powerdigitizing" },
+    { label: "Etsy", href: "https://www.etsy.com/shop/PowerDigitizing" },
     { label: "WhatsApp", href: "https://wa.me/13164441366" },
   ],
   footer: {
