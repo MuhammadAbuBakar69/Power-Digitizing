@@ -37,6 +37,7 @@ export function Footer({ site }: { site: SiteConfig }) {
     { label: "Our promise", href: "/#promise" },
     { label: "Refund policy", href: "/refund-policy" },
     { label: "Privacy policy", href: "/privacy-policy" },
+    { label: "Terms of service", href: "/terms" },
   ];
   const useCaseLinks = [
     { label: "Uniform Patches", href: "/collections/embroidered-patches" },
@@ -113,12 +114,6 @@ export function Footer({ site }: { site: SiteConfig }) {
         <div className="mt-16 flex flex-col gap-6 border-t border-white/10 pt-6 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-5">
-            {site.footer.legalLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="transition-colors hover:text-white">
-                {link.label}
-              </Link>
-            ))}
-            <span className="h-4 w-px bg-white/15" />
             {site.socials.map((social) => {
               const SocialIcon = socialIcons[social.label as keyof typeof socialIcons];
               return (
