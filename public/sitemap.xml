@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ================= Core pages ================= -->
+  <url>
+    <loc>https://powerdigitizing.com/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://powerdigitizing.com/images/hero/hero-embroidery-patch.png</image:loc></image:image>
+    <image:image><image:loc>https://powerdigitizing.com/images/hero/hero-pvc-patch.png</image:loc></image:image>
+    <image:image><image:loc>https://powerdigitizing.com/images/hero/hero-chenille-patch.png</image:loc></image:image>
+    <image:image><image:loc>https://powerdigitizing.com/images/hero/hero-leather-patch.png</image:loc></image:image>
+    <image:image><image:loc>https://powerdigitizing.com/images/hero/hero-sublimated-patch.png</image:loc></image:image>
+  </url>
+  <url><loc>https://powerdigitizing.com/quote</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://powerdigitizing.com/about</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url>
+    <loc>https://powerdigitizing.com/company</loc>
+    <lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image><image:loc>https://powerdigitizing.com/images/company/custom-patches-collection.jpg</image:loc></image:image>
+  </url>
+  <url><loc>https://powerdigitizing.com/contact</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- ================= Services (embroidery digitizing + vector) ================= -->
+  <url><loc>https://powerdigitizing.com/services</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url>
+    <loc>https://powerdigitizing.com/services/embroidery</loc>
+    <lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <image:image><image:loc>https://powerdigitizing.com/images/company/digitizing-cad.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://powerdigitizing.com/services/vector</loc>
+    <lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image><image:loc>https://powerdigitizing.com/images/company/vector-conversion.jpg</image:loc></image:image>
+  </url>
+
+  <!-- ================= Custom patch collections ================= -->
+  <url><loc>https://powerdigitizing.com/collections</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/embroidered-patches</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/pvc-patches</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/chenille-patches</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/woven-patches</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/leather-patches</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/silicone-patches</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/sublimated-patches</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/iron-on-patches</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/sequin-patches</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/pvc-keychains</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/embroidery-keychains</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://powerdigitizing.com/collections/enamel-pins</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- ================= Blog / guides ================= -->
+  <url><loc>https://powerdigitizing.com/blog</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://powerdigitizing.com/blog/ultimate-guide-embroidery-digitizing-2026</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://powerdigitizing.com/blog/pvc-vs-embroidered-patches-comparison</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://powerdigitizing.com/blog/5-essential-vector-art-tips-for-custom-patches</loc><lastmod>2026-10-08</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://powerdigitizing.com/blog/choosing-the-best-patch-backing-iron-on-velcro-sew-on</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://powerdigitizing.com/blog/varsity-chenille-patches-trend-revival</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://powerdigitizing.com/blog/sublimated-vs-woven-patches-for-detailed-artwork</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://powerdigitizing.com/blog/leather-and-silicone-patches-for-hats-and-outerwear</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://powerdigitizing.com/blog/understanding-embroidery-file-formats-dst-pes-exp</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://powerdigitizing.com/blog/how-to-care-for-custom-embroidered-patches-washing-guide</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- TODO: add the other 6 blog post URLs (behind "Load More") in the same format -->
+
+  <!-- ================= Policies ================= -->
+  <url><loc>https://powerdigitizing.com/privacy-policy</loc><lastmod>2026-11-03</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://powerdigitizing.com/refund-policy</loc><lastmod>2026-11-03</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://powerdigitizing.com/terms</loc><lastmod>2026-11-03</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
+</urlset>
