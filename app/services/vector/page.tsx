@@ -4,14 +4,17 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   CheckCircle2,
+  Clock,
   Cpu,
   Download,
   Eye,
   FileCheck,
   Flame,
   Layers,
+  Mail,
   Palette,
   PenTool,
+  Phone,
   Printer,
   Scissors,
   ShieldCheck,
@@ -19,91 +22,96 @@ import {
   Zap,
 } from "lucide-react";
 import { getSite } from "@/lib/tenant";
-import { CtaBanner } from "@/components/sections/cta-banner";
 
 export const metadata: Metadata = {
-  title: "Professional Vector Artwork & Raster-to-Vector Conversion Services | Power Digitizing",
+  title: "Vector Conversion Service | Raster to Vector Art",
   description:
-    "Expert hand-drawn raster-to-vector artwork recreation. Crisp bezier curves, Pantone spot color separations, clean cut-lines for screen printing, vinyl cutters, DTF, and large-format signage. 2–4 hour rush available.",
+    "Hand-drawn raster to vector conversion for screen printing, vinyl cutting, laser engraving, and DTF. Get AI, EPS, SVG, and PDF files in 12–24 hours.",
 };
 
 const vectorProcesses = [
   {
     id: "screen-printing",
-    title: "Screen Printing & Spot Color Separations",
-    badge: "Apparel Prepress",
-    desc: "Every ink channel is separated onto individual layers with accurate choke and spread trapping (0.5pt–1pt). Includes registration marks, centerlines, and solid opaque black fills calibrated for 110–305 TPI mesh screen exposure.",
+    tag: "Apparel prepress",
+    title: "Vector Art for Screen Printing & Color Separations",
+    desc: "Each ink color is separated onto its own layer with choke and spread trapping, registration marks, and solid black fills ready for screen exposure.",
     bullets: [
-      "Spot color separation (Pantone Solid Coated PMS matching)",
-      "Underbase white generation for dark garment printing",
-      "Spread and choke trapping to prevent registration gaps",
-      "Halftone conversion support for simulated process art",
+      "Spot color separation with Pantone Solid Coated matching",
+      "White underbase layers for printing on dark garments",
+      "Trapping that prevents gaps between colors",
+      "Halftone support for simulated process artwork",
     ],
+    buttonText: "Order for Screen Printing",
     icon: Printer,
   },
   {
     id: "cutters-plotters",
-    title: "Vinyl Cutters, Plotters & CNC Routers",
-    badge: "Cutline Optimization",
-    desc: "Engineered with 100% closed, continuous vector paths and zero overlapping phantom lines. Cutters like Roland, Graphtec, and Mimaki execute seamless, blade-friendly cuts without tearing delicate heat-transfer vinyl.",
+    tag: "Cut line ready",
+    title: "Vector Files for Vinyl Cutters, Plotters & CNC",
+    desc: "Closed, continuous paths with no hidden overlapping lines, so Roland, Graphtec, Mimaki, Cricut, and Silhouette cutters make clean cuts without tearing heat-transfer vinyl.",
     bullets: [
-      "Zero overlapping path duplicates or double-cut nodes",
-      "Hairline strokes (0.001pt / 0.025mm) calibrated for plotter blades",
-      "Weeding-friendly layout with optimized border offsets",
-      "Single-line engraving toolpaths for rotary and CNC bits",
+      "No duplicate paths or double-cut nodes",
+      "Hairline cut strokes set up for plotter blades",
+      "Easy-to-weed layouts with clean border offsets",
+      "Single-line paths for rotary and CNC engraving bits",
     ],
+    buttonText: "Order for Vinyl Cutting",
     icon: Scissors,
   },
   {
     id: "laser-engraving",
-    title: "Laser Cutting & Precision Etching",
-    badge: "Sub-Millimeter Precision",
-    desc: "Strict separation between raster engraving fills (black) and vector cutting contours (red 0.001pt). Perfectly optimized for wood, acrylic, leather patch blanks, metal marking, and CO2/fiber laser equipment.",
+    tag: "Fine detail",
+    title: "Vector Art for Laser Cutting & Engraving",
+    desc: "Engraving fills and cutting lines are kept on separate, color-coded layers. Ready for wood, acrylic, leather patch blanks, metal marking, and CO2 or fiber lasers.",
     bullets: [
-      "RGB color-coded vectors for cut vs. etch vs. score passes",
-      "Tangent-continuous arcs for ultra-smooth laser head acceleration",
-      "Kerf-compensation offsets for snug acrylic joinery",
-      "Compatible with LightBurn, Epilog, Trotec, and Glowforge",
+      "Color-coded vectors for cut, engrave, and score passes",
+      "Smooth arcs that help the laser head move cleanly",
+      "Kerf offsets for tight-fitting acrylic parts",
+      "Works with LightBurn, Epilog, Trotec, and Glowforge",
     ],
+    buttonText: "Order for Laser Cutting",
     icon: Flame,
   },
   {
     id: "dtf-dtg",
-    title: "DTF & Direct-to-Garment (DTG) Transfers",
-    badge: "Digital Apparel",
-    desc: "Vector elements with crisp, razor-sharp perimeters, true transparent negative space, and zero antialiased white halos. Exported at native 300+ DPI CMYK with deep rich blacks and vibrant color rendition.",
+    tag: "Digital apparel",
+    title: "Vector Art for DTF & DTG Transfers",
+    desc: "Crisp edges, true transparent backgrounds, and no white halos around your design. Exported at 300+ DPI with rich blacks and bright color.",
     bullets: [
-      "Zero pixel fuzz or semi-transparent edge halos",
-      "Knockout black options to save ink on black tees",
-      "High-contrast color profiles calibrated for white ink backing",
-      "Gang-sheet ready layouts with tight nested spacing",
+      "No fuzzy pixels or semi-transparent edge halos",
+      "Knockout black options to save ink on black shirts",
+      "High-contrast color set up for white ink backing",
+      "Gang-sheet ready layouts with tight spacing",
     ],
+    buttonText: "Order for DTF",
     icon: Palette,
   },
   {
     id: "large-format",
-    title: "Large Format Banners & Vehicle Wraps",
-    badge: "Infinite Scale",
-    desc: "Because vectors are mathematically computed bezier curves, your logo can be blown up from a 2-inch business card to a 50-foot highway billboard or full commercial vehicle wrap with zero pixelation or file bloat.",
+    tag: "Any size",
+    title: "Vector Art for Banners, Signs & Vehicle Wraps",
+    desc: "A vector logo can grow from a 2-inch business card to a 50-foot billboard or a full vehicle wrap with no pixelation and a small file size.",
     bullets: [
-      "Infinite resolution scalability without loss of clarity",
-      "Lightweight file size compared to massive gigabyte TIFF files",
-      "Bleed margins and safety cutline guides included",
-      "Pantone color fidelity across UV and latex ink sets",
+      "Sharp at every size, with no quality loss",
+      "Much smaller files than huge TIFF images",
+      "Bleed margins and safe-area cut guides included",
+      "Consistent Pantone color across UV and latex inks",
     ],
+    buttonText: "Order for Large Format",
     icon: Layers,
   },
   {
     id: "embroidery-prep",
-    title: "Embroidery Digitizing Art Preparation",
-    badge: "Digitizer-Friendly",
-    desc: "Before digitizing stitches, complex raster art must be simplified into clean vector regions. We remove micro-specks, unite overlapping fills, and optimize outlines for direct import into Wilcom and Tajima Pulse.",
+    tag: "Ready for digitizing",
+    title: "Vector Art Preparation for Embroidery Digitizing",
+    desc: "Before a design can be digitized, complex artwork has to be simplified into clean shapes. We remove tiny specks, merge overlapping fills, and clean up outlines for direct import into Wilcom and Tajima Pulse.",
     bullets: [
-      "Simplified vector geometry without unnecessary micro-shapes",
+      "Simple shapes without unnecessary tiny details",
       "Welded shapes that prevent unwanted stitch jumps",
-      "High-contrast color blocking for automatic stitch assignment",
-      "True proportion scaling for standard chest and cap sizes",
+      "Clear color blocks for easy stitch assignment",
+      "Correct proportions for standard left-chest and cap sizes",
     ],
+    buttonText: "Order Embroidery Art Prep",
     icon: PenTool,
   },
 ];
@@ -111,97 +119,143 @@ const vectorProcesses = [
 const workflowSteps = [
   {
     step: "01",
-    title: "Manual Bezier Tracing",
-    desc: "We never rely on automated 'auto-trace' or 'quick trace' filters which create jagged, lumpy curves and thousands of redundant anchor points. Every single contour is manually plotted using professional pen tools by senior graphic illustrators.",
+    title: "Manual tracing",
+    desc: "We never use auto-trace or Image Trace filters, which create lumpy curves and thousands of extra points. Our illustrators redraw every line by hand with professional pen tools.",
   },
   {
     step: "02",
-    title: "Typography Identification & Reconstruction",
-    desc: "If your artwork includes rasterized, blurry text, our prepress team identifies the exact font typeface from our commercial typography library or hand-draws bespoke lettering glyphs to guarantee razor-sharp typography.",
+    title: "Font matching and lettering",
+    desc: "If your artwork has blurry text, we find the matching font from our type library or redraw the lettering by hand so it stays sharp.",
   },
   {
     step: "03",
-    title: "Pantone PMS & Spot Color Calibration",
-    desc: "We assign official Pantone Matching System (PMS Solid Coated) color chips to each artwork element. This ensures that your screen printer, vinyl distributor, or sign maker hits the exact brand color every single run.",
+    title: "Pantone color matching",
+    desc: "We assign official Pantone (PMS Solid Coated) colors to each part of your artwork, so your printer, vinyl supplier, or sign maker hits the same brand color every time.",
   },
   {
     step: "04",
-    title: "Path Optimization & Node Reduction",
-    desc: "Excess anchor points cause plotter stuttering and bloated file sizes. We refine tangents, smooth bezier handles, and eliminate unnecessary nodes to produce clean, sleek curves that cut like butter.",
+    title: "Clean-up and node reduction",
+    desc: "Too many anchor points make plotters stutter and files heavy. We smooth curves and remove extra points so the file cuts and prints cleanly.",
   },
 ];
 
 const deliveryFormats = [
   {
     ext: ".AI",
-    name: "Adobe Illustrator Native",
-    app: "Industry Standard Vector",
-    desc: "Live layers, grouped paths, editable text (where requested), and organized swatches. Back-saved to CS6/CC for universal studio compatibility.",
+    name: "Adobe Illustrator",
+    app: "Industry standard",
+    desc: "Organized layers, grouped paths, editable text when requested, and color swatches. Saved for CS6 and newer.",
   },
   {
     ext: ".EPS",
     name: "Encapsulated PostScript",
-    app: "Universal Prepress Interchange",
-    desc: "Compatible with legacy RIP software, Roland VersaWorks, screen printing film processors, and third-party CAD applications.",
+    app: "Universal print file",
+    desc: "Works with older RIP software, Roland VersaWorks, film output, and most CAD programs.",
   },
   {
     ext: ".SVG",
     name: "Scalable Vector Graphics",
-    app: "Web & Digital Craft Cutters",
-    desc: "Lightweight XML-based vector code perfect for modern web frontends, Cricut Design Space, Silhouette Studio, and laser cutters.",
+    app: "Web & craft cutters",
+    desc: "Light, web-friendly files for websites, Cricut Design Space, Silhouette Studio, and laser cutters.",
   },
   {
     ext: ".PDF",
-    name: "Press-Ready High-Res PDF",
-    app: "Universal Commercial Print",
-    desc: "PDF/X-1a standards-compliant vector document with embedded fonts, CMYK/Pantone color space, and lossless vector contours.",
+    name: "Press-ready PDF",
+    app: "Commercial print",
+    desc: "High-resolution vector PDF with embedded fonts and CMYK or Pantone color.",
   },
   {
     ext: ".PNG",
-    name: "Transparent Hi-Res 300+ DPI",
-    app: "Client Preview & Digital Mockup",
-    desc: "Crisp 3000px+ transparent PNG export for immediate client approval, social media, ecommerce stores, and digital mockups.",
+    name: "Transparent PNG, 300+ DPI",
+    app: "Preview & mockups",
+    desc: "A large transparent PNG for client approval, social media, online stores, and mockups.",
   },
   {
     ext: ".CDR",
-    name: "CorelDRAW Vector (On Request)",
-    app: "Screen Printing & Signage",
-    desc: "Available upon request for shops utilizing CorelDRAW workflows, with full object and spot color preservation.",
+    name: "CorelDRAW (on request)",
+    app: "Screen printing & signs",
+    desc: "Available for shops that work in CorelDRAW, with objects and spot colors kept intact.",
   },
 ];
 
 const vectorFaqs = [
   {
-    q: "Why can't I just use Adobe Illustrator's 'Image Trace' button?",
-    a: "Automated tracing algorithms create thousands of redundant, jagged anchor points, rounded corners where sharp serifs are required, and weird color specks that ruin print jobs and cause vinyl cutters to tear material. Our vector conversions are 100% hand-drawn with surgical bezier curve precision.",
+    q: "What is raster to vector conversion?",
+    a: "Raster to vector conversion means redrawing a pixel image, such as a JPG or PNG, as lines and curves. The result is a vector file (AI, EPS, SVG, or PDF) that stays sharp at any size and works for screen printing, vinyl cutting, engraving, and signs.",
   },
   {
-    q: "Can you vector low-resolution photos or scans of sketches?",
-    a: "Yes! We specialize in reviving terrible quality artwork: camera photos of old patches, napkin doodles, screenshots of logos with compression artifacts, and micro-resolution 72 DPI JPEGs. Our illustrators accurately recreate the intended artwork geometry.",
+    q: "Why can't I just use Adobe Illustrator's Image Trace?",
+    a: "Auto-trace tools create thousands of extra points, round off sharp corners, and leave color specks that ruin print jobs and make vinyl cutters tear material. We redraw every vector by hand for clean, accurate results.",
   },
   {
-    q: "Do you provide color separations for screen printers?",
-    a: "Yes. When requested, we deliver fully separated vector files with individual spot color layers, choke/spread trapping, registration targets, and opaque black film output channels ready for direct burning onto silkscreen mesh.",
+    q: "Can you convert a low-resolution photo or a sketch to vector?",
+    a: "Yes. We regularly redraw phone photos of old patches, napkin sketches, blurry screenshots, and tiny 72 DPI JPGs. Our illustrators rebuild the artwork the way it was meant to look.",
   },
   {
-    q: "What is your turnaround time for vector artwork?",
-    a: "Standard vector conversions are completed within 12–24 hours. For critical print shop deadlines, we offer an expedited 2–4 hour rush service that delivers production-ready files directly to your inbox.",
+    q: "Do you provide color separations for screen printing?",
+    a: "Yes. When requested, we deliver separated vector files with one layer per spot color, choke and spread trapping, registration marks, and solid black film output ready for burning screens.",
+  },
+  {
+    q: "How long does vector conversion take?",
+    a: "Standard vector conversions are finished within 12–24 hours. For tight print deadlines, a 2–4 hour rush service is available.",
   },
   {
     q: "What if my logo uses a specific Pantone or CMYK color?",
-    a: "Simply specify your PMS color codes (e.g. Pantone 186 C, Pantone Reflex Blue) in your quote request. If you don't know the exact codes, our prepress team will visually match the closest official Pantone Solid Coated swatch.",
+    a: "Add your PMS codes (for example Pantone 186 C or Pantone Reflex Blue) to your quote request. If you don't know them, our team will match the closest official Pantone Solid Coated color.",
   },
   {
-    q: "Are revisions included if something needs adjustment?",
-    a: "Absolutely. We provide free minor revisions until you and your commercial printer are 100% satisfied with the vector reproduction.",
+    q: "Which file formats will I receive?",
+    a: "Every order includes AI, EPS, SVG, PDF, and a transparent PNG. CorelDRAW (CDR) files are available on request.",
+  },
+  {
+    q: "Are revisions included?",
+    a: "Yes. Minor revisions are free until you and your printer are happy with the vector file.",
   },
 ];
 
 export default async function VectorServicePage() {
   const site = await getSite();
 
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Vector Artwork Recreation & Raster-to-Vector Conversion",
+      serviceType: "Vector Conversion Service",
+      provider: {
+        "@type": "Organization",
+        name: site.name,
+        url: "https://powerdigitizing.com",
+      },
+      description:
+        "Hand-drawn raster to vector conversion for screen printing, vinyl cutting, laser engraving, and DTF. Get AI, EPS, SVG, and PDF files in 12–24 hours.",
+      areaServed: ["US", "CA", "GB", "AU"],
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: vectorFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.a,
+        },
+      })),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* ─── 1. HERO SECTION ─── */}
       <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 border-b border-border/80 bg-gradient-to-b from-card/60 via-background to-background">
         <div
@@ -216,7 +270,7 @@ export default async function VectorServicePage() {
         <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#14263D]/10 bg-[#14263D]/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#C94343]">
             <Sparkles className="size-3.5" />
-            <span>Prepress-Grade Manual Vectorization</span>
+            <span>Hand-drawn vector conversion service</span>
           </div>
 
           <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#14263D]">
@@ -225,7 +279,7 @@ export default async function VectorServicePage() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-3xl text-base sm:text-lg leading-relaxed text-muted-foreground">
-            Transform blurry JPEGs, pixelated screenshots, and hand-drawn sketches into razor-sharp mathematical bezier curves. 100% hand-plotted with zero automated shortcuts. Ready for screen printing, vinyl cutters, laser engraving, DTF, and billboards.
+            Turn blurry JPGs, pixelated PNGs, screenshots, and hand-drawn sketches into clean, scalable vector art. Every logo is redrawn by hand, not auto-traced, and delivered ready for screen printing, vinyl cutting, laser engraving, DTF transfers, embroidery, and large signs. Standard files in 12–24 hours.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -233,7 +287,7 @@ export default async function VectorServicePage() {
               href="/quote"
               className="inline-flex items-center gap-2 rounded-full bg-[#C94343] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-[#C94343]/25 hover:bg-[#b03535] hover:shadow-xl hover:shadow-[#C94343]/35 transition-all hover:scale-105"
             >
-              <span>Get Free Vector Quote</span>
+              <span>Get a Free Vector Quote</span>
               <ArrowUpRight className="size-4" />
             </Link>
             <Link
@@ -248,37 +302,37 @@ export default async function VectorServicePage() {
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-border/80">
             <div className="p-3 text-center">
               <p className="font-display text-2xl md:text-3xl font-extrabold text-[#14263D]">100%</p>
-              <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wider font-medium">Hand-Drawn Bezier</p>
+              <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wider font-medium">Hand-drawn paths</p>
             </div>
             <div className="p-3 text-center">
-              <p className="font-display text-2xl md:text-3xl font-extrabold text-[#C94343]">0% Loss</p>
-              <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wider font-medium">Infinite Resolution</p>
+              <p className="font-display text-2xl md:text-3xl font-extrabold text-[#C94343]">Any size</p>
+              <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wider font-medium">No quality loss</p>
             </div>
             <div className="p-3 text-center">
-              <p className="font-display text-2xl md:text-3xl font-extrabold text-[#14263D]">2–4 Hr</p>
-              <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wider font-medium">Rush Turnaround</p>
+              <p className="font-display text-2xl md:text-3xl font-extrabold text-[#14263D]">2–4 hr</p>
+              <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wider font-medium">Rush option</p>
             </div>
             <div className="p-3 text-center">
               <p className="font-display text-2xl md:text-3xl font-extrabold text-[#14263D]">Pantone®</p>
-              <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wider font-medium">PMS Spot Matching</p>
+              <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wider font-medium">Spot color matching</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── 2. BEFORE & AFTER SHOWCASE ─── */}
+      {/* ─── 2. SIDE-BY-SIDE COMPARISON ─── */}
       <section className="py-20 md:py-28 border-b border-border/80 bg-card/30">
         <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-[#C94343]/10 px-3 py-1 text-xs font-semibold text-[#C94343] uppercase tracking-wider">
               <Eye className="size-3.5" />
-              <span>Side-by-Side Comparison</span>
+              <span>Side-by-side comparison</span>
             </div>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-[#14263D]">
-              Low-Res Raster vs. Clean Vector Precision
+              Low-Resolution Raster vs. Clean Vector Art
             </h2>
             <p className="mt-3 text-muted-foreground text-sm sm:text-base">
-              See the difference between jagged, antialiased pixels and our surgical vector node architecture with clean spot color separation.
+              A raster image is made of pixels, so it turns blurry and jagged when you enlarge it. A vector file is made of lines and curves, so it stays sharp at any size.
             </p>
           </div>
 
@@ -286,7 +340,7 @@ export default async function VectorServicePage() {
             <div className="relative aspect-[16/9] w-full">
               <Image
                 src="/images/company/vector-separation-showcase.jpg"
-                alt="Vector transformation comparison: blurry raster badge transformed into razor sharp vector with bezier nodes and spot color separations"
+                alt="Blurry raster badge next to the same badge redrawn as a sharp vector with spot color layers"
                 fill
                 sizes="(max-width: 1200px) 100vw, 1152px"
                 className="object-cover"
@@ -295,21 +349,21 @@ export default async function VectorServicePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border bg-card p-6">
               <div className="p-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#C94343]">Problem: Blurry Raster</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#C94343]">Problem: blurry raster</span>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Low-resolution JPEGs and PNGs blur when scaled. Fringed edge pixels ruin silkscreen screens and cause vinyl cutters to shudder and tear.
+                  Low-resolution JPGs and PNGs blur when they are scaled up. Soft, fuzzy edges ruin screen printing screens and cause vinyl cutters to tear the material.
                 </p>
               </div>
               <div className="p-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#14263D]">Solution: Clean Bezier Nodes</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#14263D]">Solution: clean vector paths</span>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Hand-crafted vector paths with smooth tangent handles and minimal anchor points. Renders flawlessly whether printed 1 inch or 50 feet wide.
+                  Hand-drawn curves with smooth edges and as few anchor points as possible. Your logo prints sharp whether it is 1 inch wide or 50 feet wide.
                 </p>
               </div>
               <div className="p-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">Production Ready</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">Production ready</span>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Layered spot color channels (Crimson, Navy, Gold) with calibrated traps and solid black film positives for immediate press setup.
+                  Each spot color sits on its own layer, with trapping and solid black film positives ready for press setup when you need them.
                 </p>
               </div>
             </div>
@@ -317,20 +371,20 @@ export default async function VectorServicePage() {
         </div>
       </section>
 
-      {/* ─── 3. PREPRESS PRODUCTION PROCESS (INFOGRAPHIC) ─── */}
+      {/* ─── 3. COMMERCIAL PRINT STANDARDS ─── */}
       <section className="py-20 md:py-28 border-b border-border/80">
         <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
               <div className="inline-flex items-center gap-1.5 rounded-full bg-[#14263D]/5 px-3 py-1 text-xs font-semibold text-[#14263D] uppercase tracking-wider">
                 <Cpu className="size-3.5" />
-                <span>Commercial Print Standards</span>
+                <span>Commercial print standards</span>
               </div>
               <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-[#14263D] leading-tight">
-                Vector Art Prepress Production Architecture
+                Vector Art Built for Real Print Production
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed text-sm sm:text-base">
-                We don&apos;t just trace shapes—we build print-ready artwork engineered specifically for your shop&apos;s physical machinery. From screen separations to laser hairlines, every path has purpose.
+                We don&apos;t just trace shapes. We prepare print-ready artwork for the machine your shop actually uses, from screen separations to laser cut lines.
               </p>
 
               <div className="mt-8 space-y-4">
@@ -339,9 +393,9 @@ export default async function VectorServicePage() {
                     1
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-[#14263D]">Color-Separated Film Positives</h3>
+                    <h3 className="text-sm font-bold text-[#14263D]">Color-separated film positives</h3>
                     <p className="mt-0.5 text-xs text-muted-foreground">
-                      Clean opaque black film positives for 110–305 TPI mesh silkscreen exposure.
+                      Clean, solid black film positives for exposing screen printing mesh.
                     </p>
                   </div>
                 </div>
@@ -351,9 +405,9 @@ export default async function VectorServicePage() {
                     2
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-[#14263D]">Hairline Cut Lines (0.001 pt)</h3>
+                    <h3 className="text-sm font-bold text-[#14263D]">Hairline cut lines</h3>
                     <p className="mt-0.5 text-xs text-muted-foreground">
-                      Dedicated cut paths for vinyl plotters, flatbed cutters, and laser heads.
+                      Separate cut paths for vinyl plotters, flatbed cutters, and laser machines.
                     </p>
                   </div>
                 </div>
@@ -363,9 +417,9 @@ export default async function VectorServicePage() {
                     3
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-[#14263D]">Pantone® Spot Color Chips</h3>
+                    <h3 className="text-sm font-bold text-[#14263D]">Pantone® spot color chips</h3>
                     <p className="mt-0.5 text-xs text-muted-foreground">
-                      Standardized color matching that eliminates print shop color guesswork.
+                      Standard color matching that removes guesswork for your printer.
                     </p>
                   </div>
                 </div>
@@ -375,9 +429,9 @@ export default async function VectorServicePage() {
                     4
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-[#14263D]">Wide-Format Scaling</h3>
+                    <h3 className="text-sm font-bold text-[#14263D]">Wide-format scaling</h3>
                     <p className="mt-0.5 text-xs text-muted-foreground">
-                      Zero pixelation on banners, trade show displays, and architectural signs.
+                      No pixelation on banners, trade show displays, vehicle wraps, and building signs.
                     </p>
                   </div>
                 </div>
@@ -389,7 +443,7 @@ export default async function VectorServicePage() {
                 <div className="relative aspect-[16/9] w-full">
                   <Image
                     src="/images/company/vector-prepress-workflow.jpg"
-                    alt="Vector Art Prepress Production Process infographic: Film Positives, Hairline Cut Lines, Pantone Swatch Cards, Large Format Vinyl"
+                    alt="Vector art prepress examples showing film positives, cut lines, Pantone swatches, and large-format vinyl"
                     fill
                     sizes="(max-width: 1200px) 100vw, 700px"
                     className="object-cover"
@@ -401,19 +455,19 @@ export default async function VectorServicePage() {
         </div>
       </section>
 
-      {/* ─── 4. OUTPUT PROCESSES WE SPECIALIZE IN ─── */}
+      {/* ─── 4. SPECIALIZED VECTOR SOLUTIONS (6 CARDS) ─── */}
       <section className="py-20 md:py-28 border-b border-border/80 bg-card/20">
         <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-[#C94343]/10 px-3 py-1 text-xs font-semibold text-[#C94343] uppercase tracking-wider">
               <Zap className="size-3.5" />
-              <span>Tailored For Every Machine</span>
+              <span>Made for every machine</span>
             </div>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-[#14263D]">
-              Specialized Prepress Vector Solutions
+              Vector Art Services for Every Print and Cut Method
             </h2>
             <p className="mt-3 text-muted-foreground text-sm sm:text-base">
-              Different manufacturing methods require fundamentally different vector geometries. We customize every file to match your exact equipment specifications.
+              Each production method needs a different kind of vector file. We set up every file for the equipment you will use.
             </p>
           </div>
 
@@ -431,7 +485,7 @@ export default async function VectorServicePage() {
                         <IconComp className="size-5" />
                       </div>
                       <span className="rounded-full bg-[#14263D]/5 px-2.5 py-0.5 text-xs font-semibold text-[#14263D]">
-                        {proc.badge}
+                        {proc.tag}
                       </span>
                     </div>
 
@@ -453,7 +507,7 @@ export default async function VectorServicePage() {
                       href="/quote"
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-[#C94343] hover:text-[#b03535] transition-colors"
                     >
-                      <span>Order for {proc.title.split("&")[0].trim()}</span>
+                      <span>{proc.buttonText}</span>
                       <ArrowUpRight className="size-3" />
                     </Link>
                   </div>
@@ -464,19 +518,19 @@ export default async function VectorServicePage() {
         </div>
       </section>
 
-      {/* ─── 5. THE 4-STAGE MANUAL PIPELINE ─── */}
+      {/* ─── 5. OUR 4-STEP MANUAL PROCESS ─── */}
       <section className="py-20 md:py-28 border-b border-border/80">
         <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-[#14263D]/5 px-3 py-1 text-xs font-semibold text-[#14263D] uppercase tracking-wider">
               <ShieldCheck className="size-3.5" />
-              <span>Zero Automated Shortcuts</span>
+              <span>No auto-trace shortcuts</span>
             </div>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-[#14263D]">
-              Our 4-Stage Manual Vectorization Workflow
+              How We Convert Your Logo to Vector, Step by Step
             </h2>
             <p className="mt-3 text-muted-foreground text-sm sm:text-base">
-              Why professional print shops and screen printers trust Power Digitizing for mission-critical artwork.
+              Why print shops and screen printers trust Power Digitizing with artwork that has to print right the first time.
             </p>
           </div>
 
@@ -495,19 +549,19 @@ export default async function VectorServicePage() {
         </div>
       </section>
 
-      {/* ─── 6. FILE FORMATS DELIVERED ─── */}
+      {/* ─── 6. FILE FORMATS (6 CARDS) ─── */}
       <section className="py-20 md:py-28 border-b border-border/80 bg-card/30">
         <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-[#C94343]/10 px-3 py-1 text-xs font-semibold text-[#C94343] uppercase tracking-wider">
               <Download className="size-3.5" />
-              <span>Universal Compatibility</span>
+              <span>Works with your software</span>
             </div>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-[#14263D]">
-              Delivered in All Standard Production Formats
+              Delivered in Every Standard Vector Format
             </h2>
             <p className="mt-3 text-muted-foreground text-sm sm:text-base">
-              Every completed order includes the full production suite of files ready for immediate use by designers, printers, and machine operators.
+              Every order includes the production files designers, printers, and machine operators need.
             </p>
           </div>
 
@@ -531,20 +585,19 @@ export default async function VectorServicePage() {
         </div>
       </section>
 
-
-      {/* ─── 8. PREPRESS VECTOR FAQS ─── */}
+      {/* ─── 7. FAQ SECTION (8 QUESTIONS) ─── */}
       <section className="py-20 md:py-28 border-b border-border/80 bg-card/20">
         <div className="mx-auto max-w-4xl px-5">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-[#C94343]/10 px-3 py-1 text-xs font-semibold text-[#C94343] uppercase tracking-wider">
               <FileCheck className="size-3.5" />
-              <span>Expert Knowledge</span>
+              <span>Vector questions</span>
             </div>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-[#14263D]">
-              Frequently Asked Vector Questions
+              Vector Conversion FAQs
             </h2>
             <p className="mt-3 text-muted-foreground text-sm sm:text-base">
-              Everything you need to know about preparing artwork for manufacturing and commercial printing.
+              What you need to know before sending artwork for print or production.
             </p>
           </div>
 
@@ -555,10 +608,10 @@ export default async function VectorServicePage() {
                 className="rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:border-[#14263D]/30"
               >
                 <h3 className="font-display text-base font-bold text-[#14263D] flex items-start gap-2.5">
-                  <span className="text-[#C94343] font-bold">Q:</span>
+                  <span className="text-[#C94343] font-bold">Q{idx + 1}:</span>
                   <span>{faq.q}</span>
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground pl-6">
+                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground pl-8">
                   {faq.a}
                 </p>
               </div>
@@ -567,8 +620,83 @@ export default async function VectorServicePage() {
         </div>
       </section>
 
-      {/* ─── 9. BOTTOM CTA BANNER ─── */}
-      <CtaBanner site={site} />
+      {/* ─── 8. CLOSING CALL TO ACTION ─── */}
+      <section className="relative overflow-hidden bg-background py-16 md:py-24">
+        <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
+          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#0B1626] via-[#14263D] to-[#0B1626] p-8 text-center text-white shadow-2xl sm:p-12 md:p-16 lg:p-20">
+            {/* Ambient lighting */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-96 w-[600px] rounded-full bg-[#C94343]/15 blur-[120px]"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -bottom-32 right-10 h-72 w-72 rounded-full bg-white/5 blur-[100px]"
+            />
+
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
+                <Sparkles className="size-3.5 text-[#C94343]" />
+                <span>Ready to get started?</span>
+              </div>
+
+              <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+                Turn your logo into a clean vector file today.
+              </h2>
+
+              <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+                Send your JPG, PNG, PDF, screenshot, or sketch. We&apos;ll redraw it by hand and deliver print-ready AI, EPS, SVG, and PDF files, usually within 12–24 hours.
+              </p>
+
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <Link
+                  href="/quote"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[#C94343] px-8 py-4 text-sm font-bold text-white shadow-xl shadow-[#C94343]/30 transition-all hover:scale-105 hover:bg-[#b03535] hover:shadow-2xl"
+                >
+                  <span>Get a Free Vector Quote</span>
+                  <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white backdrop-blur transition-all hover:border-white/40 hover:bg-white/15"
+                >
+                  <span>Talk to Our Team</span>
+                </Link>
+              </div>
+
+              {/* Contact strip */}
+              <div className="mt-12 flex flex-wrap items-center justify-center gap-6 border-t border-white/10 pt-8 text-xs text-slate-300/80 sm:text-sm">
+                <a
+                  href="tel:13164441366"
+                  className="group flex items-center gap-2 transition-colors hover:text-white"
+                >
+                  <Phone className="size-4 text-[#C94343] transition-transform group-hover:scale-110" />
+                  <span>+1 (316) 444-1366</span>
+                </a>
+                <span className="hidden sm:inline text-white/20">•</span>
+                <a
+                  href="mailto:design@powerdigitizing.com"
+                  className="group flex items-center gap-2 transition-colors hover:text-white"
+                >
+                  <Mail className="size-4 text-[#C94343] transition-transform group-hover:scale-110" />
+                  <span>design@powerdigitizing.com</span>
+                </a>
+                <span className="hidden sm:inline text-white/20">•</span>
+                <div className="flex items-center gap-2">
+                  <Clock className="size-4 text-[#C94343]" />
+                  <span>2–4 hour rush available</span>
+                </div>
+                <span className="hidden sm:inline text-white/20">•</span>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="size-4 text-[#C94343]" />
+                  <span>Free minor revisions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
