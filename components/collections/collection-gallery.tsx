@@ -182,13 +182,13 @@ export function CollectionGallery({ slug, collectionName }: { slug: string; coll
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-primary">
-            <Sparkles className="size-3.5" /> Curated Production Gallery
+            Our work
           </span>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
-            Real Custom {collectionName} Work
+            Real {collectionName} We&apos;ve Made
           </h2>
           <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Every design is manufactured to industrial tolerances with 100% white background studio capture. Click any patch to inspect close-up stitch detailing.
+            Every patch is photographed on a plain white background, so you can see the real detail. Click any patch for a close-up.
           </p>
         </div>
 
@@ -227,7 +227,7 @@ export function CollectionGallery({ slug, collectionName }: { slug: string; coll
                   {item.title}
                 </h3>
                 <div className="mt-2 flex items-center justify-between text-[11px] text-muted-foreground">
-                  <span className="font-medium text-primary">View specimen</span>
+                  <span className="font-medium text-primary">View close-up</span>
                   <ArrowUpRight className="size-3 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </div>
               </div>
@@ -241,11 +241,11 @@ export function CollectionGallery({ slug, collectionName }: { slug: string; coll
             href="/quote"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-bold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:scale-105"
           >
-            Request Custom Proof with Your Artwork
+            Request a Free Proof With Your Artwork
             <ArrowUpRight className="size-4" />
           </Link>
           <p className="mt-2.5 text-xs text-muted-foreground">
-            Free digital proof included. Zero die costs or setup fees.
+            Free digital proof included. No mold or setup fees.
           </p>
         </div>
       </div>

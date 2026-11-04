@@ -21,653 +21,1022 @@ import {
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { CollectionGallery } from "@/components/collections/collection-gallery";
 
-// ─── Per-collection rich content ──────────────────────────────────────────────
-const collectionDetails: Record<
-  string,
-  {
-    splitSections: { heading: string; body: string[]; image: string; imageAlt: string; reverse?: boolean }[];
-    about: { heading: string; paragraphs: string[] };
-    specs: { label: string; value: string }[];
-  }
-> = {
-  "leather-patches": {
-    about: {
-      heading: "Artisanal Heritage: The Master Leather Patch Atelier",
+export interface CollectionDetail {
+  meta: {
+    title: string;
+    description: string;
+    keywords: string;
+  };
+  heroEyebrow: string;
+  h1: string;
+  heroParagraph: string;
+  shortName: string;
+  specs: { label: string; value: string }[];
+  howTheyreMade: {
+    heading: string;
+    paragraphs: string[];
+  };
+  splitSections: {
+    heading: string;
+    body: string[];
+    image: string;
+    imageAlt: string;
+    reverse?: boolean;
+  }[];
+  faq: {
+    q: string;
+    a: string;
+  }[];
+}
+
+const collectionDetails: Record<string, CollectionDetail> = {
+  "embroidered-patches": {
+    meta: {
+      title: "Custom Embroidered Patches | Uniform & Logo Patches",
+      description:
+        "Custom embroidered patches for uniforms, teams, and brands. Hand-digitized artwork, merrowed borders, free digital proof, and no setup fees.",
+      keywords:
+        "custom embroidered patches, embroidered uniform patches, custom logo patches",
+    },
+    heroEyebrow: "Uniforms · Brands · Teams",
+    h1: "Custom Embroidered Patches",
+    shortName: "Embroidered Patches",
+    heroParagraph:
+      "Classic stitched patches with crisp lettering and raised texture. A top pick for embroidered uniform patches, clubs, and company apparel, with 3D puff embroidery for raised logos on caps. Made from artwork our own digitizers prepare by hand.",
+    specs: [
+      { label: "Stitch Detail", value: "Hand-digitized for clean lettering" },
+      { label: "Thread", value: "Colorfast polyester" },
+      { label: "Border", value: "Merrowed or laser-cut" },
+      { label: "Backing", value: "Iron-on, Velcro, or sew-on" },
+      { label: "Durability", value: "50+ wash cycles" },
+      { label: "Rush", value: "Available" },
+    ],
+    howTheyreMade: {
+      heading: "How Custom Embroidered Patches Are Made",
       paragraphs: [
-        "Leather patches represent the apex of heritage craft, permanent tactile branding, and timeless apparel positioning. A richly debossed or laser-engraved leather patch applied to a structured trucker cap, raw denim jacket, or waxed canvas travel bag communicates authentic craftsmanship in a way synthetic labels can never replicate. It speaks to permanence, rugged luxury, and discerning taste.",
-        "We source genuine top-grain cowhide, rustic crazy-horse vintage pull-up leather, and cruelty-free high-grade synthetic faux leathers. Every hide is inspected for grain uniformity, thickness calibrated to 2.2mm–2.8mm, and precision cut with high-speed optical CNC lasers before undergoing heated hydraulic pressure debossing or fiber-laser etching.",
-        "As leather patches age, they absorb oils, sunlight, and wear — developing a signature patina that renders every garment uniquely personal. For apparel decorators, hatmakers, and lifestyle brands seeking to command higher retail price points, our bespoke leather patches are the definitive choice.",
+        "Embroidered patches are the classic patch: thread stitched onto a twill base with raised, textured detail. They add weight and character to team crests, company uniforms, and tactical insignia.",
+        "We use colorfast polyester and rayon threads that hold up to washing, sunlight, and daily wear. Our digitizers set stitch angles, underlay, and pull compensation by hand so patches don't pucker.",
+        "Choose 50%, 75%, or 100% embroidery coverage on twill, with a merrowed or laser-cut border. You see a proof first, so you know exactly how your patch will look.",
       ],
     },
-    specs: [
-      { label: "Hide Thickness", value: "2.2mm – 2.8mm Top-Grain" },
-      { label: "Deboss Depth", value: "0.8mm Crisp Hydraulic Relief" },
-      { label: "Edge Treatment", value: "Burnished, Raw, or Stitch Grooved" },
-      { label: "Backing Method", value: "Heat-Seal, Sew-On Channel, Velcro" },
-      { label: "Turnaround Time", value: "5–7 Days Production" },
-      { label: "Minimum Order", value: "25 Pieces (Free Proof Included)" },
-    ],
     splitSections: [
       {
-        heading: "The Anatomy of a Premium Leather Hat Patch",
+        heading: "Embroidered Uniform Patches for First Responders, Military, and Teams",
         body: [
-          "Custom leather patches have become the gold standard for premium headwear brands worldwide. An authentic leather emblem elevates a standard 5-panel or 6-panel trucker cap from basic promotional merch into an upscale retail product that commands $35–$50 on shelves.",
-          "We engineer our leather patches specifically for headwear curvature. Our patches feature calibrated pliability so they contour smoothly to curved cap crowns without creasing, lifting at the edges, or bubbling.",
-          "Choose between blind debossing (where heated steel dies press your artwork permanently into the hide) and ultra-high-definition laser burnishing, which darkens the leather fibres to create rich caramel and espresso contrasts.",
+          "Uniform patches for fire departments, police, EMS, security teams, and sports clubs have to hold up to hard daily use. Tight merrowed borders keep the edges from fraying.",
+          "We match thread colors to Pantone and Madeira charts, so your department's official colors stay consistent from order to order.",
+          "Choose Velcro (hook and loop) backing for quick uniform changes, or heat-seal backing for permanent heat-press application.",
+        ],
+        image: "/images/embroidery/180ac20d-921e-4432-aee7-0ebb724068d7.webp",
+        imageAlt: "Embroidered uniform patches for first responders and teams",
+      },
+      {
+        heading: "Hand Digitizing Makes the Difference",
+        body: [
+          "A sharp embroidered patch starts with a good stitch file. Auto-digitizing software creates uneven stitches that break needles and blur text, so our digitizers plan every letter and fill by hand.",
+          "Small lettering down to 3.5 mm stays clear and readable, because we adjust density and underlay for small text.",
+          "Before production, you get a stitch preview with the stitch count and thread colors.",
+        ],
+        image: "/images/embroidery/9c109bbb-b227-4f4e-9d3d-56fae3c5016f.webp",
+        imageAlt: "Hand-digitized embroidery stitch precision and clean small lettering",
+        reverse: true,
+      },
+    ],
+    faq: [
+      {
+        q: "What is the minimum order for custom embroidered patches?",
+        a: "Embroidered patches start at 10 pieces, and the price per patch drops at 100, 250, 500, and 1,000+ pieces.",
+      },
+      {
+        q: "Will I see a proof before production?",
+        a: "Yes. You get a free digital proof within 24–48 hours showing the size, thread colors, and border. Production starts only after you approve it.",
+      },
+      {
+        q: "What file should I send for my patch?",
+        a: "Vector files (AI, EPS, PDF, SVG) work best, but high-resolution PNG and JPG files are fine. If you only have a sketch or a photo of an old patch, our artists will redraw it for free.",
+      },
+      {
+        q: "Which backing should I choose for embroidered patches?",
+        a: "Use sew-on for uniforms that are washed often, Velcro for tactical gear and swappable patches, and iron-on for cotton shirts, denim, and bags.",
+      },
+    ],
+  },
+
+  "chenille-patches": {
+    meta: {
+      title: "Custom Chenille Patches | Letterman & Varsity Patches",
+      description:
+        "Custom chenille patches for letterman jackets, varsity letters, and streetwear. Wool felt base, free digital proof, and orders from 10 pieces.",
+      keywords:
+        "custom chenille patches, chenille letterman patches, custom varsity patches, custom patches for jackets",
+    },
+    heroEyebrow: "Jackets · Letterman · Varsity",
+    h1: "Custom Chenille Patches",
+    shortName: "Chenille Patches",
+    heroParagraph:
+      "Soft, fuzzy yarn patches for chenille letterman patches, custom varsity patches, hoodies, and school spirit wear. One of the most popular custom patches for jackets, made on a wool felt base.",
+    specs: [
+      { label: "Yarn Height", value: "4–6 mm plush loops" },
+      { label: "Base", value: "Double-layer wool felt" },
+      { label: "Embroidery Detail", value: "Chenille and chainstitch combined" },
+      { label: "Border", value: "Die-cut felt or merrowed" },
+      { label: "Application", value: "Sew-on or heat-seal" },
+      { label: "Minimum Order", value: "10 pieces" },
+    ],
+    howTheyreMade: {
+      heading: "The Varsity Classic: Custom Chenille and Felt Patches",
+      paragraphs: [
+        "Chenille patches have been part of varsity and school culture for over a century. The thick, looped yarn gives each patch a soft, raised texture that stands 4–6 mm above the garment.",
+        "We make them with acrylic chenille yarn on a double layer of wool felt, the same look as a classic letterman jacket.",
+        "From varsity letters and mascots to streetwear logos, chenille turns a plain hoodie or bomber into something people want to keep.",
+      ],
+    },
+    splitSections: [
+      {
+        heading: "Chenille Letterman Patches for Schools and Teams",
+        body: [
+          "Nothing marks a big win or a varsity letter like chenille. We make felt backings in classic school colors such as crimson, navy, forest green, gold, and gray.",
+          "We build layered letters with contrasting chenille fills, stepped felt borders, and gold or silver embroidery for championship stars and years.",
+          "Sizes go up to 10 inches for jacket backs or 4–5 inches for the chest, and each patch is made to sit flat on wool and leather sleeves.",
+        ],
+        image: "/images/chenille/534aa9a0-5f7f-4a78-b27e-360df8c03136.webp",
+        imageAlt: "Custom chenille varsity letterman patches for schools and teams",
+      },
+      {
+        heading: "Chenille Patches for Streetwear Brands",
+        body: [
+          "Streetwear labels love chenille because its soft texture stands out on heavyweight cotton and satin jackets. A chunky chenille logo makes a statement piece.",
+          "We also make hybrid patches: fine details such as eyes, small text, or teeth are flat embroidery, while large areas are filled with chenille loops.",
+          "Every order includes free artwork setup and a color proof, so your drop arrives exactly as planned.",
+        ],
+        image: "/images/chenille/53d2f848-5ff7-4e64-9393-d42b165ca529.webp",
+        imageAlt: "Streetwear chenille patches with hybrid embroidery details",
+        reverse: true,
+      },
+    ],
+    faq: [
+      {
+        q: "What is the minimum order for custom chenille patches?",
+        a: "Chenille patches start at 10 pieces, with lower prices per patch as quantity goes up.",
+      },
+      {
+        q: "Will I see a proof before production?",
+        a: "Yes. You get a free digital proof within 24–48 hours showing the size, felt colors, and chenille areas. Production starts only after you approve.",
+      },
+      {
+        q: "How big can a chenille patch be?",
+        a: "Chenille letterman patches are usually 4–5 inches for the chest and up to 10 inches for a jacket back. Chenille works best with bold shapes, so very small text is added in flat embroidery.",
+      },
+      {
+        q: "How do I attach a chenille patch to a letterman jacket?",
+        a: "Sewing gives the most secure hold on wool and leather. Heat-seal backing is also available for cotton hoodies and jackets that can be heat pressed.",
+      },
+    ],
+  },
+
+  "pvc-patches": {
+    meta: {
+      title: "Custom PVC Patches | Tactical Rubber Patches",
+      description:
+        "Custom PVC patches and rubber patches for tactical, outdoor, and marine gear. Waterproof 2D and 3D designs, Velcro backing, and no mold fees.",
+      keywords:
+        "custom PVC patches, custom rubber patches, tactical PVC patches, PVC morale patches",
+    },
+    heroEyebrow: "Outdoor · Tactical · Gear",
+    h1: "Custom PVC Patches",
+    shortName: "PVC Patches",
+    heroParagraph:
+      "Soft, flexible custom rubber patches that resist water, mud, and heavy use. Tactical PVC patches with Velcro backing are a favorite for uniforms, packs, plate carriers, and outdoor gear.",
+    specs: [
+      { label: "Material", value: "Soft, flexible PVC" },
+      { label: "Relief", value: "2D flat or 3D sculpted" },
+      { label: "Water Resistance", value: "Waterproof and mud-proof" },
+      { label: "Backing", value: "Velcro (hook and loop) or sew channel" },
+      { label: "Temperature Range", value: "-30°C to +80°C (-22°F to 176°F)" },
+      { label: "Minimum Order", value: "25 pieces" },
+    ],
+    howTheyreMade: {
+      heading: "Custom Rubber Patches Built for All Weather",
+      paragraphs: [
+        "Soft PVC patches are one of the toughest patch options. Made from flexible PVC rubber, they are waterproof, mud-proof, and UV-resistant, for outdoor, tactical, and marine use.",
+        "Unlike thread patches, which can snag or soak up water, PVC patches wipe clean and keep their color.",
+        "Using precision metal molds, we create 2D and 3D raised detail with sharp, fine lines that embroidery can't match.",
+      ],
+    },
+    splitSections: [
+      {
+        heading: "Tactical PVC Patches for Military and Law Enforcement",
+        body: [
+          "From morale patches on plate carriers to department crests on caps, our PVC patches are made for hard use. A recessed sewing channel protects the stitching from wear.",
+          "We make subdued tactical colors such as coyote brown, ranger green, wolf gray, and OD green, plus glow-in-the-dark options.",
+          "Velcro backing is bonded and stitched around the edge so the patch stays on your vest and gear.",
+        ],
+        image: "/images/pvc/105f6253-e172-4ca6-a390-19a0ff9ec46a.webp",
+        imageAlt: "Tactical PVC morale patches for plate carriers and uniforms",
+      },
+      {
+        heading: "PVC Patches for Outdoor and Marine Gear",
+        body: [
+          "Outdoor brands, ski gear makers, and dive shops choose PVC because snow, salt water, and dirt don't damage it.",
+          "Our molding process allows up to 6 Pantone colors, each on its own raised level.",
+          "The mold captures sharp text and detailed logos without colors bleeding into each other.",
+        ],
+        image: "/images/pvc/24778966-adb2-4b70-870f-52984729189b.webp",
+        imageAlt: "Waterproof PVC rubber patches for outdoor and marine apparel",
+        reverse: true,
+      },
+      {
+        heading: "How We Make Your 3D PVC Patch Mold",
+        body: [
+          "Our team turns your vector logo into a multi-level metal mold. Liquid PVC is then filled into each level of the mold.",
+          "This creates raised borders, rounded edges, and textured fills that embroidery can't copy.",
+          "Every order includes a 3D digital preview showing each layer and color before the mold is made.",
+        ],
+        image: "/images/pvc/308c1aea-e284-4c78-b934-1501d16f6228.webp",
+        imageAlt: "Multi-level metal mold for 3D sculpted PVC rubber patches",
+      },
+    ],
+    faq: [
+      {
+        q: "What is the minimum order for custom PVC patches?",
+        a: "PVC patches start at 25 pieces. Prices per patch drop at higher quantities because the mold is made once.",
+      },
+      {
+        q: "Is there a mold fee for PVC patches?",
+        a: "No. There are no setup or mold fees. The quote you receive is the price you pay.",
+      },
+      {
+        q: "Are PVC patches waterproof?",
+        a: "Yes. PVC patches are waterproof and mud-proof, and they wipe clean, which makes them ideal for tactical, outdoor, and marine gear.",
+      },
+      {
+        q: "What is the difference between PVC and embroidered patches?",
+        a: "PVC patches are molded rubber with raised 3D detail and are waterproof. Embroidered patches are stitched thread with a classic textured look. Choose PVC for rugged gear and embroidery for uniforms and apparel.",
+      },
+    ],
+  },
+
+  "pvc-keychains": {
+    meta: {
+      title: "Custom PVC Keychains | 3D Rubber Keychains",
+      description:
+        "Custom PVC keychains in 2D or 3D soft rubber with bright Pantone colors and steel split rings. Free digital proof and orders from 25 pieces.",
+      keywords:
+        "custom PVC keychains, custom rubber keychains, 3D keychains, promotional keychains",
+    },
+    heroEyebrow: "Keys · Merch · Weatherproof",
+    h1: "Custom PVC Keychains",
+    shortName: "PVC Keychains",
+    heroParagraph:
+      "Molded 2D and 3D soft PVC keychains with steel split rings and bright Pantone colors, made from the same artwork as your patches. Great for brand merch, events, car clubs, and giveaways.",
+    specs: [
+      { label: "Material", value: "Soft, flexible PVC" },
+      { label: "Design", value: "2D multi-level or 3D sculpted" },
+      { label: "Hardware", value: "4-link chain and split ring" },
+      { label: "Water Resistance", value: "Waterproof" },
+      { label: "Sides", value: "Single-sided or double-sided 3D" },
+      { label: "Minimum Order", value: "25 pieces (free proof included)" },
+    ],
+    howTheyreMade: {
+      heading: "Custom Rubber Keychains for Brands and Everyday Carry",
+      paragraphs: [
+        "Soft PVC keychains are durable promotional merch people actually use. They don't fade or crack, and they won't scratch car ignitions, motorcycle tanks, or bags.",
+        "With 2D layers or full 3D relief, our PVC keychains show bright Pantone colors with clean separation and rounded edges.",
+        "Each keychain comes with a steel grommet, chain, and split ring. Choose a single-sided design with a textured back or a fully molded double-sided keychain.",
+      ],
+    },
+    splitSections: [
+      {
+        heading: "Built for Cars, Motorcycles, and Everyday Carry",
+        body: [
+          "Unlike metal keychains, soft PVC doesn't rattle against the steering column or scratch your car.",
+          "They handle heavy keys, rain, mud, and hot or freezing weather without losing color or flexibility.",
+          "Steel split rings (25–30 mm) and 4-link chains are made to hold a full set of keys.",
+        ],
+        image: "/images/pvc-keychains/11ea7517-d14e-46df-9402-99631c94c09b-6ad90f0dd4de7.webp",
+        imageAlt: "Soft rubber PVC keychains for automotive, motorcycle and daily carry",
+      },
+      {
+        heading: "Raised 3D Detail in Bright Pantone Colors",
+        body: [
+          "Our molds hold up to 8 Pantone colors, each on its own level, without bleeding or mixing.",
+          "Ideal for company merch, mascots, streetwear drops, and car clubs that want retail-quality accessories.",
+          "Every order includes a 3D digital proof showing layer heights, colors, and chain placement before the mold is made.",
+        ],
+        image: "/images/pvc-keychains/4fd78dbf-5d25-4342-aaaf-c5db604137ac-6ad90f0cea3f9.webp",
+        imageAlt: "Raised 3D multi-level molded soft PVC keychain detail",
+        reverse: true,
+      },
+      {
+        heading: "Double-Sided Keychain Options",
+        body: [
+          "Choose a textured back, a printed back with your website or contact details, or a fully molded double-sided 3D design for a heavier, premium feel.",
+          "Custom shapes follow your logo's outline for the most visual impact in a pocket-friendly size.",
+        ],
+        image: "/images/pvc-keychains/8adf7f0a-0467-4fd0-8a6c-6c4c02beb2d0-6ad90f0d02746.webp",
+        imageAlt: "Double-sided custom shaped soft rubber keychains",
+      },
+    ],
+    faq: [
+      {
+        q: "What is the minimum order for custom PVC keychains?",
+        a: "PVC keychains start at 25 pieces, with a free digital proof included.",
+      },
+      {
+        q: "Can PVC keychains be double-sided?",
+        a: "Yes. You can choose a textured back, a printed back, or a fully molded double-sided 3D keychain.",
+      },
+      {
+        q: "What file should I send?",
+        a: "Vector files (AI, EPS, PDF, SVG) work best, but PNG and JPG files are fine. Our artists can redraw a sketch or photo for free.",
+      },
+      {
+        q: "Are PVC keychains waterproof?",
+        a: "Yes. Soft PVC is waterproof and easy to wipe clean, so the keychain keeps its color through rain, mud, and daily use.",
+      },
+    ],
+  },
+
+  "silicone-patches": {
+    meta: {
+      title: "Custom Silicone Patches | Soft-Touch 3D Patches",
+      description:
+        "Custom silicone patches with a soft-touch matte finish for hats, athletic wear, and tactical gear. Waterproof 3D designs and a free digital proof.",
+      keywords:
+        "silicone patches, custom silicone patches, silicone patches for hats",
+    },
+    heroEyebrow: "Soft touch · Modern brands",
+    h1: "Custom Silicone Patches",
+    shortName: "Silicone Patches",
+    heroParagraph:
+      "Silicone patches with a soft-touch, slightly raised matte finish for hats, athletic apparel, bags, and modern branding. A clean, modern alternative to thread.",
+    specs: [
+      { label: "Material", value: "Matte silicone" },
+      { label: "Finish", value: "Soft-touch, non-glare" },
+      { label: "Raised Depth", value: "Up to 3.5 mm, multi-level 3D" },
+      { label: "Backing", value: "Velcro, heat-seal, or sew channel" },
+      { label: "Water Resistance", value: "Waterproof and washable" },
+      { label: "Minimum Order", value: "25 pieces" },
+    ],
+    howTheyreMade: {
+      heading: "Soft-Touch 3D Silicone Patches With a Matte Finish",
+      paragraphs: [
+        "Silicone patches give a clean, modern look with a soft matte finish, sharp 3D detail, and strong durability. They are a modern take on tactical and athletic emblems.",
+        "Water, sunlight, and cold don't damage silicone, so the patches keep their color and flexibility for years.",
+        "Available with sew-on channels, peel-and-stick adhesive, or Velcro (hook and loop) backing.",
+      ],
+    },
+    splitSections: [
+      {
+        heading: "Custom Silicone Patches for Hats and Performance Apparel",
+        body: [
+          "Matte silicone patches look upscale on technical jackets, structured trucker caps, and athletic wear.",
+          "Our molds capture very fine lettering without distortion.",
+          "A recessed channel around the edge protects the sewing thread from wear.",
+        ],
+        image: "/images/silicone/2ac5cc5d-94fa-4889-b6e5-066611aa1d47.webp",
+        imageAlt: "3D molded silicone patches for performance headwear and athletic apparel",
+      },
+      {
+        heading: "Silicone Patches for Fire, Rescue, and Tactical Teams",
+        body: [
+          "Silicone stands up to heat, fluids, mud, and hard scrubbing that would wear out embroidered patches.",
+          "Fire departments, rescue squads, and tactical teams choose it for crisp crests and non-reflective matte colors.",
+          "Velcro backing lets you move patches between uniforms, vests, and bags in seconds.",
+        ],
+        image: "/images/silicone/4dcf7a59-f478-4f4f-9a76-496d1d3d0286.webp",
+        imageAlt: "Heat-resistant matte silicone patches for emergency rescue and tactical teams",
+        reverse: true,
+      },
+      {
+        heading: "3D Silicone Patches for Streetwear Drops",
+        body: [
+          "Give streetwear collections raised 3D lettering and bright Pantone colors that thread can't match.",
+          "Up to 6 colors, each molded on its own level with clean, sharp edges.",
+          "Every order includes a 3D digital preview of all layers and colors before the mold is made.",
+        ],
+        image: "/images/silicone/90dc77d0-d222-43bd-a6ba-84c2b88cc895.webp",
+        imageAlt: "Dimensional 3D silicone patches for modern streetwear apparel drops",
+      },
+    ],
+    faq: [
+      {
+        q: "What is the minimum order for custom silicone patches?",
+        a: "Silicone patches start at 25 pieces.",
+      },
+      {
+        q: "What is the difference between silicone and PVC patches?",
+        a: "Both are molded and waterproof. Silicone has a softer, matte, velvet-like finish and a more modern look, while PVC is a bit firmer with more color shine. Silicone suits athletic wear and fashion; PVC suits rugged tactical gear.",
+      },
+      {
+        q: "Can silicone patches be heat pressed?",
+        a: "Yes. Silicone patches are available with heat-seal backing, as well as sew-on channels, Velcro, and adhesive.",
+      },
+      {
+        q: "Will I see a proof first?",
+        a: "Yes. You get a free 3D digital preview showing each layer and color, and production starts only after you approve it.",
+      },
+    ],
+  },
+
+  "leather-patches": {
+    meta: {
+      title: "Custom Leather Patches | Leather Hat Patches",
+      description:
+        "Custom leather patches for hats, beanies, denim, and bags. Genuine or faux leather, debossed or laser-engraved, with a free digital proof.",
+      keywords:
+        "custom leather patches, custom leather hat patches, custom patches for hats",
+    },
+    heroEyebrow: "Hats · Premium · Heritage",
+    h1: "Custom Leather Patches",
+    shortName: "Leather Patches",
+    heroParagraph:
+      "Genuine or faux leather with a debossed or laser-engraved logo. Custom leather hat patches are a top choice for trucker caps and beanies, and one of the best custom patches for hats.",
+    specs: [
+      { label: "Thickness", value: "2.2–2.8 mm top-grain" },
+      { label: "Deboss Depth", value: "About 0.8 mm" },
+      { label: "Edges", value: "Burnished, raw, or stitch-grooved" },
+      { label: "Backing", value: "Heat-seal, sew-on channel, or Velcro" },
+      { label: "Production Time", value: "5–7 days" },
+      { label: "Minimum Order", value: "25 pieces (free proof included)" },
+    ],
+    howTheyreMade: {
+      heading: "Premium Custom Leather Patches",
+      paragraphs: [
+        "A debossed or laser-engraved leather patch on a trucker cap, denim jacket, or canvas bag says quality in a way synthetic labels can't.",
+        "We use genuine top-grain cowhide, vintage pull-up leather, and high-quality faux leather. Each piece is cut by laser, then debossed with heat and pressure or laser-engraved.",
+        "Real leather develops a natural patina over time, so every hat or jacket ages in its own way. It is a strong choice for brands that want a premium retail look.",
+      ],
+    },
+    splitSections: [
+      {
+        heading: "Custom Leather Hat Patches for Caps and Beanies",
+        body: [
+          "Leather patches are a favorite of headwear brands. A leather patch can turn a basic 5-panel or 6-panel trucker cap into a premium retail product.",
+          "Our hat patches are made flexible enough to follow the curve of the cap without creasing, lifting at the edges, or bubbling.",
+          "Choose blind debossing, where a heated die presses your logo into the leather, or laser engraving, which darkens the leather for rich caramel and brown contrast.",
         ],
         image: "/images/leather/299d8a05-a46b-4b75-b618-277f67044e1e.webp",
         imageAlt: "Custom debossed leather patches on trucker caps and beanies",
       },
       {
-        heading: "Denim Waistbands, Outerwear & Heavy-Duty Gear",
+        heading: "Leather Patches for Denim, Jackets, and Bags",
         body: [
-          "On the yoke of a raw denim jacket, the waistband of bespoke jeans, or the flap of a full-grain leather backpack, a leather patch serves as an enduring brand signature. Our heavy-duty finishes survive repeated laundering without cracking or peeling.",
-          "We offer pre-punched perimeter stitch channels with optional heavy contrast thread (Madeira Serafil industrial thread in gold, white, or black) for seamless hand-sewing or commercial sewing machine attachment.",
-          "Every order includes a high-definition digital rendering that accurately simulates hide grain texture, debossing depth, and burnish shadows before metal dies are cast.",
+          "On a denim jacket, the waistband of jeans, or a backpack flap, a leather patch becomes a lasting brand mark. Our finishes hold up to repeated washing without cracking or peeling.",
+          "We offer pre-punched stitch holes with optional contrast thread in gold, white, or black, for easy hand or machine sewing.",
+          "Every order includes a detailed digital preview of the leather texture and debossing before production.",
         ],
         image: "/images/leather/64a46fe2-61a2-4b76-9df3-81988759d6c6.webp",
-        imageAlt: "Artisanal leather patches for denim and heavy workwear",
+        imageAlt: "Artisanal leather patches for denim, jackets, and bags",
         reverse: true,
       },
     ],
-  },
-  "embroidered-patches": {
-    about: {
-      heading: "The Art & High-Tensile Engineering of Embroidered Patches",
-      paragraphs: [
-        "Embroidered patches are the timeless, quintessential benchmark of insignia craft. Offering a rich, tactile three-dimensional topography, embroidery adds authoritative weight and heirloom permanence to team crests, corporate uniforms, and tactical insignias.",
-        "We utilize 100% colorfast trilobal polyester and rayon threads that resist chlorine, harsh laundering detergents, and UV bleaching. Our manual digitizers carefully plot stitch angles, underlay density, and pull compensation needle by needle to prevent fabric puckering and thread breaks.",
-        "Whether you require a traditional 75% embroidery on heavy cotton twill or 100% full-surface embroidery with a heavy merrowed border, our production guarantees museum-grade sharpness from initial digital proof to delivered goods.",
-      ],
-    },
-    specs: [
-      { label: "Stitch Precision", value: "Sub-millimeter Needle Planning" },
-      { label: "Thread Type", value: "Trilobal Colorfast Polyester" },
-      { label: "Border Finish", value: "Merrowed Overlock or Laser-Cut" },
-      { label: "Backing", value: "Heat-Seal Iron-On, Velcro Hook/Loop" },
-      { label: "Durability", value: "50+ Commercial Wash Cycles" },
-      { label: "Rush Option", value: "Available in 2-4 Hours" },
-    ],
-    splitSections: [
+    faq: [
       {
-        heading: "Engineered for First Responders, Military & Teams",
-        body: [
-          "When emergency personnel, corporate teams, and sporting clubs take the field, their identification must withstand punishing real-world demands. Our embroidered patches feature tightly bound merrowed overlock borders that prevent fraying even under abrasive physical contact.",
-          "Our color matching utilizes the Madeira Pantone system to guarantee your department's official colors are replicated with 100% accuracy.",
-          "Available with military-grade hook-and-loop Velcro backings for rapid uniform changes or industrial heat-seal backing for permanent heat-press application.",
-        ],
-        image: "/images/embroidery/180ac20d-921e-4432-aee7-0ebb724068d7.webp",
-        imageAlt: "Heavy-duty embroidered patches for uniform programs",
+        q: "What is the minimum order for custom leather patches?",
+        a: "Leather patches start at 25 pieces, with a free digital proof included.",
       },
       {
-        heading: "The Digitizing Difference: No Automated Shortcuts",
-        body: [
-          "The secret to a razor-sharp embroidered patch lies in the digital punching phase. Automated auto-trace software yields flat, irregular stitches that snap needles and distort text. Our senior digitizers map every letter and fill manually.",
-          "Small lettering down to 3.5mm height remains crisp and legible because we adjust stitch density and underlay sequencing specifically for micro-typography.",
-          "You receive a high-resolution simulation with complete stitch counts and color sequences before production commences.",
-        ],
-        image: "/images/embroidery/9c109bbb-b227-4f4e-9d3d-56fae3c5016f.webp",
-        imageAlt: "Detailed embroidery digitizing stitch run-out",
-        reverse: true,
+        q: "How are leather hat patches attached?",
+        a: "Most leather hat patches are heat-pressed with heat-seal backing or sewn on through pre-punched stitch holes. Velcro backing is also available.",
+      },
+      {
+        q: "Genuine or faux leather: which should I choose?",
+        a: "Genuine leather has natural grain and ages with a patina. Faux leather costs less, looks consistent, and is animal-free. Both can be debossed or laser-engraved.",
+      },
+      {
+        q: "How long does production take?",
+        a: "Leather patches are typically produced in 5–7 days after you approve your proof, plus shipping time.",
       },
     ],
   },
-  "chenille-patches": {
-    about: {
-      heading: "The Varsity Icon: Bespoke Chenille & Looped Yarn Emblems",
-      paragraphs: [
-        "Chenille patches carry over a century of varsity heritage, collegiate achievement, and luxury streetwear culture. The signature thick, looped yarn construction gives each emblem an unmistakable warmth, plush softness, and volumetric depth that stands 4mm–6mm proud of the garment surface.",
-        "Woven on specialized moss-stitch looms using high-grade acrylic chenille yarn and reinforced with double-layer wool felt backings, our custom chenille patches capture the authentic golden era of letterman jackets.",
-        "From championship varsity letters and mascot head emblems to high-fashion streetwear drops, chenille patches turn basic hoodies and varsity bombers into luxury collectible garments.",
-      ],
-    },
-    specs: [
-      { label: "Yarn Loft", value: "4.0mm – 6.0mm Plush Thickness" },
-      { label: "Base Fabric", value: "Double-Layer Melton Wool Felt" },
-      { label: "Embroidery Detail", value: "Integrated Chain & Chenille Combo" },
-      { label: "Border", value: "Felt Die-Cut or Merrowed Ring" },
-      { label: "Application", value: "Direct Sew-On or Industrial Heat-Seal" },
-      { label: "Minimum Order", value: "10 Pieces" },
-    ],
-    splitSections: [
-      {
-        heading: "The Classic American Letterman & Varsity Heritage",
-        body: [
-          "Nothing commemorates athletic triumph and academic achievement like a traditional chenille varsity letter. Our chenille patches feature authentic felt backings in traditional school colors — crimson, navy, forest green, varsity gold, and heather grey.",
-          "We build multi-layered letters with contrasting chenille center fills, felt border steps, and metallic gold or silver embroidery detailing for state championship stars and award years.",
-          "Sized up to 10 inches for jacket backs or 4-5 inches for chest insignias, each piece is engineered to drape naturally on heavy wool and leather sleeves.",
-        ],
-        image: "/images/chenille/534aa9a0-5f7f-4a78-b27e-360df8c03136.webp",
-        imageAlt: "Varsity letterman chenille patches with felt backing",
-      },
-      {
-        heading: "Streetwear Reinvention: High-Density Fashion Drops",
-        body: [
-          "Modern streetwear labels have embraced chenille for its tactile contrast against heavyweight French terry cotton and satin bomber jackets. A chunky chenille logo transforms a garment into a statement piece.",
-          "We offer hybrid chenille-embroidery patches where complex graphic details (eyes, small lettering, fine teeth) are digitized in high-tensile flat embroidery, while large body areas are filled with plush chenille loops.",
-          "Every order includes free digital artwork setup and color verification proofs to ensure your brand's drop arrives production-perfect.",
-        ],
-        image: "/images/chenille/53d2f848-5ff7-4e64-9393-d42b165ca529.webp",
-        imageAlt: "Streetwear chenille patch applications on hoodies",
-        reverse: true,
-      },
-    ],
-  },
-  "pvc-patches": {
-    about: {
-      heading: "Tactical Resilience: All-Weather 3D Molded PVC Patches",
-      paragraphs: [
-        "Soft PVC patches are the most indestructible insignia option in modern apparel. Cast from flexible, marine-grade polyvinyl chloride, PVC patches are 100% waterproof, mud-proof, UV-resistant, and flame-retardant — engineered for extreme outdoor, tactical, and maritime environments.",
-        "Unlike thread-based patches that can snag, pill, or absorb moisture, PVC patches wipe clean with water and maintain vibrant, saturated color indefinitely.",
-        "Utilizing precision CNC aluminum molds, we create striking multi-level 2D and 3D reliefs with sharp micro-lines that cannot be achieved with textile embroidery.",
-      ],
-    },
-    specs: [
-      { label: "Material Grade", value: "Non-Toxic Marine PVC" },
-      { label: "Relief Dimension", value: "2D Flat / 3D Sculpted Mold" },
-      { label: "Waterproof Rating", value: "100% Submersible & Mud-Proof" },
-      { label: "Backing", value: "Hook & Loop (Velcro) or Sew Channel" },
-      { label: "Thermal Range", value: "-30°C to +80°C Resilience" },
-      { label: "Minimum Order", value: "25 Pieces" },
-    ],
-    splitSections: [
-      {
-        heading: "Military, SWAT & Law Enforcement Gear",
-        body: [
-          "From morale patches on tactical plate carriers to department crests on operator caps, our PVC patches are built for combat durability. The recessed sewing channel ensures your attachment thread is protected from abrasive friction.",
-          "We produce subdued tactical colorways (Coyote Brown, Ranger Green, Wolf Grey, O.D. Green) and custom glow-in-the-dark or IR-reflective options for nocturnal operations.",
-          "Hook-and-loop Velcro backings are heat-bonded and perimeter-stitched for unconditional retention on vests and gear.",
-        ],
-        image: "/images/pvc/105f6253-e172-4ca6-a390-19a0ff9ec46a.webp",
-        imageAlt: "Tactical military PVC patches with Velcro backing",
-      },
-      {
-        heading: "Extreme Outdoor & Maritime Applications",
-        body: [
-          "Outdoor apparel brands, ski gear manufacturers, and scuba diving outfits choose PVC for its complete imperviousness to snow, salt spray, and abrasive dirt.",
-          "Our multi-layer molding process allows up to 6 custom Pantone colors cast into distinct dimensional planes.",
-          "Precision mold tooling captures sharp geometric typography and intricate logo badges without color bleeding.",
-        ],
-        image: "/images/pvc/24778966-adb2-4b70-870f-52984729189b.webp",
-        imageAlt: "All-weather PVC patches for outdoor lifestyle brands",
-        reverse: true,
-      },
-      {
-        heading: "Custom PVC Patches & Precision 3D Mold Design",
-        body: [
-          "Our engineering team translates complex vector logos into precision multi-level CNC aluminum molds. Liquid marine-grade PVC is injected under pressure into each dimensional cavity.",
-          "Features recessed borders, rounded contours, and fine-line texture fills that cannot be duplicated by textile embroidery.",
-          "Every order includes a 3D isometric CAD rendering verifying all relief tiers, base thicknesses, and pantone rubber colors before metal tooling commences.",
-        ],
-        image: "/images/pvc/308c1aea-e284-4c78-b934-1501d16f6228.webp",
-        imageAlt: "Custom 3D molded tactical PVC patch design with multi-level relief",
-      },
-    ],
-  },
-  "pvc-keychains": {
-    about: {
-      heading: "Custom 3D Molded PVC Rubber Keychains & Everyday Carry Tags",
-      paragraphs: [
-        "Soft PVC keychains are the ultimate durable, high-impact promotional merchandise and everyday carry accessory. Cast from flexible, non-toxic marine-grade rubber, they never fade, crack, or scratch motorcycle fuel tanks, car ignitions, or gear bags.",
-        "Featuring full multi-level 2D and sculpted 3D relief, our custom PVC keychains capture vivid Pantone colors with razor-sharp separation, rich textured backgrounds, and rounded sculptural contours.",
-        "Equipped with solid steel grommets, 4-link chains, and flat heavy-duty split keyrings. Available with single-sided 3D relief with textured reverse or full double-sided molded rubber.",
-      ],
-    },
-    specs: [
-      { label: "Material Grade", value: "Non-Toxic Flexible Marine PVC" },
-      { label: "Dimensioning", value: "2D Multi-Level or 3D Sculpted" },
-      { label: "Hardware", value: "Reinforced 4-Link Chain & Split Ring" },
-      { label: "Waterproof", value: "100% Submersible & Weatherproof" },
-      { label: "Double-Sided", value: "Single-Sided or Full 2-Sided 3D" },
-      { label: "Minimum Order", value: "25 Pieces (Free Proof Included)" },
-    ],
-    splitSections: [
-      {
-        heading: "Automotive, Motorcycle & Everyday Carry Durability",
-        body: [
-          "Unlike metal keychains that rattle against steering columns and scratch vehicle finishes, soft PVC rubber keychains are completely scratch-free and silent in motion.",
-          "Engineered to withstand heavy keys, gasoline spills, rain, mud, and extreme temperatures from -30°C to +80°C without discoloring or losing flexibility.",
-          "Solid steel 25mm–30mm split keyrings and 4-link chains are pull-tested for 25kg+ retention strength.",
-        ],
-        image: "/images/pvc-keychains/11ea7517-d14e-46df-9402-99631c94c09b-6ad90f0dd4de7.webp",
-        imageAlt: "Custom 3D molded soft rubber PVC keychain with split ring",
-      },
-      {
-        heading: "Multi-Tiered 3D Relief & Vivid Pantone Coloring",
-        body: [
-          "Our precision CNC aluminum molds inject up to 8 separate liquid Pantone colors into distinct dimensional levels without bleeding or color mixing.",
-          "Ideal for corporate merchandise, mascot characters, streetwear drops, and automotive enthusiast clubs seeking retail-grade accessories.",
-          "Every order includes a 3D isometric digital proof detailing layer heights, color codes, and chain attachment placement before mold casting.",
-        ],
-        image: "/images/pvc-keychains/4fd78dbf-5d25-4342-aaaf-c5db604137ac-6ad90f0cea3f9.webp",
-        imageAlt: "Mill Creek Academy custom molded PVC rubber keychain",
-        reverse: true,
-      },
-      {
-        heading: "Double-Sided 3D Molded Branding Options",
-        body: [
-          "Choose between standard textured reverse backing, printed URL/contact details on back, or full double-sided 3D sculpted molding for premium weight and feel.",
-          "Custom die-cut shapes contour naturally to your logo outline, ensuring maximum visual punch in pocket-friendly dimensions.",
-        ],
-        image: "/images/pvc-keychains/8adf7f0a-0467-4fd0-8a6c-6c4c02beb2d0-6ad90f0d02746.webp",
-        imageAlt: "Double-sided molded PVC rubber keychain with custom chain",
-      },
-    ],
-  },
-  "pvc-keychain": {
-    about: {
-      heading: "Custom 3D Molded PVC Rubber Keychains & Everyday Carry Tags",
-      paragraphs: [
-        "Soft PVC keychains are the ultimate durable, high-impact promotional merchandise and everyday carry accessory. Cast from flexible, non-toxic marine-grade rubber, they never fade, crack, or scratch motorcycle fuel tanks, car ignitions, or gear bags.",
-        "Featuring full multi-level 2D and sculpted 3D relief, our custom PVC keychains capture vivid Pantone colors with razor-sharp separation, rich textured backgrounds, and rounded sculptural contours.",
-        "Equipped with solid steel grommets, 4-link chains, and flat heavy-duty split keyrings. Available with single-sided 3D relief with textured reverse or full double-sided molded rubber.",
-      ],
-    },
-    specs: [
-      { label: "Material Grade", value: "Non-Toxic Flexible Marine PVC" },
-      { label: "Dimensioning", value: "2D Multi-Level or 3D Sculpted" },
-      { label: "Hardware", value: "Reinforced 4-Link Chain & Split Ring" },
-      { label: "Waterproof", value: "100% Submersible & Weatherproof" },
-      { label: "Double-Sided", value: "Single-Sided or Full 2-Sided 3D" },
-      { label: "Minimum Order", value: "25 Pieces (Free Proof Included)" },
-    ],
-    splitSections: [
-      {
-        heading: "Automotive, Motorcycle & Everyday Carry Durability",
-        body: [
-          "Unlike metal keychains that rattle against steering columns and scratch vehicle finishes, soft PVC rubber keychains are completely scratch-free and silent in motion.",
-          "Engineered to withstand heavy keys, gasoline spills, rain, mud, and extreme temperatures from -30°C to +80°C without discoloring or losing flexibility.",
-          "Solid steel 25mm–30mm split keyrings and 4-link chains are pull-tested for 25kg+ retention strength.",
-        ],
-        image: "/images/pvc-keychains/11ea7517-d14e-46df-9402-99631c94c09b-6ad90f0dd4de7.webp",
-        imageAlt: "Custom 3D molded soft rubber PVC keychain with split ring",
-      },
-      {
-        heading: "Multi-Tiered 3D Relief & Vivid Pantone Coloring",
-        body: [
-          "Our precision CNC aluminum molds inject up to 8 separate liquid Pantone colors into distinct dimensional levels without bleeding or color mixing.",
-          "Ideal for corporate merchandise, mascot characters, streetwear drops, and automotive enthusiast clubs seeking retail-grade accessories.",
-          "Every order includes a 3D isometric digital proof detailing layer heights, color codes, and chain attachment placement before mold casting.",
-        ],
-        image: "/images/pvc-keychains/4fd78dbf-5d25-4342-aaaf-c5db604137ac-6ad90f0cea3f9.webp",
-        imageAlt: "Mill Creek Academy custom molded PVC rubber keychain",
-        reverse: true,
-      },
-      {
-        heading: "Double-Sided 3D Molded Branding Options",
-        body: [
-          "Choose between standard textured reverse backing, printed URL/contact details on back, or full double-sided 3D sculpted molding for premium weight and feel.",
-          "Custom die-cut shapes contour naturally to your logo outline, ensuring maximum visual punch in pocket-friendly dimensions.",
-        ],
-        image: "/images/pvc-keychains/8adf7f0a-0467-4fd0-8a6c-6c4c02beb2d0-6ad90f0d02746.webp",
-        imageAlt: "Double-sided molded PVC rubber keychain with custom chain",
-      },
-    ],
-  },
-  "enamel-pins": {
-    about: {
-      heading: "Jewelry-Grade Custom Hard & Soft Enamel Lapel Pins",
-      paragraphs: [
-        "Custom enamel pins offer museum-grade jewelry quality, brilliant Pantone enamel fills, and mirror-polished metal plating in 24k gold, silver, rose gold, and dyed black nickel.",
-        "Whether crafting commemorative pins for corporate galas, collectible merchandise for festivals, or distinguished collar badges for military and clubs, our pins are cast with sub-millimeter die-striking precision.",
-        "Choose between smooth flush hard enamel (cloisonné style) and textured dimensional soft enamel with raised metal borders and recessed color valleys.",
-      ],
-    },
-    specs: [
-      { label: "Plating Finishes", value: "24K Gold, Silver, Black Nickel, Antique" },
-      { label: "Enamel Type", value: "Jewelry Hard Enamel or Soft Enamel" },
-      { label: "Attachment Backs", value: "Butterfly Clutch, Rubber Cap, Deluxe Magnet" },
-      { label: "Packaging", value: "Custom Backing Cards & Velvet Pouches" },
-      { label: "Tolerance", value: "±0.05mm Micro-Die Striking" },
-      { label: "Minimum Order", value: "25 Pieces (Free Proof Included)" },
-    ],
-    splitSections: [
-      {
-        heading: "Die-Struck Precision & Vivid Pantone Coloring",
-        body: [
-          "Every enamel pin begins with a hardened steel die cast under 50 tons of hydraulic pressure. Liquid enamel is hand-applied needle by needle into each recessed cavity and fired at high temperature.",
-          "Hard enamel pins undergo multiple rounds of hand-polishing and electroplating until the enamel and metal rims form a continuous, flush, mirror-flat surface.",
-          "We offer custom backing cards with spot UV, foil stamping, and individual poly-bagging ready for retail display.",
-        ],
-        image: "/images/enamel-pins/3051384c-c62d-47ec-b705-1a6a633a8fcb.webp",
-        imageAlt: "Custom hard enamel lapel pin with polished gold edges",
-      },
-      {
-        heading: "Electroplated Finishes & Secure Locking Clutches",
-        body: [
-          "Select from genuine 24K gold plating, polished silver chrome, antique brass, rose gold, or black nickel electroplate to complement your art.",
-          "Every piece comes standard with a secure butterfly clutch, rubber military-style clutch, or optional deluxe ball-locking mechanisms that ensure pins stay attached to lapels, hats, and backpacks.",
-        ],
-        image: "/images/enamel-pins/54c5fa67-1ebb-4c46-b911-78817a436452.webp",
-        imageAlt: "Custom die-struck enamel pin with polished metallic rims",
-        reverse: true,
-      },
-    ],
-  },
-  "embroidery-keychains": {
-    about: {
-      heading: "Aviation-Grade Double-Sided Embroidered Flight Tags & Keychains",
-      paragraphs: [
-        "Our custom embroidered keychains — famously modeled after vintage aviation flight tags — combine durable heavy twill fabric, merrowed stitched border perimeter rings, and solid steel grommet eyelets.",
-        "Engineered for heavy daily carry on keys, backpacks, gear bags, and motorcycle ignitions, these keychains will never scratch bike paint or car dashboards.",
-        "With 100% double-sided embroidery, your slogan, club emblem, or warning insignia is legible from both sides with industrial thread durability.",
-      ],
-    },
-    specs: [
-      { label: "Fabric Core", value: "Heavy-Duty Reinforced Twill" },
-      { label: "Borders", value: "Tightly Merrowed Overlock Stitch" },
-      { label: "Hardware", value: "Solid Steel Grommet & Flat Split Ring" },
-      { label: "Sides", value: "100% Double-Sided Embroidery" },
-      { label: "Standard Size", value: "130mm x 30mm (Custom Shapes Available)" },
-      { label: "Minimum Order", value: "25 Pieces" },
-    ],
-    splitSections: [
-      {
-        heading: "Aviation-Heritage Merrowed Flight Tags & Steel Eyelets",
-        body: [
-          "Unlike metal keychains that rattle and scratch steering columns, fuel tanks, or motorcycle finishes, fabric embroidered key fobs are soft, flexible, and completely silent in motion.",
-          "Featuring high-tensile Madeira polyester threads that resist fraying, gasoline spills, salt spray, and extreme weather exposure.",
-          "Finished with solid brass or steel grommets pull-tested for 20kg+ retention and flat 30mm split keyrings.",
-        ],
-        image: "/images/embroidery-keychains/125b3a14-acde-4c8d-adca-cda2365756cc.webp",
-        imageAlt: "Aviation crew double-sided embroidered flight tag keychains",
-      },
-      {
-        heading: "Personalized Names, Club Drops & Swivel Clasp Hardware",
-        body: [
-          "From automotive enthusiast clubs to corporate onboarding merchandise and retail lifestyle accessories, our keychains can be personalized with individual names, numbers, or department designations.",
-          "Available with lobster claw swivel clips, carabiner clips, or double grommet loops for versatile attachment to packs, duty belts, and flight jackets.",
-          "Merrowed overlock borders wrap 360 degrees around the outer edge, locking fabric threads permanently to prevent unraveling.",
-        ],
-        image: "/images/embroidery-keychains/a0d44bce-3d32-486a-af7a-476b0facfd49.webp",
-        imageAlt: "Personalized embroidered name key fobs with swivel clasps",
-        reverse: true,
-      },
-      {
-        heading: "Double-Sided High-Density Twill Embroidery",
-        body: [
-          "Every flight tag features full 100% double-sided embroidery with identical or contrasting artwork on the reverse side.",
-          "Reinforced heavy buckram core provides just the right amount of stiffness so tags hold their shape without bending or flopping in the wind.",
-          "Free digital proof includes 1:1 scale mockups showing both sides, border thread colors, and eyelet placement before manufacturing.",
-        ],
-        image: "/images/embroidery-keychains/6762830b-e120-4ea5-9c0a-eb48fdc84b74.webp",
-        imageAlt: "Custom military aviation squadron double-sided flight tags",
-      },
-    ],
-  },
-  "sequin-patches": {
-    about: {
-      heading: "Shimmering Reversible & High-Density Metallic Sequin Patches",
-      paragraphs: [
-        "Sequin patches bring high-fashion dazzle, dynamic motion, and reflective sparkle to denim, hoodies, dancewear, and festival apparel. Each sequin is precision-sewn onto high-grade backing fabric for permanent retention.",
-        "We craft both classic single-color glittering sequins and interactive two-tone flip reversible sequins where swiping your hand across the patch reveals a secondary color or hidden graphic.",
-        "Engineered with soft fabric borders or clean heat-sealed edges for easy machine sewing or commercial heat-press application.",
-      ],
-    },
-    specs: [
-      { label: "Sequin Types", value: "Metallic, Holographic, Reversible Flip" },
-      { label: "Sequin Sizes", value: "3mm Micro to 5mm Standard Discs" },
-      { label: "Border Finish", value: "Merrowed Felt or Embroidered Ring" },
-      { label: "Backing", value: "Iron-On Heat Seal or Sew-On Twill" },
-      { label: "Luster", value: "High-Gloss Mirror & Shimmer Refraction" },
-      { label: "Minimum Order", value: "25 Pieces" },
-    ],
-    splitSections: [
-      {
-        heading: "Dynamic Motion & Stadium Game Day Glamour",
-        body: [
-          "Whether lighting up festival stages or accenting couture streetwear jackets, sequin emblems reflect ambient light with stunning vibrancy.",
-          "Our reinforced stitching locks every sequin disc in place to prevent thread breakage during laundering or active wear.",
-          "Available in gold, silver, iridescent chameleon, crimson, and two-tone flip combinations.",
-        ],
-        image: "/images/sequin/5af416a1-4bf4-4ec3-9361-5b61a805a3b8.webp",
-        imageAlt: "Custom glittering purple and silver game day sequin patch",
-      },
-      {
-        heading: "Varsity Script & High-Density Spirit Wear Lettering",
-        body: [
-          "Craft custom cheer team scripts, school mascots, and collegiate lettering with dazzling metallic sequin fills.",
-          "Outlined with precision embroidered borders or felt bases that provide clean contrast and effortless garment stitching.",
-          "Soft felt and heat-seal adhesive backings ensure comfortable wear on cheer hoodies, bomber jackets, and competition jerseys.",
-        ],
-        image: "/images/sequin/1ee8d767-91d2-4778-9d7b-02d4e2d6b99c.webp",
-        imageAlt: "Wildcats sparkling hot pink varsity sequin script emblem",
-        reverse: true,
-      },
-      {
-        heading: "Large Statement Crests & Couture Jacket Wings",
-        body: [
-          "Make an unmistakable runway impression with oversized back-of-jacket sequin wings, sacred crests, and Halloween holiday collections.",
-          "Engineered with flexible multi-layer stabiliser fabric so large-format patches contour naturally over shoulder blades without stiff creasing.",
-          "Every order includes a high-definition digital layout verifying sequin density, disc orientation, and stitch framing.",
-        ],
-        image: "/images/sequin/af5d32d0-8a31-46fc-bb56-b6b6d119641a.webp",
-        imageAlt: "Hot pink and silver shimmering sequin angel wings jacket patches",
-      },
-    ],
-  },
-  "silicone-patches": {
-    about: {
-      heading: "Modern Soft-Touch 3D Matte Molded Silicone Patches",
-      paragraphs: [
-        "Silicone patches provide a clean, modern aesthetic with ultra-matte velvet finish, sharp 3D reliefs, and exceptional durability. They represent the modern evolution of tactical and athletic emblems.",
-        "Impervious to water, UV radiation, and freezing temperatures, silicone patches maintain their vibrant matte color and elasticity for years of rigorous outdoor and streetwear wear.",
-        "Available with sew-on stitch channels, peel-and-stick adhesives, or military-spec Velcro hook-and-loop backings.",
-      ],
-    },
-    specs: [
-      { label: "Material", value: "Eco-Grade Matte Silicone" },
-      { label: "Finish", value: "Velvet Soft-Touch Non-Glare" },
-      { label: "Relief Depth", value: "Up to 3.5mm Multi-Tier 3D" },
-      { label: "Backing", value: "Hook & Loop, Heat-Seal, Sew Channel" },
-      { label: "Waterproof", value: "100% Submersible & Washable" },
-      { label: "Minimum Order", value: "25 Pieces" },
-    ],
-    splitSections: [
-      {
-        heading: "Tactile Precision for Modern Headwear & Technical Apparel",
-        body: [
-          "Matte silicone patches create an upscale, understated look on technical outerwear, structured trucker caps, and athletic compression gear.",
-          "Our multi-cavity precision molds capture crisp micro-lettering down to 0.5mm stroke thickness without distortion.",
-          "The recessed needle channel around the perimeter protects sewing thread from abrasion and friction.",
-        ],
-        image: "/images/silicone/2ac5cc5d-94fa-4889-b6e5-066611aa1d47.webp",
-        imageAlt: "Custom 3D molded soft silicone round emblem with raised lettering",
-      },
-      {
-        heading: "First Responder, Fire Department & Tactical Insignia",
-        body: [
-          "Silicone stands up to heat, hydraulic fluids, mud, and rigorous scrubbing that would degrade standard embroidered patches.",
-          "Chosen by fire departments, rescue squads, and tactical operators for crisp geometric crests and non-reflective matte subdued finishes.",
-          "Heat-bonded industrial Velcro hook-and-loop backings allow instant swap between uniforms, tactical vests, and gear bags.",
-        ],
-        image: "/images/silicone/4dcf7a59-f478-4f4f-9a76-496d1d3d0286.webp",
-        imageAlt: "Glace Bay Fire Dept tactical silicone department shield",
-        reverse: true,
-      },
-      {
-        heading: "Dimensional Streetwear Drops & Pop-Art Mascot Badges",
-        body: [
-          "Elevate streetwear collections with sculptural 3D pop-out typography and vibrant Pantone rubber fills that cannot be duplicated with thread.",
-          "Multi-tier liquid silicone injection allows up to 6 custom colors cast into separate architectural planes with clean, knife-sharp boundaries.",
-          "Every order includes a 3D isometric CAD rendering detailing all layer heights and color codes before metal tooling begins.",
-        ],
-        image: "/images/silicone/90dc77d0-d222-43bd-a6ba-84c2b88cc895.webp",
-        imageAlt: "Queens Finest 3D layered yellow and white streetwear silicone patch",
-      },
-    ],
-  },
+
   "woven-patches": {
-    about: {
-      heading: "Ultra-Fine Damask Woven Patches for Micro-Detail & Small Typography",
+    meta: {
+      title: "Custom Woven Patches & Woven Labels",
+      description:
+        "Custom woven patches and woven labels with fine detail and text as small as 1.5 mm. Merrowed or heat-cut borders and a free digital proof.",
+      keywords:
+        "custom woven patches, custom woven labels, woven vs embroidered patches",
+    },
+    heroEyebrow: "Logos · Labels · Fine detail",
+    h1: "Custom Woven Patches",
+    shortName: "Woven Patches",
+    heroParagraph:
+      "Thin, smooth patches that hold small text and fine detail. The same weave is used for custom woven labels on apparel and products.",
+    specs: [
+      { label: "Weave", value: "High-density damask" },
+      { label: "Thread", value: "Fine 50-denier thread" },
+      { label: "Smallest Text", value: "1.5 mm" },
+      { label: "Border", value: "Merrowed or heat-cut" },
+      { label: "Backing", value: "Iron-on, Velcro, or adhesive" },
+      { label: "Minimum Order", value: "25 pieces" },
+    ],
+    howTheyreMade: {
+      heading: "Woven Patches for Fine Detail and Small Text",
       paragraphs: [
-        "When your artwork features intricate line art, micro-typography, or fine gradient details that exceed the physical needle resolution of embroidery, woven patches are the premier choice.",
-        "Woven on high-speed Jacquard looms with microscopic 50-denier polyester threads, woven patches deliver photographic sharpness with a smooth, flat, lightweight profile.",
-        "Finished with traditional merrowed overlock borders for classic insignia styling or laser heat-cut edges for modern, flush-fit application.",
+        "When your artwork has fine lines, small text, or detail that is too small for embroidery, woven patches are the answer.",
+        "Fine threads are woven tightly together, so the patch is thinner and flatter than embroidery and shows much more detail.",
+        "The result is a smooth, lightweight patch that sits comfortably on hats, shirts, and bags.",
       ],
     },
-    specs: [
-      { label: "Weave Type", value: "High-Density Damask Jacquard" },
-      { label: "Thread Density", value: "50-Denier Microfilament" },
-      { label: "Min Text Height", value: "1.5mm Ultra-Legible Typography" },
-      { label: "Border Style", value: "Merrowed Edge or Laser Heat-Cut" },
-      { label: "Backing", value: "Iron-On, Velcro Hook/Loop, Adhesive" },
-      { label: "Minimum Order", value: "25 Pieces" },
-    ],
     splitSections: [
       {
-        heading: "Micro-Detail Without Needle Restrictions",
+        heading: "Fine Detail That Embroidery Can't Reach",
         body: [
-          "Unlike embroidery where needles punch through fabric, woven threads are interlaced horizontally and vertically, allowing razor-sharp resolution on complex crests and sponsor logos.",
-          "Smooth surface feel that lays completely flat on shirts, beanies, caps, and outdoor equipment.",
+          "Embroidery is limited by needle size. Weaving isn't, so text as small as 1.5 mm stays readable.",
+          "Woven patches are ideal for detailed logos, maps, fine line art, and brand marks with thin strokes.",
+          "The same process makes custom woven labels for clothing necks, hems, and product tags.",
         ],
         image: "/images/woven/58df48c6-cdd5-4947-8347-7028f6f71e16.webp",
-        imageAlt: "High-definition custom woven damask patch emblem",
+        imageAlt: "High-density damask woven patches with micro-text readability",
       },
       {
-        heading: "Authentic Merrowed Border Framing & Flexible Backings",
+        heading: "Merrowed Borders and Flexible Backing Options",
         body: [
-          "Every woven patch can be enclosed in a heavy merrowed thread border that preserves traditional patch dimension and rigidity.",
-          "Available with iron-on heat-seal adhesive, Velcro hook-and-loop backing, or self-adhesive peel-and-stick for universal garment application.",
+          "Finish your woven patch with a classic merrowed border, or a heat-cut edge that follows your logo's shape.",
+          "Choose iron-on, Velcro, adhesive, or sew-on backing to suit your garment.",
+          "You see a free digital proof before production, so every detail is checked.",
         ],
         image: "/images/woven/0144dc71-5e3b-449e-b4ef-180df37885d7.webp",
-        imageAlt: "Custom woven patch with merrowed stitched edge",
+        imageAlt: "Woven patch edge finishes and flexible backing choices",
         reverse: true,
       },
     ],
+    faq: [
+      {
+        q: "What is the minimum order for custom woven patches?",
+        a: "Woven patches start at 25 pieces.",
+      },
+      {
+        q: "What is the difference between woven and embroidered patches?",
+        a: "Woven patches use fine threads woven tightly together, so they are thinner, flatter, and show more detail. Embroidered patches have thicker, raised thread texture. Choose woven for small text and fine detail.",
+      },
+      {
+        q: "Do you make custom woven labels?",
+        a: "Yes. We use the same weaving process to make custom woven labels for clothing and products.",
+      },
+      {
+        q: "Will I see a proof before production?",
+        a: "Yes. You get a free digital proof within 24–48 hours, and production starts only after you approve it.",
+      },
+    ],
   },
+
   "sublimated-patches": {
-    about: {
-      heading: "Photographic & Full-Color Gradient Sublimation Patches",
+    meta: {
+      title: "Custom Sublimated Patches | Full-Color Printed Patches",
+      description:
+        "Custom sublimated patches with full-color printing for photos, gradients, and detailed art. Merrowed borders, free digital proof, orders from 10 pieces.",
+      keywords:
+        "custom sublimated patches, custom printed patches, photo patches",
+    },
+    heroEyebrow: "Full color · Photo quality",
+    h1: "Custom Sublimated Patches",
+    shortName: "Sublimated Patches",
+    heroParagraph:
+      "Custom printed patches with edge-to-edge color for gradients, photos, and detailed artwork that thread can't show. Finished with a classic stitched border.",
+    specs: [
+      { label: "Print Method", value: "Dye sublimation" },
+      { label: "Resolution", value: "Photo quality" },
+      { label: "Colors", value: "Full color, including neon" },
+      { label: "Border", value: "Merrowed stitched edge" },
+      { label: "Durability", value: "Ink is infused into the fabric, so it won't peel" },
+      { label: "Minimum Order", value: "10 pieces" },
+    ],
+    howTheyreMade: {
+      heading: "Full-Color Custom Printed Patches",
       paragraphs: [
-        "Dye-sublimation patches infuse high-resolution heat-activated dyes directly into the polyester fabric fibers at 400°F. The result is permanent, photo-realistic color with zero stitch restrictions.",
-        "Ideal for photography, complex gradients, continuous shading, and multi-color illustrated artwork that cannot be replicated with threads.",
-        "Often finished with an authentic merrowed embroidered border or clean laser edge, blending the authority of an embroidered patch with photographic fidelity.",
+        "Sublimation prints your design directly into the fabric, so colors, gradients, and even photos show edge to edge.",
+        "Because the ink becomes part of the fabric, it doesn't crack or peel the way a surface print can.",
+        "When your artwork has more color or detail than thread can capture, sublimated patches are usually the better fit.",
       ],
     },
-    specs: [
-      { label: "Print Method", value: "Direct Fiber Dye Sublimation" },
-      { label: "Resolution", value: "1200 DPI True Photographic" },
-      { label: "Color Gamut", value: "Full Spectrum CMYK + Neon" },
-      { label: "Border Finish", value: "Merrowed Embroidered Overlock" },
-      { label: "Durability", value: "Permanent Colorfast In-Fiber Infusion" },
-      { label: "Minimum Order", value: "10 Pieces" },
-    ],
     splitSections: [
       {
-        heading: "True Full-Color Gradients & Photo Realism",
+        heading: "True Gradients and Photo-Quality Detail",
         body: [
-          "From scenic landscapes to illustrated artwork with continuous shadows and subtle highlights, dye sublimation delivers photographic fidelity that needle-and-thread embroidery cannot match.",
-          "High-temperature dye infusion permanently fuses color into the polyester twill matrix, guaranteeing colorfast brilliance that never peels or cracks in the laundry.",
+          "Embroidery uses solid thread colors. Sublimation can show smooth color fades, shadows, and photographs.",
+          "It is ideal for event patches, memorial patches with photos, sports teams with detailed logos, and full-color art.",
+          "There is no limit on the number of colors in your design.",
         ],
         image: "/images/sublimation/26246876-c845-4884-99ac-448603884dd8.webp",
-        imageAlt: "Photographic Delaware coastal lighthouse full-color sublimated patch",
+        imageAlt: "Continuous full-color dye sublimated patches with photo-quality details",
       },
       {
-        heading: "Vivid Character Art with Merrowed Stitched Overlock Borders",
+        heading: "Bright Character Art With Merrowed Borders",
         body: [
-          "Combine photographic print fidelity with traditional patch heritage. Our sublimated patches are framed with authentic merrowed overlock stitched borders for classic insignia weight and durability.",
-          "Perfect for mascot apparel, pet portraits, illustrated brand logos, and commemorative festival merchandise with intricate color palettes.",
+          "Mascots, cartoon characters, and illustrations look bright and sharp in full color.",
+          "A merrowed stitched border gives a printed patch the same finished look as an embroidered one.",
+          "Choose iron-on, Velcro, adhesive, or sew-on backing.",
         ],
         image: "/images/sublimation/3e719772-4b60-4b78-b436-5a705b206aab.webp",
-        imageAlt: "Custom sublimated character patch with merrowed border",
+        imageAlt: "Sublimated patches with merrowed overlock stitched borders",
         reverse: true,
       },
     ],
+    faq: [
+      {
+        q: "What is the minimum order for custom sublimated patches?",
+        a: "Sublimated patches start at 10 pieces.",
+      },
+      {
+        q: "What is a sublimated patch?",
+        a: "A sublimated patch is a printed patch. The design is printed into polyester fabric with heat, so it can show photos, gradients, and unlimited colors, then finished with a stitched border.",
+      },
+      {
+        q: "Sublimated or embroidered: which should I choose?",
+        a: "Choose sublimated for photos, color fades, and very detailed art. Choose embroidered for a classic raised, textured look with solid colors.",
+      },
+      {
+        q: "Will I see a proof first?",
+        a: "Yes. You get a free digital proof within 24–48 hours, and production starts only after you approve it.",
+      },
+    ],
   },
-  "iron-on-patches": {
-    about: {
-      heading: "Industrial Heat-Seal Iron-On Patches for Fast, Permanent Application",
+
+  "sequin-patches": {
+    meta: {
+      title: "Custom Sequin Patches | Reversible & Metallic",
+      description:
+        "Custom sequin patches in metallic, holographic, and reversible sequins for dance, cheer, fashion, and game day. Free digital proof included.",
+      keywords:
+        "custom sequin patches, reversible sequin patches, sequin letters for jackets",
+    },
+    heroEyebrow: "Fashion · Shimmer · Events",
+    h1: "Custom Sequin Patches",
+    shortName: "Sequin Patches",
+    heroParagraph:
+      "Shiny sequin patches that catch the light, made for dancewear, cheer teams, fashion apparel, game-day gear, and special events.",
+    specs: [
+      { label: "Sequin Types", value: "Metallic, holographic, or reversible flip" },
+      { label: "Sequin Sizes", value: "3 mm to 5 mm" },
+      { label: "Border", value: "Merrowed felt or embroidered edge" },
+      { label: "Backing", value: "Iron-on or sew-on" },
+      { label: "Finish", value: "High-shine shimmer" },
+      { label: "Minimum Order", value: "25 pieces" },
+    ],
+    howTheyreMade: {
+      heading: "Reversible and Metallic Custom Sequin Patches",
       paragraphs: [
-        "Iron-on patches feature commercial-grade thermoplastic heat-activated adhesive backing. Applied in seconds using a home iron or commercial heat press, the adhesive bonds deep into garment fibers.",
-        "Engineered to withstand over 50 commercial laundry wash cycles without edge peeling, lifting, or bubbling.",
-        "Available across all our patch constructions — embroidered, woven, printed, and leather.",
+        "Sequin patches shimmer as you move, which makes them stand out on stage, at games, and in fashion.",
+        "Choose metallic, holographic, or reversible flip sequins that change color when you brush them.",
+        "Sequins are stitched onto a felt or twill base, often combined with embroidery for lettering and outlines.",
       ],
     },
-    specs: [
-      { label: "Adhesive Type", value: "Commercial Thermoplastic Polyolefin" },
-      { label: "Press Temp", value: "150°C – 170°C (300°F – 340°F)" },
-      { label: "Press Time", value: "12 – 15 Seconds Firm Pressure" },
-      { label: "Wash Resistance", value: "50+ Machine Wash Cycles" },
-      { label: "Border", value: "Merrowed Edge or Precision Heat-Cut" },
-      { label: "Minimum Order", value: "25 Pieces" },
-    ],
     splitSections: [
       {
-        heading: "Fast, No-Sew Apparel Decoration with High-Tensile Stitching",
+        heading: "Sequin Patches for Dance, Cheer, and Game Day",
         body: [
-          "Perfect for school programs, event merch, and team uniform rollouts where fast application is essential without sewing machines.",
-          "Our heat-activated adhesive bonds permanently to cotton, denim, canvas, fleece, and polyester blends.",
-          "Each patch is crafted with premium trilobal embroidery threads that maintain radiant color depth through heavy wear.",
+          "Sequins catch stadium and stage lights, so dance teams, cheer squads, and fans love them.",
+          "They work well on jackets, hoodies, bags, and team uniforms.",
+          "Combine sequins with embroidered details for team names and numbers.",
         ],
-        image: "/images/collections/iron-on-patch.webp",
-        imageAlt: "Custom embroidered iron-on emblem patch",
+        image: "/images/sequin/5af416a1-4bf4-4ec3-9361-5b61a805a3b8.webp",
+        imageAlt: "Sparkling sequin patches for dance teams, cheer squads, and game day gear",
       },
       {
-        heading: "Commercial Wash Durability & Thermoplastic Adhesive",
+        heading: "Sequin Script Letters for Spirit Wear",
         body: [
-          "Every iron-on patch begins with our premium colorfast embroidery thread, bound by an authentic merrowed overlock edge that locks all thread ends securely.",
-          "Our commercial-grade thermoplastic adhesive melts uniformly under heat and pressure, penetrating deep into fabric weaves for a bond that survives 50+ commercial washing machine cycles.",
-          "Includes peel-proof perimeter sealing so corners and curved edges never lift or fray over time.",
+          "Script letters and team names in sequins give spirit wear a bold, eye-catching finish.",
+          "We outline the letters with embroidery, so they stay readable from a distance.",
+          "Choose school or team colors to match your uniforms.",
         ],
-        image: "/images/embroidery/7571cad3-6834-4ded-a431-3cacb7fab0ff.webp",
-        imageAlt: "Collegiate varsity monogram embroidered iron-on patch",
+        image: "/images/sequin/1ee8d767-91d2-4778-9d7b-02d4e2d6b99c.webp",
+        imageAlt: "Sequin script lettering with embroidery outlines for varsity spirit wear",
+        reverse: true,
+      },
+      {
+        heading: "Large Sequin Crests and Jacket Back Patches",
+        body: [
+          "Large sequin patches make a statement on the back of a jacket or as fashion wings and crests.",
+          "Bigger designs leave room for more sequin colors and detail.",
+          "You see a free digital proof before production, so you know how the sequins and colors will look.",
+        ],
+        image: "/images/sequin/af5d32d0-8a31-46fc-bb56-b6b6d119641a.webp",
+        imageAlt: "Large sequin angel wings and statement crests for jacket backs",
+      },
+    ],
+    faq: [
+      {
+        q: "What is the minimum order for custom sequin patches?",
+        a: "Sequin patches start at 25 pieces.",
+      },
+      {
+        q: "What are reversible sequin patches?",
+        a: "Reversible (flip) sequins have a different color on each side. When you brush them, they flip to show the other color.",
+      },
+      {
+        q: "Can sequin patches be ironed on?",
+        a: "Yes, iron-on backing is available. For garments that are washed often, sewing gives the most secure hold.",
+      },
+      {
+        q: "How should I wash clothing with sequin patches?",
+        a: "Wash inside out on a gentle cycle in cold water, and air dry. Don't iron directly on the sequins.",
+      },
+    ],
+  },
+
+  "enamel-pins": {
+    meta: {
+      title: "Custom Enamel Pins | Hard & Soft Enamel Lapel Pins",
+      description:
+        "Custom enamel pins in hard or soft enamel with gold, silver, or black nickel plating. Pantone colors, custom backing cards, and a free proof.",
+      keywords:
+        "custom enamel pins, custom lapel pins, hard enamel pins, soft enamel pins",
+    },
+    heroEyebrow: "Hard & soft enamel · Collectibles",
+    h1: "Custom Enamel Pins",
+    shortName: "Enamel Pins",
+    heroParagraph:
+      "Custom soft and hard enamel lapel pins with bright Pantone colors, polished metal edges, and butterfly clutch backs. Great for brands, teams, events, and collectors.",
+    specs: [
+      { label: "Plating", value: "Gold, silver, black nickel, or antique" },
+      { label: "Enamel Type", value: "Hard enamel or soft enamel" },
+      { label: "Backs", value: "Butterfly clutch, rubber clutch, or magnet" },
+      { label: "Packaging", value: "Custom backing cards or pouches" },
+      { label: "Detail", value: "Fine die-struck detail" },
+      { label: "Minimum Order", value: "25 pieces (free proof included)" },
+    ],
+    howTheyreMade: {
+      heading: "Custom Hard and Soft Enamel Lapel Pins",
+      paragraphs: [
+        "Enamel pins are small metal pins filled with colored enamel. They are popular for brand merch, team pins, events, and collecting.",
+        "Hard enamel pins are polished flat and smooth, with a jewelry-like finish. Soft enamel pins have raised metal lines you can feel, and cost less.",
+        "Choose your metal plating, back type, and packaging to finish the look.",
+      ],
+    },
+    splitSections: [
+      {
+        heading: "Die-Struck Detail and Pantone Colors",
+        body: [
+          "Each pin is struck from a custom metal die, which creates clean raised lines around every color.",
+          "Enamel colors are matched to Pantone, so your logo colors look right.",
+          "Add glitter, glow-in-the-dark, or printed details for extra effect.",
+        ],
+        image: "/images/enamel-pins/3051384c-c62d-47ec-b705-1a6a633a8fcb.webp",
+        imageAlt: "Die-struck custom enamel lapel pins with Pantone color matching",
+      },
+      {
+        heading: "Plating Finishes and Secure Pin Backs",
+        body: [
+          "Choose gold, silver, black nickel, or antique plating to match your design.",
+          "Butterfly clutches, rubber clutches, and magnet backs keep pins in place on jackets, hats, and bags.",
+          "Custom backing cards turn your pins into ready-to-sell retail products.",
+        ],
+        image: "/images/enamel-pins/54c5fa67-1ebb-4c46-b911-78817a436452.webp",
+        imageAlt: "Polished metal plating finishes and clutch attachment options for enamel pins",
         reverse: true,
       },
     ],
-  },
-};
-
-const fallbackDetails = (name: string, patchTypeName: string, fallbackImage = "/images/brand/logo.png") => ({
-  about: {
-    heading: `The Definitive Guide to Custom ${name}`,
-    paragraphs: [
-      `When it comes to brand representation, team unity, and professional apparel, details matter immensely. Our custom ${name.toLowerCase()} are engineered to stand out and last a lifetime. Whether outfitting a team, producing merchandise for an apparel line, or creating commemorative patches, our expert manufacturing process guarantees perfection.`,
-      `We specialize in high-quality bespoke ${name.toLowerCase()} tailored exactly to your specifications. From intricate artwork to bold, simplistic designs, we bring your vision to life using industry-leading machinery and top-tier materials. Discover why thousands of businesses and organizations globally trust us for their personalized ${patchTypeName.toLowerCase()} needs.`,
-      `From the choice of material to the border finish — merrowed, laser-cut, or heat-cut — every variable is fine-tuned to your garment and application. Our team works collaboratively with you through the proofing stage to ensure zero surprises when your order arrives.`,
+    faq: [
+      {
+        q: "What is the minimum order for custom enamel pins?",
+        a: "Enamel pins start at 25 pieces, with a free digital proof included.",
+      },
+      {
+        q: "Hard enamel or soft enamel: what's the difference?",
+        a: "Hard enamel pins are polished smooth and flat, with a premium, durable finish. Soft enamel pins have raised metal outlines and recessed color, and they usually cost less.",
+      },
+      {
+        q: "Which pin backs do you offer?",
+        a: "We offer butterfly (metal) clutches, rubber clutches, and magnet backs.",
+      },
+      {
+        q: "Will I see a proof first?",
+        a: "Yes. You get a free digital proof showing the size, colors, and plating, and production starts only after you approve it.",
+      },
     ],
   },
-  specs: [
-    { label: "Custom Shapes", value: "100% Bespoke Die-Cut Available" },
-    { label: "Quality Standard", value: "ISO Commercial Apparel Grade" },
-    { label: "Backing Options", value: "Iron-On, Velcro, Sew-On, Adhesive" },
-    { label: "Proof Turnaround", value: "24–48 Hours Free Digital Proof" },
-    { label: "Revisions", value: "Unlimited Free Design Revisions" },
-    { label: "Production", value: "7–14 Business Days Tracked" },
-  ],
-  splitSections: [
-    {
-      heading: `Built for Brands, Teams & Professionals`,
-      body: [
-        `Our custom ${name.toLowerCase()} are trusted by businesses, teams, and organizations across the USA, Canada, UK, and Australia. Every patch is produced to a professional standard with rigorous quality control.`,
-        `Whether you need a small batch for a local club or thousands for a national rollout, our production scales to your requirements with no minimum order restrictions and transparent, competitive pricing.`,
-        `We provide a free digital proof within 24-48 hours of your request, allowing you to review and approve the exact design before a single patch is manufactured.`,
-      ],
-      image: fallbackImage,
-      imageAlt: `Custom ${name.toLowerCase()} for brands and teams`,
-    },
-  ],
-});
 
-const SLUG_ALIASES: Record<string, string> = {
-  "pvc-patch-design": "pvc-keychains",
-  "pvc-keychain": "pvc-keychains",
+  "embroidery-keychains": {
+    meta: {
+      title: "Custom Embroidered Keychains | Flight Tag Keychains",
+      description:
+        "Custom embroidered keychains and double-sided flight tags with merrowed edges and steel eyelets. Free digital proof and orders from 25 pieces.",
+      keywords:
+        "custom embroidered keychains, embroidered flight tags, custom flight tag keychains",
+    },
+    heroEyebrow: "Flight tags · Merch · Double-sided",
+    h1: "Custom Embroidered Keychains",
+    shortName: "Embroidered Keychains",
+    heroParagraph:
+      "Double-sided embroidered flight tags and keychains with merrowed edges and steel eyelets. Great for brands, pilots, car clubs, and personalized gifts.",
+    specs: [
+      { label: "Base", value: "Heavy-duty twill" },
+      { label: "Border", value: "Tight merrowed edge" },
+      { label: "Hardware", value: "Steel grommet and split ring" },
+      { label: "Sides", value: "Double-sided embroidery" },
+      { label: "Standard Size", value: "130 × 30 mm (custom shapes available)" },
+      { label: "Minimum Order", value: "25 pieces" },
+    ],
+    howTheyreMade: {
+      heading: "Double-Sided Embroidered Flight Tags and Keychains",
+      paragraphs: [
+        "Embroidered keychains are stitched on both sides of a strong twill base, so your design shows whichever way the keychain turns.",
+        "The classic flight tag shape (130 × 30 mm) is inspired by aviation 'Remove Before Flight' tags.",
+        "A merrowed edge and a steel eyelet make them strong enough for daily use on keys and bags.",
+      ],
+    },
+    splitSections: [
+      {
+        heading: "Classic Flight Tags With Steel Eyelets",
+        body: [
+          "Flight tags are a favorite with pilots, aviation clubs, and car enthusiasts.",
+          "Tight merrowed borders keep the edges from fraying.",
+          "Steel eyelets and split rings hold up to everyday use.",
+        ],
+        image: "/images/embroidery-keychains/125b3a14-acde-4c8d-adca-cda2365756cc.webp",
+        imageAlt: "Classic double-sided embroidered flight tags with steel eyelets",
+      },
+      {
+        heading: "Personalized Names, Club Merch, and Swivel Clasps",
+        body: [
+          "Add names, numbers, or slogans for teams, clubs, and gifts.",
+          "Embroidered keychains make lasting merch for car clubs, sports teams, and brands.",
+          "Choose a split ring or a swivel clasp to attach them to bags and lanyards.",
+        ],
+        image: "/images/embroidery-keychains/a0d44bce-3d32-486a-af7a-476b0facfd49.webp",
+        imageAlt: "Custom name embroidered keychains with swivel clasp hardware",
+        reverse: true,
+      },
+      {
+        heading: "Double-Sided Twill Embroidery",
+        body: [
+          "Each side can carry a different design, such as your logo on the front and a name on the back.",
+          "Dense stitching keeps the colors bright through daily handling.",
+          "You see a free digital proof of both sides before production.",
+        ],
+        image: "/images/embroidery-keychains/6762830b-e120-4ea5-9c0a-eb48fdc84b74.webp",
+        imageAlt: "High-density double-sided embroidered twill keychains",
+      },
+    ],
+    faq: [
+      {
+        q: "What is the minimum order for custom embroidered keychains?",
+        a: "Embroidered keychains start at 25 pieces.",
+      },
+      {
+        q: "Can each side have a different design?",
+        a: "Yes. Embroidered keychains are double-sided, and each side can have its own design or text.",
+      },
+      {
+        q: "What size are embroidered flight tags?",
+        a: "The standard size is 130 × 30 mm. Custom shapes and sizes are available.",
+      },
+      {
+        q: "Will I see a proof first?",
+        a: "Yes. You get a free digital proof of both sides, and production starts only after you approve it.",
+      },
+    ],
+  },
+
+  "iron-on-patches": {
+    meta: {
+      title: "Custom Iron-On Patches | No-Sew Heat-Seal Patches",
+      description:
+        "Custom iron on patches with commercial heat-seal backing. Easy no-sew application, 50+ wash durability, and any patch style. Free digital proof.",
+      keywords:
+        "iron on patches, custom iron on patches, how to apply iron on patches",
+    },
+    heroEyebrow: "Apparel · Easy apply",
+    h1: "Custom Iron-On Patches",
+    shortName: "Iron-On Patches",
+    heroParagraph:
+      "Iron on patches with heat-seal backing for quick, no-sew application on jackets, bags, hats, and team apparel. Any of our patch styles can be ordered with iron-on backing.",
+    specs: [
+      { label: "Adhesive", value: "Commercial heat-seal adhesive" },
+      { label: "Press Temperature", value: "300–340°F (150–170°C)" },
+      { label: "Press Time", value: "12–15 seconds, firm pressure" },
+      { label: "Wash Resistance", value: "50+ machine washes" },
+      { label: "Border", value: "Merrowed or heat-cut" },
+      { label: "Minimum Order", value: "25 pieces" },
+    ],
+    howTheyreMade: {
+      heading: "Custom Iron-On Patches With Commercial Heat-Seal Backing",
+      paragraphs: [
+        "Iron-on patches have a heat-activated adhesive on the back, so you can apply them with a household iron or a heat press. No sewing needed.",
+        "We use a commercial heat-seal adhesive that bonds firmly to cotton, denim, and canvas.",
+        "Any style can be made iron-on, including embroidered, woven, sublimated, and chenille patches.",
+      ],
+    },
+    splitSections: [
+      {
+        heading: "Fast, No-Sew Decoration for Apparel",
+        body: [
+          "Iron-on patches are the fastest way to add your logo to shirts, hats, jackets, and bags.",
+          "Heat press at 300–340°F for 12–15 seconds with firm pressure, then let the patch cool.",
+          "Great for team apparel, school clubs, events, and small brands decorating their own products.",
+        ],
+        image: "/images/collections/iron-on-patch.webp",
+        imageAlt: "Commercial heat-seal iron-on patch application on cotton and denim",
+      },
+      {
+        heading: "Iron-On Patches That Last Through Washing",
+        body: [
+          "Properly applied, our iron-on patches stay on through 50+ machine washes.",
+          "Wash inside out in cold water and skip high-heat drying to help them last longer.",
+          "For nylon, leather, or waterproof jackets, which can't take high heat, choose sew-on or Velcro backing instead.",
+        ],
+        image: "/images/embroidery/7571cad3-6834-4ded-a431-3cacb7fab0ff.webp",
+        imageAlt: "Wash-durable iron-on patches bonded to apparel and outerwear",
+        reverse: true,
+      },
+    ],
+    faq: [
+      {
+        q: "What is the minimum order for custom iron-on patches?",
+        a: "Iron-on patches start at 25 pieces.",
+      },
+      {
+        q: "How do I apply an iron-on patch?",
+        a: "Set a heat press to 300–340°F, place the patch, and press for 12–15 seconds with firm pressure. With a household iron, use the cotton setting with no steam, press through a thin cloth, and let it cool before moving it.",
+      },
+      {
+        q: "Do iron-on patches stay on after washing?",
+        a: "Yes. Applied correctly, they last through 50+ washes. Wash inside out in cold water for best results.",
+      },
+      {
+        q: "Which fabrics work with iron-on patches?",
+        a: "Iron-on patches work best on heat-safe fabrics such as cotton, denim, canvas, and twill. For nylon, polyester performance wear, or leather, sew-on or Velcro backing is safer.",
+      },
+    ],
+  },
 };
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+// Aliases
+collectionDetails["pvc-keychain"] = collectionDetails["pvc-keychains"];
+
+const SLUG_ALIASES: Record<string, string> = {
+  "pvc-keychain": "pvc-keychains",
+  "pvc-patch-design": "pvc-patches",
+  "pvc-patch": "pvc-patches",
+  "embroidered-patch": "embroidered-patches",
+  "chenille-patch": "chenille-patches",
+  "leather-patch": "leather-patches",
+  "woven-patch": "woven-patches",
+  "sublimated-patch": "sublimated-patches",
+  "sublimation-patches": "sublimated-patches",
+  "sequin-patch": "sequin-patches",
+  "enamel-pin": "enamel-pins",
+  "embroidery-keychain": "embroidery-keychains",
+  "iron-on-patch": "iron-on-patches",
+};
+
+export function generateStaticParams() {
+  return [
+    { slug: "embroidered-patches" },
+    { slug: "chenille-patches" },
+    { slug: "pvc-patches" },
+    { slug: "pvc-keychains" },
+    { slug: "silicone-patches" },
+    { slug: "leather-patches" },
+    { slug: "woven-patches" },
+    { slug: "sublimated-patches" },
+    { slug: "sequin-patches" },
+    { slug: "enamel-pins" },
+    { slug: "embroidery-keychains" },
+    { slug: "iron-on-patches" },
+  ];
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   let { slug } = await params;
   if (SLUG_ALIASES[slug]) slug = SLUG_ALIASES[slug];
   const site = await getSite();
   const collection = site.collections.find((c) => c.slug === slug);
   if (!collection) return {};
+
+  const details = collectionDetails[slug];
+  const title = details?.meta?.title ?? `${collection.name} | Free Proof, No Setup Fees`;
+  const description = details?.meta?.description ?? collection.description;
+  const keywords = details?.meta?.keywords ?? `custom ${collection.name.toLowerCase()}`;
+
   return {
-    title: `Custom ${collection.name} | Bespoke Production & Free Proof | ${site.name}`,
-    description: `Order custom ${collection.name.toLowerCase()} for uniforms, headwear, and apparel. ${collection.description} Free digital proof, fast production, and zero setup fees.`,
-    keywords: `custom ${collection.name.toLowerCase()}, personalized ${collection.name.toLowerCase()}, bespoke patches, order ${collection.name.toLowerCase()} online`,
+    title,
+    description,
+    keywords,
+    alternates: {
+      canonical: `/collections/${slug}`,
+    },
+    openGraph: {
+      title: `${title} | Power Digitizing`,
+      description,
+      url: `/collections/${slug}`,
+      type: "website",
+    },
   };
 }
 
-export default async function CollectionDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function CollectionDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   if (SLUG_ALIASES[slug]) {
     redirect(`/collections/${SLUG_ALIASES[slug]}`);
@@ -676,28 +1045,79 @@ export default async function CollectionDetailPage({ params }: { params: Promise
   const collection = site.collections.find((c) => c.slug === slug);
   if (!collection) notFound();
 
-  const patchTypeName = collection.name.replace(/ patches$/i, "");
-  const details = collectionDetails[slug] ?? fallbackDetails(collection.name, patchTypeName, collection.image);
-  const isLeather = slug === "leather-patches";
+  const details = collectionDetails[slug];
+  if (!details) notFound();
 
+  const isLeather = slug === "leather-patches";
   const phone = site.contact?.phone || "+1 (316) 444-1366";
-  const email = site.contact?.email || "support@powerdigitizing.com";
+  const email = site.contact?.email || "design@powerdigitizing.com";
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: details.h1,
+    description: details.heroParagraph,
+    image: `https://powerdigitizing.com${collection.image}`,
+    brand: {
+      "@type": "Brand",
+      name: "Power Digitizing",
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "USD",
+      lowPrice: collection.price?.replace(/[^0-9.]/g, "") || "1.50",
+      offerCount: details.specs.length,
+      availability: "https://schema.org/InStock",
+    },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: details.faq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
 
   return (
     <div className="min-h-screen bg-[#FBF9F5] text-[#1E1E1E]">
-      {/* ── 1. LUXURY EDITORIAL HERO ─────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
+      {/* ── A1 & A2. HERO SECTION ─────────────────────────────────────────── */}
       <section className="relative overflow-hidden border-b border-[#E8E6E0] bg-white pt-28 pb-16 md:pt-36 md:pb-24">
         {/* Subtle geometric pattern */}
-        <div aria-hidden className="absolute inset-0 bg-[linear-gradient(to_right,#00000006_1px,transparent_1px),linear-gradient(to_bottom,#00000006_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-[linear-gradient(to_right,#00000006_1px,transparent_1px),linear-gradient(to_bottom,#00000006_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"
+        />
 
         <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
-          {/* Breadcrumbs */}
-          <nav className="mb-8 flex items-center gap-2 text-xs font-mono tracking-wider uppercase text-muted-foreground">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          {/* A1: Breadcrumbs: Home / Collections / {Name} */}
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-8 flex items-center gap-2 text-xs font-mono tracking-wider uppercase text-muted-foreground"
+          >
+            <Link href="/" className="hover:text-primary transition-colors">
+              Home
+            </Link>
             <ChevronRight className="size-3 text-muted-foreground/60" />
-            <Link href="/collections" className="hover:text-primary transition-colors">Collections</Link>
+            <Link href="/collections" className="hover:text-primary transition-colors">
+              Collections
+            </Link>
             <ChevronRight className="size-3 text-muted-foreground/60" />
-            <span className="text-foreground font-semibold">{collection.name}</span>
+            <span className="text-foreground font-semibold">{details.h1}</span>
           </nav>
 
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-20 items-center">
@@ -705,24 +1125,24 @@ export default async function CollectionDetailPage({ params }: { params: Promise
             <div className="lg:col-span-7 space-y-6 xl:space-y-8">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                 <Sparkles className="size-3.5" />
-                <span>Atelier Grade • {collection.category}</span>
+                <span>{details.heroEyebrow}</span>
               </div>
 
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-[#1A1A1A] leading-[1.08]">
-                Bespoke <span className="text-primary">{collection.name}</span>
+                {details.h1}
               </h1>
 
               <p className="text-base sm:text-lg xl:text-xl text-[#555] leading-relaxed max-w-xl xl:max-w-2xl font-normal">
-                {collection.description} Engineered with master-level calibration, authentic materials, and strict production tolerances for apparel brands, hatmakers, and uniform programs worldwide.
+                {details.heroParagraph}
               </p>
 
-              {/* Action Buttons */}
+              {/* A2: Hero Buttons */}
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <Link
                   href="/quote"
                   className="inline-flex items-center gap-2 rounded-full bg-[#1A1A1A] px-8 py-4 text-sm font-bold text-white shadow-xl hover:bg-black transition-all hover:scale-105"
                 >
-                  <span>Request Free Digital Proof</span>
+                  <span>Request a Free Digital Proof</span>
                   <ArrowUpRight className="size-4" />
                 </Link>
 
@@ -735,35 +1155,38 @@ export default async function CollectionDetailPage({ params }: { params: Promise
                 </a>
               </div>
 
-              {/* Trust checklist */}
-              <div className="pt-6 border-t border-[#EFECE6] grid grid-cols-2 gap-3 text-xs text-[#555] font-medium">
+              {/* A2: Trust checklist */}
+              <div className="pt-6 border-t border-[#EFECE6] grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#555] font-medium">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="size-4 text-emerald-600 shrink-0" />
-                  <span>100% Free Digital Proof in 24h</span>
+                  <span>Free digital proof in 24–48 hours</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="size-4 text-emerald-600 shrink-0" />
-                  <span>No Setup or Mold Fees</span>
+                  <span>No setup or mold fees</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="size-4 text-emerald-600 shrink-0" />
-                  <span>Industrial Machine Tested</span>
+                  <span>Checked against your approved proof</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="size-4 text-emerald-600 shrink-0" />
-                  <span>Worldwide Tracked Delivery</span>
+                  <span>Tracked shipping: USA • Canada • UK • Australia</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Product Card with Zoom Effect */}
+            {/* Right Product Card (A3: Spec card header) */}
             <div className="lg:col-span-5">
               <div className="group relative aspect-square overflow-hidden rounded-3xl border border-[#E8E6E0] bg-gradient-to-b from-slate-50/90 to-slate-100/50 p-6 sm:p-10 shadow-2xl flex items-center justify-center">
-                <div aria-hidden className="absolute inset-0 bg-gradient-to-tr from-[#F8F7F2]/40 to-transparent pointer-events-none" />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-tr from-[#F8F7F2]/40 to-transparent pointer-events-none"
+                />
                 <div className="relative size-full flex items-center justify-center">
                   <Image
                     src={collection.image}
-                    alt={collection.name}
+                    alt={details.h1}
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 450px"
@@ -771,14 +1194,14 @@ export default async function CollectionDetailPage({ params }: { params: Promise
                   />
                 </div>
 
-                {/* Floating badge */}
+                {/* A3: Floating badge */}
                 <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E8E6E0] p-4 shadow-lg flex items-center justify-between text-xs">
                   <div>
-                    <p className="font-display font-bold text-[#1A1A1A]">{collection.name}</p>
-                    <p className="text-[11px] text-muted-foreground">Certified Production Spec</p>
+                    <p className="font-display font-bold text-[#1A1A1A]">{details.h1}</p>
+                    <p className="text-[11px] text-muted-foreground">Production specs</p>
                   </div>
                   <span className="rounded-full bg-emerald-50 px-2.5 py-1 font-semibold text-emerald-700 text-[11px]">
-                    In Production
+                    In production
                   </span>
                 </div>
               </div>
@@ -787,26 +1210,39 @@ export default async function CollectionDetailPage({ params }: { params: Promise
         </div>
       </section>
 
-      {/* ── 2. TECHNICAL SPECIFICATIONS PILL STRIP ───────────────────────────── */}
+      {/* ── TECHNICAL SPECIFICATIONS PILL STRIP ───────────────────────────── */}
       <section className="border-b border-[#E8E6E0] bg-[#F7F5EE] py-8">
         <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
             {details.specs.map((spec) => (
-              <div key={spec.label} className="rounded-xl border border-[#E5E3DC] bg-white p-3.5 shadow-sm">
-                <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">{spec.label}</p>
-                <p className="mt-1 font-display text-xs sm:text-sm font-bold text-[#1A1A1A]">{spec.value}</p>
+              <div
+                key={spec.label}
+                className="rounded-xl border border-[#E5E3DC] bg-white p-3.5 shadow-sm"
+              >
+                <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
+                  {spec.label}
+                </p>
+                <p className="mt-1 font-display text-xs sm:text-sm font-bold text-[#1A1A1A]">
+                  {spec.value}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 3. SPECIAL LEATHER ATELIER SHOWCASE (If Leather Page) ─────────────── */}
+      {/* ── SPECIAL LEATHER ATELIER SHOWCASE (If Leather Page) ─────────────── */}
       {isLeather && (
         <ScrollReveal>
           <section className="py-20 md:py-28 border-b border-white/10 bg-[#0B1626] text-white relative overflow-hidden">
-            <div aria-hidden className="absolute -right-24 -top-24 size-96 rounded-full bg-[#C94343]/10 blur-3xl pointer-events-none" />
-            <div aria-hidden className="absolute -left-24 -bottom-24 size-96 rounded-full bg-[#14263D]/30 blur-3xl pointer-events-none" />
+            <div
+              aria-hidden
+              className="absolute -right-24 -top-24 size-96 rounded-full bg-[#C94343]/10 blur-3xl pointer-events-none"
+            />
+            <div
+              aria-hidden
+              className="absolute -left-24 -bottom-24 size-96 rounded-full bg-[#14263D]/30 blur-3xl pointer-events-none"
+            />
 
             <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
               <div data-reveal className="max-w-2xl text-center mx-auto mb-16">
@@ -867,7 +1303,12 @@ export default async function CollectionDetailPage({ params }: { params: Promise
                         <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[10px] font-mono text-[#C94343]">
                           {swatch.badge}
                         </span>
-                        <span className="size-4 rounded-full border border-white/40 shadow-inner" style={{ backgroundColor: swatch.color.replace("bg-[", "").replace("]", "") }} />
+                        <span
+                          className="size-4 rounded-full border border-white/40 shadow-inner"
+                          style={{
+                            backgroundColor: swatch.color.replace("bg-[", "").replace("]", ""),
+                          }}
+                        />
                       </div>
                       <h3 className="font-display text-lg font-bold text-white">{swatch.name}</h3>
                       <p className="mt-2 text-xs leading-relaxed text-slate-300/80">{swatch.desc}</p>
@@ -888,10 +1329,15 @@ export default async function CollectionDetailPage({ params }: { params: Promise
               </div>
 
               {/* Headwear Placement Guide */}
-              <div data-reveal className="mt-14 rounded-3xl border border-white/15 bg-white/[0.04] p-8 md:p-12">
+              <div
+                data-reveal
+                className="mt-14 rounded-3xl border border-white/15 bg-white/[0.04] p-8 md:p-12"
+              >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   <div className="lg:col-span-7 space-y-4">
-                    <p className="text-xs font-mono uppercase tracking-widest text-[#C94343]">HEADWEAR CALIBRATION</p>
+                    <p className="text-xs font-mono uppercase tracking-widest text-[#C94343]">
+                      HEADWEAR CALIBRATION
+                    </p>
                     <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
                       Curved Crown & Beanie Fold Engineering
                     </h3>
@@ -899,9 +1345,15 @@ export default async function CollectionDetailPage({ params }: { params: Promise
                       Most generic leather patches crack or bubble when applied to curved 6-panel trucker caps. At Power Digitizing, our dies are cast with perimeter bevels and custom flexibility conditioning, ensuring the patch contours flush against Richardson 112, Yupoong Classics, and Carhartt beanies.
                     </p>
                     <div className="flex flex-wrap gap-4 pt-2 text-xs text-white/80">
-                      <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="size-4 text-[#C94343]" /> Pre-curved Cap Option</span>
-                      <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="size-4 text-[#C94343]" /> Perimeter Stitch Grooves</span>
-                      <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="size-4 text-[#C94343]" /> High-Melt Industrial Adhesive</span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <CheckCircle2 className="size-4 text-[#C94343]" /> Pre-curved Cap Option
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <CheckCircle2 className="size-4 text-[#C94343]" /> Perimeter Stitch Grooves
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <CheckCircle2 className="size-4 text-[#C94343]" /> High-Melt Industrial Adhesive
+                      </span>
                     </div>
                   </div>
 
@@ -930,16 +1382,18 @@ export default async function CollectionDetailPage({ params }: { params: Promise
         </ScrollReveal>
       )}
 
-      {/* ── 4. LONG-FORM CRAFT ESSAY ────────────────────────────────────────── */}
+      {/* ── A4. HOW THEY'RE MADE SECTION ───────────────────────────────────── */}
       <ScrollReveal>
         <section className="py-20 md:py-28 bg-white border-b border-[#E8E6E0]">
           <div className="mx-auto max-w-4xl px-5 text-center">
-            <span className="text-xs font-mono uppercase tracking-widest text-primary">MANUFACTURING PHILOSOPHY</span>
+            <span className="text-xs font-mono uppercase tracking-widest text-primary">
+              How they&apos;re made
+            </span>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
-              {details.about.heading}
+              {details.howTheyreMade.heading}
             </h2>
             <div className="mt-8 space-y-6 text-base sm:text-lg leading-relaxed text-[#555] text-left">
-              {details.about.paragraphs.map((para, i) => (
+              {details.howTheyreMade.paragraphs.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
             </div>
@@ -947,18 +1401,22 @@ export default async function CollectionDetailPage({ params }: { params: Promise
         </section>
       </ScrollReveal>
 
-      {/* ── 5. SPLIT PRODUCTION DEEP-DIVES ───────────────────────────────────── */}
+      {/* ── A4. PRODUCTION SECTIONS (SPLIT SECTIONS) ─────────────────────────── */}
       {details.splitSections.map((section, idx) => {
         const isReversed = section.reverse ?? false;
         return (
           <ScrollReveal key={idx}>
-            <section className={`py-20 md:py-28 ${idx % 2 === 0 ? "bg-[#FBF9F5]" : "bg-white"} border-b border-[#E8E6E0]`}>
+            <section
+              className={`py-20 md:py-28 ${
+                idx % 2 === 0 ? "bg-[#FBF9F5]" : "bg-white"
+              } border-b border-[#E8E6E0]`}
+            >
               <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
                 <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-20 items-center">
                   {/* Text Column */}
                   <div className={`lg:col-span-7 space-y-6 ${isReversed ? "lg:order-2" : "lg:order-1"}`}>
                     <span className="rounded-full bg-primary/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-primary">
-                      {patchTypeName} Production Standard
+                      {details.shortName} production standard
                     </span>
                     <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1A1A1A]">
                       {section.heading}
@@ -973,7 +1431,7 @@ export default async function CollectionDetailPage({ params }: { params: Promise
                         href="/quote"
                         className="inline-flex items-center gap-2 rounded-full border border-[#D5D3CC] bg-white px-6 py-3 text-xs sm:text-sm font-semibold text-[#1A1A1A] hover:border-primary hover:text-primary transition-colors"
                       >
-                        <span>Configure This Style</span>
+                        <span>Start This Style</span>
                         <ArrowUpRight className="size-4" />
                       </Link>
                     </div>
@@ -998,82 +1456,86 @@ export default async function CollectionDetailPage({ params }: { params: Promise
         );
       })}
 
-      {/* ── 5.5 CURATED PRODUCTION GALLERY (10-12 DESIGNS) ─────────── */}
-      <CollectionGallery slug={slug} collectionName={collection.name} />
+      {/* ── A5. CURATED PRODUCTION GALLERY ─────────────────────────────────── */}
+      <CollectionGallery slug={slug} collectionName={details.h1} />
 
-      {/* ── 6. PRODUCTION PILLARS ───────────────────────────────────────────── */}
+      {/* ── A6. WHY CHOOSE US (2 CARDS) ─────────────────────────────────────── */}
       <ScrollReveal>
         <section className="py-20 md:py-28 bg-[#F7F5EE] border-b border-[#E8E6E0]">
           <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
             <div data-reveal className="text-center max-w-2xl mx-auto mb-16">
-              <span className="text-xs font-mono uppercase tracking-widest text-primary">ZERO COMPROMISE</span>
+              <span className="text-xs font-mono uppercase tracking-widest text-primary">
+                Why Power Digitizing
+              </span>
               <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#1A1A1A]">
-                Why Power Digitizing {collection.name}?
+                Why Order {details.h1} From Power Digitizing?
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-muted-foreground">
-                We combine fine art craftsmanship with industrial production rigor to guarantee flawless execution.
+              <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                Hand-prepared artwork, careful production, and a proof you approve before anything is made.
               </p>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                { Icon: Shield, title: "100% Guaranteed Durability", text: "Tested against 50+ wash cycles, UV exposure, and abrasive real-world uniform wear without unravelling." },
-                { Icon: Sparkles, title: "Micro-Precision Detailing", text: "Whether sharp laser engraving or satin stitch columns down to 3mm, our tolerances are verified manually." },
-                { Icon: Layers, title: "4 Application Backings", text: "Choose from industrial heat-seal iron-on, genuine Velcro hook-and-loop, peel-and-stick, or sew-on." },
-                { Icon: Award, title: "Multi-Point Human QC", text: "Every single patch is physically checked by our quality control leads before packing into protective cases." },
-                { Icon: Zap, title: "Rush Turnaround Ready", text: "Need emergency event stock or rapid samples? Same-day proofs and expedited 5-day manufacturing available." },
-                { Icon: Star, title: "Complimentary Setup & Proof", text: "No hidden die costs, setup fees, or digitization charges. What you see on your tailored quote is final." },
-              ].map(({ Icon, title, text }) => (
-                <div
-                  data-reveal
-                  key={title}
-                  className="rounded-2xl border border-[#E8E6E0] bg-white p-7 shadow-sm transition-all hover:border-primary/40 hover:-translate-y-1 hover:shadow-md"
-                >
-                  <div className="grid size-11 place-items-center rounded-xl bg-primary/5 text-primary mb-5">
-                    <Icon className="size-5" />
-                  </div>
-                  <h3 className="font-display text-lg font-bold text-[#1A1A1A]">{title}</h3>
-                  <p className="mt-2 text-xs sm:text-sm text-[#666] leading-relaxed">{text}</p>
+            <div className="grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
+              <div
+                data-reveal
+                className="rounded-3xl border border-[#E8E6E0] bg-white p-8 sm:p-10 shadow-sm transition-all hover:border-primary/40 hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="grid size-12 place-items-center rounded-2xl bg-primary/5 text-primary mb-6">
+                  <Shield className="size-6 text-primary" />
                 </div>
-              ))}
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-[#1A1A1A]">
+                  Made to Last
+                </h3>
+                <p className="mt-4 text-sm sm:text-base text-[#666] leading-relaxed">
+                  Built for real use on uniforms, hats, and gear, and checked against your approved proof before it ships. If it doesn&apos;t match, we remake it at no extra cost.
+                </p>
+              </div>
+
+              <div
+                data-reveal
+                className="rounded-3xl border border-[#E8E6E0] bg-white p-8 sm:p-10 shadow-sm transition-all hover:border-primary/40 hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="grid size-12 place-items-center rounded-2xl bg-primary/5 text-primary mb-6">
+                  <Sparkles className="size-6 text-primary" />
+                </div>
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-[#1A1A1A]">
+                  Fine Detail, Checked by Hand
+                </h3>
+                <p className="mt-4 text-sm sm:text-base text-[#666] leading-relaxed">
+                  From sharp laser engraving to small lettering, every detail is checked by our team before production.
+                </p>
+              </div>
             </div>
           </div>
         </section>
       </ScrollReveal>
 
-      {/* ── 7. FAQ ACCORDION FOR THIS PATCH TYPE ─────────────────────────────── */}
+      {/* ── A7. FAQ SECTION (4 UNIQUE QUESTIONS PER COLLECTION) ─────────────── */}
       <ScrollReveal>
         <section className="py-20 md:py-28 bg-white border-b border-[#E8E6E0]">
           <div className="mx-auto max-w-4xl xl:max-w-5xl px-5 sm:px-6 lg:px-8">
             <div data-reveal className="text-center mb-12">
-              <span className="text-xs font-mono uppercase tracking-widest text-primary">COMMON INQUIRIES</span>
+              <span className="text-xs font-mono uppercase tracking-widest text-primary">
+                Common questions
+              </span>
               <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#1A1A1A]">
-                Frequently Asked About {collection.name}
+                {details.h1} FAQs
               </h2>
             </div>
 
             <div className="space-y-4">
-              {[
-                {
-                  q: `What is the minimum order quantity for custom ${collection.name.toLowerCase()}?`,
-                  a: `We support both boutique pilot batches and large commercial runs. Minimums start at just 10–25 pieces depending on custom mold complexity, with significant volume discounts at 100, 250, 500, and 1,000+ units.`,
-                },
-                {
-                  q: `Will I see a proof before full production commences?`,
-                  a: `Always. We provide a full digital simulation showing real-scale dimensions, Pantone thread or leather hide colors, and border textures within 24 hours. Production only begins upon your 100% written sign-off.`,
-                },
-                {
-                  q: `What file format should I upload for my artwork?`,
-                  a: `We accept vector AI, EPS, PDF, SVG, and high-resolution PNG or JPG. If you only have a rough sketch or photo of an old physical patch, our vector redraw artists will recreate it into press-ready artwork for free.`,
-                },
-                {
-                  q: `Which backing is recommended for my garment?`,
-                  a: `For commercial hats and heavy denim, sew-on channels or high-temp heat-seal adhesive work best. For tactical vests and military uniforms, hook-and-loop Velcro is the standard. For casual cotton tees or bags, iron-on provides instant bond.`,
-                },
-              ].map(({ q, a }) => (
-                <div data-reveal key={q} className="rounded-2xl border border-[#E8E6E0] bg-[#FAFAF7] p-6 sm:p-8">
-                  <h3 className="font-display text-base sm:text-lg font-bold text-[#1A1A1A]">{q}</h3>
-                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-[#666]">{a}</p>
+              {details.faq.map(({ q, a }) => (
+                <div
+                  data-reveal
+                  key={q}
+                  className="rounded-2xl border border-[#E8E6E0] bg-[#FAFAF7] p-6 sm:p-8 hover:border-primary/30 transition-colors"
+                >
+                  <h3 className="font-display text-base sm:text-lg font-bold text-[#1A1A1A]">
+                    {q}
+                  </h3>
+                  <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#666]">
+                    {a}
+                  </p>
                 </div>
               ))}
             </div>
@@ -1081,7 +1543,7 @@ export default async function CollectionDetailPage({ params }: { params: Promise
         </section>
       </ScrollReveal>
 
-      {/* ── 8. TONELLI-INSPIRED LUXURY EDITORIAL CALLOUT (Replacing red block) ── */}
+      {/* ── A8. CLOSING CALL TO ACTION ───────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-background py-16 md:py-24">
         <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10 text-center">
           <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#0B1626] via-[#14263D] to-[#0B1626] p-8 text-white shadow-2xl sm:p-12 md:p-16">
@@ -1092,16 +1554,16 @@ export default async function CollectionDetailPage({ params }: { params: Promise
 
             <div className="relative z-10">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
-                <Sparkles className="size-3.5 text-[#C94343]" /> Start Your Custom Order
+                <Sparkles className="size-3.5 text-[#C94343]" /> Start your order
               </span>
 
               <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-white sm:text-5xl leading-tight">
-                Ready to craft your custom <br className="hidden sm:inline" />
-                {patchTypeName.toLowerCase()} patches with master precision?
+                Ready to make your <br className="hidden sm:inline" />
+                {details.h1}?
               </h2>
 
               <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
-                Upload your artwork or idea today. Our senior digitizers and craft directors will prepare your tailored specification sheet and complimentary digital proof within 24 hours.
+                Send your logo, sketch, or idea. Our team will recommend the right size and backing and send a free digital proof within 24–48 hours. Production starts only after you approve.
               </p>
 
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -1109,7 +1571,7 @@ export default async function CollectionDetailPage({ params }: { params: Promise
                   href="/quote"
                   className="group inline-flex items-center gap-2 rounded-full bg-[#C94343] px-8 py-4 text-sm font-bold text-white shadow-xl shadow-[#C94343]/30 transition-all hover:scale-105 hover:bg-[#b03535] hover:shadow-2xl"
                 >
-                  <span>Request Free Proof & Quote</span>
+                  <span>Request a Free Proof & Quote</span>
                   <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
 
@@ -1117,25 +1579,31 @@ export default async function CollectionDetailPage({ params }: { params: Promise
                   href="/contact"
                   className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white backdrop-blur transition-all hover:border-white/40 hover:bg-white/15"
                 >
-                  <span>Talk to Patch Specialist</span>
+                  <span>Talk to a Patch Specialist</span>
                 </Link>
               </div>
 
-              {/* Direct hotline */}
+              {/* A8 Contact strip: +1 (316) 444-1366 • design@powerdigitizing.com • Rush options available */}
               <div className="mt-12 flex flex-wrap items-center justify-center gap-6 border-t border-white/10 pt-8 text-xs text-slate-300/80">
-                <a href={`tel:${phone.replace(/\D/g, "")}`} className="group flex items-center gap-2 transition-colors hover:text-white">
+                <a
+                  href={`tel:${phone.replace(/\D/g, "")}`}
+                  className="group flex items-center gap-2 transition-colors hover:text-white"
+                >
                   <Phone className="size-3.5 text-[#C94343] transition-transform group-hover:scale-110" />
                   <span>{phone}</span>
                 </a>
                 <span className="hidden text-white/20 sm:inline">•</span>
-                <a href={`mailto:${email}`} className="group flex items-center gap-2 transition-colors hover:text-white">
+                <a
+                  href={`mailto:${email}`}
+                  className="group flex items-center gap-2 transition-colors hover:text-white"
+                >
                   <Mail className="size-3.5 text-[#C94343] transition-transform group-hover:scale-110" />
                   <span>{email}</span>
                 </a>
                 <span className="hidden text-white/20 sm:inline">•</span>
                 <span className="flex items-center gap-1.5 text-slate-200">
                   <Clock className="size-3.5 text-[#C94343]" />
-                  <span>24/6 Active Production Studio</span>
+                  <span>Rush options available</span>
                 </span>
               </div>
             </div>
