@@ -5,40 +5,184 @@ import { getSite } from "@/lib/tenant";
 import { SalonGallery } from "@/components/collections/salon-gallery";
 
 export const metadata: Metadata = {
-  title: "Custom Patch Collections & Gallery | Power Digitizing",
+  title: "Custom Patches Online | Compare Patch Types",
   description:
-    "Explore our full range of custom patch types — embroidered, PVC, chenille, leather, woven, sublimated and more. Browse our salon gallery for inspiration and click through to order.",
+    "Browse custom patches online: embroidered, PVC, chenille, leather, woven, sublimated, and silicone. Compare styles and backings, then get a free proof.",
+  alternates: {
+    canonical: "/collections",
+  },
+  openGraph: {
+    title: "Custom Patches Online | Compare Patch Types | Power Digitizing",
+    description:
+      "Browse custom patches online: embroidered, PVC, chenille, leather, woven, sublimated, and silicone. Compare styles and backings, then get a free proof.",
+    url: "/collections",
+    type: "website",
+  },
 };
+
+const comparisonRows = [
+  {
+    name: "Embroidered",
+    best: "Uniforms, apparel, and caps",
+    detail: "High, with raised thread texture",
+    waterproof: "Weather-resistant",
+    moq: "10 pcs",
+    time: "7–14 business days",
+    href: "/collections/embroidered-patches",
+  },
+  {
+    name: "PVC",
+    best: "Tactical gear, outdoor wear, hats, and marine use",
+    detail: "Very sharp 2D and 3D molded detail",
+    waterproof: "Waterproof",
+    moq: "25 pcs",
+    time: "7–14 business days",
+    href: "/collections/pvc-patches",
+  },
+  {
+    name: "PVC keychains",
+    best: "Keys, merch, car and gear accessories",
+    detail: "2D and 3D molded rubber",
+    waterproof: "Waterproof",
+    moq: "25 pcs",
+    time: "7–14 business days",
+    href: "/collections/pvc-keychains",
+  },
+  {
+    name: "Chenille",
+    best: "Letterman jackets and streetwear",
+    detail: "Soft looped texture, bold shapes",
+    waterproof: "Dry clean recommended",
+    moq: "10 pcs",
+    time: "7–14 business days",
+    href: "/collections/chenille-patches",
+  },
+  {
+    name: "Leather",
+    best: "Beanies, caps, workwear, and denim",
+    detail: "Debossed or laser-engraved",
+    waterproof: "Water-resistant finish",
+    moq: "25 pcs",
+    time: "5–7 days",
+    href: "/collections/leather-patches",
+  },
+  {
+    name: "Iron-on",
+    best: "Apparel, jerseys, and quick no-sew jobs",
+    detail: "Same as the patch style chosen",
+    waterproof: "Lasts 50+ washes",
+    moq: "25 pcs",
+    time: "7–14 business days",
+    href: "/collections/iron-on-patches",
+  },
+  {
+    name: "Woven",
+    best: "Small text, labels, and fine logos",
+    detail: "Very fine detail, text from 1.5 mm",
+    waterproof: "Washable",
+    moq: "25 pcs",
+    time: "7–14 business days",
+    href: "/collections/woven-patches",
+  },
+  {
+    name: "Sublimated",
+    best: "Photos, gradients, and full-color art",
+    detail: "Full color, photo quality",
+    waterproof: "Fade-resistant",
+    moq: "10 pcs",
+    time: "7–14 business days",
+    href: "/collections/sublimated-patches",
+  },
+  {
+    name: "Silicone",
+    best: "Athletic wear, hats, and bags",
+    detail: "Soft-touch raised 3D",
+    waterproof: "Waterproof",
+    moq: "25 pcs",
+    time: "7–14 business days",
+    href: "/collections/silicone-patches",
+  },
+];
+
+const backingOptions = [
+  {
+    title: "Iron-On / Heat Seal",
+    desc: "Heat-activated adhesive for easy application with a household iron or a heat press. Best on cotton, denim, and canvas.",
+    badge: "Most popular",
+  },
+  {
+    title: "Velcro (Hook & Loop)",
+    desc: "Hook-and-loop backing for tactical uniforms, operator caps, and plate carriers. Lets you remove and swap patches in seconds.",
+    badge: "Tactical & gear",
+  },
+  {
+    title: "Peel & Stick Adhesive",
+    desc: "Pressure-sensitive sticker backing for events, trade shows, and short-term use.",
+    badge: "No heat needed",
+  },
+  {
+    title: "Sew-On",
+    desc: "A plain backing for sewing directly onto heavy denim, leather, or any garment you wash often. The strongest, longest-lasting hold.",
+    badge: "Most permanent",
+  },
+];
 
 export default async function CollectionsPage() {
   const site = await getSite();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Every custom patch style, in one place.",
+    description:
+      "Browse custom patches online by style, from classic embroidered and rugged PVC to soft chenille and genuine leather. Open any collection to see uses, specs, and real examples, then request a free quote and digital proof.",
+    url: "https://powerdigitizing.com/collections",
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: site.collections.length,
+      itemListElement: site.collections.map((collection, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: collection.name,
+        description: collection.description,
+        url: `https://powerdigitizing.com/collections/${collection.slug}`,
+      })),
+    },
+  };
+
   return (
     <>
-      {/* ── Hero ───────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* ── Section 1: Hero ───────────────────────────────────────────── */}
       <section className="relative overflow-hidden border-b border-border bg-muted pb-16 pt-32 md:pb-24 md:pt-40">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="mx-auto max-w-5xl xl:max-w-6xl 2xl:max-w-7xl px-5 relative z-10 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-5">
-            Patch Collections
+            Patch collections
           </p>
           <h1 className="font-display text-5xl font-semibold leading-tight tracking-tight md:text-7xl xl:text-8xl">
-            Every patch type,<br />
-            <span className="text-primary">one place.</span>
+            Every custom patch style,<br />
+            <span className="text-primary">in one place.</span>
           </h1>
           <p className="mx-auto mt-8 max-w-2xl xl:max-w-3xl text-lg xl:text-xl leading-relaxed text-muted-foreground">
-            Browse our full range of custom patch collections — from classic embroidered and tactile PVC patches & design to plush chenille and genuine leather — and click any card to explore deep product details, use-cases and get a free instant quote.
+            Browse custom patches online by style, from classic embroidered and rugged PVC to soft chenille and genuine leather. Open any collection to see uses, specs, and real examples, then request a free quote and digital proof.
           </p>
         </div>
       </section>
 
-      {/* ── Collection Cards ──────────────────────────────── */}
+      {/* ── Section 2: Shop Custom Patches by Type (12 cards) ────────── */}
       <section className="py-20 md:py-28 bg-background">
         <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="mb-14 text-center">
-            <h2 className="font-display text-3xl font-semibold md:text-4xl xl:text-5xl">Shop by Patch Type</h2>
+            <h2 className="font-display text-3xl font-semibold md:text-4xl xl:text-5xl">
+              Shop Custom Patches by Type
+            </h2>
             <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
-              Click any collection to explore pricing, applications, and full product details.
+              Click any style to see what it&apos;s best for, how it&apos;s made, and examples of our work.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8">
@@ -77,18 +221,18 @@ export default async function CollectionsPage() {
         </div>
       </section>
 
-      {/* ── Material Comparison Table ─────────────────────── */}
+      {/* ── Section 3: Decision Guide (comparison table) ─────────────── */}
       <section className="border-t border-border bg-card py-20 md:py-28">
         <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-6 lg:px-8 xl:px-10">
           <div className="mb-14 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-3">
-              Decision Guide
+              Decision guide
             </p>
             <h2 className="font-display text-3xl font-semibold md:text-5xl">
-              Compare Patch Materials & Specs
+              Compare Custom Patch Types
             </h2>
             <p className="mt-4 text-muted-foreground text-base max-w-2xl mx-auto">
-              Find the perfect match for your design complexity, durability requirements, and apparel type.
+              Match each patch style to your design detail, where it will be used, and how much wear it needs to handle.
             </p>
           </div>
 
@@ -96,32 +240,36 @@ export default async function CollectionsPage() {
             <table className="w-full text-left text-sm">
               <thead className="border-b border-border bg-muted/50 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 <tr>
-                  <th className="px-6 py-4">Patch Style</th>
-                  <th className="px-6 py-4">Best For</th>
-                  <th className="px-6 py-4">Detail Precision</th>
-                  <th className="px-6 py-4">Waterproof</th>
-                  <th className="px-6 py-4">Min Order</th>
-                  <th className="px-6 py-4">Turnaround</th>
+                  <th className="px-6 py-4">Patch style</th>
+                  <th className="px-6 py-4">Best for</th>
+                  <th className="px-6 py-4">Detail level</th>
+                  <th className="px-6 py-4">Water resistance</th>
+                  <th className="px-6 py-4">Min order</th>
+                  <th className="px-6 py-4">Production</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border/60">
-                {[
-                  { name: "Embroidered", best: "Classic apparel, uniforms & caps", detail: "High (classic thread)", waterproof: "Weather-resistant", moq: "10 pcs", time: "5-7 days" },
-                  { name: "PVC Patches", best: "Tactical, outdoor, hats & marine", detail: "Ultra-sharp 2D/3D molds", waterproof: "100% Waterproof", moq: "25 pcs", time: "7-10 days" },
-                  { name: "PVC Keychains", best: "Automotive, keys, merch & gear", detail: "2D/3D molded rubber + chain", waterproof: "100% Waterproof", moq: "25 pcs", time: "6-8 days" },
-                  { name: "Chenille Varsity", best: "Letterman jackets & streetwear", detail: "Plush looped texture", waterproof: "Dry clean only", moq: "10 pcs", time: "6-8 days" },
-                  { name: "Genuine Leather", best: "Beanies, caps, workwear & denim", detail: "Debossed / laser burned", waterproof: "Conditioned finish", moq: "25 pcs", time: "7-9 days" },
-                  { name: "Iron-On / Heat-Seal", best: "Apparel, jerseys & fast no-sew", detail: "Commercial embroidery bond", waterproof: "50+ machine washes", moq: "25 pcs", time: "5-7 days" },
-                  { name: "Woven High-Res", best: "Small text, gradients & fine logos", detail: "Ultra-fine weave (<2mm)", waterproof: "Wash durable", moq: "50 pcs", time: "6-8 days" },
-                  { name: "Sublimated Print", best: "Photographic artwork & fades", detail: "Continuous full color", waterproof: "Fade-proof wash", moq: "20 pcs", time: "5-7 days" },
-                  { name: "3D Molded Silicone", best: "Luxury athleticwear & bags", detail: "Velvet-touch soft 3D", waterproof: "100% Waterproof", moq: "50 pcs", time: "8-12 days" },
-                ].map((row, i) => (
-                  <tr key={row.name} className={`transition-colors hover:bg-muted/30 ${i % 2 === 0 ? "bg-card" : "bg-background"}`}>
-                    <td className="px-6 py-4 font-semibold text-foreground">{row.name}</td>
+                {comparisonRows.map((row, i) => (
+                  <tr
+                    key={row.name}
+                    className={`transition-colors hover:bg-muted/30 ${
+                      i % 2 === 0 ? "bg-card" : "bg-background"
+                    }`}
+                  >
+                    <td className="px-6 py-4 font-semibold text-foreground">
+                      <Link
+                        href={row.href}
+                        className="hover:text-primary transition-colors underline-offset-4 hover:underline"
+                      >
+                        {row.name}
+                      </Link>
+                    </td>
                     <td className="px-6 py-4 text-muted-foreground">{row.best}</td>
                     <td className="px-6 py-4 text-primary font-medium">{row.detail}</td>
                     <td className="px-6 py-4 text-muted-foreground">{row.waterproof}</td>
-                    <td className="px-6 py-4 font-mono text-xs">{row.moq}</td>
+                    <td className="px-6 py-4 font-mono text-xs font-medium text-foreground">
+                      {row.moq}
+                    </td>
                     <td className="px-6 py-4 font-mono text-xs">{row.time}</td>
                   </tr>
                 ))}
@@ -131,33 +279,37 @@ export default async function CollectionsPage() {
         </div>
       </section>
 
-      {/* ── Backing Options ───────────────────────────────── */}
+      {/* ── Section 4: Choose the Right Backing (4 cards) ───────────── */}
       <section className="border-t border-border bg-[#F7F5EE] py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mb-14 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-3">
-              Application Versatility
+              Backing options
             </p>
             <h2 className="font-display text-3xl font-semibold md:text-5xl">
-              Choose the Right Backing
+              Choose the Right Patch Backing
             </h2>
             <p className="mt-4 text-muted-foreground text-base max-w-2xl mx-auto">
-              Every patch type can be fitted with the ideal backing for your garments, bags, or gear.
+              Every patch style can be made with the backing that suits your garment, bag, or gear.
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { title: "Iron-On / Heat Seal", desc: "Industrial-grade heat-activated adhesive for easy home or commercial heat-press application.", badge: "Most Popular" },
-              { title: "Velcro Hook & Loop", desc: "Military-spec hook-and-loop backing for tactical uniforms, operator caps, and plate carriers.", badge: "Tactical & Gear" },
-              { title: "Peel & Stick Adhesive", desc: "Pressure-sensitive temporary sticker backing for events, trade shows, and short-term applications.", badge: "No Heat Required" },
-              { title: "Traditional Sew-On", desc: "Clean plastic-coated backing with an unsealed edge for direct machine stitching to heavy denim or leather.", badge: "Permanent Durability" },
-            ].map((backing) => (
-              <div key={backing.title} className="rounded-2xl border border-border bg-white p-6 shadow-sm flex flex-col justify-between">
+            {backingOptions.map((backing) => (
+              <div
+                key={backing.title}
+                className="rounded-2xl border border-border bg-white p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
+              >
                 <div>
-                  <span className="rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold text-primary">{backing.badge}</span>
-                  <h3 className="mt-4 font-display text-lg font-semibold text-foreground">{backing.title}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{backing.desc}</p>
+                  <span className="rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold text-primary">
+                    {backing.badge}
+                  </span>
+                  <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
+                    {backing.title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                    {backing.desc}
+                  </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-border/60 text-xs font-medium text-primary">
                   Available on all orders
@@ -168,19 +320,18 @@ export default async function CollectionsPage() {
         </div>
       </section>
 
-      {/* ── Salon Gallery ─────────────────────────────────── */}
+      {/* ── Section 5: Patch Gallery ─────────────────────────────────── */}
       <section className="border-t border-border bg-muted/30 py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mb-14 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-4">
-              Design Inspiration
+              Design inspiration
             </p>
             <h2 className="font-display text-3xl font-semibold md:text-5xl">
-              Our Patch Gallery
+              Custom Patch Gallery
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              A curated salon gallery of real patch designs across every type and style. Filter by
-              material and save your favourites with the heart button.
+              Real custom patches we&apos;ve made, in every style. Filter by material to find ideas for your own design, and save your favorites with the heart button.
             </p>
           </div>
           <SalonGallery fallbackImages={site.collections.map((c) => c.image)} />

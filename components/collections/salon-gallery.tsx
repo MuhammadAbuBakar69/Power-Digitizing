@@ -243,7 +243,7 @@ export function SalonGallery({ fallbackImages }: { fallbackImages: string[] }) {
               <div className="relative aspect-square w-full overflow-hidden rounded-t-2xl bg-gradient-to-b from-muted/30 to-muted/80 p-3 sm:p-4 flex items-center justify-center">
                 <Image
                   src={item.image}
-                  alt={`${item.material} patch: ${item.title}`}
+                  alt={`${item.material} custom patch - ${item.title}`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-contain object-center transition-transform duration-500 group-hover:scale-105 drop-shadow-md"
@@ -316,7 +316,7 @@ export function SalonGallery({ fallbackImages }: { fallbackImages: string[] }) {
             <div className="relative w-full h-[50vh] sm:h-[65vh] p-4 sm:p-8 flex items-center justify-center bg-gradient-to-b from-muted/20 to-muted/60">
               <Image
                 src={lightboxItem.image}
-                alt={lightboxItem.title}
+                alt={`${lightboxItem.material} custom patch - ${lightboxItem.title}`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 900px"
                 className="object-contain object-center drop-shadow-2xl p-2 sm:p-4"
