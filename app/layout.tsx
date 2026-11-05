@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { getSite, getOrigin } from "@/lib/tenant";
 import { buildMetadata, faqJsonLd, jsonLdString, organizationJsonLd } from "@/lib/seo";
@@ -82,6 +83,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <main>{children}</main>
         <Footer site={site} />
         <WhatsAppButton />
+        <Analytics />
         {schemas.map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(s) }} />)}
       </body>
     </html>
