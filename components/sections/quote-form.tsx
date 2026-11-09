@@ -45,7 +45,7 @@ export function QuoteForm() {
         }
       }
 
-      // 1. Save to Firestore and 2. Dispatch email notification in parallel
+      // 1. Save to Firestore for permanent backup
       const firestoreTask = addDoc(collection(db, "quotes"), {
         name,
         email,
@@ -64,19 +64,69 @@ export function QuoteForm() {
         console.warn("Firestore save warning:", firestoreErr);
       });
 
+      // 2. Dispatch email notification with client fallback
       const emailTask = fetch("/api/quote", {
         method: "POST",
         body: formData,
-      }).catch((emailErr) => {
-        console.warn("Email dispatch warning:", emailErr);
-      });
+      })
+        .then(async (res) => {
+          const json = await res.json().catch(() => null);
+          if (!res.ok || (json && json.delivered === false)) {
+            const web3Key =
+              process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+              "23d6f0cd-5bce-46da-a69d-4481f9990ef1";
+            const clientData = new FormData();
+            clientData.append("access_key", web3Key);
+            clientData.append("subject", `New Custom Patch Quote: ${name || "Customer"}`);
+            clientData.append("from_name", "Power Digitizing Quotes");
+            clientData.append("Customer Name", name || "Customer");
+            clientData.append("Customer Email", email || "Not provided");
+            clientData.append("Customer Phone", phone || "Not provided");
+            clientData.append("Category", category || "Custom Patches");
+            clientData.append("Quantity", quantity || "Not specified");
+            clientData.append("Zip Code", zip || "Not provided");
+            clientData.append("Project Details", details || "No details provided");
+            if (file && file.size > 0 && file.size <= 5 * 1024 * 1024) {
+              clientData.append("attachment", file);
+            }
+            await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: clientData,
+            }).catch(() => null);
+          }
+          return json;
+        })
+        .catch(async (emailErr) => {
+          console.warn("API route error, falling back to Web3Forms:", emailErr);
+          const web3Key =
+            process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+            "23d6f0cd-5bce-46da-a69d-4481f9990ef1";
+          const clientData = new FormData();
+          clientData.append("access_key", web3Key);
+          clientData.append("subject", `New Custom Patch Quote: ${name || "Customer"}`);
+          clientData.append("from_name", "Power Digitizing Quotes");
+          clientData.append("Customer Name", name || "Customer");
+          clientData.append("Customer Email", email || "Not provided");
+          clientData.append("Customer Phone", phone || "Not provided");
+          clientData.append("Category", category || "Custom Patches");
+          clientData.append("Quantity", quantity || "Not specified");
+          clientData.append("Zip Code", zip || "Not provided");
+          clientData.append("Project Details", details || "No details provided");
+          if (file && file.size > 0 && file.size <= 5 * 1024 * 1024) {
+            clientData.append("attachment", file);
+          }
+          await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: clientData,
+          }).catch(() => null);
+        });
 
       await Promise.all([firestoreTask, emailTask]);
 
       form.reset();
       setFileName("");
       setStatus("success");
-      setStatusMessage("Thank you! Your quote request has been received and sent to design@powerdigitizing.com.");
+      setStatusMessage("Thank you! Your quote request has been received. Our team will review your project and get in touch shortly.");
     } catch (error) {
       setStatus("error");
       setStatusMessage(error instanceof Error ? error.message : "Could not send. Please try again.");

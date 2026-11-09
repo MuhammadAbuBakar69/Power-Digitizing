@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
+const WEB3FORMS_DEFAULT_KEY = "23d6f0cd-5bce-46da-a69d-4481f9990ef1";
+
 export async function POST(request: Request) {
   try {
     const formData = await request.formData();
@@ -15,6 +17,12 @@ export async function POST(request: Request) {
     const file = formData.get("attachment") as File | null;
 
     const resendKey = process.env.RESEND_API_KEY || "";
+    const web3formsKey =
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+      process.env.WEB3FORMS_ACCESS_KEY ||
+      WEB3FORMS_DEFAULT_KEY;
+
+    const fromEmail = process.env.FROM_EMAIL || "Power Digitizing Quotes <onboarding@resend.dev>";
     const primaryEmail = process.env.DESTINATION_EMAIL || "design@powerdigitizing.com";
     const fallbackEmail = process.env.NOTIFICATION_EMAIL || "jeffsmith.powerdigitizing@gmail.com";
 
@@ -31,7 +39,7 @@ export async function POST(request: Request) {
     const htmlContent = `
       <div style="font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;">
         <div style="background-color: #14263D; color: #ffffff; padding: 16px 20px; border-radius: 6px; margin-bottom: 24px;">
-          <h2 style="margin: 0; font-size: 20px;">New Custom Patch Quote Request</h2>
+          <h2 style="margin: 0; font-size: 20px; color: #ffffff;">New Custom Patch Quote Request</h2>
           <p style="margin: 4px 0 0; font-size: 13px; color: #cbd5e1;">Received from Power Digitizing Website</p>
         </div>
 
@@ -82,72 +90,108 @@ export async function POST(request: Request) {
       </div>
     `;
 
-    // Try sending to primary recipient first; if unverified domain, fallback to verified account email
-    let sentSuccess = false;
+    let resendDelivered = false;
     let resendError = "";
+    let web3Delivered = false;
 
-    // Attempt 1: Send to primary and fallback
-    try {
-      const res = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${resendKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          from: "Power Digitizing Quotes <onboarding@resend.dev>",
-          to: [primaryEmail, fallbackEmail],
-          reply_to: email || undefined,
-          subject: `New Custom Patch Quote: ${name || "Customer"} (${category || "Patches"})`,
-          html: htmlContent,
-          attachments: attachments.length ? attachments : undefined,
-        }),
-      });
+    // Resend Delivery Logic
+    if (resendKey) {
+      // If from domain is resend.dev (testing domain), Resend strictly requires recipient to be the account owner email
+      const isTestDomain = fromEmail.includes("resend.dev");
+      const targetRecipients = isTestDomain ? [fallbackEmail] : [primaryEmail, fallbackEmail];
 
-      const data = await res.json();
-      if (res.ok) {
-        sentSuccess = true;
-      } else {
-        resendError = data.message || JSON.stringify(data);
-      }
-    } catch (err) {
-      resendError = err instanceof Error ? err.message : String(err);
-    }
-
-    // Attempt 2: If attempt 1 failed (e.g. domain not verified for primaryEmail), send to fallbackEmail
-    if (!sentSuccess) {
       try {
-        const fallbackRes = await fetch("https://api.resend.com/emails", {
+        const res = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${resendKey}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: "Power Digitizing Quotes <onboarding@resend.dev>",
-            to: [fallbackEmail],
+            from: fromEmail,
+            to: targetRecipients,
             reply_to: email || undefined,
-            subject: `[Quote Request] ${name || "Customer"} - Design Attached`,
+            subject: `New Custom Patch Quote: ${name || "Customer"} (${category || "Patches"})`,
             html: htmlContent,
             attachments: attachments.length ? attachments : undefined,
           }),
         });
 
-        if (fallbackRes.ok) {
-          sentSuccess = true;
+        const data = await res.json().catch(() => ({}));
+        if (res.ok) {
+          resendDelivered = true;
         } else {
-          const fallbackData = await fallbackRes.json();
-          resendError = fallbackData.message || JSON.stringify(fallbackData);
+          resendError = data.message || JSON.stringify(data);
+          // If 403 because unverified domain, fallback to sending strictly to fallbackEmail
+          if (!isTestDomain && (res.status === 403 || String(resendError).includes("testing emails"))) {
+            const retry = await fetch("https://api.resend.com/emails", {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${resendKey}`,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                from: "Power Digitizing Quotes <onboarding@resend.dev>",
+                to: [fallbackEmail],
+                reply_to: email || undefined,
+                subject: `[Quote Request] ${name || "Customer"} - Design Attached`,
+                html: htmlContent,
+                attachments: attachments.length ? attachments : undefined,
+              }),
+            });
+            if (retry.ok) {
+              resendDelivered = true;
+              resendError = "";
+            }
+          }
         }
       } catch (err) {
         resendError = err instanceof Error ? err.message : String(err);
       }
     }
 
+    // Dual dispatch or fallback via Web3Forms to guarantee delivery into inbox
+    if (web3formsKey) {
+      try {
+        const w3Data = new FormData();
+        w3Data.append("access_key", web3formsKey);
+        w3Data.append("subject", `New Custom Patch Quote: ${name || "Customer"} (${category || "Patches"})`);
+        w3Data.append("from_name", "Power Digitizing Quotes");
+        w3Data.append("Customer Name", name || "Not provided");
+        w3Data.append("Customer Email", email || "Not provided");
+        w3Data.append("Customer Phone", phone || "Not provided");
+        w3Data.append("Category", category || "Custom Patches");
+        w3Data.append("Quantity", quantity || "Not specified");
+        w3Data.append("Zip Code", zip || "Not provided");
+        w3Data.append("Project Details", details || "No details provided");
+
+        if (file && file.size > 0 && file.size <= 5 * 1024 * 1024) {
+          w3Data.append("attachment", file);
+        }
+
+        const w3Res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: w3Data,
+        });
+
+        if (w3Res.ok) {
+          web3Delivered = true;
+        }
+      } catch (w3Err) {
+        console.warn("Web3Forms delivery attempt warning:", w3Err);
+      }
+    }
+
+    const delivered = resendDelivered || web3Delivered;
+
     return NextResponse.json({
       success: true,
-      delivered: sentSuccess,
-      warning: sentSuccess ? undefined : resendError,
+      delivered,
+      channels: {
+        resend: resendDelivered,
+        web3forms: web3Delivered,
+      },
+      warning: delivered ? undefined : (resendError || "Email delivery failed on all channels"),
     });
   } catch (error) {
     console.error("Quote API route error:", error);

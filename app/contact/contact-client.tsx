@@ -47,7 +47,7 @@ export function ContactClient({ site }: { site: SiteConfig }) {
     setLoading(true);
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "23d6f0cd-5bce-46da-a69d-4481f9990ef1";
 
-    // 1. Save contact message to Firestore & 2. Send email via /api/contact in parallel
+    // 1. Save contact message to Firestore for permanent record
     const firestoreTask = addDoc(collection(db, "contacts"), {
       name,
       email,
@@ -59,13 +59,47 @@ export function ContactClient({ site }: { site: SiteConfig }) {
       console.warn("Firestore contact save warning:", firestoreErr);
     });
 
+    // 2. Send email via /api/contact with client-side fail-safe fallback
     const emailTask = fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, services, message }),
-    }).catch((emailErr) => {
-      console.warn("Contact email dispatch warning:", emailErr);
-    });
+    })
+      .then(async (res) => {
+        const json = await res.json().catch(() => null);
+        if (!res.ok || (json && json.delivered === false)) {
+          await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({
+              access_key: accessKey,
+              subject: `New Contact Inquiry from ${name || "Customer"}`,
+              from_name: "Power Digitizing Contact Form",
+              name: name || "Customer",
+              email,
+              services: Array.isArray(services) ? services.join(", ") : services,
+              message,
+            }),
+          }).catch(() => null);
+        }
+        return json;
+      })
+      .catch(async (emailErr) => {
+        console.warn("Contact email dispatch warning:", emailErr);
+        await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: `New Contact Inquiry from ${name || "Customer"}`,
+            from_name: "Power Digitizing Contact Form",
+            name: name || "Customer",
+            email,
+            services: Array.isArray(services) ? services.join(", ") : services,
+            message,
+          }),
+        }).catch(() => null);
+      });
 
     await Promise.all([firestoreTask, emailTask]);
 
