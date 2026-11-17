@@ -12,7 +12,7 @@ export function WhatsAppButton() {
   return (
     <aside
       aria-label="WhatsApp quick chat"
-      className="fixed bottom-5 left-5 z-50 flex items-center sm:bottom-6 sm:left-6"
+      className="fixed bottom-5 right-5 z-40 flex items-center sm:bottom-6 sm:right-6"
     >
       <a
         href={whatsappUrl}

@@ -9,6 +9,7 @@ import { fontVariables } from "@/lib/fonts";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import { TawkChat } from "@/components/layout/tawk-chat";
 
 export async function generateMetadata(): Promise<Metadata> {
   const site = await getSite();
@@ -24,8 +25,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={fontVariables} style={themeStyle(site)} data-site={site.id}>
       <head>
-        <meta name="robots" content="index, follow" />
-        <meta name="google-site-verification" content="hQ9qNGyTKvu7sI_LZTKi7kZqAdvQYU38hw5g71o6rgE" />
         <link rel="icon" href="/favicon.png" sizes="512x512" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         {/* Google tag (gtag.js) */}
@@ -83,6 +82,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <main>{children}</main>
         <Footer site={site} />
         <WhatsAppButton />
+        <TawkChat />
         <Analytics />
         {schemas.map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(s) }} />)}
       </body>
