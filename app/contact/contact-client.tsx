@@ -45,63 +45,39 @@ export function ContactClient({ site }: { site: SiteConfig }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "23d6f0cd-5bce-46da-a69d-4481f9990ef1";
 
-    // 1. Save contact message to Firestore for permanent record
-    const firestoreTask = addDoc(collection(db, "contacts"), {
-      name,
-      email,
-      services,
-      message,
-      toEmail: "design@powerdigitizing.com",
-      createdAt: serverTimestamp(),
-    }).catch((firestoreErr) => {
-      console.warn("Firestore contact save warning:", firestoreErr);
-    });
+    // 1. Asynchronously backup contact message to Firestore without blocking
+    try {
+      addDoc(collection(db, "contacts"), {
+        name,
+        email,
+        services,
+        message,
+        toEmail: "jeffsmith.powerdigitizing@gmail.com",
+        createdAt: serverTimestamp(),
+      }).catch((firestoreErr) => {
+        console.warn("Firestore contact save warning:", firestoreErr);
+      });
+    } catch (backupErr) {
+      console.warn("Pre-submission backup skipped:", backupErr);
+    }
 
-    // 2. Send email via /api/contact with client-side fail-safe fallback
-    const emailTask = fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, services, message }),
-    })
-      .then(async (res) => {
-        const json = await res.json().catch(() => null);
-        if (!res.ok || (json && json.delivered === false)) {
-          await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", Accept: "application/json" },
-            body: JSON.stringify({
-              access_key: accessKey,
-              subject: `New Contact Inquiry from ${name || "Customer"}`,
-              from_name: "Power Digitizing Contact Form",
-              name: name || "Customer",
-              email,
-              services: Array.isArray(services) ? services.join(", ") : services,
-              message,
-            }),
-          }).catch(() => null);
-        }
-        return json;
-      })
-      .catch(async (emailErr) => {
-        console.warn("Contact email dispatch warning:", emailErr);
-        await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            access_key: accessKey,
-            subject: `New Contact Inquiry from ${name || "Customer"}`,
-            from_name: "Power Digitizing Contact Form",
-            name: name || "Customer",
-            email,
-            services: Array.isArray(services) ? services.join(", ") : services,
-            message,
-          }),
-        }).catch(() => null);
+    // 2. Dispatch email notification via /api/contact
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, services, message }),
       });
 
-    await Promise.all([firestoreTask, emailTask]);
+      const json = await response.json().catch(() => ({}));
+
+      if (!response.ok || json.success === false) {
+        throw new Error(json.error || "Failed to deliver contact message.");
+      }
+    } catch (emailErr) {
+      console.error("Contact email dispatch error:", emailErr);
+    }
 
     setLoading(false);
     setSubmitted(true);

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight, Clock3, Globe2, Palette, Upload } from "lucide-react";
+import { ArrowUpRight, Clock3, Globe2, Palette, Upload, CheckCircle2, AlertCircle } from "lucide-react";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
@@ -27,109 +27,63 @@ export function QuoteForm() {
       const details = String(formData.get("details") || "").trim();
       const file = formData.get("attachment") as File | null;
 
-      let fileData = "";
-      const fileName = file?.name || "";
-      const fileSize = file?.size || 0;
-      const fileType = file?.type || "";
-
-      if (file && file.size > 0 && file.size <= 800 * 1024) {
-        try {
+      // 1. Asynchronously backup to Firestore without blocking form submission
+      try {
+        let fileData = "";
+        if (file && file.size > 0 && file.size <= 500 * 1024) {
+          const reader = new FileReader();
           fileData = await new Promise<string>((resolve) => {
-            const reader = new FileReader();
             reader.onload = () => resolve(String(reader.result || ""));
             reader.onerror = () => resolve("");
             reader.readAsDataURL(file);
           });
-        } catch (readerErr) {
-          console.warn("FileReader error:", readerErr);
         }
+
+        addDoc(collection(db, "quotes"), {
+          name,
+          email,
+          phone,
+          category,
+          quantity: quantity ? Number(quantity) || quantity : "",
+          zip,
+          details,
+          fileName: file?.name || "",
+          fileSize: file?.size || 0,
+          fileType: file?.type || "",
+          fileData,
+          toEmail: "jeffsmith.powerdigitizing@gmail.com",
+          createdAt: serverTimestamp(),
+        }).catch((firestoreErr) => {
+          console.warn("Firestore quote backup warning:", firestoreErr);
+        });
+      } catch (backupErr) {
+        console.warn("Pre-submission backup skipped:", backupErr);
       }
 
-      // 1. Save to Firestore for permanent backup
-      const firestoreTask = addDoc(collection(db, "quotes"), {
-        name,
-        email,
-        phone,
-        category,
-        quantity: quantity ? Number(quantity) || quantity : "",
-        zip,
-        details,
-        fileName,
-        fileSize,
-        fileType,
-        fileData,
-        toEmail: "design@powerdigitizing.com",
-        createdAt: serverTimestamp(),
-      }).catch((firestoreErr) => {
-        console.warn("Firestore save warning:", firestoreErr);
-      });
-
-      // 2. Dispatch email notification with client fallback
-      const emailTask = fetch("/api/quote", {
+      // 2. Dispatch email notification via /api/quote
+      const response = await fetch("/api/quote", {
         method: "POST",
         body: formData,
-      })
-        .then(async (res) => {
-          const json = await res.json().catch(() => null);
-          if (!res.ok || (json && json.delivered === false)) {
-            const web3Key =
-              process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
-              "23d6f0cd-5bce-46da-a69d-4481f9990ef1";
-            const clientData = new FormData();
-            clientData.append("access_key", web3Key);
-            clientData.append("subject", `New Custom Patch Quote: ${name || "Customer"}`);
-            clientData.append("from_name", "Power Digitizing Quotes");
-            clientData.append("Customer Name", name || "Customer");
-            clientData.append("Customer Email", email || "Not provided");
-            clientData.append("Customer Phone", phone || "Not provided");
-            clientData.append("Category", category || "Custom Patches");
-            clientData.append("Quantity", quantity || "Not specified");
-            clientData.append("Zip Code", zip || "Not provided");
-            clientData.append("Project Details", details || "No details provided");
-            if (file && file.size > 0 && file.size <= 5 * 1024 * 1024) {
-              clientData.append("attachment", file);
-            }
-            await fetch("https://api.web3forms.com/submit", {
-              method: "POST",
-              body: clientData,
-            }).catch(() => null);
-          }
-          return json;
-        })
-        .catch(async (emailErr) => {
-          console.warn("API route error, falling back to Web3Forms:", emailErr);
-          const web3Key =
-            process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
-            "23d6f0cd-5bce-46da-a69d-4481f9990ef1";
-          const clientData = new FormData();
-          clientData.append("access_key", web3Key);
-          clientData.append("subject", `New Custom Patch Quote: ${name || "Customer"}`);
-          clientData.append("from_name", "Power Digitizing Quotes");
-          clientData.append("Customer Name", name || "Customer");
-          clientData.append("Customer Email", email || "Not provided");
-          clientData.append("Customer Phone", phone || "Not provided");
-          clientData.append("Category", category || "Custom Patches");
-          clientData.append("Quantity", quantity || "Not specified");
-          clientData.append("Zip Code", zip || "Not provided");
-          clientData.append("Project Details", details || "No details provided");
-          if (file && file.size > 0 && file.size <= 5 * 1024 * 1024) {
-            clientData.append("attachment", file);
-          }
-          await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: clientData,
-          }).catch(() => null);
-        });
+      });
 
-      await Promise.all([firestoreTask, emailTask]);
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || result.success === false) {
+        throw new Error(result.error || "Failed to deliver quote request. Please try again.");
+      }
 
       form.reset();
       setFileName("");
       setStatus("success");
       setStatusMessage("Thank you! Your quote request has been received. Our team will review your project and get in touch shortly.");
     } catch (error) {
+      console.error("Quote submit error:", error);
       setStatus("error");
-      setStatusMessage(error instanceof Error ? error.message : "Could not send. Please try again.");
+      setStatusMessage(
+        error instanceof Error
+          ? error.message
+          : "Could not send quote request. Please email us directly at jeffsmith.powerdigitizing@gmail.com."
+      );
     }
   }
 
@@ -175,10 +129,16 @@ export function QuoteForm() {
       <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
         <p className="text-xs text-white/60">By submitting, you agree to be contacted about your project.</p>
         <div className="flex items-center gap-4">
-          {statusMessage && <p className={`max-w-xs text-xs font-semibold ${status === "success" ? "text-accent" : "text-white"}`}>{statusMessage}</p>}
           <button type="submit" disabled={status === "sending"} className="inline-flex cursor-pointer items-center gap-2 rounded-[0.35rem] bg-secondary px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-1 disabled:cursor-wait disabled:opacity-60">{status === "sending" ? "Sending..." : "Send a request"} <ArrowUpRight aria-hidden className="size-4" /></button>
         </div>
       </div>
+
+      {statusMessage && (
+        <div className={`mt-4 rounded-lg p-3 text-xs font-medium flex items-center gap-2 ${status === "success" ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" : "bg-rose-500/20 text-rose-200 border border-rose-500/30"}`}>
+          {status === "success" ? <CheckCircle2 className="size-4 shrink-0 text-emerald-400" /> : <AlertCircle className="size-4 shrink-0 text-rose-400" />}
+          <span>{statusMessage}</span>
+        </div>
+      )}
     </form>
   );
 }
